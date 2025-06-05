@@ -1,0 +1,59 @@
+# WordPress Core Files (WP Engine manages these)
+/wp-admin/
+/wp-includes/
+wp-*.php
+xmlrpc.php
+license.txt
+readme.html
+
+# WP Engine specific
+/.htaccess
+/wp-config.php
+
+# Local development files
+node_modules/
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build files
+*.map
+*.log
+
+# Test files (our local testing)
+wp-content/themes/alepo-theme/local-page-test.php
+wp-content/themes/alepo-theme/full-page-test.php
+wp-content/themes/alepo-theme/generate-html-pages.php
+wp-content/themes/alepo-theme/generated-pages/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Cache
+wp-content/cache/
+wp-content/uploads/cache/
+
+# Plugins that will be managed separately
+wp-content/plugins/
+!wp-content/plugins/.gitkeep
+
+# Theme node_modules if any
+wp-content/themes/*/node_modules/
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Temporary files
+tmp/
+temp/

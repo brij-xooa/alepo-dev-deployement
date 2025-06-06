@@ -1,0 +1,6 @@
+// Add these lines to wp-config.php temporarily via WP Engine:
+
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', true );
+@ini_set( 'display_errors', 1 );

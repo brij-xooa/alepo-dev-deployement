@@ -1684,3 +1684,8 @@ if (file_exists(get_template_directory() . '/inc/mega-menu-walker.php')) {
 }
 // Customizer functions are already in this file, so we don't need to include customizer.php
 // require get_template_directory() . '/inc/customizer.php';
+
+// Include admin page creator
+if (file_exists(get_template_directory() . '/admin-page-creator.php')) {
+    require get_template_directory() . '/admin-page-creator.php';
+}

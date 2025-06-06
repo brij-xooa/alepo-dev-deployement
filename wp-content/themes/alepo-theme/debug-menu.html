@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mega Menu Debug</title>
+    <style>
+        /* Test if this CSS shows the mega menu */
+        .nav-item:hover .mega-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .mega-menu {
+            background: red !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            width: 300px !important;
+            height: 200px !important;
+            z-index: 9999 !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mega Menu CSS Debug</h1>
+    <p>If you see this file working, it means the file structure is correct.</p>
+    
+    <div class="nav-item">
+        <a href="#">Solutions (hover me)</a>
+        <div class="mega-menu">
+            <p>This should appear on hover!</p>
+        </div>
+    </div>
+</body>
+</html>

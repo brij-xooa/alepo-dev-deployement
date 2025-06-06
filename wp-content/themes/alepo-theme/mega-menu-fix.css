@@ -1,23 +1,13 @@
-/* Mega Menu Desktop Fix - Force Visibility */
+/* Mega Menu Desktop Fix - Clean Hover Behavior */
 
-/* Force show mega menu on desktop for testing */
 @media (min-width: 769px) {
     
-    /* Make mega menu visible on hover */
-    .nav-item:hover .mega-menu,
-    .nav-item:focus-within .mega-menu {
-        opacity: 1 !important;
-        visibility: visible !important;
-        display: block !important;
-        transform: translateY(0) !important;
-    }
-    
-    /* Ensure mega menu is positioned correctly */
+    /* Hide mega menu by default */
     .mega-menu {
         position: absolute !important;
         top: 100% !important;
         left: 50% !important;
-        transform: translateX(-50%) !important;
+        transform: translateX(-50%) translateY(-10px) !important;
         z-index: 9999 !important;
         background: white !important;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
@@ -25,6 +15,18 @@
         width: 1000px !important;
         max-width: 90vw !important;
         margin-top: 10px !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Show mega menu on hover with smooth transition */
+    .nav-item:hover .mega-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateX(-50%) translateY(0) !important;
     }
     
     /* Ensure nav-item is positioned relatively */
@@ -32,16 +34,32 @@
         position: relative !important;
     }
     
+    /* Add hover delay to prevent jittering */
+    .nav-item {
+        transition: all 0.1s ease !important;
+    }
+    
     /* Add hover state for nav links */
     .nav-item:hover > .nav-link {
         color: #0066CC !important;
     }
     
-    /* Test: Force show first mega menu always (temporary) */
-    .nav-item:first-of-type .mega-menu {
+    /* Prevent mega menu from disappearing when hovering over it */
+    .mega-menu:hover {
         opacity: 1 !important;
         visibility: visible !important;
-        display: block !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Add a small gap tolerance to prevent flickering */
+    .nav-item::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 10px;
+        z-index: 9998;
     }
 }
 

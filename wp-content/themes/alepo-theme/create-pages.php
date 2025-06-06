@@ -34,10 +34,7 @@ function alepo_create_all_pages() {
     // Get all page definitions
     $pages_data = alepo_get_pages_data();
     
-    echo "<p>Debug: Retrieved " . count($pages_data) . " page definitions</p>\n";
-    
-    foreach ($pages_data as $index => $page_data) {
-        echo "<h3>Processing page " . ($index + 1) . " of " . count($pages_data) . "</h3>\n";
+    foreach ($pages_data as $page_data) {
         try {
             $page_id = alepo_create_single_page($page_data);
             if ($page_id) {
@@ -75,13 +72,9 @@ function alepo_create_all_pages() {
  * Create a single page with content and ACF fields
  */
 function alepo_create_single_page($page_data) {
-    // Debug output
-    echo "<br>Attempting to create page: {$page_data['title']} (slug: {$page_data['slug']})<br>\n";
-    
     // Check if page already exists
     $existing_page = get_page_by_path($page_data['slug']);
     if ($existing_page) {
-        echo "Page already exists with ID: {$existing_page->ID}<br>\n";
         return $existing_page->ID; // Return existing page ID
     }
     
@@ -106,18 +99,12 @@ function alepo_create_single_page($page_data) {
         }
     }
     
-    // Debug: Show post data
-    echo "Post data prepared. Creating page...<br>\n";
-    
     // Create the page
     $page_id = wp_insert_post($post_data);
     
     if (is_wp_error($page_id)) {
-        echo "<span style='color: red;'>Error creating page: " . $page_id->get_error_message() . "</span><br>\n";
         throw new Exception($page_id->get_error_message());
     }
-    
-    echo "Page created successfully with ID: {$page_id}<br>\n";
     
     // Add ACF fields if they exist
     if (!empty($page_data['acf_fields']) && function_exists('update_field')) {
@@ -162,6 +149,27 @@ function alepo_get_pages_data() {
         ),
         
         // Solution Pages
+        array(
+            'title' => 'Network Access Control',
+            'slug' => 'solutions/network-access-control',
+            'content' => alepo_get_solution_content('network_access_control'),
+            'template' => 'page-templates/page-solution.php',
+            'meta_description' => 'Advanced network access control solutions for secure authentication, authorization, and accounting across 5G, WiFi, and enterprise networks.',
+            'focus_keyword' => 'network access control',
+            'acf_fields' => array(
+                'hero_headline' => 'Secure Every Connection with Advanced Network Access Control',
+                'hero_subheadline' => 'Comprehensive AAA solutions for RADIUS, Diameter, and 5G authentication with 99.999% uptime and 36,000 TPS performance.',
+                'challenge_addressed' => 'Legacy AAA systems lack scalability, security, and 5G readiness for modern network demands.',
+                'target_audience' => array('csps', 'mvnos', 'isps', 'enterprises'),
+                'implementation_time' => '4-6 weeks',
+                'roi_metrics' => array(
+                    array('roi_metric' => '60%', 'roi_description' => 'Reduction in authentication latency'),
+                    array('roi_metric' => '99.999%', 'roi_description' => 'System uptime guarantee'),
+                    array('roi_metric' => '36,000 TPS', 'roi_description' => 'Transaction processing speed')
+                )
+            )
+        ),
+        
         array(
             'title' => 'Legacy AAA Replacement',
             'slug' => 'solutions/legacy-aaa-replacement',
@@ -704,6 +712,7 @@ function alepo_get_homepage_content() {
 
 function alepo_get_solution_content($solution_type) {
     $content_map = array(
+        'network_access_control' => 'Advanced network access control solutions providing secure authentication, authorization, and accounting for modern telecommunications infrastructure. Support for RADIUS, Diameter, TACACS+, and 5G AUSF with 99.999% uptime and 36,000 TPS performance.',
         'legacy_aaa' => 'Modernize your legacy AAA infrastructure with our cloud-native solutions. Reduce operational costs by 50% while improving scalability and enabling 5G services.',
         '5g_evolution' => 'Accelerate your 5G network evolution with comprehensive solutions for service orchestration, monetization, and subscriber management.',
         'cloud_migration' => 'Migrate your telecom infrastructure to the cloud with confidence. Our proven methodology ensures zero downtime and immediate benefits.',

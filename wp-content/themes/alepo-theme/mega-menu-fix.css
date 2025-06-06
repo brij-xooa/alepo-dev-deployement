@@ -2,6 +2,15 @@
 
 @media (min-width: 769px) {
     
+    /* FORCE HIDE ALL mega menus by default - AGGRESSIVE APPROACH */
+    .mega-menu,
+    .solutions-mega-menu,
+    .products-mega-menu,
+    .industries-mega-menu,
+    .resources-mega-menu {
+        display: none !important;
+    }
+    
     /* Hide mega menu by default */
     .mega-menu {
         position: absolute !important;
@@ -22,7 +31,12 @@
     }
     
     /* Show mega menu on hover with smooth transition */
-    .nav-item:hover .mega-menu {
+    .nav-item:hover .mega-menu,
+    .nav-item:hover .solutions-mega-menu,
+    .nav-item:hover .products-mega-menu,
+    .nav-item:hover .industries-mega-menu,
+    .nav-item:hover .resources-mega-menu {
+        display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;

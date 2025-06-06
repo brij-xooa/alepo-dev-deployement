@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Menu Count</title>
+    <script>
+        // Run this in browser console to debug
+        function debugMenus() {
+            console.log('=== MEGA MENU DEBUG ===');
+            
+            // Count all mega menus
+            const allMegaMenus = document.querySelectorAll('.mega-menu');
+            console.log(`Total mega menus found: ${allMegaMenus.length}`);
+            
+            // Count Solutions menus specifically
+            const solutionsMenus = document.querySelectorAll('.solutions-mega-menu');
+            console.log(`Solutions mega menus found: ${solutionsMenus.length}`);
+            
+            // Check each mega menu
+            allMegaMenus.forEach((menu, index) => {
+                const rect = menu.getBoundingClientRect();
+                const styles = window.getComputedStyle(menu);
+                console.log(`Menu ${index + 1}:`, {
+                    className: menu.className,
+                    position: `${rect.left}, ${rect.top}`,
+                    size: `${rect.width}x${rect.height}`,
+                    opacity: styles.opacity,
+                    visibility: styles.visibility,
+                    display: styles.display
+                });
+            });
+        }
+        
+        // Auto-run when page loads
+        window.addEventListener('load', debugMenus);
+    </script>
+</head>
+<body>
+    <h1>Menu Debug Script</h1>
+    <p>Check browser console for debug info</p>
+    <button onclick="debugMenus()">Run Debug Again</button>
+</body>
+</html>

@@ -10,26 +10,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-/**
- * Add postMessage support for site title and description
- */
-function alepo_customize_register($wp_customize) {
-    $wp_customize->get_setting('blogname')->transport = 'postMessage';
-    $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
-    $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
-
-    if (isset($wp_customize->selective_refresh)) {
-        $wp_customize->selective_refresh->add_partial('blogname', array(
-            'selector' => '.site-title a',
-            'render_callback' => 'alepo_customize_partial_blogname',
-        ));
-        $wp_customize->selective_refresh->add_partial('blogdescription', array(
-            'selector' => '.site-description',
-            'render_callback' => 'alepo_customize_partial_blogdescription',
-        ));
-    }
-}
-add_action('customize_register', 'alepo_customize_register');
+// Note: alepo_customize_register is already defined in functions.php
+// This file contains additional customizer functions only
 
 /**
  * Render the site title for the selective refresh partial

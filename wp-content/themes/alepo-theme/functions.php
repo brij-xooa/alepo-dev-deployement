@@ -1676,6 +1676,11 @@ add_filter('wp_headers', function($headers) {
 /**
  * Include additional theme files
  */
-require get_template_directory() . '/inc/template-functions.php';
-require get_template_directory() . '/inc/mega-menu-walker.php';
-require get_template_directory() . '/inc/customizer.php';
+if (file_exists(get_template_directory() . '/inc/template-functions.php')) {
+    require get_template_directory() . '/inc/template-functions.php';
+}
+if (file_exists(get_template_directory() . '/inc/mega-menu-walker.php')) {
+    require get_template_directory() . '/inc/mega-menu-walker.php';
+}
+// Customizer functions are already in this file, so we don't need to include customizer.php
+// require get_template_directory() . '/inc/customizer.php';

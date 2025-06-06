@@ -11,12 +11,14 @@
 
     // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
+        console.log('Alepo Navigation: DOM Ready, initializing...');
         initMegaMenu();
         initMobileMenu();
         initSearchFunctionality();
         initStickyNavigation();
         initActiveMenuStates();
         initKeyboardNavigation();
+        console.log('Alepo Navigation: All functions initialized');
     });
 
     /**
@@ -28,7 +30,7 @@
         let hoverTimer = null;
 
         navItems.forEach(item => {
-            const megaMenu = item.querySelector('.mega-menu, .dropdown-menu');
+            const megaMenu = item.querySelector('.mega-menu, .solutions-mega-menu, .industries-mega-menu, .customers-mega-menu, .resources-mega-menu, .dropdown-menu');
             if (!megaMenu) return;
 
             // Mouse enter - show menu with delay
@@ -156,7 +158,7 @@
     function hideAllMenus() {
         const navItems = document.querySelectorAll('.nav-item');
         navItems.forEach(item => {
-            const menu = item.querySelector('.mega-menu, .dropdown-menu');
+            const menu = item.querySelector('.mega-menu, .solutions-mega-menu, .industries-mega-menu, .customers-mega-menu, .resources-mega-menu, .dropdown-menu');
             if (menu) {
                 hideMegaMenu(item, menu);
             }
@@ -530,7 +532,7 @@
 
         navItems.forEach(item => {
             const link = item.querySelector('.nav-link');
-            const megaMenu = item.querySelector('.mega-menu, .dropdown-menu');
+            const megaMenu = item.querySelector('.mega-menu, .solutions-mega-menu, .industries-mega-menu, .customers-mega-menu, .resources-mega-menu, .dropdown-menu');
 
             if (!link || !megaMenu) return;
 

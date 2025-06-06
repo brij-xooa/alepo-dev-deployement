@@ -99,6 +99,9 @@ function alepo_scripts() {
     // Enqueue theme stylesheet
     wp_enqueue_style('alepo-style', get_stylesheet_uri(), array(), '1.0.0');
     
+    // Enqueue mega menu fix CSS
+    wp_enqueue_style('alepo-mega-menu-fix', get_template_directory_uri() . '/mega-menu-fix.css', array('alepo-style'), '1.0.0');
+    
     // Enqueue Google Fonts
     wp_enqueue_style('alepo-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', array(), null);
     

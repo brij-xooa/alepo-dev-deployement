@@ -1,0 +1,59 @@
+/* Mega Menu Desktop Fix - Force Visibility */
+
+/* Force show mega menu on desktop for testing */
+@media (min-width: 769px) {
+    
+    /* Make mega menu visible on hover */
+    .nav-item:hover .mega-menu,
+    .nav-item:focus-within .mega-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        transform: translateY(0) !important;
+    }
+    
+    /* Ensure mega menu is positioned correctly */
+    .mega-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 9999 !important;
+        background: white !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+        border-radius: 8px !important;
+        width: 1000px !important;
+        max-width: 90vw !important;
+        margin-top: 10px !important;
+    }
+    
+    /* Ensure nav-item is positioned relatively */
+    .nav-item {
+        position: relative !important;
+    }
+    
+    /* Add hover state for nav links */
+    .nav-item:hover > .nav-link {
+        color: #0066CC !important;
+    }
+    
+    /* Test: Force show first mega menu always (temporary) */
+    .nav-item:first-of-type .mega-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+}
+
+/* Mobile: Keep existing mobile behavior */
+@media (max-width: 768px) {
+    .mega-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 100% !important;
+        transform: none !important;
+        box-shadow: none !important;
+        margin-top: 0 !important;
+    }
+}

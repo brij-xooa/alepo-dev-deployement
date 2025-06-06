@@ -56,7 +56,8 @@
                 </div>
 
                 <!-- Primary Menu -->
-                <?php if (has_nav_menu('primary')) : ?>
+                <?php // Always show mega menu structure ?>
+                <?php if (true) : ?>
                     <ul class="nav-menu" role="menubar">
                         <!-- Solutions Menu Item -->
                         <li class="nav-item" role="none">

@@ -53,6 +53,22 @@ function alepo_admin_page_creator() {
                        value="Create Claude Pages (Creative Content)" 
                        onclick="return confirm('This will create pages with unique Claude-generated content.');">
                 
+                <input type="submit" name="fix_permalinks" class="button button-primary" 
+                       value="Fix Permalinks" 
+                       onclick="return confirm('This will fix permalink and routing issues.');">
+                       
+                <input type="submit" name="fix_page_routing" class="button button-primary" 
+                       value="Fix Page Routing (Complete)" 
+                       onclick="return confirm('This will run a comprehensive fix for page routing issues.');">
+                       
+                <input type="submit" name="debug_pages" class="button button-secondary" 
+                       value="Debug Page Content" 
+                       onclick="return confirm('This will show debug information about created pages.');">
+                       
+                <input type="submit" name="comprehensive_debug" class="button button-secondary" 
+                       value="Comprehensive Debug" 
+                       onclick="return confirm('This will run a complete analysis of the page routing issue.');">
+                       
                 <input type="submit" name="create_test_page" class="button button-secondary" 
                        value="Create Test Page (Debug)" 
                        onclick="return confirm('This will create a simple test page for debugging.');">
@@ -72,6 +88,82 @@ function alepo_admin_page_creator() {
 }
 
 function alepo_handle_page_creation() {
+    // Handle permalink fix
+    if (isset($_POST['fix_permalinks']) && 
+        wp_verify_nonce($_POST['alepo_create_pages_nonce'], 'alepo_create_pages_action')) {
+        
+        ob_start();
+        
+        echo "<h3>Fixing Permalinks...</h3>\n";
+        
+        // Include and run permalink fix
+        require_once(get_template_directory() . '/fix-permalinks.php');
+        alepo_fix_permalinks();
+        
+        $output = ob_get_clean();
+        set_transient('alepo_page_creation_output', $output, 300);
+        
+        wp_redirect(admin_url('tools.php?page=alepo-create-pages&created=1'));
+        exit;
+    }
+    
+    // Handle comprehensive page routing fix
+    if (isset($_POST['fix_page_routing']) && 
+        wp_verify_nonce($_POST['alepo_create_pages_nonce'], 'alepo_create_pages_action')) {
+        
+        ob_start();
+        
+        echo "<h3>Fixing Page Routing...</h3>\n";
+        
+        // Include and run comprehensive routing fix
+        require_once(get_template_directory() . '/fix-page-routing.php');
+        alepo_fix_page_routing();
+        
+        $output = ob_get_clean();
+        set_transient('alepo_page_creation_output', $output, 300);
+        
+        wp_redirect(admin_url('tools.php?page=alepo-create-pages&created=1'));
+        exit;
+    }
+    
+    // Handle debug pages
+    if (isset($_POST['debug_pages']) && 
+        wp_verify_nonce($_POST['alepo_create_pages_nonce'], 'alepo_create_pages_action')) {
+        
+        ob_start();
+        
+        echo "<h3>Debug Page Information...</h3>\n";
+        
+        // Include and run debug script
+        require_once(get_template_directory() . '/debug-page-content.php');
+        alepo_debug_page_content();
+        
+        $output = ob_get_clean();
+        set_transient('alepo_page_creation_output', $output, 300);
+        
+        wp_redirect(admin_url('tools.php?page=alepo-create-pages&created=1'));
+        exit;
+    }
+    
+    // Handle comprehensive debug
+    if (isset($_POST['comprehensive_debug']) && 
+        wp_verify_nonce($_POST['alepo_create_pages_nonce'], 'alepo_create_pages_action')) {
+        
+        ob_start();
+        
+        echo "<h3>Comprehensive Debug Analysis...</h3>\n";
+        
+        // Include and run comprehensive debug script
+        require_once(get_template_directory() . '/comprehensive-debug.php');
+        alepo_comprehensive_debug();
+        
+        $output = ob_get_clean();
+        set_transient('alepo_page_creation_output', $output, 300);
+        
+        wp_redirect(admin_url('tools.php?page=alepo-create-pages&created=1'));
+        exit;
+    }
+    
     // Handle Claude pages creation
     if (isset($_POST['create_claude_pages']) && 
         wp_verify_nonce($_POST['alepo_create_pages_nonce'], 'alepo_create_pages_action')) {

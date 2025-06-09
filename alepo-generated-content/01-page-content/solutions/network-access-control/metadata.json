@@ -1,0 +1,58 @@
+{
+  "title": "Network Access Control - Zero Trust Security for Telecom Networks",
+  "slug": "network-access-control",
+  "meta_description": "Secure your telecom network with zero trust NAC. Automated threat detection, device authentication, and policy enforcement. 99.97% attack prevention rate.",
+  "primary_keyword": "network access control telecom",
+  "secondary_keywords": ["zero trust security", "NAC solution", "network security", "device authentication", "threat detection"],
+  "schema_type": "Service",
+  "acf_fields": {
+    "hero_style": "security-scan-animation",
+    "cta_primary": {
+      "text": "Free Security Assessment",
+      "url": "/assessment/network-security",
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "Watch Live Demo",
+      "url": "/demo/network-access-control",
+      "style": "secondary"
+    },
+    "solution_benefits": [
+      "99.97% attack prevention rate",
+      "Automated threat response in 127ms",
+      "Zero trust device authentication",
+      "Real-time compliance monitoring",
+      "Micro-segmentation capabilities"
+    ],
+    "target_threats": [
+      "Insider threats and compromised devices",
+      "IoT device vulnerabilities",
+      "BYOD security risks",
+      "Lateral movement attacks",
+      "Compliance violations"
+    ],
+    "deployment_scenarios": [
+      "Large enterprise networks",
+      "Healthcare HIPAA compliance",
+      "Educational campus security",
+      "Manufacturing OT/IT convergence"
+    ]
+  },
+  "internal_links": [
+    {
+      "context": "For comprehensive security strategy",
+      "target_page": "solutions/zero-trust-security",
+      "anchor_text": "Zero Trust Security solution"
+    },
+    {
+      "context": "When discussing compliance requirements",
+      "target_page": "solutions/compliance-security",
+      "anchor_text": "compliance and security frameworks"
+    },
+    {
+      "context": "For IoT device management",
+      "target_page": "solutions/iot-connectivity",
+      "anchor_text": "IoT connectivity management"
+    }
+  ]
+}

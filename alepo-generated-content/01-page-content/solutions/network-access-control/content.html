@@ -1,0 +1,1535 @@
+<!-- Network Access Control - Security-First Solution -->
+<section class="hero-section nac-hero" data-animation="security-scan">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/solutions">Solutions</a></li>
+        <li aria-current="page">Network Access Control</li>
+      </ol>
+    </nav>
+    
+    <div class="hero-content">
+      <div class="security-badge">
+        <span class="badge-icon">🛡️</span>
+        <span>Zero Trust Network Security</span>
+      </div>
+      
+      <h1 class="hero-headline">Every Device Is Guilty Until Proven Innocent</h1>
+      <p class="hero-subheadline">In a world where coffee machines get hacked and IoT devices become botnet zombies, trust is a luxury telecom networks can't afford. Alepo's Network Access Control treats every connection attempt as a potential threat—because that's exactly what it might be.</p>
+      
+      <div class="threat-counter">
+        <div class="counter-item">
+          <span class="counter-number" data-counter="2847">2,847</span>
+          <span class="counter-label">Threats blocked today</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-number" data-counter="99.97">99.97%</span>
+          <span class="counter-label">Attack prevention rate</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-number" data-counter="127">127ms</span>
+          <span class="counter-label">Security decision time</span>
+        </div>
+      </div>
+      
+      <div class="hero-actions">
+        <a href="/demo/network-access-control" class="btn-primary">See Security Demo</a>
+        <a href="/assessment/network-security" class="btn-secondary">Security Assessment</a>
+      </div>
+    </div>
+    
+    <div class="hero-visualization">
+      <div class="network-diagram">
+        <div class="network-center">
+          <div class="core-network">
+            <span class="network-label">Secure Core</span>
+            <div class="protection-ring"></div>
+          </div>
+        </div>
+        
+        <div class="device-connections">
+          <div class="device-node authorized" data-status="verified">
+            <span class="device-icon">📱</span>
+            <span class="device-status">Verified</span>
+          </div>
+          
+          <div class="device-node quarantine" data-status="suspicious">
+            <span class="device-icon">💻</span>
+            <span class="device-status">Quarantined</span>
+          </div>
+          
+          <div class="device-node blocked" data-status="threat">
+            <span class="device-icon">🤖</span>
+            <span class="device-status">Blocked</span>
+          </div>
+          
+          <div class="device-node authorized" data-status="verified">
+            <span class="device-icon">📶</span>
+            <span class="device-status">Verified</span>
+          </div>
+          
+          <div class="device-node scanning" data-status="scanning">
+            <span class="device-icon">⌚</span>
+            <span class="device-status">Scanning...</span>
+          </div>
+          
+          <div class="device-node blocked" data-status="threat">
+            <span class="device-icon">🏠</span>
+            <span class="device-status">Blocked</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="threat-landscape">
+  <div class="container">
+    <h2>The Network Threat Reality</h2>
+    <p class="section-intro">Your network isn't just under attack—it's under siege. Every second, thousands of devices attempt connections with unknown intentions. Traditional perimeter security is like building a fortress with glass walls.</p>
+    
+    <div class="threat-scenarios">
+      <div class="scenario-card insider-threat">
+        <div class="scenario-header">
+          <h3>The Insider Threat</h3>
+          <span class="threat-level high">Critical Risk</span>
+        </div>
+        <div class="scenario-story">
+          <p><strong>The Setup:</strong> A trusted employee's laptop gets compromised by malware through a phishing email.</p>
+          <p><strong>Traditional Response:</strong> "It's an internal device, let it connect everywhere."</p>
+          <p><strong>NAC Response:</strong> Device behavior analysis triggers immediate quarantine and threat containment.</p>
+        </div>
+        <div class="scenario-stats">
+          <div class="stat">
+            <span class="stat-number">60%</span>
+            <span class="stat-label">of breaches involve insiders</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">days average detection</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scenario-card iot-invasion">
+        <div class="scenario-header">
+          <h3>The IoT Invasion</h3>
+          <span class="threat-level medium">Growing Risk</span>
+        </div>
+        <div class="scenario-story">
+          <p><strong>The Setup:</strong> Smart thermostats, security cameras, and door locks connecting to your corporate network.</p>
+          <p><strong>Traditional Response:</strong> "If it has an IP, it can connect."</p>
+          <p><strong>NAC Response:</strong> Device fingerprinting and micro-segmentation create isolated IoT zones.</p>
+        </div>
+        <div class="scenario-stats">
+          <div class="stat">
+            <span class="stat-number">31B</span>
+            <span class="stat-label">IoT devices by 2025</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">lack security updates</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scenario-card byod-chaos">
+        <div class="scenario-header">
+          <h3>The BYOD Chaos</h3>
+          <span class="threat-level high">Active Threat</span>
+        </div>
+        <div class="scenario-story">
+          <p><strong>The Setup:</strong> Personal devices mixing business and personal use, each with unknown security postures.</p>
+          <p><strong>Traditional Response:</strong> "Hope they have good antivirus."</p>
+          <p><strong>NAC Response:</strong> Continuous compliance checking and dynamic access rights.</p>
+        </div>
+        <div class="scenario-stats">
+          <div class="stat">
+            <span class="stat-number">82%</span>
+            <span class="stat-label">of companies allow BYOD</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1 in 3</span>
+            <span class="stat-label">have malware installed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nac-approach">
+  <div class="container">
+    <h2>Zero Trust: Assume Breach, Verify Everything</h2>
+    <p class="section-intro">Alepo's Network Access Control doesn't just check credentials at the door—it continuously validates every device, user, and session throughout their entire network journey.</p>
+    
+    <div class="trust-model-comparison">
+      <div class="model-side traditional">
+        <h3>Traditional "Castle & Moat"</h3>
+        <div class="model-visual">
+          <div class="castle">
+            <div class="moat">Firewall</div>
+            <div class="castle-interior">
+              <span>Everything inside is trusted</span>
+              <div class="internal-threats">
+                <span class="threat">💀 Malware spreads freely</span>
+                <span class="threat">💀 Lateral movement unlimited</span>
+                <span class="threat">💀 Privilege escalation easy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="model-problems">
+          <h4>Critical Weaknesses:</h4>
+          <ul>
+            <li>Single point of failure at perimeter</li>
+            <li>No internal monitoring or segmentation</li>
+            <li>Compromised devices have full access</li>
+            <li>Cannot distinguish between legitimate and malicious activity</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="vs-arrow">→</div>
+      
+      <div class="model-side zero-trust">
+        <h3>Alepo Zero Trust NAC</h3>
+        <div class="model-visual">
+          <div class="zero-trust-network">
+            <div class="trust-zones">
+              <div class="zone verified">Verified Zone</div>
+              <div class="zone quarantine">Quarantine Zone</div>
+              <div class="zone guest">Guest Zone</div>
+              <div class="zone iot">IoT Zone</div>
+            </div>
+            <div class="continuous-verification">
+              <span>Continuous verification everywhere</span>
+            </div>
+          </div>
+        </div>
+        <div class="model-benefits">
+          <h4>Security Advantages:</h4>
+          <ul>
+            <li>Micro-segmentation limits blast radius</li>
+            <li>Continuous device and user validation</li>
+            <li>Behavioral analysis detects anomalies</li>
+            <li>Automated threat response and containment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nac-capabilities">
+  <div class="container">
+    <h2>Intelligent Access Orchestration</h2>
+    
+    <div class="capabilities-grid">
+      <div class="capability device-discovery">
+        <div class="capability-icon">🔍</div>
+        <h3>Automated Device Discovery</h3>
+        <p>Every device that touches your network gets fingerprinted, classified, and profiled within seconds of connection.</p>
+        <div class="capability-details">
+          <h4>How It Works:</h4>
+          <ul>
+            <li>Passive network scanning and active probing</li>
+            <li>Device fingerprinting using multiple vectors</li>
+            <li>Machine learning classification algorithms</li>
+            <li>Continuous device behavior monitoring</li>
+          </ul>
+        </div>
+        <div class="capability-demo">
+          <div class="discovery-flow">
+            <div class="flow-step">Device Connects</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Fingerprint Captured</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Risk Assessed</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Access Granted/Denied</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="capability policy-enforcement">
+        <div class="capability-icon">⚖️</div>
+        <h3>Dynamic Policy Enforcement</h3>
+        <p>Security policies that adapt in real-time based on device behavior, user context, and threat intelligence.</p>
+        <div class="capability-details">
+          <h4>Policy Dimensions:</h4>
+          <ul>
+            <li>User identity and role-based access</li>
+            <li>Device type and compliance status</li>
+            <li>Location and time-based restrictions</li>
+            <li>Application and resource-specific rules</li>
+          </ul>
+        </div>
+        <div class="policy-example">
+          <div class="policy-rule">
+            <strong>Example Policy:</strong> "Marketing dept smartphones can access email and CRM between 9-5, but finance laptops require additional authentication for database access after hours."
+          </div>
+        </div>
+      </div>
+      
+      <div class="capability threat-response">
+        <div class="capability-icon">🚨</div>
+        <h3>Automated Threat Response</h3>
+        <p>When threats are detected, response is immediate and surgical—isolate the threat while maintaining business continuity.</p>
+        <div class="capability-details">
+          <h4>Response Actions:</h4>
+          <ul>
+            <li>Immediate device quarantine and isolation</li>
+            <li>Privilege escalation and access restriction</li>
+            <li>Network traffic redirection and analysis</li>
+            <li>Automated incident response workflows</li>
+          </ul>
+        </div>
+        <div class="response-timeline">
+          <div class="timeline-event">
+            <span class="time">0.2s</span>
+            <span class="action">Threat detected</span>
+          </div>
+          <div class="timeline-event">
+            <span class="time">0.5s</span>
+            <span class="action">Device quarantined</span>
+          </div>
+          <div class="timeline-event">
+            <span class="time">1.0s</span>
+            <span class="action">Access revoked</span>
+          </div>
+          <div class="timeline-event">
+            <span class="time">2.0s</span>
+            <span class="action">Incident logged</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="capability compliance-reporting">
+        <div class="capability-icon">📊</div>
+        <h3>Compliance & Reporting</h3>
+        <p>Comprehensive audit trails and compliance reporting that makes regulatory reviews simple and transparent.</p>
+        <div class="capability-details">
+          <h4>Compliance Features:</h4>
+          <ul>
+            <li>Automated compliance policy enforcement</li>
+            <li>Real-time violation detection and alerts</li>
+            <li>Comprehensive audit trails and logging</li>
+            <li>Regulatory reporting templates (SOX, HIPAA, PCI)</li>
+          </ul>
+        </div>
+        <div class="compliance-dashboard">
+          <div class="compliance-metric">
+            <span class="metric-value">99.8%</span>
+            <span class="metric-label">Compliance Score</span>
+          </div>
+          <div class="compliance-metric">
+            <span class="metric-value">0</span>
+            <span class="metric-label">Critical Violations</span>
+          </div>
+          <div class="compliance-metric">
+            <span class="metric-value">24/7</span>
+            <span class="metric-label">Continuous Monitoring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deployment-scenarios">
+  <div class="container">
+    <h2>Real-World Deployment Scenarios</h2>
+    
+    <div class="scenario-tabs">
+      <button class="tab-btn active" data-scenario="enterprise">Large Enterprise</button>
+      <button class="tab-btn" data-scenario="healthcare">Healthcare Network</button>
+      <button class="tab-btn" data-scenario="education">Educational Campus</button>
+      <button class="tab-btn" data-scenario="manufacturing">Manufacturing Plant</button>
+    </div>
+    
+    <div class="scenario-content enterprise active">
+      <div class="scenario-overview">
+        <h3>Fortune 500 Technology Company</h3>
+        <div class="company-stats">
+          <span>25,000 employees</span>
+          <span>75 office locations</span>
+          <span>150,000+ devices</span>
+        </div>
+      </div>
+      
+      <div class="scenario-challenges">
+        <h4>Security Challenges:</h4>
+        <ul>
+          <li>Massive BYOD program with personal and corporate devices</li>
+          <li>Remote workers accessing sensitive intellectual property</li>
+          <li>Third-party contractors and vendors requiring network access</li>
+          <li>Compliance requirements across multiple jurisdictions</li>
+        </ul>
+      </div>
+      
+      <div class="scenario-solution">
+        <h4>NAC Implementation:</h4>
+        <div class="solution-components">
+          <div class="component">
+            <strong>Device Classification:</strong> Automatic categorization into corporate, personal, contractor, and IoT devices
+          </div>
+          <div class="component">
+            <strong>Risk-Based Access:</strong> Dynamic permissions based on device trust level and user role
+          </div>
+          <div class="component">
+            <strong>Micro-Segmentation:</strong> Network zones for different device types and security levels
+          </div>
+          <div class="component">
+            <strong>Continuous Monitoring:</strong> 24/7 behavioral analysis and threat detection
+          </div>
+        </div>
+      </div>
+      
+      <div class="scenario-results">
+        <h4>Business Impact:</h4>
+        <div class="result-metrics">
+          <div class="metric">
+            <span class="value">87%</span>
+            <span class="label">Reduction in security incidents</span>
+          </div>
+          <div class="metric">
+            <span class="value">60%</span>
+            <span class="label">Faster incident response</span>
+          </div>
+          <div class="metric">
+            <span class="value">$2.3M</span>
+            <span class="label">Annual security cost savings</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scenario-content healthcare">
+      <div class="scenario-overview">
+        <h3>Regional Healthcare Network</h3>
+        <div class="company-stats">
+          <span>12 hospitals</span>
+          <span>8,000 staff members</span>
+          <span>50,000+ medical devices</span>
+        </div>
+      </div>
+      
+      <div class="scenario-challenges">
+        <h4>Unique Requirements:</h4>
+        <ul>
+          <li>HIPAA compliance for patient data protection</li>
+          <li>Life-critical medical devices requiring 99.99% uptime</li>
+          <li>Legacy medical equipment with no security updates</li>
+          <li>Guest access for patients and visitors</li>
+        </ul>
+      </div>
+      
+      <div class="scenario-solution">
+        <h4>Healthcare-Specific NAC:</h4>
+        <div class="solution-components">
+          <div class="component">
+            <strong>Medical Device Protection:</strong> Specialized profiles for medical equipment with safety-first policies
+          </div>
+          <div class="component">
+            <strong>HIPAA Compliance:</strong> Automated enforcement of healthcare privacy regulations
+          </div>
+          <div class="component">
+            <strong>Guest Network Isolation:</strong> Secure patient and visitor access without compromising clinical networks
+          </div>
+          <div class="component">
+            <strong>Emergency Override:</strong> Critical care protocols that prioritize patient safety
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scenario-content education">
+      <div class="scenario-overview">
+        <h3>Major University Campus</h3>
+        <div class="company-stats">
+          <span>45,000 students</span>
+          <span>5,000 faculty/staff</span>
+          <span>200,000+ devices</span>
+        </div>
+      </div>
+      
+      <div class="scenario-challenges">
+        <h4>Campus Challenges:</h4>
+        <ul>
+          <li>Massive scale with constantly changing user population</li>
+          <li>Research data requiring various security classifications</li>
+          <li>Personal devices from students, faculty, and visitors</li>
+          <li>Limited IT budget requiring cost-effective solutions</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="scenario-content manufacturing">
+      <div class="scenario-overview">
+        <h3>Smart Manufacturing Facility</h3>
+        <div class="company-stats">
+          <span>24/7 operations</span>
+          <span>1,200 employees</span>
+          <span>25,000+ IoT sensors</span>
+        </div>
+      </div>
+      
+      <div class="scenario-challenges">
+        <h4>Industrial Security:</h4>
+        <ul>
+          <li>Operational Technology (OT) and IT network convergence</li>
+          <li>Legacy industrial equipment with security vulnerabilities</li>
+          <li>Real-time production systems requiring zero downtime</li>
+          <li>Supply chain partners requiring controlled access</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="implementation-roadmap">
+  <div class="container">
+    <h2>Zero-Disruption NAC Deployment</h2>
+    <p class="section-intro">Implementing network access control doesn't mean network downtime. Our phased approach ensures security enhancement without operational disruption.</p>
+    
+    <div class="roadmap-phases">
+      <div class="phase assessment">
+        <div class="phase-number">Phase 1</div>
+        <div class="phase-content">
+          <h3>Network Discovery & Assessment</h3>
+          <div class="phase-duration">2-3 weeks</div>
+          <p>Comprehensive inventory of all network devices, users, and access patterns. Baseline establishment for security policies.</p>
+          <div class="phase-activities">
+            <h4>Key Activities:</h4>
+            <ul>
+              <li>Passive network scanning and device discovery</li>
+              <li>Current security posture assessment</li>
+              <li>Policy requirements gathering</li>
+              <li>Risk analysis and priority setting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="phase pilot">
+        <div class="phase-number">Phase 2</div>
+        <div class="phase-content">
+          <h3>Pilot Deployment</h3>
+          <div class="phase-duration">3-4 weeks</div>
+          <p>Limited deployment in controlled environment to validate policies and refine configurations.</p>
+          <div class="phase-activities">
+            <h4>Key Activities:</h4>
+            <ul>
+              <li>NAC deployment in isolated network segment</li>
+              <li>Policy testing and refinement</li>
+              <li>User experience validation</li>
+              <li>Integration testing with existing infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="phase rollout">
+        <div class="phase-number">Phase 3</div>
+        <div class="phase-content">
+          <h3>Phased Rollout</h3>
+          <div class="phase-duration">6-8 weeks</div>
+          <p>Gradual expansion across network segments with continuous monitoring and adjustment.</p>
+          <div class="phase-activities">
+            <h4>Key Activities:</h4>
+            <ul>
+              <li>Progressive deployment by network segment</li>
+              <li>Continuous policy optimization</li>
+              <li>User training and support</li>
+              <li>Performance monitoring and tuning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="phase optimization">
+        <div class="phase-number">Phase 4</div>
+        <div class="phase-content">
+          <h3>Optimization & Advanced Features</h3>
+          <div class="phase-duration">4-6 weeks</div>
+          <p>Full feature activation, advanced threat detection, and integration with security ecosystem.</p>
+          <div class="phase-activities">
+            <h4>Key Activities:</h4>
+            <ul>
+              <li>Advanced analytics and reporting setup</li>
+              <li>Threat intelligence integration</li>
+              <li>Automated response workflow configuration</li>
+              <li>Long-term monitoring and maintenance planning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section security-focused">
+  <div class="container">
+    <div class="cta-content">
+      <div class="urgency-indicator">
+        <span class="urgency-icon">⚠️</span>
+        <span>Your network is under attack right now</span>
+      </div>
+      
+      <h2>Don't Wait for the Next Breach</h2>
+      <p>Every minute your network operates without proper access control is a minute attackers have to establish footholds, escalate privileges, and steal data. Start protecting your network today.</p>
+      
+      <div class="cta-options">
+        <div class="cta-option primary">
+          <h3>Free Security Assessment</h3>
+          <p>Get a comprehensive analysis of your current network security posture</p>
+          <a href="/assessment/network-security" class="btn-primary large">Start Assessment</a>
+          <span class="cta-note">Results in 24 hours</span>
+        </div>
+        
+        <div class="cta-option secondary">
+          <h3>Live NAC Demonstration</h3>
+          <p>See real-time threat detection and response in action</p>
+          <a href="/demo/network-access-control" class="btn-secondary large">Watch Demo</a>
+          <span class="cta-note">15-minute interactive demo</span>
+        </div>
+      </div>
+      
+      <div class="security-guarantee">
+        <div class="guarantee-badge">
+          <span class="badge-icon">🛡️</span>
+          <span>Security Guarantee</span>
+        </div>
+        <p>We're so confident in our NAC solution that we offer a 30-day security improvement guarantee or your money back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Network Access Control Specific Styles */
+.nac-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 69, 0, 0.2);
+  border: 1px solid rgba(255, 69, 0, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.threat-counter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.counter-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.counter-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6b35;
+  margin-bottom: 0.5rem;
+}
+
+.counter-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.hero-visualization {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.network-diagram {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.network-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+}
+
+.core-network {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00c851, #00a441);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 200, 81, 0.5);
+}
+
+.protection-ring {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 3px solid rgba(0, 200, 81, 0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: protection-pulse 2s infinite;
+}
+
+@keyframes protection-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
+}
+
+.device-connections {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.device-node {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.device-node.authorized {
+  background: rgba(0, 200, 81, 0.2);
+  border: 2px solid #00c851;
+  color: #00c851;
+}
+
+.device-node.quarantine {
+  background: rgba(255, 193, 7, 0.2);
+  border: 2px solid #ffc107;
+  color: #ffc107;
+}
+
+.device-node.blocked {
+  background: rgba(220, 53, 69, 0.2);
+  border: 2px solid #dc3545;
+  color: #dc3545;
+}
+
+.device-node.scanning {
+  background: rgba(23, 162, 184, 0.2);
+  border: 2px solid #17a2b8;
+  color: #17a2b8;
+  animation: scanning-pulse 1s infinite;
+}
+
+@keyframes scanning-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.device-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.device-status {
+  font-size: 8px;
+  text-align: center;
+}
+
+/* Position devices around the circle */
+.device-node:nth-child(1) { top: 10%; left: 50%; transform: translateX(-50%); }
+.device-node:nth-child(2) { top: 25%; right: 10%; }
+.device-node:nth-child(3) { top: 50%; right: 5%; transform: translateY(-50%); }
+.device-node:nth-child(4) { bottom: 25%; right: 10%; }
+.device-node:nth-child(5) { bottom: 10%; left: 50%; transform: translateX(-50%); }
+.device-node:nth-child(6) { top: 50%; left: 5%; transform: translateY(-50%); }
+
+/* Threat Scenarios */
+.threat-scenarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.scenario-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #dc3545;
+}
+
+.scenario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.threat-level {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.threat-level.high {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.threat-level.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.scenario-story p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.scenario-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #dc3545;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Trust Model Comparison */
+.trust-model-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 3rem;
+  margin: 3rem 0;
+  align-items: center;
+}
+
+.vs-arrow {
+  font-size: 3rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.model-side {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.model-visual {
+  height: 200px;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  position: relative;
+}
+
+.castle {
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+
+.moat {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.castle-interior {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 25px;
+  background: #e9ecef;
+  border-radius: 8px 8px 0 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.internal-threats {
+  margin-top: 1rem;
+}
+
+.threat {
+  display: block;
+  font-size: 0.7rem;
+  color: #dc3545;
+  margin: 0.25rem 0;
+}
+
+.zero-trust-network {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+  height: 80%;
+  width: 80%;
+}
+
+.zone {
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.zone.verified {
+  background: rgba(0, 200, 81, 0.2);
+  border: 2px solid #00c851;
+  color: #00c851;
+}
+
+.zone.quarantine {
+  background: rgba(255, 193, 7, 0.2);
+  border: 2px solid #ffc107;
+  color: #ffc107;
+}
+
+.zone.guest {
+  background: rgba(23, 162, 184, 0.2);
+  border: 2px solid #17a2b8;
+  color: #17a2b8;
+}
+
+.zone.iot {
+  background: rgba(102, 16, 242, 0.2);
+  border: 2px solid #6610f2;
+  color: #6610f2;
+}
+
+.continuous-verification {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #28a745;
+  font-weight: 600;
+}
+
+/* Capabilities Grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.capability {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #007bff;
+}
+
+.capability-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.capability-details {
+  margin: 1.5rem 0;
+}
+
+.capability-details h4 {
+  margin-bottom: 0.75rem;
+  color: #495057;
+}
+
+.capability-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.capability-details li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.capability-details li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.capability-demo {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.discovery-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.flow-step {
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.flow-arrow {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.policy-example {
+  background: #e3f2fd;
+  border-left: 3px solid #2196f3;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.response-timeline {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.timeline-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border-left: 3px solid #dc3545;
+}
+
+.time {
+  font-weight: bold;
+  color: #dc3545;
+}
+
+.compliance-dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.compliance-metric {
+  text-align: center;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* Scenario Tabs */
+.scenario-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e9ecef;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  border-bottom-color: #007bff;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.scenario-content {
+  display: none;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.scenario-content.active {
+  display: block;
+}
+
+.company-stats {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.company-stats span {
+  background: #e9ecef;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.solution-components {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.component {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #007bff;
+}
+
+.result-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.result-metrics .metric {
+  text-align: center;
+  background: #e8f5e9;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.result-metrics .value {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 0.5rem;
+}
+
+.result-metrics .label {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Implementation Roadmap */
+.roadmap-phases {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.phase {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  position: relative;
+}
+
+.phase::before {
+  content: '';
+  position: absolute;
+  left: 3rem;
+  top: 4rem;
+  bottom: -2rem;
+  width: 2px;
+  background: #e9ecef;
+}
+
+.phase:last-child::before {
+  display: none;
+}
+
+.phase-number {
+  background: #007bff;
+  color: white;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.phase-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.phase-duration {
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.phase-activities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.phase-activities li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.phase-activities li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* CTA Section */
+.cta-section.security-focused {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  padding: 4rem 0;
+}
+
+.urgency-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  animation: urgency-pulse 2s infinite;
+}
+
+@keyframes urgency-pulse {
+  0%, 100% { background: rgba(255, 255, 255, 0.2); }
+  50% { background: rgba(255, 255, 255, 0.3); }
+}
+
+.urgency-icon {
+  font-size: 1.5rem;
+}
+
+.cta-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 3rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-option {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.cta-option h3 {
+  margin-bottom: 1rem;
+}
+
+.cta-option p {
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.btn-primary.large, .btn-secondary.large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 250px;
+}
+
+.cta-note {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.security-guarantee {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.guarantee-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-visualization {
+    display: none;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .threat-counter {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .trust-model-comparison {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .vs-arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+  
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-options {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .scenario-tabs {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .tab-btn {
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    text-align: left;
+  }
+  
+  .tab-btn.active {
+    border-left-color: #007bff;
+    border-bottom: none;
+  }
+  
+  .roadmap-phases .phase {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .phase::before {
+    display: none;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Scenario tabs functionality
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const scenarios = document.querySelectorAll('.scenario-content');
+  
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const scenario = btn.dataset.scenario;
+      
+      // Update active tab
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Update active scenario content
+      scenarios.forEach(s => {
+        s.classList.remove('active');
+        if (s.classList.contains(scenario)) {
+          s.classList.add('active');
+        }
+      });
+    });
+  });
+  
+  // Network diagram device hover effects
+  const deviceNodes = document.querySelectorAll('.device-node');
+  
+  deviceNodes.forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      node.style.transform = 'scale(1.1)';
+      node.style.zIndex = '10';
+    });
+    
+    node.addEventListener('mouseleave', () => {
+      node.style.transform = 'scale(1)';
+      node.style.zIndex = '1';
+    });
+  });
+  
+  // Threat counter animation
+  const counters = document.querySelectorAll('[data-counter]');
+  
+  function animateCounter(element) {
+    const target = parseFloat(element.dataset.counter);
+    const duration = 2000;
+    const start = 0;
+    const startTime = Date.now();
+    
+    function updateCounter() {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      let current;
+      if (element.textContent.includes('.')) {
+        current = (start + (target - start) * progress).toFixed(2);
+      } else {
+        current = Math.floor(start + (target - start) * progress);
+      }
+      
+      element.textContent = current;
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      }
+    }
+    
+    updateCounter();
+  }
+  
+  // Intersection Observer for counter animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+  
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+});
+</script>

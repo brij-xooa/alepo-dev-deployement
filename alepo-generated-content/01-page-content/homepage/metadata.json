@@ -1,0 +1,70 @@
+{
+  "title": "Alepo - Digital Transformation for Communications Providers | 5G, AI & Cloud-Native Solutions",
+  "slug": "/",
+  "meta_description": "Transform your telecom operations with Alepo's 5G-ready AAA, Digital BSS, and AI customer experience solutions. Trusted by 500M+ subscribers worldwide.",
+  "primary_keyword": "telecom digital transformation",
+  "secondary_keywords": ["5G network solutions", "AAA authentication", "digital BSS", "AI customer experience", "telecom cloud native"],
+  "schema_type": "Organization",
+  "page_template": "front-page",
+  "acf_fields": {
+    "hero_style": "gradient-animated-background",
+    "is_homepage": true,
+    "featured_solutions": ["aaa-solutions", "digital-bss", "ai-customer-assistant"],
+    "cta_primary": {
+      "text": "Transform Your Network",
+      "url": "/schedule-consultation",
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "See Success Stories",
+      "url": "/customer-stories",
+      "style": "secondary"
+    },
+    "trust_indicators": [
+      "Trusted by Tier-1 Operators",
+      "500M+ Subscribers Managed", 
+      "99.999% Uptime SLA"
+    ],
+    "key_metrics": [
+      {
+        "value": "36K",
+        "label": "TPS Performance",
+        "description": "Authentication transactions per second"
+      },
+      {
+        "value": "90%",
+        "label": "AI Resolution Rate",
+        "description": "Customer inquiries resolved instantly"
+      },
+      {
+        "value": "30",
+        "label": "Day MVNO Launch",
+        "description": "Fastest time to market"
+      }
+    ]
+  },
+  "internal_links": [
+    {
+      "context": "Explore our network authentication solutions",
+      "target_page": "products/aaa-solutions",
+      "anchor_text": "AAA Solutions"
+    },
+    {
+      "context": "Learn about our digital business systems",
+      "target_page": "products/digital-bss", 
+      "anchor_text": "Digital BSS platform"
+    },
+    {
+      "context": "Discover AI-powered customer experience",
+      "target_page": "products/ai-customer-assistant",
+      "anchor_text": "AI customer solutions"
+    }
+  ],
+  "competitive_advantages": [
+    "Only platform with unified AAA, BSS, and AI capabilities",
+    "20+ years of telecom domain expertise",
+    "Fastest MVNO deployment in the industry",
+    "Proven scale with 500M+ subscribers managed",
+    "5G-native architecture from ground up"
+  ]
+}

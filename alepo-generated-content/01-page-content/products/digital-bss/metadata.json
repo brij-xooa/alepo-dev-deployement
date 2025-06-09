@@ -1,0 +1,31 @@
+{
+  "title": "Digital BSS Platform - Convergent Billing & Customer Management | Alepo",
+  "slug": "products/digital-bss",
+  "meta_description": "Transform telecom operations with Alepo's Digital BSS. Launch MVNOs in 30 days, reduce OpEx by 50%, unified billing and customer management platform.",
+  "primary_keyword": "digital BSS platform",
+  "secondary_keywords": ["convergent billing", "telecom BSS", "MVNO platform", "customer management", "billing system"],
+  "schema_type": "Product",
+  "page_template": "page-product",
+  "acf_fields": {
+    "hero_style": "gradient-dashboard-preview",
+    "product_category": "bss",
+    "key_features": [
+      "30-Day MVNO Launch",
+      "Convergent Billing",
+      "Real-Time Charging",
+      "Omnichannel Self-Care",
+      "Partner Management",
+      "50% OpEx Reduction"
+    ],
+    "cta_primary": {
+      "text": "Schedule BSS Assessment",
+      "url": "/schedule-bss-consultation",
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "Explore Live Demo",
+      "url": "/bss-demo-environment",
+      "style": "secondary"
+    }
+  }
+}

@@ -12,6 +12,16 @@ get_header();
     
     <?php while (have_posts()) : the_post(); ?>
         
+        <?php 
+        // Check if this is Claude-generated content
+        $is_custom_generated = get_post_meta(get_the_ID(), '_alepo_custom_generated', true);
+        
+        // For Claude-generated content, output directly without wrapper
+        if ($is_custom_generated) : 
+        ?>
+            <?php the_content(); ?>
+        <?php else : ?>
+        
         <!-- Hero Section -->
         <?php if (alepo_get_field('hero_headline') || is_front_page()) : ?>
             <section class="hero <?php echo is_front_page() ? 'hero-homepage' : 'hero-page'; ?>">
@@ -291,6 +301,8 @@ get_header();
             comments_template();
         endif;
         ?>
+        
+        <?php endif; // End of else for custom generated check ?>
 
     <?php endwhile; ?>
 

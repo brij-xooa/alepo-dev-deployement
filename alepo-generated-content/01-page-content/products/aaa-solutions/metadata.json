@@ -1,0 +1,108 @@
+{
+  "title": "AAA Solutions - Authentication at the Speed of 5G | Alepo",
+  "slug": "products/aaa-solutions",
+  "meta_description": "Alepo's cloud-native AAA solution handles 36,000 TPS with 99.999% uptime. Transform your authentication infrastructure for 5G networks. See it in action.",
+  "primary_keyword": "AAA solutions",
+  "secondary_keywords": ["authentication server", "5G AAA", "cloud AAA", "telecom authentication", "RADIUS Diameter"],
+  "schema_type": "Product",
+  "page_template": "page-product",
+  "acf_fields": {
+    "hero_style": "gradient-video-background",
+    "product_category": "aaa",
+    "key_features": [
+      "36,000 TPS Performance",
+      "99.999% Uptime SLA",
+      "Multi-Protocol Support",
+      "AI-Powered Security",
+      "Cloud-Native Architecture",
+      "Zero-Touch Migration"
+    ],
+    "cta_primary": {
+      "text": "Schedule AAA Demo",
+      "url": "/request-demo/aaa",
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "Download Performance Report",
+      "url": "/resources/aaa-performance-report",
+      "style": "secondary"
+    },
+    "performance_metrics": [
+      {
+        "metric": "36,000",
+        "label": "Transactions Per Second",
+        "description": "Peak authentication performance per node"
+      },
+      {
+        "metric": "99.999%",
+        "label": "Uptime SLA",
+        "description": "Guaranteed service availability"
+      },
+      {
+        "metric": "500M+",
+        "label": "Active Subscribers",
+        "description": "Supported across global deployments"
+      },
+      {
+        "metric": "<10ms",
+        "label": "Response Time",
+        "description": "Average authentication latency"
+      }
+    ],
+    "technical_specs": {
+      "protocols": ["RADIUS", "Diameter", "REST", "SOAP", "HTTP/2"],
+      "standards": ["3GPP Rel 15/16", "RFC 2865", "RFC 6733", "TM Forum"],
+      "deployment": ["On-premises", "Private Cloud", "Public Cloud", "Hybrid"],
+      "integration": ["Kubernetes", "Docker", "Microservices", "API-first"],
+      "security": ["FIPS 140-2", "TLS 1.3", "OAuth 2.0", "JWT"]
+    },
+    "use_cases": [
+      "5G Network Authentication",
+      "WiFi Hotspot Management",
+      "IoT Device Authentication",
+      "Fixed Broadband Access",
+      "Enterprise VPN Access"
+    ]
+  },
+  "internal_links": [
+    {
+      "context": "For complete network policy management",
+      "target_page": "products/digital-bss",
+      "anchor_text": "Digital BSS platform"
+    },
+    {
+      "context": "Learn about our 5G transformation approach",
+      "target_page": "solutions/5g-network-evolution",
+      "anchor_text": "5G evolution strategy"
+    },
+    {
+      "context": "See how mobile operators benefit",
+      "target_page": "industries/mobile-operators",
+      "anchor_text": "mobile operator solutions"
+    }
+  ],
+  "related_resources": [
+    {
+      "title": "AAA Performance Benchmark Report",
+      "type": "whitepaper",
+      "url": "/resources/aaa-benchmark-2024"
+    },
+    {
+      "title": "5G Authentication Best Practices",
+      "type": "guide",
+      "url": "/resources/5g-authentication-guide"
+    },
+    {
+      "title": "AAA Migration Playbook",
+      "type": "playbook",
+      "url": "/resources/aaa-migration-guide"
+    }
+  ],
+  "competitive_advantages": [
+    "Only AAA solution with native 5G support",
+    "Fastest migration path from legacy systems",
+    "Industry's highest TPS performance",
+    "Built-in AI fraud detection",
+    "Zero-downtime deployment capability"
+  ]
+}

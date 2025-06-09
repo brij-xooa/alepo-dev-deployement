@@ -3,11 +3,11 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 # Claude Code Instructions: Alepo Website Generation
-*Comprehensive file generation specifications*
+*Creative content generation and WordPress integration*
 
 ## Overview for Claude Code
 
-You will generate a complete file structure for the Alepo website. Create folders recursively and populate each with specific files as detailed below. Reference documents in `alepo-docs/` folder for all content details.
+You will generate unique, customized content for each of the 47 Alepo website pages. Each page should be crafted with creativity, personality, and specific details while maintaining brand consistency. Pages will be generated as HTML/content files and then pushed to WordPress. Reference documents in `alepo-docs/` folder for company information and guidelines.
 
 ## Project Context
 
@@ -27,98 +27,124 @@ You will generate a complete file structure for the Alepo website. Create folder
 
 ---
 
-## Root Folder Structure to Create
+## Generation Approach - Creative Content, Not Templates
+
+### Key Principles
+1. **Each page is unique** - No two pages should feel templated or generic
+2. **Creative storytelling** - Use engaging narratives, metaphors, and industry-specific language
+3. **Custom design elements** - Suggest unique layouts, interactive elements, and visual concepts for each page
+4. **Brand personality** - Let Alepo's expertise and innovation shine through varied content approaches
+5. **SEO without compromise** - Optimize for search while maintaining engaging, human-centric content
+
+### Folder Structure for Generated Content
 
 ```
-alepo-website-complete/
-├── 01-content-generation/
-│   ├── pages/
-│   ├── custom-post-types/
-│   ├── media-assets/
-│   └── navigation/
-├── 02-wordpress-theme/
-│   ├── alepo-theme/
-│   └── child-theme/
-├── 03-automation-scripts/
-│   ├── content-import/
-│   ├── page-creation/
-│   └── deployment/
-├── 04-deployment-config/
-│   ├── github-workflows/
-│   ├── wp-engine-config/
-│   └── environment-setup/
-└── 05-documentation/
-    ├── implementation-guide.md
-    ├── content-strategy.md
-    └── deployment-checklist.md
+alepo-generated-content/
+├── 01-page-content/
+│   ├── homepage/
+│   │   ├── content.html
+│   │   ├── metadata.json
+│   │   └── design-notes.md
+│   ├── products/
+│   │   ├── aaa-solutions/
+│   │   ├── digital-bss/
+│   │   ├── bss-now/
+│   │   ├── ai-customer-assistant/
+│   │   └── ai-agent-assistant/
+│   ├── solutions/
+│   │   └── [15 solution folders]
+│   ├── industries/
+│   │   └── [6 industry folders]
+│   └── company/
+│       └── [company page folders]
+├── 02-wordpress-integration/
+│   ├── import-scripts/
+│   ├── page-mapping.json
+│   └── acf-field-data/
+└── 03-assets/
+    ├── image-specs/
+    ├── interactive-elements/
+    └── custom-scripts/
 ```
 
 ---
 
-## 01-content-generation/ Instructions
+## Page Content Generation Guidelines
 
-### pages/ folder
-Create individual `.md` files for each of the 47 pages with this exact structure:
+### Creative Content Structure
+Each page folder should contain:
 
-#### File naming convention:
+#### 1. content.html - The main page content
+```html
+<!-- Example structure - each page should be unique -->
+<section class="hero-section" data-animation="fade-in">
+  <div class="container">
+    <h1>Creative, Engaging Headline Specific to This Page</h1>
+    <p class="lead">Compelling subheadline that tells a story</p>
+    <!-- Unique hero elements per page -->
+  </div>
+</section>
+
+<section class="content-section">
+  <!-- Rich, varied content with:
+    - Storytelling elements
+    - Industry-specific scenarios
+    - Interactive components
+    - Visual suggestions
+    - Customer success stories
+    - Technical depth where appropriate
+  -->
+</section>
 ```
-homepage.md
-product-aaa-solutions.md
-product-digital-bss.md
-product-bss-now.md
-product-ai-customer-assistant.md
-product-ai-agent-assistant.md
-solution-legacy-aaa-replacement.md
-solution-5g-network-evolution.md
-[continue for all 15 solutions]
-industry-mobile-operators.md
-[continue for all 6 industries]
-company-about-alepo.md
-company-leadership-team.md
-[continue for all company pages]
+
+#### 2. metadata.json - SEO and WordPress integration data
+```json
+{
+  "title": "Page Title - Unique and Compelling",
+  "slug": "url-slug",
+  "meta_description": "150-155 character description that compels clicks",
+  "primary_keyword": "main keyword",
+  "secondary_keywords": ["keyword1", "keyword2", "keyword3"],
+  "schema_type": "Product|Service|Organization|Article",
+  "acf_fields": {
+    "hero_style": "video-background|animated-graphics|split-screen|etc",
+    "cta_primary": {
+      "text": "Action-oriented CTA",
+      "url": "/contact",
+      "style": "primary"
+    }
+  },
+  "internal_links": [
+    {
+      "context": "When discussing authentication needs",
+      "target_page": "product-aaa-solutions",
+      "anchor_text": "comprehensive AAA solution"
+    }
+  ]
+}
 ```
 
-#### Content template for each .md file:
+#### 3. design-notes.md - Creative direction for developers
 ```markdown
----
-page_type: "homepage|product|solution|industry|company"
-title: "Exact Page Title"
-slug: "url-slug"
-meta_description: "150-155 character meta description with primary keyword"
-primary_keyword: "main SEO keyword"
-secondary_keywords: ["keyword1", "keyword2", "keyword3"]
-page_template: "template-name"
-acf_fields:
-  field_name: "field_value"
-internal_links:
-  - page: "related-page-slug"
-    anchor_text: "link text"
-cta_primary:
-  text: "Primary CTA Text"
-  url: "destination-url"
-  style: "button-primary"
-cta_secondary:
-  text: "Secondary CTA Text"  
-  url: "destination-url"
-  style: "button-secondary"
----
+# Design Notes: [Page Name]
 
-# Page Title
+## Visual Concept
+[Unique visual theme for this page]
 
-## Hero Section
-[Specific hero content based on page type]
+## Interactive Elements
+- [Specific animations or interactions]
+- [Data visualizations]
+- [User engagement features]
 
-## Main Content Sections
-[Structured content sections]
+## Content Highlights
+- [Key differentiators to emphasize]
+- [Unique value propositions]
+- [Customer proof points]
 
-## Call-to-Action Section
-[Page-specific CTA with consistent formatting]
-
-## Related Resources
-[Internal links and related content]
-
-## SEO Content
-[Additional content for SEO and completeness]
+## Technical Considerations
+- [Any special functionality needed]
+- [Performance optimizations]
+- [Accessibility notes]
 ```
 
 ### custom-post-types/ folder
@@ -287,103 +313,75 @@ Each page template must include:
 
 ---
 
-## 03-automation-scripts/ Instructions
+## WordPress Integration Approach
 
-### content-import/ folder
+### Content Import Strategy
 
-#### import-all-content.php
+Instead of using templated scripts, we'll push Claude-generated content to WordPress:
+
+#### 1. import-generated-content.php
 ```php
 <?php
 /**
- * Complete Alepo Website Content Import
- * Imports all pages, posts, and custom content
+ * Import Claude-generated content to WordPress
+ * Preserves unique content while setting up WordPress structure
  */
 
-function alepo_import_all_content() {
-    // Import pages
-    alepo_import_pages();
+function alepo_import_claude_content($content_dir) {
+    $pages = alepo_scan_content_directory($content_dir);
     
-    // Import custom post types
-    alepo_import_products();
-    alepo_import_solutions();
-    alepo_import_industries();
-    alepo_import_case_studies();
-    
-    // Set up navigation
-    alepo_create_navigation_menus();
-    
-    // Configure WordPress settings
-    alepo_configure_wordpress_settings();
-    
-    // Set up internal linking
-    alepo_create_internal_links();
-    
-    echo "✅ Alepo website content import complete!\n";
-}
-
-function alepo_import_pages() {
-    $pages_dir = get_template_directory() . '/content-generation/pages/';
-    $page_files = glob($pages_dir . '*.md');
-    
-    foreach ($page_files as $file) {
-        $content = alepo_parse_markdown_file($file);
-        $page_id = alepo_create_page_from_content($content);
-        alepo_log_import("Page created: {$content['title']} (ID: {$page_id})");
+    foreach ($pages as $page_path) {
+        $content = file_get_contents($page_path . '/content.html');
+        $metadata = json_decode(file_get_contents($page_path . '/metadata.json'), true);
+        
+        // Create/update WordPress page
+        $page_id = alepo_create_or_update_page([
+            'post_title' => $metadata['title'],
+            'post_content' => $content,
+            'post_name' => $metadata['slug'],
+            'post_status' => 'publish',
+            'meta_input' => [
+                '_yoast_wpseo_metadesc' => $metadata['meta_description'],
+                '_yoast_wpseo_focuskw' => $metadata['primary_keyword']
+            ]
+        ]);
+        
+        // Set ACF fields
+        if (function_exists('update_field')) {
+            foreach ($metadata['acf_fields'] as $field => $value) {
+                update_field($field, $value, $page_id);
+            }
+        }
+        
+        echo "✅ Imported: {$metadata['title']} (ID: {$page_id})\n";
     }
 }
-
-// Additional import functions...
 ```
 
-### page-creation/ folder
-
-#### create-page-structure.php
-Generate functions for each page type with consistent structure:
-
+#### 2. preserve-customization.php
 ```php
 <?php
-function alepo_create_product_page($product_data) {
-    $content = alepo_build_product_content($product_data);
-    
-    $page_data = array(
-        'post_title' => $product_data['title'],
-        'post_content' => $content,
-        'post_status' => 'publish',
-        'post_type' => 'page',
-        'post_name' => $product_data['slug'],
-        'page_template' => 'page-templates/page-product.php'
-    );
-    
-    $page_id = wp_insert_post($page_data);
-    
-    // Add ACF fields
-    alepo_populate_product_acf_fields($page_id, $product_data['acf_fields']);
-    
-    // Add SEO meta
-    alepo_add_seo_meta($page_id, $product_data);
-    
-    return $page_id;
-}
+/**
+ * Ensures Claude's creative content is preserved
+ * Prevents overwriting of custom designs
+ */
 
-function alepo_build_product_content($product_data) {
-    $content = '';
+function alepo_preserve_custom_content($page_id, $new_content) {
+    // Store revision for rollback
+    wp_save_post_revision($page_id);
     
-    // Hero section
-    $content .= alepo_build_hero_section($product_data);
+    // Preserve custom blocks and shortcodes
+    $content = alepo_merge_custom_elements($new_content);
     
-    // Features section  
-    $content .= alepo_build_features_section($product_data['acf_fields']['key_features']);
-    
-    // Technical specs
-    $content .= alepo_build_specs_section($product_data['acf_fields']['technical_specs']);
-    
-    // Benefits section
-    $content .= alepo_build_benefits_section($product_data);
-    
-    // CTA section
-    $content .= alepo_build_cta_section($product_data['cta_primary']);
-    
-    return $content;
+    // Update with preservation flags
+    wp_update_post([
+        'ID' => $page_id,
+        'post_content' => $content,
+        'meta_input' => [
+            '_alepo_custom_generated' => true,
+            '_alepo_generation_date' => current_time('mysql')
+        ]
+    ]);
 }
 ```
 
@@ -468,29 +466,51 @@ Every content piece must include:
 
 ---
 
-## File Generation Execution Order
+## Creative Content Examples
 
-1. **Create folder structure** (all directories first)
-2. **Generate content files** (pages/ folder - all .md files)
-3. **Generate structured data** (custom-post-types/ JSON files)
-4. **Generate WordPress theme** (alepo-theme/ complete structure)
-5. **Generate automation scripts** (page creation and import scripts)
-6. **Generate deployment config** (GitHub workflows, WP Engine setup)
-7. **Generate documentation** (implementation guides and checklists)
+### Homepage - Breaking the Mold
+Instead of: "Welcome to Alepo, a leading telecom solutions provider"
+Create: "When 5G networks demand microsecond decisions, legacy systems become tomorrow's bottlenecks. Alepo transforms how operators evolve."
+
+### Product Pages - Technical Storytelling
+Instead of: "Our AAA solution provides authentication, authorization, and accounting"
+Create: "Picture 50 million subscribers attempting to connect simultaneously during a major event. Your AAA infrastructure either scales gracefully or becomes the story no operator wants to tell."
+
+### Solution Pages - Problem-First Narratives
+Instead of: "We offer 5G network solutions"
+Create: "The jump from 4G to 5G isn't an upgrade—it's a metamorphosis. Like asking a freight train to become a fighter jet mid-journey."
+
+### Industry Pages - Sector-Specific Language
+Instead of: "Solutions for mobile operators"
+Create: "Built by operators, for operators. We've walked in your shoes through 3G sunsets, 4G battles, and now guide you through 5G's promises."
+
+## Content Generation Workflow
+
+1. **Research Phase** - Deep dive into alepo-docs/ for each page
+2. **Creative Ideation** - Develop unique angle for each page
+3. **Content Creation** - Write rich HTML with personality
+4. **Metadata Setup** - SEO and WordPress integration data
+5. **Design Documentation** - Visual and interactive concepts
+6. **Quality Review** - Ensure uniqueness and brand alignment
+7. **WordPress Import** - Push to WordPress preserving creativity
 
 ## Success Validation
 
 After generation, verify:
-- [ ] All 47 .md content files created with proper front matter
-- [ ] JSON data files contain structured, consistent data
-- [ ] WordPress theme files include all required functions
-- [ ] Automation scripts reference correct file paths
-- [ ] CTA consistency maintained across all page types
-- [ ] Brand voice consistency in all content
-- [ ] Internal linking strategy implemented
-- [ ] SEO optimization complete on all pages
+- [ ] All 47 pages have unique, creative content (no templating)
+- [ ] Each page tells a distinct story while maintaining brand coherence
+- [ ] HTML content is rich with varied structures and elements
+- [ ] Metadata files contain proper SEO and WordPress integration data
+- [ ] Design notes provide clear creative direction
+- [ ] No two pages feel similar in approach or structure
+- [ ] Technical accuracy maintained while being engaging
+- [ ] Content connects emotionally with target audience
+- [ ] WordPress import preserves all creative elements
+- [ ] Interactive elements and visual concepts documented
 
-This structure ensures Claude Code can work systematically through each folder, generating consistent, professional content that maintains Alepo's brand standards while creating a complete, functional website.
+## Key Differentiator
+
+This approach ensures every page is crafted with care and creativity, avoiding the cookie-cutter feel of template-based generation. Each page should feel like it was written by a skilled content strategist who deeply understands both Alepo's technology and their customers' challenges.
 
 ---
 

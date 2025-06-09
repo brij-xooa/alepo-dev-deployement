@@ -1319,9 +1319,10 @@ ul, ol {
 
 .hero-actions {
     display: flex;
-    gap: var(--space-4);
+    gap: var(--space-8);
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 /* ===== MOBILE MENU ===== */
@@ -1408,6 +1409,19 @@ ul, ol {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .hero-actions {
+        gap: var(--space-7);
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        min-width: 180px;
+        max-width: 250px;
+        text-align: center;
+    }
+}
+
 @media (max-width: 1024px) {
     .solutions-grid,
     .products-grid {
@@ -1422,6 +1436,31 @@ ul, ol {
     .resources-grid {
         grid-template-columns: 1fr;
         gap: var(--space-5);
+    }
+    
+    .hero-actions {
+        gap: var(--space-7);
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        min-width: 200px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-actions {
+        gap: var(--space-4);
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
     }
 }
 

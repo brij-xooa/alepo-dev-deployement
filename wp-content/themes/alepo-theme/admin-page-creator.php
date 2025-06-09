@@ -49,6 +49,10 @@ function alepo_admin_page_creator() {
                        value="<?php echo count($alepo_pages) > 0 ? 'Create Remaining Alepo Pages' : 'Create All Alepo Pages'; ?>" 
                        onclick="return confirm('This will create the Alepo pages. Continue?');">
                 
+                <input type="submit" name="create_claude_pages" class="button button-primary" 
+                       value="Create Claude Pages (Creative Content)" 
+                       onclick="return confirm('This will create pages with unique Claude-generated content.');">
+                
                 <input type="submit" name="create_test_page" class="button button-secondary" 
                        value="Create Test Page (Debug)" 
                        onclick="return confirm('This will create a simple test page for debugging.');">
@@ -68,6 +72,25 @@ function alepo_admin_page_creator() {
 }
 
 function alepo_handle_page_creation() {
+    // Handle Claude pages creation
+    if (isset($_POST['create_claude_pages']) && 
+        wp_verify_nonce($_POST['alepo_create_pages_nonce'], 'alepo_create_pages_action')) {
+        
+        ob_start();
+        
+        echo "<h3>Creating Claude-Generated Pages...</h3>\n";
+        
+        // Include and run Claude pages creator
+        require_once(get_template_directory() . '/create-claude-pages.php');
+        alepo_create_claude_pages();
+        
+        $output = ob_get_clean();
+        set_transient('alepo_page_creation_output', $output, 300);
+        
+        wp_redirect(admin_url('tools.php?page=alepo-create-pages&created=1'));
+        exit;
+    }
+    
     // Handle test page creation
     if (isset($_POST['create_test_page']) && 
         wp_verify_nonce($_POST['alepo_create_pages_nonce'], 'alepo_create_pages_action')) {

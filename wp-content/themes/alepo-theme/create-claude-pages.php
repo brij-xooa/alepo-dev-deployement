@@ -165,9 +165,33 @@ function alepo_create_claude_pages() {
             'is_front_page' => true
         ],
         
+        'products' => [
+            'title' => 'Products',
+            'slug' => 'products',
+            'content' => '
+<section style="padding: 80px 0; text-align: center;">
+  <div class="container">
+    <h1 style="font-size: 3rem; margin-bottom: 30px;">Alepo Products</h1>
+    <p style="font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 50px;">Comprehensive solutions for modern telecom operations</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+      <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <h3><a href="/products/digital-bss/" style="color: #0066CC; text-decoration: none;">Digital BSS</a></h3>
+        <p>Convergent billing and customer management platform</p>
+      </div>
+      <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <h3><a href="/products/aaa-solutions/" style="color: #0066CC; text-decoration: none;">AAA Solutions</a></h3>
+        <p>Authentication at the speed of 5G networks</p>
+      </div>
+    </div>
+  </div>
+</section>'
+        ],
+        
         'digital-bss' => [
-            'title' => 'Digital BSS Platform - Convergent Billing & Customer Management',
-            'slug' => 'products/digital-bss',
+            'title' => 'Digital BSS',
+            'slug' => 'digital-bss',
+            'parent_slug' => 'products',
             'content' => '
 <!-- Digital BSS - Business Transformation Platform -->
 <section style="background: linear-gradient(135deg, #0066CC 0%, #1976D2 100%); color: white; padding: 120px 0; text-align: center;">
@@ -306,8 +330,9 @@ function alepo_create_claude_pages() {
         ],
         
         'aaa-solutions' => [
-            'title' => 'AAA Solutions - Authentication at the Speed of 5G',
-            'slug' => 'products/aaa-solutions', 
+            'title' => 'AAA Solutions',
+            'slug' => 'aaa-solutions',
+            'parent_slug' => 'products', 
             'content' => '
 <!-- AAA Solutions - Creative, Unique Content -->
 <section style="background: linear-gradient(135deg, #0056b3 0%, #17a2b8 100%); color: white; padding: 120px 0; text-align: center;">
@@ -418,37 +443,68 @@ function alepo_create_claude_pages() {
         ]
     ];
 
-    // Create the pages
+    // Create pages with proper parent-child relationships
+    $created_pages = [];
+    
     foreach ($pages_to_create as $page_key => $page_data) {
+        // Determine parent ID if this is a child page
+        $parent_id = 0;
+        if (isset($page_data['parent_slug'])) {
+            $parent_page = get_page_by_path($page_data['parent_slug'], OBJECT, 'page');
+            if ($parent_page) {
+                $parent_id = $parent_page->ID;
+            } else {
+                // Create parent page if it doesn't exist
+                foreach ($pages_to_create as $potential_parent_key => $potential_parent_data) {
+                    if ($potential_parent_data['slug'] === $page_data['parent_slug']) {
+                        $parent_id = wp_insert_post([
+                            'post_title' => $potential_parent_data['title'],
+                            'post_content' => $potential_parent_data['content'],
+                            'post_name' => $potential_parent_data['slug'],
+                            'post_status' => 'publish',
+                            'post_type' => 'page',
+                            'meta_input' => [
+                                '_alepo_custom_generated' => true,
+                                '_alepo_generation_date' => current_time('mysql')
+                            ]
+                        ]);
+                        echo "✅ Created parent: {$potential_parent_data['title']} (ID: {$parent_id})<br>\n";
+                        $created_pages[$potential_parent_key] = $parent_id;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        // Skip if we already created this page as a parent
+        if (isset($created_pages[$page_key])) {
+            continue;
+        }
+        
         // Check if page already exists
         $existing_page = get_page_by_path($page_data['slug'], OBJECT, 'page');
         
+        $page_args = [
+            'post_title' => $page_data['title'],
+            'post_content' => $page_data['content'],
+            'post_name' => $page_data['slug'],
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_parent' => $parent_id,
+            'meta_input' => [
+                '_alepo_custom_generated' => true,
+                '_alepo_generation_date' => current_time('mysql')
+            ]
+        ];
+        
         if ($existing_page) {
             // Update existing page
-            $page_id = wp_update_post([
-                'ID' => $existing_page->ID,
-                'post_title' => $page_data['title'],
-                'post_content' => $page_data['content'],
-                'post_status' => 'publish',
-                'meta_input' => [
-                    '_alepo_custom_generated' => true,
-                    '_alepo_generation_date' => current_time('mysql')
-                ]
-            ]);
+            $page_args['ID'] = $existing_page->ID;
+            $page_id = wp_update_post($page_args);
             echo "✅ Updated: {$page_data['title']} (ID: {$page_id})<br>\n";
         } else {
             // Create new page
-            $page_id = wp_insert_post([
-                'post_title' => $page_data['title'],
-                'post_content' => $page_data['content'],
-                'post_name' => $page_data['slug'],
-                'post_status' => 'publish',
-                'post_type' => 'page',
-                'meta_input' => [
-                    '_alepo_custom_generated' => true,
-                    '_alepo_generation_date' => current_time('mysql')
-                ]
-            ]);
+            $page_id = wp_insert_post($page_args);
             echo "✅ Created: {$page_data['title']} (ID: {$page_id})<br>\n";
         }
         
@@ -460,8 +516,17 @@ function alepo_create_claude_pages() {
         }
     }
     
+    // Flush rewrite rules to make sure new permalinks work
+    flush_rewrite_rules();
+    
     echo "<br><h3>✅ Page creation complete!</h3>\n";
-    echo "<p>All pages have been created with unique, creative content. Visit your site to see the transformation!</p>\n";
+    echo "<p>All pages have been created with unique, creative content and proper parent-child relationships.</p>\n";
+    echo "<p><strong>URLs should now work:</strong></p>\n";
+    echo "<ul>\n";
+    echo "<li><a href='/products/digital-bss/' target='_blank'>/products/digital-bss/</a></li>\n";
+    echo "<li><a href='/products/aaa-solutions/' target='_blank'>/products/aaa-solutions/</a></li>\n";
+    echo "</ul>\n";
+    echo "<p>Visit your site to test the navigation!</p>\n";
 }
 
 // If accessed directly via URL, run the function

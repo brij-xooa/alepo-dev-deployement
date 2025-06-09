@@ -1,0 +1,42 @@
+{
+  "title": "BSS Now - Instant Business Support System Deployment",
+  "slug": "bss-now",
+  "meta_description": "Deploy a complete BSS solution in days, not months. Alepo's BSS Now offers pre-configured billing, CRM, and service management for rapid market entry.",
+  "primary_keyword": "instant BSS deployment",
+  "secondary_keywords": ["quick BSS setup", "rapid billing deployment", "fast telecom BSS", "pre-configured BSS"],
+  "schema_type": "Product",
+  "acf_fields": {
+    "hero_style": "animated-dashboard",
+    "cta_primary": {
+      "text": "Start 30-Day Trial",
+      "url": "/bss-now-trial",
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "See Deployment Timeline",
+      "url": "/resources/bss-now-timeline",
+      "style": "secondary"
+    },
+    "product_features": [
+      "Pre-configured rating plans",
+      "Ready-to-use product catalog",
+      "Instant CRM activation",
+      "Built-in payment gateways",
+      "Automated provisioning"
+    ],
+    "deployment_time": "7-14 days",
+    "target_market": "MVNOs, ISPs, Small Operators"
+  },
+  "internal_links": [
+    {
+      "context": "For enterprises needing full customization",
+      "target_page": "products/digital-bss",
+      "anchor_text": "explore our complete Digital BSS platform"
+    },
+    {
+      "context": "When discussing rapid deployment",
+      "target_page": "solutions/mvno-enablement",
+      "anchor_text": "MVNO launch solutions"
+    }
+  ]
+}

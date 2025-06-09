@@ -1,0 +1,46 @@
+{
+  "title": "AI Agent Assistant - Empower Your Support Team with AI",
+  "slug": "ai-agent-assistant",
+  "meta_description": "Transform novice agents into experts instantly. Alepo's AI Agent Assistant provides real-time guidance, suggested responses, and knowledge base integration.",
+  "primary_keyword": "AI agent assistance telecom",
+  "secondary_keywords": ["agent AI helper", "support team AI", "agent productivity tool", "AI-powered agent desktop"],
+  "schema_type": "Product",
+  "acf_fields": {
+    "hero_style": "split-screen-comparison",
+    "cta_primary": {
+      "text": "Schedule Agent Demo",
+      "url": "/demo/ai-agent-assistant",
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "Download Feature Guide",
+      "url": "/resources/ai-agent-guide",
+      "style": "secondary"
+    },
+    "product_features": [
+      "Real-time response suggestions",
+      "Automatic knowledge base search",
+      "Sentiment-based coaching",
+      "Performance analytics",
+      "Multi-system integration"
+    ],
+    "performance_metrics": {
+      "productivity_increase": "40%",
+      "training_time_reduction": "60%",
+      "first_call_resolution": "25% improvement",
+      "agent_satisfaction": "89%"
+    }
+  },
+  "internal_links": [
+    {
+      "context": "For customer-facing AI",
+      "target_page": "products/ai-customer-assistant",
+      "anchor_text": "AI Customer Assistant"
+    },
+    {
+      "context": "Improving operational efficiency",
+      "target_page": "solutions/operational-efficiency",
+      "anchor_text": "operational efficiency solutions"
+    }
+  ]
+}

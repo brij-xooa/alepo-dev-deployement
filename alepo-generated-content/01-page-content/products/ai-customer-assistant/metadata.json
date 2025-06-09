@@ -1,0 +1,46 @@
+{
+  "title": "AI Customer Assistant - Transform Support with Conversational AI",
+  "slug": "ai-customer-assistant",
+  "meta_description": "Reduce support costs by 70% with Alepo's AI Customer Assistant. Natural language understanding, instant resolutions, and seamless escalation when needed.",
+  "primary_keyword": "AI customer support telecom",
+  "secondary_keywords": ["conversational AI support", "telecom chatbot", "AI customer service", "automated support"],
+  "schema_type": "Product",
+  "acf_fields": {
+    "hero_style": "chat-interface-animation",
+    "cta_primary": {
+      "text": "Watch AI Demo",
+      "url": "/demo/ai-customer-assistant",
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "Calculate ROI",
+      "url": "/tools/ai-roi-calculator",
+      "style": "secondary"
+    },
+    "product_features": [
+      "Natural language processing in 50+ languages",
+      "Contextual understanding of telecom queries",
+      "Seamless human handoff",
+      "Self-learning from interactions",
+      "Omnichannel deployment"
+    ],
+    "ai_capabilities": {
+      "resolution_rate": "85%",
+      "average_handling_time": "2.3 minutes",
+      "languages_supported": "50+",
+      "integration_time": "2-4 weeks"
+    }
+  },
+  "internal_links": [
+    {
+      "context": "For agent-side AI assistance",
+      "target_page": "products/ai-agent-assistant",
+      "anchor_text": "AI Agent Assistant"
+    },
+    {
+      "context": "Complete customer experience transformation",
+      "target_page": "solutions/customer-experience-enhancement",
+      "anchor_text": "customer experience solutions"
+    }
+  ]
+}

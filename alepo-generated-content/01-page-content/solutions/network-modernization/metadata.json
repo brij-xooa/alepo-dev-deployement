@@ -1,0 +1,52 @@
+{
+  "title": "Network Modernization - Transform Legacy Infrastructure for 5G Era",
+  "slug": "network-modernization", 
+  "meta_description": "Modernize your telecom network infrastructure with zero downtime. Cloud-native architecture, microservices, and AI-driven optimization for 5G readiness.",
+  "primary_keyword": "network modernization telecom",
+  "secondary_keywords": ["legacy network upgrade", "5G infrastructure", "cloud-native telecom", "network transformation"],
+  "schema_type": "Service",
+  "acf_fields": {
+    "hero_style": "parallax-flow",
+    "cta_primary": {
+      "text": "Start Modernization Assessment",
+      "url": "/consultation/network-modernization", 
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "Download Modernization Guide",
+      "url": "/resources/network-evolution-guide",
+      "style": "secondary"
+    },
+    "solution_benefits": [
+      "10x faster service deployment",
+      "99.99% uptime guarantee", 
+      "60% infrastructure cost reduction",
+      "Zero-downtime migration",
+      "Auto-scaling capabilities"
+    ],
+    "target_challenges": [
+      "Legacy bottlenecks",
+      "Integration complexity", 
+      "Technical debt accumulation",
+      "Scalability limitations",
+      "Manual operations"
+    ]
+  },
+  "internal_links": [
+    {
+      "context": "For 5G-specific transformation",
+      "target_page": "solutions/5g-network-evolution",
+      "anchor_text": "5G Network Evolution solution"
+    },
+    {
+      "context": "When discussing cloud migration",
+      "target_page": "solutions/cloud-migration", 
+      "anchor_text": "cloud migration strategy"
+    },
+    {
+      "context": "For AAA modernization specifically",
+      "target_page": "solutions/legacy-aaa-replacement",
+      "anchor_text": "Legacy AAA Replacement"
+    }
+  ]
+}

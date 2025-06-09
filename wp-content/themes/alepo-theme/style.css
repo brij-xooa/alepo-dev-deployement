@@ -1317,12 +1317,29 @@ ul, ol {
     margin-right: auto;
 }
 
-.hero-actions {
-    display: flex;
-    gap: var(--space-8);
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+.hero-actions,
+div[style*="margin: 50px 0"],
+div[style*="margin: 40px 0"] {
+    display: flex !important;
+    gap: var(--space-8) !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+}
+
+/* Force override inline styles on buttons */
+.hero-actions a,
+div[style*="margin: 50px 0"] a,
+div[style*="margin: 40px 0"] a {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Hide line breaks between buttons in hero sections */
+.hero-actions br,
+div[style*="margin: 50px 0"] br,
+div[style*="margin: 40px 0"] br {
+    display: none !important;
 }
 
 /* ===== MOBILE MENU ===== */
@@ -1410,8 +1427,10 @@ ul, ol {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
-    .hero-actions {
-        gap: var(--space-7);
+    .hero-actions,
+    div[style*="margin: 50px 0"],
+    div[style*="margin: 40px 0"] {
+        gap: var(--space-7) !important;
     }
     
     .btn-primary,
@@ -1438,8 +1457,10 @@ ul, ol {
         gap: var(--space-5);
     }
     
-    .hero-actions {
-        gap: var(--space-7);
+    .hero-actions,
+    div[style*="margin: 50px 0"],
+    div[style*="margin: 40px 0"] {
+        gap: var(--space-7) !important;
     }
     
     .btn-primary,
@@ -1450,10 +1471,12 @@ ul, ol {
 }
 
 @media (max-width: 992px) {
-    .hero-actions {
-        gap: var(--space-4);
-        flex-direction: column;
-        align-items: center;
+    .hero-actions,
+    div[style*="margin: 50px 0"],
+    div[style*="margin: 40px 0"] {
+        gap: var(--space-4) !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
     
     .btn-primary,
@@ -1500,9 +1523,11 @@ ul, ol {
         font-size: var(--font-size-body);
     }
     
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
+    .hero-actions,
+    div[style*="margin: 50px 0"],
+    div[style*="margin: 40px 0"] {
+        flex-direction: column !important;
+        align-items: center !important;
     }
     
     .btn-primary,

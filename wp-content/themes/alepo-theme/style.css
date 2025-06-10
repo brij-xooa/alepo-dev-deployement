@@ -9,10 +9,36 @@ License: GPL v2 or later
 
 /* ===== CSS VARIABLES ===== */
 :root {
-    /* Primary Colors */
-    --primary-blue: #0066CC;
-    --primary-blue-dark: #0052A3;
-    --primary-blue-light: #1976D2;
+    /* v5 Primary (Azure → Royal) */
+    --c-primary-50: #EEF7FF;
+    --c-primary-100: #D9ECFF;
+    --c-primary-200: #BCDEFF;
+    --c-primary-300: #8DCBFF;
+    --c-primary-400: #58ACFF;
+    --c-primary-500: #318AFF; /* main brand */
+    --c-primary-600: #1A6AF6;
+    --c-primary-700: #1353E2;
+    --c-primary-800: #1644B7;
+    --c-primary-900: #183D90;
+    --c-primary-950: #172D66;
+    
+    /* v5 Secondary (Teal → Charcoal) */
+    --c-secondary-50: #F2F9F9;
+    --c-secondary-100: #DDF0F0;
+    --c-secondary-200: #BEE1E3;
+    --c-secondary-300: #92CACE;
+    --c-secondary-400: #5EABB2;
+    --c-secondary-500: #4697A0; /* accent */
+    --c-secondary-600: #3A7680;
+    --c-secondary-700: #34606A;
+    --c-secondary-800: #315159;
+    --c-secondary-900: #2D454C;
+    --c-secondary-950: #1A2C32;
+
+    /* Legacy aliases for compatibility */
+    --primary-blue: var(--c-primary-600);
+    --primary-blue-dark: var(--c-primary-700);
+    --primary-blue-light: var(--c-primary-500);
     
     /* Neutral Colors */
     --dark-gray: #2C3E50;
@@ -97,20 +123,31 @@ License: GPL v2 or later
     --transition-medium: 0.3s;
     --transition-slow: 0.6s;
     
-    /* Shadow System */
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
-    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
-    --shadow-lg: 0 8px 16px rgba(0,0,0,0.12);
-    --shadow-xl: 0 16px 32px rgba(0,0,0,0.16);
-    --shadow-blue: 0 8px 24px rgba(0, 102, 204, 0.12);
-    --shadow-blue-lg: 0 16px 48px rgba(0, 102, 204, 0.16);
+    /* v5 Shadow System */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
+    --shadow-primary: 0 8px 24px rgba(49, 138, 255, 0.15);
+    --shadow-primary-lg: 0 12px 32px rgba(49, 138, 255, 0.20);
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
-    --gradient-secondary: linear-gradient(135deg, #0052A3 0%, #1976D2 100%);
-    --gradient-tertiary: linear-gradient(135deg, #1976D2 0%, #42A5F5 100%);
-    --gradient-light: linear-gradient(135deg, #F5F7FA 0%, #E8F2FF 50%, #F0F4F8 100%);
-    --gradient-blue: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    /* Legacy shadows for compatibility */
+    --shadow-blue: var(--shadow-primary);
+    --shadow-blue-lg: var(--shadow-primary-lg);
+    
+    /* v5 Gradients */
+    --gradient-ocean: linear-gradient(135deg, var(--c-primary-400) 0%, var(--c-secondary-500) 100%);
+    --gradient-sky: linear-gradient(45deg, var(--c-primary-200) 0%, var(--c-secondary-300) 100%);
+    --gradient-deep: linear-gradient(135deg, var(--c-primary-700) 0%, var(--c-secondary-700) 100%);
+    --gradient-subtle-animated: linear-gradient(135deg, var(--c-primary-400), var(--c-secondary-500), var(--c-primary-500));
+    
+    /* Legacy gradients for compatibility */
+    --gradient-primary: var(--gradient-ocean);
+    --gradient-secondary: var(--gradient-deep);
+    --gradient-tertiary: var(--gradient-sky);
+    --gradient-light: linear-gradient(135deg, var(--c-gray-50) 0%, var(--c-primary-50) 50%, var(--c-gray-100) 100%);
+    --gradient-blue: linear-gradient(135deg, var(--c-primary-50) 0%, var(--c-primary-100) 100%);
     --gradient-purple: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
     --gradient-green: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
     --gradient-orange: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
@@ -1257,64 +1294,109 @@ ul, ol {
 
 /* ===== BUTTONS ===== */
 .btn-primary {
-    background: var(--primary-blue);
-    color: var(--white);
-    padding: var(--space-4) var(--space-6);
-    border-radius: 4px;
-    text-decoration: none;
+    background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-primary-600) 100%);
+    color: var(--c-white);
+    padding: 14px 32px;
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-body);
-    border: 2px solid var(--primary-blue);
-    transition: all var(--transition-fast) ease;
-    display: inline-block;
+    border-radius: 6px;
+    border: none;
+    transition: all var(--transition-smooth);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    min-height: 44px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
 .btn-primary:hover {
-    background: var(--primary-blue-dark);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-blue);
+    box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--primary-blue);
-    padding: var(--space-4) var(--space-6);
-    border-radius: 4px;
+    color: var(--c-primary-600);
+    border: 2px solid var(--c-primary-600);
+    padding: 12px 30px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-body);
-    border: 2px solid var(--primary-blue);
-    transition: all var(--transition-fast) ease;
+    transition: all var(--transition-smooth);
     display: inline-block;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--c-primary-600);
+    color: var(--c-white);
     transform: translateY(-2px);
+}
+
+/* Special styling for hero section buttons */
+.hero .btn-secondary {
+    color: var(--c-white);
+    border-color: var(--c-white);
+}
+
+.hero .btn-secondary:hover {
+    background: var(--c-white);
+    color: var(--c-primary-600);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
-    background: var(--gradient-light);
-    padding: var(--space-9) var(--space-5);
+    background: var(--gradient-ocean);
+    padding: var(--space-11) 0 var(--space-9);
+    position: relative;
+    overflow: hidden;
+    color: var(--c-white);
     text-align: center;
 }
 
-.hero h1 {
-    font-size: var(--font-size-hero);
-    margin-bottom: var(--space-4);
-    color: var(--dark-gray);
-    font-weight: var(--font-weight-semibold);
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.hero p {
-    font-size: var(--font-size-large);
-    color: var(--text-gray);
+.hero-title {
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-bold);
+    color: var(--c-white);
+    margin-bottom: var(--space-4);
+    line-height: var(--line-height-tight);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-body-lg);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: var(--space-6);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: var(--line-height-normal);
 }
 
 .hero-actions,
@@ -1550,6 +1632,28 @@ div[style*="margin: 40px 0"] br {
 }
 
 /* ===== HOMEPAGE V5 SECTIONS ===== */
+
+/* Section styling */
+.section {
+    padding: var(--space-9) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--space-3);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-semibold);
+    color: var(--c-gray-900);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--c-gray-600);
+    max-width: 600px;
+    margin: 0 auto var(--space-7);
+    font-size: var(--font-size-body-lg);
+}
+
 .why-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

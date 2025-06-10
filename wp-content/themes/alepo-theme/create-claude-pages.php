@@ -31,7 +31,8 @@ function alepo_load_content_from_files() {
                 'title' => $metadata['title'] ?? 'Home',
                 'slug' => '',
                 'content' => $content,
-                'is_front_page' => true
+                'is_front_page' => true,
+                'acf_fields' => $metadata['acf_fields'] ?? []
             ];
         }
     }
@@ -80,7 +81,8 @@ function alepo_load_content_from_files() {
                     'title' => $title,
                     'slug' => $page_slug,
                     'content' => $content,
-                    'parent_slug' => $category
+                    'parent_slug' => $category,
+                    'acf_fields' => $metadata['acf_fields'] ?? []
                 ];
             }
         }
@@ -140,6 +142,19 @@ function alepo_create_claude_pages() {
         // Check if page already exists
         $existing_page = get_page_by_path($page_data['slug'], OBJECT, 'page');
         
+        // Prepare meta input with ACF fields
+        $meta_input = [
+            '_alepo_custom_generated' => true,
+            '_alepo_generation_date' => current_time('mysql')
+        ];
+        
+        // Add ACF fields from metadata if available
+        if (isset($page_data['acf_fields']) && is_array($page_data['acf_fields'])) {
+            foreach ($page_data['acf_fields'] as $field_name => $field_value) {
+                $meta_input[$field_name] = $field_value;
+            }
+        }
+        
         $page_post_data = [
             'post_title' => $page_data['title'],
             'post_content' => $page_data['content'],
@@ -147,10 +162,7 @@ function alepo_create_claude_pages() {
             'post_type' => 'page',
             'post_name' => $page_data['slug'],
             'post_parent' => $parent_id,
-            'meta_input' => [
-                '_alepo_custom_generated' => true,
-                '_alepo_generation_date' => current_time('mysql')
-            ]
+            'meta_input' => $meta_input
         ];
         
         if ($existing_page) {

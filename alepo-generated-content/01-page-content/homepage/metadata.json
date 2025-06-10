@@ -7,6 +7,12 @@
   "schema_type": "Organization",
   "page_template": "front-page",
   "acf_fields": {
+    "hero_headline": "Transform Your Telecom Business",
+    "hero_subheadline": "Empower your network with AI-driven solutions that scale, secure, and revolutionize customer experiences",
+    "hero_cta_primary": "Get Started",
+    "hero_cta_primary_url": "#",
+    "hero_cta_secondary": "Watch Demo", 
+    "hero_cta_secondary_url": "#",
     "hero_style": "gradient-animated-background",
     "is_homepage": true,
     "featured_solutions": ["aaa-solutions", "digital-bss", "ai-customer-assistant"],

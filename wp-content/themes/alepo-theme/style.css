@@ -1654,6 +1654,441 @@ div[style*="margin: 40px 0"] br {
     font-size: var(--font-size-body-lg);
 }
 
+/* Gradient text animation from v5 mockup */
+.heading-gradient {
+    background: linear-gradient(135deg, var(--c-primary-600) 0%, var(--c-secondary-600) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heading-gradient-animated {
+    background: linear-gradient(135deg, var(--c-primary-500), var(--c-secondary-500), var(--c-primary-500), var(--c-secondary-500));
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-text 5s ease infinite;
+}
+
+@keyframes gradient-text {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Why Choose Alepo Section - Typography from v5 */
+.section-why {
+    background: var(--c-gray-50);
+}
+
+.section-why .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-why .section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--c-gray-600);
+    margin-bottom: 3rem;
+}
+
+/* Solutions Section - Typography from v5 */
+.section-solutions {
+    background: linear-gradient(180deg, var(--c-white) 0%, var(--c-primary-50) 100%);
+    padding: var(--space-10) 0;
+}
+
+.section-solutions .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--c-gray-900);
+    margin-bottom: 1rem;
+}
+
+.section-solutions .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--c-gray-600);
+    margin-bottom: 3rem;
+}
+
+/* Three Core Solutions Cards - from v5 */
+.section .card-feature {
+    background: var(--c-white);
+    border: 1px solid var(--c-gray-200);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Modern Hover Effect from v5 */
+.section .card-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--c-primary-500), var(--c-secondary-500));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.section .card-feature:hover::before {
+    transform: scaleX(1);
+}
+
+.section .card-feature:hover {
+    border-color: transparent;
+    box-shadow: 0 10px 40px rgba(49, 138, 255, 0.1);
+    transform: translateY(-4px);
+}
+
+.section .feature-icon {
+    color: var(--c-primary-500);
+    background: var(--c-primary-50);
+    padding: 16px;
+    border-radius: 12px;
+    display: inline-flex;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.section .card-feature:hover .feature-icon {
+    background: var(--c-primary-100);
+    transform: scale(1.1);
+}
+
+.section .feature-title {
+    color: var(--c-gray-900);
+    margin-bottom: var(--space-3);
+}
+
+.section .feature-description {
+    color: var(--c-gray-600);
+    margin-bottom: var(--space-4);
+}
+
+/* Customer Portfolio Section */
+.section-portfolio {
+    background: linear-gradient(135deg, var(--c-primary-50) 0%, var(--c-secondary-50) 100%);
+}
+
+/* Stats Section with Counter Animation */
+.section-stats {
+    background: var(--c-white);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-6);
+}
+
+.stat-card {
+    text-align: center;
+    padding: var(--space-6);
+    background: var(--c-white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-medium);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--c-primary-600);
+    margin-bottom: var(--space-2);
+    display: inline-block;
+}
+
+.stat-number[data-target] {
+    animation: countUp 2s ease-out;
+}
+
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-label {
+    color: var(--c-gray-600);
+    font-size: var(--font-size-body);
+}
+
+/* Testimonials Section - background from v5 */
+.section-testimonials {
+    background: var(--c-primary-950);
+    color: var(--c-white);
+}
+
+.section-testimonials .section-title {
+    color: var(--c-white);
+}
+
+.section-testimonials .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.testimonial-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 280px;
+}
+
+.testimonial-slide {
+    display: none;
+    text-align: center;
+}
+
+.testimonial-slide.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Testimonial Card from v5 with v5 hover */
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--c-primary-500);
+    padding: var(--space-6);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 0 var(--space-9);
+}
+
+.testimonial-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.testimonial-quote {
+    font-size: var(--font-size-body-lg);
+    line-height: var(--line-height-relaxed);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-5);
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-weight: var(--font-weight-semibold);
+    color: var(--c-white);
+    margin-bottom: var(--space-1);
+}
+
+.testimonial-role {
+    color: var(--c-primary-300);
+    font-size: var(--font-size-small);
+}
+
+/* Enhanced carousel buttons - no background, extreme positions */
+.testimonial-carousel-container {
+    position: relative;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+}
+
+.testimonial-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 280px;
+    padding: 0 var(--space-8);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--c-white);
+}
+
+.carousel-btn-prev { 
+    left: 0;
+}
+
+.carousel-btn-next { 
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-5);
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all var(--transition-medium);
+}
+
+.carousel-dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--c-primary-400);
+}
+
+/* Resources Section */
+.section-resources {
+    background: var(--c-gray-50);
+}
+
+.resource-image {
+    height: 200px;
+    background: linear-gradient(135deg, var(--c-primary-100) 0%, var(--c-secondary-100) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.resource-badge {
+    display: inline-block;
+    background: var(--c-primary-500);
+    color: var(--c-white);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 4px;
+    font-size: var(--font-size-micro);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-3);
+}
+
+/* Newsletter Section */
+.section-newsletter {
+    background: var(--c-primary-950);
+    padding: var(--space-8) 0;
+}
+
+.newsletter-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: var(--space-7);
+    border-radius: 16px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--c-white);
+    padding: var(--space-3) var(--space-4);
+    border-radius: 6px;
+    font-size: var(--font-size-body);
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--c-primary-300);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* CTA Section */
+.section-cta {
+    background: linear-gradient(135deg, var(--c-primary-600) 0%, var(--c-primary-700) 100%);
+    padding: var(--space-10) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-30px, -30px) rotate(180deg); }
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    color: var(--c-white);
+    font-size: var(--font-size-display);
+    margin-bottom: var(--space-4);
+}
+
+.cta-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-body-lg);
+    margin-bottom: var(--space-6);
+}
+
+.btn-cta {
+    background: var(--c-white);
+    color: var(--c-primary-600);
+    padding: 16px 40px;
+    font-size: var(--font-size-body-lg);
+}
+
+.btn-cta:hover {
+    background: var(--c-gray-100);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
 .why-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

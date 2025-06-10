@@ -96,8 +96,12 @@ add_action('after_setup_theme', 'alepo_theme_setup');
  * Enqueue Scripts and Styles
  */
 function alepo_scripts() {
+    // External libraries first
+    wp_enqueue_style('bootstrap-icons', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css', array(), '1.11.0');
+    wp_enqueue_style('bootstrap-css', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css', array(), '5.3.0');
+    
     // Enqueue theme stylesheet
-    wp_enqueue_style('alepo-style', get_stylesheet_uri(), array(), '1.0.0');
+    wp_enqueue_style('alepo-style', get_stylesheet_uri(), array('bootstrap-css'), '1.0.0');
     
     // Enqueue mega menu styles CSS
     wp_enqueue_style('alepo-mega-menu-styles', get_template_directory_uri() . '/mega-menu-styles.css', array('alepo-style'), '1.0.0');

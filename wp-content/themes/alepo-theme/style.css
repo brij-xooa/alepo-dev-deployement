@@ -1344,17 +1344,21 @@ ul, ol {
 }
 
 .wp-block-button.btn-primary .wp-block-button__link {
-    background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-primary-600) 100%) !important;
-    color: var(--c-white) !important;
     font-weight: var(--font-weight-semibold);
     transition: all var(--transition-smooth);
     position: relative;
     overflow: hidden;
 }
 
+/* Primary buttons - always apply theme colors */
+.wp-block-button.btn-primary .wp-block-button__link,
+.wp-block-button.btn-primary .wp-block-button__link:not([style*="background"]) {
+    background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-primary-600) 100%) !important;
+    color: var(--c-white) !important;
+}
+
 .wp-block-button.btn-primary .wp-block-button__link:hover {
     color: var(--c-white) !important;
-    background: linear-gradient(135deg, var(--c-primary-600) 0%, var(--c-primary-700) 100%) !important;
 }
 
 /* Non-Gutenberg secondary buttons */
@@ -1390,19 +1394,33 @@ ul, ol {
     box-shadow: 0 4px 12px rgba(49, 138, 255, 0.3);
 }
 
+/* Button alignment fixes - ensure consistent height and alignment */
+.wp-block-buttons .wp-block-button .wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    box-sizing: border-box;
+}
+
 .wp-block-button.btn-secondary .wp-block-button__link {
     font-weight: var(--font-weight-semibold);
     transition: all var(--transition-smooth);
 }
 
-/* Override default link hover - ensure secondary buttons maintain their border/text colors */
+/* Secondary buttons - ensure transparent background and proper border handling */
+.wp-block-button.btn-secondary .wp-block-button__link {
+    background: transparent !important;
+}
+
 .wp-block-button.btn-secondary .wp-block-button__link:hover {
-    color: inherit !important;
     background: var(--c-primary-600) !important;
+    color: var(--c-white) !important;
 }
 
 /* Special handling for hero section secondary buttons */
 .hero .wp-block-button.btn-secondary .wp-block-button__link {
+    background: transparent !important;
     color: var(--c-white) !important;
     border-color: var(--c-white) !important;
 }

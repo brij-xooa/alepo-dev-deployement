@@ -1696,3 +1696,8 @@ if (file_exists(get_template_directory() . '/inc/mega-menu-walker.php')) {
 if (file_exists(get_template_directory() . '/admin-page-creator.php')) {
     require get_template_directory() . '/admin-page-creator.php';
 }
+
+// Include cleanup script
+if (file_exists(get_template_directory() . '/cleanup-generated-pages.php')) {
+    require get_template_directory() . '/cleanup-generated-pages.php';
+}

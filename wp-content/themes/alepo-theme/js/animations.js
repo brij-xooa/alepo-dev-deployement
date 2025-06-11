@@ -18,6 +18,7 @@
         initCardAnimations();
         initProgressBars();
         initTypewriterEffect();
+        initTestimonialCarousel();
     });
 
     /**
@@ -517,5 +518,102 @@
         }
     `;
     document.head.appendChild(animationStyles);
+
+    /**
+     * Testimonial Carousel Functionality
+     */
+    function initTestimonialCarousel() {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        if (slides.length === 0) return;
+
+        function showSlide(index) {
+            // Remove active class from all slides and dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Calculate the new index (with wrapping)
+            currentSlide = (index + slides.length) % slides.length;
+            
+            // Add active class to current slide and dot
+            slides[currentSlide].classList.add('active');
+            if (dots[currentSlide]) {
+                dots[currentSlide].classList.add('active');
+            }
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // Make functions globally available for onclick handlers
+        window.alepoChangeSlide = changeSlide;
+        window.alepoGoToSlide = goToSlide;
+
+        // Auto-rotate testimonials every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+        
+        const carousel = document.querySelector('.testimonial-carousel');
+        if (carousel) {
+            carousel.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', function(e) {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const threshold = 50;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        changeSlide(1); // Swipe left, go to next
+                    } else {
+                        changeSlide(-1); // Swipe right, go to previous
+                    }
+                }
+            }
+        }
+
+        // Pause auto-rotation on hover
+        const carouselContainer = document.querySelector('.testimonial-carousel-container');
+        if (carouselContainer) {
+            let autoRotateTimer;
+            
+            carouselContainer.addEventListener('mouseenter', function() {
+                clearInterval(autoRotateTimer);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', function() {
+                autoRotateTimer = setInterval(() => {
+                    changeSlide(1);
+                }, 5000);
+            });
+        }
+    }
 
 })();

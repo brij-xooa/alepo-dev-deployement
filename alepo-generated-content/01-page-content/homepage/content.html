@@ -372,25 +372,40 @@
     <p class="has-text-align-center section-subtitle has-text-color" style="color:rgba(255,255,255,0.8);margin-bottom:var(--wp--preset--spacing--70)">Real results from industry leaders</p>
     <!-- /wp:paragraph -->
 
-    <!-- wp:group {"className":"testimonial-carousel","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"var(--wp--preset--spacing--80)","right":"var(--wp--preset--spacing--80)"}}}} -->
-    <div class="wp-block-group testimonial-carousel" style="padding-top:0;padding-right:var(--wp--preset--spacing--80);padding-bottom:0;padding-left:var(--wp--preset--spacing--80)">
-        <!-- wp:group {"className":"testimonial-card","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)","left":"var(--wp--preset--spacing--60)","right":"var(--wp--preset--spacing--60)"}},"border":{"radius":"8px","left":{"color":"#318aff","width":"4px"}},"color":{"background":"rgba(255,255,255,0.05)"}},"layout":{"type":"default"}} -->
-        <div class="wp-block-group testimonial-card has-background" style="border-radius:8px;border-left-color:#318aff;border-left-width:4px;background-color:rgba(255,255,255,0.05);padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)">
-            <!-- wp:paragraph {"className":"testimonial-quote","style":{"typography":{"fontSize":"1.125rem","fontStyle":"italic","lineHeight":"1.8"},"color":{"text":"rgba(255,255,255,0.9)"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--50)"}}}} -->
-            <p class="testimonial-quote has-text-color" style="color:rgba(255,255,255,0.9);margin-bottom:var(--wp--preset--spacing--50);font-size:1.125rem;font-style:italic;line-height:1.8">"Alepo's AI Customer Assistant has transformed our customer service operations. We've seen a 90% resolution rate and significant cost savings while improving customer satisfaction scores."</p>
-            <!-- /wp:paragraph -->
-
-            <!-- wp:paragraph {"className":"testimonial-author","style":{"typography":{"fontWeight":"600"},"color":{"text":"#ffffff"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--10)"}}}} -->
-            <p class="testimonial-author has-text-color" style="color:#ffffff;margin-bottom:var(--wp--preset--spacing--10);font-weight:600">Sarah Johnson</p>
-            <!-- /wp:paragraph -->
-
-            <!-- wp:paragraph {"className":"testimonial-role","style":{"typography":{"fontSize":"0.875rem"},"color":{"text":"#8dcbff"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-            <p class="testimonial-role has-text-color" style="color:#8dcbff;margin-top:0;margin-bottom:0;font-size:0.875rem">VP of Customer Experience, SaskTel</p>
-            <!-- /wp:paragraph -->
+    <!-- wp:html -->
+    <div class="testimonial-carousel-container">
+        <div class="testimonial-carousel">
+            <div class="testimonial-slide active">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Alepo's AI Customer Assistant has transformed our customer service operations. We've seen a 90% resolution rate and significant cost savings while improving customer satisfaction scores."</p>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-role">VP of Customer Experience, SaskTel</div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The BSS modernization with Alepo reduced our time-to-market for new products by 70%. Their solution is truly next-generation."</p>
+                    <div class="testimonial-author">Mohammed Al-Rashid</div>
+                    <div class="testimonial-role">CTO, STC</div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Network reliability improved dramatically with Alepo's AAA solution. The 99.999% uptime commitment is real, not just marketing."</p>
+                    <div class="testimonial-author">Jennifer Chen</div>
+                    <div class="testimonial-role">Network Director, Global Tier-1 Operator</div>
+                </div>
+            </div>
         </div>
-        <!-- /wp:group -->
+        <button class="carousel-btn carousel-btn-prev" onclick="alepoChangeSlide(-1)">‹</button>
+        <button class="carousel-btn carousel-btn-next" onclick="alepoChangeSlide(1)">›</button>
+        <div class="carousel-dots">
+            <span class="carousel-dot active" onclick="alepoGoToSlide(0)"></span>
+            <span class="carousel-dot" onclick="alepoGoToSlide(1)"></span>
+            <span class="carousel-dot" onclick="alepoGoToSlide(2)"></span>
+        </div>
     </div>
-    <!-- /wp:group -->
+    <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 

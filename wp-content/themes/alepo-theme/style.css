@@ -1332,7 +1332,8 @@ ul, ol {
     left: 100%;
 }
 
-.btn-secondary {
+/* Non-Gutenberg secondary buttons */
+.btn-secondary:not(.wp-block-button__link) {
     background: transparent;
     color: var(--c-primary-600);
     border: 2px solid var(--c-primary-600);
@@ -1349,22 +1350,21 @@ ul, ol {
     gap: var(--space-2);
 }
 
-.btn-secondary:hover {
+.btn-secondary:not(.wp-block-button__link):hover {
     background: var(--c-primary-600);
     color: var(--c-white);
     transform: translateY(-2px);
 }
 
-/* Special styling for hero section buttons */
-.hero .btn-secondary {
-    color: var(--c-white);
-    border-color: var(--c-white);
+/* Gutenberg button enhancements - don't override inline styles */
+.wp-block-button.btn-secondary .wp-block-button__link {
+    transition: all var(--transition-smooth);
+    font-weight: var(--font-weight-semibold);
 }
 
-.hero .btn-secondary:hover {
-    background: var(--c-white);
-    color: var(--c-primary-600);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.wp-block-button.btn-secondary .wp-block-button__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 138, 255, 0.3);
 }
 
 /* ===== HERO SECTION ===== */

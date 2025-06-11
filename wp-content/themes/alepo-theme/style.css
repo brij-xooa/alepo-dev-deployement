@@ -1293,7 +1293,8 @@ ul, ol {
 }
 
 /* ===== BUTTONS ===== */
-.btn-primary {
+/* Non-Gutenberg primary buttons */
+.btn-primary:not(.wp-block-button) {
     background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-primary-600) 100%);
     color: var(--c-white);
     padding: 14px 32px;
@@ -1312,7 +1313,7 @@ ul, ol {
     overflow: hidden;
 }
 
-.btn-primary::before {
+.btn-primary:not(.wp-block-button)::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1323,17 +1324,41 @@ ul, ol {
     transition: left 0.5s;
 }
 
-.btn-primary:hover {
+.btn-primary:not(.wp-block-button):hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-primary);
 }
 
-.btn-primary:hover::before {
+.btn-primary:not(.wp-block-button):hover::before {
     left: 100%;
 }
 
+/* Gutenberg Primary Buttons */
+.wp-block-button.btn-primary {
+    transition: all var(--transition-smooth);
+}
+
+.wp-block-button.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+.wp-block-button.btn-primary .wp-block-button__link {
+    background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-primary-600) 100%) !important;
+    color: var(--c-white) !important;
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-block-button.btn-primary .wp-block-button__link:hover {
+    color: var(--c-white) !important;
+    background: linear-gradient(135deg, var(--c-primary-600) 0%, var(--c-primary-700) 100%) !important;
+}
+
 /* Non-Gutenberg secondary buttons */
-.btn-secondary:not(.wp-block-button__link) {
+.btn-secondary:not(.wp-block-button) {
     background: transparent;
     color: var(--c-primary-600);
     border: 2px solid var(--c-primary-600);
@@ -1343,28 +1368,48 @@ ul, ol {
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-body);
     transition: all var(--transition-smooth);
-    display: inline-block;
-    min-height: 44px;
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
+    min-height: 44px;
 }
 
-.btn-secondary:not(.wp-block-button__link):hover {
+.btn-secondary:not(.wp-block-button):hover {
     background: var(--c-primary-600);
     color: var(--c-white);
     transform: translateY(-2px);
 }
 
-/* Gutenberg button enhancements - don't override inline styles */
-.wp-block-button.btn-secondary .wp-block-button__link {
+/* Gutenberg Secondary Buttons */
+.wp-block-button.btn-secondary {
     transition: all var(--transition-smooth);
-    font-weight: var(--font-weight-semibold);
 }
 
-.wp-block-button.btn-secondary .wp-block-button__link:hover {
+.wp-block-button.btn-secondary:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(49, 138, 255, 0.3);
+}
+
+.wp-block-button.btn-secondary .wp-block-button__link {
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-smooth);
+}
+
+/* Override default link hover - ensure secondary buttons maintain their border/text colors */
+.wp-block-button.btn-secondary .wp-block-button__link:hover {
+    color: inherit !important;
+    background: var(--c-primary-600) !important;
+}
+
+/* Special handling for hero section secondary buttons */
+.hero .wp-block-button.btn-secondary .wp-block-button__link {
+    color: var(--c-white) !important;
+    border-color: var(--c-white) !important;
+}
+
+.hero .wp-block-button.btn-secondary .wp-block-button__link:hover {
+    background: var(--c-white) !important;
+    color: var(--c-primary-600) !important;
 }
 
 /* ===== HERO SECTION ===== */

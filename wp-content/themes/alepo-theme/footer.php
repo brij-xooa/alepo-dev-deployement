@@ -352,6 +352,9 @@
     background: rgba(255, 255, 255, 0.1);
     color: var(--white);
     font-size: var(--font-size-small);
+    height: 44px;
+    box-sizing: border-box;
+    line-height: 1.4;
 }
 
 .newsletter-form input[type="email"]::placeholder {
@@ -374,6 +377,12 @@
     font-weight: var(--font-weight-medium);
     cursor: pointer;
     transition: background var(--transition-fast);
+    height: 44px;
+    box-sizing: border-box;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-newsletter:hover {

@@ -1689,6 +1689,9 @@ if (file_exists(get_template_directory() . '/inc/template-functions.php')) {
 if (file_exists(get_template_directory() . '/inc/mega-menu-walker.php')) {
     require get_template_directory() . '/inc/mega-menu-walker.php';
 }
+if (file_exists(get_template_directory() . '/inc/gutenberg-mega-menu.php')) {
+    require get_template_directory() . '/inc/gutenberg-mega-menu.php';
+}
 // Customizer functions are already in this file, so we don't need to include customizer.php
 // require get_template_directory() . '/inc/customizer.php';
 

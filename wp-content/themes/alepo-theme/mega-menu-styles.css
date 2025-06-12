@@ -31,7 +31,7 @@
 
 @media (min-width: 769px) {
     
-    /* FORCE HIDE ALL mega menus and dropdown menus by default - AGGRESSIVE APPROACH */
+    /* Hide mega menus and dropdown menus by default - using opacity for smooth transitions */
     .mega-menu,
     .solutions-mega-menu,
     .products-mega-menu,
@@ -39,7 +39,9 @@
     .customers-mega-menu,
     .resources-mega-menu,
     .dropdown-menu {
-        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
     
     /* Updated mega menu base styles */
@@ -92,7 +94,6 @@
     .nav-item:hover .industries-mega-menu,
     .nav-item:hover .customers-mega-menu,
     .nav-item:hover .resources-mega-menu {
-        display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
@@ -101,7 +102,6 @@
     
     /* Show dropdown menu on hover with smooth transition */
     .nav-item:hover .dropdown-menu {
-        display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;

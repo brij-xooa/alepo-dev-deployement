@@ -849,7 +849,7 @@ ol {
 }
 
 .product-overview-btn::after {
-    content: '→';
+
     transition: transform var(--transition-fast);
 }
 

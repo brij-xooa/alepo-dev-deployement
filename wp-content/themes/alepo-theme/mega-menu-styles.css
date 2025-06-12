@@ -31,26 +31,17 @@
 
 @media (min-width: 769px) {
     
-    /* Hide mega menus and dropdown menus by default - using opacity for smooth transitions */
+    /* Updated mega menu base styles - matching mockup exactly */
     .mega-menu,
     .solutions-mega-menu,
     .products-mega-menu,
     .industries-mega-menu,
     .customers-mega-menu,
-    .resources-mega-menu,
-    .dropdown-menu {
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-        transform: translateX(-50%) translateY(-10px) !important;
-    }
-    
-    /* Updated mega menu base styles - matching mockup exactly */
-    .mega-menu {
+    .resources-mega-menu {
         position: absolute !important;
         top: 100% !important;
         left: 50% !important;
-        transform: translateX(-50%) !important;
+        transform: translateX(-50%) translateY(-10px) !important;
         z-index: 9999 !important;
         background: white !important;
         box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
@@ -91,7 +82,7 @@
         max-width: 1000px !important;
     }
     
-    /* Hide dropdown menu by default */
+    /* Dropdown menu styles for regular dropdowns */
     .dropdown-menu {
         position: absolute !important;
         top: 100% !important;
@@ -172,14 +163,14 @@
         transform: translateX(-50%) translateY(0) !important;
     }
     
-    /* Add a small gap tolerance to prevent flickering */
+    /* Add a larger gap tolerance to prevent flickering */
     .nav-item::after {
         content: '';
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        height: 10px;
+        height: 18px;
         z-index: 9998;
         pointer-events: none;
     }

@@ -12,7 +12,7 @@
     // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
         console.log('Alepo Navigation: DOM Ready, initializing...');
-        initMegaMenu();
+        // initMegaMenu(); // Disabled - using CSS hover instead
         initMobileMenu();
         initSearchFunctionality();
         initStickyNavigation();
@@ -536,21 +536,7 @@
 
             if (!link || !megaMenu) return;
 
-            // Open menu on Enter/Space
-            link.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    
-                    if (megaMenu.style.display === 'block') {
-                        hideMegaMenu(item, megaMenu);
-                    } else {
-                        hideAllMenus();
-                        showMegaMenu(item, megaMenu);
-                    }
-                }
-            });
-
-            // Navigate within mega menu
+            // Navigate within mega menu with arrow keys
             const menuLinks = megaMenu.querySelectorAll('a');
             menuLinks.forEach((menuLink, index) => {
                 menuLink.addEventListener('keydown', function(e) {
@@ -569,7 +555,6 @@
                             link.focus();
                         }
                     } else if (e.key === 'Escape') {
-                        hideMegaMenu(item, megaMenu);
                         link.focus();
                     }
                 });

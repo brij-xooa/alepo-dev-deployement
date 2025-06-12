@@ -1708,6 +1708,27 @@ if (file_exists(get_template_directory() . '/inc/gutenberg-mega-menu.php')) {
         }
     });
 }
+
+// Include gutenberg-footer functionality
+if (file_exists(get_template_directory() . '/inc/gutenberg-footer.php')) {
+    require get_template_directory() . '/inc/gutenberg-footer.php';
+    
+    // Auto-create footer content when theme is activated
+    add_action('after_switch_theme', 'alepo_create_default_footer_content');
+    
+    // Also create on admin_init if not exists (for existing installations)
+    add_action('admin_init', function() {
+        $existing = get_posts(array(
+            'post_type' => 'footer_content',
+            'numberposts' => 1,
+            'post_status' => 'any'
+        ));
+        
+        if (empty($existing)) {
+            alepo_create_default_footer_content();
+        }
+    });
+}
 // Customizer functions are already in this file, so we don't need to include customizer.php
 // require get_template_directory() . '/inc/customizer.php';
 

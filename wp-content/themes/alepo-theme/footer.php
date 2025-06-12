@@ -7,6 +7,13 @@
                 <div class="footer-content">
                     <!-- Footer Column 1: Company Info -->
                     <div class="footer-column">
+                        <?php
+                        $company_content = function_exists('alepo_get_footer_content') ? alepo_get_footer_content('company') : '';
+                        if (!empty($company_content)) {
+                            echo $company_content;
+                        } else {
+                            // Fallback to hardcoded content if no admin content exists
+                        ?>
                         <div class="footer-branding">
                             <?php if (has_custom_logo()) : ?>
                                 <?php the_custom_logo(); ?>
@@ -47,13 +54,20 @@
                             <a href="#" class="social-link" aria-label="<?php esc_attr_e('Twitter', 'alepo'); ?>">🐦</a>
                             <a href="#" class="social-link" aria-label="<?php esc_attr_e('YouTube', 'alepo'); ?>">📺</a>
                         </div>
+                        <?php } ?>
                     </div>
 
                     <!-- Footer Column 2: Solutions -->
                     <div class="footer-column">
-                        <?php if (is_active_sidebar('footer-1')) : ?>
-                            <?php dynamic_sidebar('footer-1'); ?>
-                        <?php else : ?>
+                        <?php
+                        $solutions_content = function_exists('alepo_get_footer_content') ? alepo_get_footer_content('solutions') : '';
+                        if (!empty($solutions_content)) {
+                            echo $solutions_content;
+                        } elseif (is_active_sidebar('footer-1')) {
+                            dynamic_sidebar('footer-1');
+                        } else {
+                            // Fallback to hardcoded content if no admin content exists
+                        ?>
                             <h3 class="footer-title"><?php esc_html_e('Solutions', 'alepo'); ?></h3>
                             <ul class="footer-menu">
                                 <li><a href="/solutions/legacy-aaa-replacement"><?php esc_html_e('Legacy AAA Replacement', 'alepo'); ?></a></li>
@@ -64,14 +78,20 @@
                                 <li><a href="/solutions/omnichannel-cx"><?php esc_html_e('Omnichannel CX', 'alepo'); ?></a></li>
                                 <li><a href="/solutions"><?php esc_html_e('View All Solutions', 'alepo'); ?></a></li>
                             </ul>
-                        <?php endif; ?>
+                        <?php } ?>
                     </div>
 
                     <!-- Footer Column 3: Products & Industries -->
                     <div class="footer-column">
-                        <?php if (is_active_sidebar('footer-2')) : ?>
-                            <?php dynamic_sidebar('footer-2'); ?>
-                        <?php else : ?>
+                        <?php
+                        $products_content = function_exists('alepo_get_footer_content') ? alepo_get_footer_content('products') : '';
+                        if (!empty($products_content)) {
+                            echo $products_content;
+                        } elseif (is_active_sidebar('footer-2')) {
+                            dynamic_sidebar('footer-2');
+                        } else {
+                            // Fallback to hardcoded content if no admin content exists
+                        ?>
                             <h3 class="footer-title"><?php esc_html_e('Products', 'alepo'); ?></h3>
                             <ul class="footer-menu">
                                 <li><a href="/products/aaa-server"><?php esc_html_e('AAA Authentication Server', 'alepo'); ?></a></li>
@@ -88,14 +108,20 @@
                                 <li><a href="/industries/enterprise-private-networks"><?php esc_html_e('Enterprise & Private Networks', 'alepo'); ?></a></li>
                                 <li><a href="/industries"><?php esc_html_e('View All Industries', 'alepo'); ?></a></li>
                             </ul>
-                        <?php endif; ?>
+                        <?php } ?>
                     </div>
 
                     <!-- Footer Column 4: Resources & Company -->
                     <div class="footer-column">
-                        <?php if (is_active_sidebar('footer-3')) : ?>
-                            <?php dynamic_sidebar('footer-3'); ?>
-                        <?php else : ?>
+                        <?php
+                        $resources_content = function_exists('alepo_get_footer_content') ? alepo_get_footer_content('resources') : '';
+                        if (!empty($resources_content)) {
+                            echo $resources_content;
+                        } elseif (is_active_sidebar('footer-3')) {
+                            dynamic_sidebar('footer-3');
+                        } else {
+                            // Fallback to hardcoded content if no admin content exists
+                        ?>
                             <h3 class="footer-title"><?php esc_html_e('Resources', 'alepo'); ?></h3>
                             <ul class="footer-menu">
                                 <li><a href="/resources/blog"><?php esc_html_e('Blog & Insights', 'alepo'); ?></a></li>
@@ -115,14 +141,20 @@
                                 <li><a href="/partners"><?php esc_html_e('Partners', 'alepo'); ?></a></li>
                                 <li><a href="/contact"><?php esc_html_e('Contact Us', 'alepo'); ?></a></li>
                             </ul>
-                        <?php endif; ?>
+                        <?php } ?>
                     </div>
 
                     <!-- Footer Column 5: Newsletter & CTA -->
                     <div class="footer-column">
-                        <?php if (is_active_sidebar('footer-4')) : ?>
-                            <?php dynamic_sidebar('footer-4'); ?>
-                        <?php else : ?>
+                        <?php
+                        $newsletter_content = function_exists('alepo_get_footer_content') ? alepo_get_footer_content('newsletter') : '';
+                        if (!empty($newsletter_content)) {
+                            echo $newsletter_content;
+                        } elseif (is_active_sidebar('footer-4')) {
+                            dynamic_sidebar('footer-4');
+                        } else {
+                            // Fallback to hardcoded content if no admin content exists
+                        ?>
                             <h3 class="footer-title"><?php esc_html_e('Stay Connected', 'alepo'); ?></h3>
                             <p class="newsletter-description">
                                 <?php esc_html_e('Get the latest insights on telecom innovation, 5G trends, and industry best practices.', 'alepo'); ?>
@@ -149,7 +181,7 @@
                                     <?php esc_html_e('Talk to Expert', 'alepo'); ?>
                                 </a>
                             </div>
-                        <?php endif; ?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -159,6 +191,13 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
+                    <?php
+                    $bottom_content = function_exists('alepo_get_footer_content') ? alepo_get_footer_content('bottom') : '';
+                    if (!empty($bottom_content)) {
+                        echo $bottom_content;
+                    } else {
+                        // Fallback to hardcoded content if no admin content exists
+                    ?>
                     <div class="footer-copyright">
                         <p>
                             <?php 
@@ -199,6 +238,7 @@
                         <span class="certification-badge">✅ <?php esc_html_e('SOC 2', 'alepo'); ?></span>
                         <span class="certification-badge">🛡️ <?php esc_html_e('GDPR Compliant', 'alepo'); ?></span>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

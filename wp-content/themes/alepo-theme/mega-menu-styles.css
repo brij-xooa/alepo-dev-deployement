@@ -52,7 +52,7 @@
         background: white !important;
         box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
         border-radius: 8px !important;
-        width: 100vw !important;
+        width: 100% !important;
         max-width: 1200px !important;
         margin-top: 8px !important;
         opacity: 0 !important;

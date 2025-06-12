@@ -170,6 +170,11 @@ body {
     background: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -371,7 +376,7 @@ ul, ol {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 100vw;
+    width: 100%;
     max-width: var(--container-mega-menu);
     background: var(--white);
     box-shadow: var(--shadow-xl);

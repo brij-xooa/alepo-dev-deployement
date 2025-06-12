@@ -135,9 +135,13 @@ function alepo_generate_solutions_gutenberg_content() {
         <p class="product-tagline has-text-color" style="color:#666666;margin-bottom:var(--wp--preset--spacing--40);font-size:0.8125rem">Secure Every Connection</p>
         <!-- /wp:paragraph -->
         
-        <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"typography":{"fontSize":"0.8125rem","fontWeight":"500"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"},"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
-        <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/solutions/network-access-control" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px;margin-bottom:var(--wp--preset--spacing--40);font-size:0.8125rem;font-weight:500">Solution Overview</a></div>
-        <!-- /wp:button -->
+        <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
+        <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
+            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}}}} -->
+            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/solutions/network-access-control" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Solution Overview</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:group -->
         
         <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.8125rem","fontWeight":"600"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
         <h4 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--20);font-size:0.8125rem;font-weight:600">Highlights:</h4>
@@ -195,9 +199,13 @@ function alepo_generate_solutions_gutenberg_content() {
         <p class="product-tagline has-text-color" style="color:#666666;margin-bottom:var(--wp--preset--spacing--40);font-size:0.8125rem">Complete Business Support System</p>
         <!-- /wp:paragraph -->
         
-        <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"typography":{"fontSize":"0.8125rem","fontWeight":"500"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"},"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
-        <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/products/digital-bss" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px;margin-bottom:var(--wp--preset--spacing--40);font-size:0.8125rem;font-weight:500">Solution Overview</a></div>
-        <!-- /wp:button -->
+        <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
+        <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
+            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}}}} -->
+            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/products/digital-bss" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Solution Overview</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:group -->
         
         <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.8125rem","fontWeight":"600"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
         <h4 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--20);font-size:0.8125rem;font-weight:600">Highlights:</h4>
@@ -255,9 +263,13 @@ function alepo_generate_solutions_gutenberg_content() {
         <p class="product-tagline has-text-color" style="color:#666666;margin-bottom:var(--wp--preset--spacing--40);font-size:0.8125rem">Transform Customer Engagement</p>
         <!-- /wp:paragraph -->
         
-        <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"typography":{"fontSize":"0.8125rem","fontWeight":"500"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"},"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
-        <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/products/ai-customer-assistant" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px;margin-bottom:var(--wp--preset--spacing--40);font-size:0.8125rem;font-weight:500">Solution Overview</a></div>
-        <!-- /wp:button -->
+        <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
+        <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
+            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}}}} -->
+            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/products/ai-customer-assistant" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Solution Overview</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:group -->
         
         <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.8125rem","fontWeight":"600"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
         <h4 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--20);font-size:0.8125rem;font-weight:600">Highlights:</h4>

@@ -282,42 +282,37 @@
         align-items: flex-start;
     }
 
-    .product-overview-btn {
-        background: linear-gradient(135deg, #F0F7FF 0%, #E8F2FF 100%);
-        color: var(--primary-blue);
-        padding: 8px 16px;
-        border-radius: 8px;
-        text-decoration: none;
+    /* Product overview button - use on wp-block-button wrapper, not anchor */
+    .wp-block-button.product-overview-btn {
+        display: inline-block;
+        font-size: 0.8125rem;
         font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-bottom: 20px;
-        transition: all 0.5s ease;
-        font-size: 13px;
-        border: 1px solid transparent;
-        position: relative;
-        overflow: hidden;
     }
 
-    .product-overview-btn::after {
+    .wp-block-button.product-overview-btn .wp-block-button__link {
+        position: relative;
+        transition: all 0.3s ease;
+        text-decoration: none !important;
+    }
+
+    .wp-block-button.product-overview-btn .wp-block-button__link::after {
         content: '→';
         position: absolute;
-        right: 40px;
-        transition: all 0.5s ease;
+        right: 16px;
+        transition: all 0.3s ease;
         opacity: 0;
     }
 
-    .product-overview-btn:hover {
-        background: var(--primary-blue);
-        color: var(--white);
+    .wp-block-button.product-overview-btn .wp-block-button__link:hover {
+        background: var(--primary-blue) !important;
+        color: var(--white) !important;
         transform: translateX(2px);
         box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
-        padding-right: 24px;
+        padding-right: 32px !important;
     }
 
-    .product-overview-btn:hover::after {
-        right: 8px;
+    .wp-block-button.product-overview-btn .wp-block-button__link:hover::after {
+        right: 12px;
         opacity: 1;
     }
 

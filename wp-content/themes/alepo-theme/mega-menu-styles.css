@@ -42,30 +42,53 @@
         opacity: 0 !important;
         visibility: hidden !important;
         pointer-events: none !important;
+        transform: translateX(-50%) translateY(-10px) !important;
     }
     
-    /* Updated mega menu base styles */
+    /* Updated mega menu base styles - matching mockup exactly */
     .mega-menu {
         position: absolute !important;
         top: 100% !important;
         left: 50% !important;
-        transform: translateX(-50%) translateY(-10px) !important;
+        transform: translateX(-50%) !important;
         z-index: 9999 !important;
         background: white !important;
         box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
         border-radius: 8px !important;
-        width: 100% !important;
+        width: 100vw !important;
         max-width: 1200px !important;
+        min-width: 800px !important;
         margin-top: 8px !important;
         opacity: 0 !important;
         visibility: hidden !important;
         pointer-events: none !important;
         transition: all 0.3s ease !important;
+        overflow: hidden !important;
     }
     
     /* Resources mega menu - narrower for 2 columns */
     .resources-mega-menu {
         max-width: 800px !important;
+    }
+    
+    /* Products mega menu - standard width for 4 columns */
+    .products-mega-menu {
+        max-width: 1200px !important;
+    }
+    
+    /* Solutions mega menu - standard width for 4 columns */
+    .solutions-mega-menu {
+        max-width: 1200px !important;
+    }
+    
+    /* Industries mega menu - wide for 6 columns */
+    .industries-mega-menu {
+        max-width: 1200px !important;
+    }
+    
+    /* Customers mega menu - standard width for 2 columns */
+    .customers-mega-menu {
+        max-width: 1000px !important;
     }
     
     /* Hide dropdown menu by default */
@@ -100,6 +123,18 @@
         transform: translateX(-50%) translateY(0) !important;
     }
     
+    /* Ensure mega menu content is properly displayed */
+    .nav-item:hover .mega-menu .mega-menu-content,
+    .nav-item:hover .solutions-mega-menu .mega-menu-content,
+    .nav-item:hover .products-mega-menu .mega-menu-content,
+    .nav-item:hover .industries-mega-menu .mega-menu-content,
+    .nav-item:hover .customers-mega-menu .mega-menu-content,
+    .nav-item:hover .resources-mega-menu .mega-menu-content {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
     /* Show dropdown menu on hover with smooth transition */
     .nav-item:hover .dropdown-menu {
         opacity: 1 !important;
@@ -125,10 +160,16 @@
     
     /* Prevent mega menu from disappearing when hovering over it */
     .mega-menu:hover,
+    .solutions-mega-menu:hover,
+    .products-mega-menu:hover,
+    .industries-mega-menu:hover,
+    .customers-mega-menu:hover,
+    .resources-mega-menu:hover,
     .dropdown-menu:hover {
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
+        transform: translateX(-50%) translateY(0) !important;
     }
     
     /* Add a small gap tolerance to prevent flickering */
@@ -140,11 +181,18 @@
         right: 0;
         height: 10px;
         z-index: 9998;
+        pointer-events: none;
+    }
+    
+    /* Ensure mega menu stays above other content */
+    .mega-menu * {
+        z-index: inherit;
     }
 
     /* Mega Menu Content Styles */
     .mega-menu-content {
         padding: 48px;
+        position: relative;
     }
 
     .mega-menu-header {
@@ -153,6 +201,8 @@
         color: var(--text-gray);
         margin-bottom: 24px;
         letter-spacing: 1px;
+        position: relative;
+        z-index: 1;
     }
 
     /* Solutions Grid */
@@ -163,6 +213,7 @@
         margin: -48px -48px 0 -48px;
         padding: 48px 48px 32px 48px;
         background: linear-gradient(135deg, #F8F9FA 0%, #EFF3F8 100%);
+        border-radius: 0;
     }
 
     .product-column {
@@ -174,6 +225,9 @@
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
     }
 
     .product-column::before {
@@ -488,6 +542,7 @@
         grid-template-columns: repeat(6, 1fr);
         gap: 20px;
         margin-bottom: 32px;
+        padding: 0;
     }
 
     .industry-card {
@@ -500,6 +555,10 @@
         border: 1px solid transparent;
         position: relative;
         overflow: hidden;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .industry-card::before {
@@ -697,6 +756,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 32px;
+        padding: 0;
     }
 
     .resources-section {
@@ -979,6 +1039,29 @@
 }
 
 /* Responsive breakpoints */
+@media (max-width: 1400px) {
+    .mega-menu {
+        max-width: 95vw !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .mega-menu {
+        max-width: 90vw !important;
+    }
+    
+    .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 32px;
+        margin: -32px -32px 0 -32px;
+    }
+    
+    .mega-menu-content {
+        padding: 32px;
+    }
+}
+
 @media (max-width: 1024px) {
     .solutions-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -995,6 +1078,7 @@
         border-bottom: 1px solid var(--border-gray);
         padding-bottom: 32px;
         margin-bottom: 32px;
+        min-height: auto;
     }
 
     .product-column:last-child {

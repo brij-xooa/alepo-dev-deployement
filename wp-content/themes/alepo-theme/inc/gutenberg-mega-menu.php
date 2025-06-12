@@ -137,8 +137,8 @@ function alepo_generate_solutions_gutenberg_content() {
         
         <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
         <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
-            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}}}} -->
-            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/solutions/network-access-control" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Solution Overview</a></div>
+            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"}}} -->
+            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/solutions/network-access-control" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF">Solution Overview</a></div>
             <!-- /wp:button -->
         </div>
         <!-- /wp:group -->
@@ -201,8 +201,8 @@ function alepo_generate_solutions_gutenberg_content() {
         
         <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
         <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
-            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}}}} -->
-            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/products/digital-bss" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Solution Overview</a></div>
+            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"}}} -->
+            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/products/digital-bss" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF">Solution Overview</a></div>
             <!-- /wp:button -->
         </div>
         <!-- /wp:group -->
@@ -265,8 +265,8 @@ function alepo_generate_solutions_gutenberg_content() {
         
         <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
         <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
-            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}}}} -->
-            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/products/ai-customer-assistant" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Solution Overview</a></div>
+            <!-- wp:button {"className":"product-overview-btn","style":{"border":{"radius":"8px"},"color":{"text":"#0066CC","background":"#F0F7FF"}}} -->
+            <div class="wp-block-button product-overview-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/products/ai-customer-assistant" style="border-radius:8px;color:#0066CC;background-color:#F0F7FF">Solution Overview</a></div>
             <!-- /wp:button -->
         </div>
         <!-- /wp:group -->

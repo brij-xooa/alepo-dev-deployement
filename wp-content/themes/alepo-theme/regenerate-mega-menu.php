@@ -30,7 +30,7 @@ foreach ($existing_posts as $post) {
 // Create the updated content
 alepo_create_default_mega_menu_content();
 
-echo "✅ Mega menu content regenerated with fixed buttons!\n";
+echo "✅ Mega menu content regenerated with fixed buttons and spacing!\n";
 
 // List created posts
 $posts = get_posts(array(

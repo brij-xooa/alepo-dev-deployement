@@ -66,100 +66,111 @@
                                 <span class="dropdown-arrow">▼</span>
                             </a>
                             <div class="mega-menu solutions-mega-menu">
-                                <div class="mega-menu-content">
-                                    <h2 class="mega-menu-header"><?php esc_html_e('OUR SOLUTION PORTFOLIO', 'alepo'); ?></h2>
-                                    <div class="solutions-grid">
-                                        <!-- Network Access Control -->
-                                        <div class="product-column">
-                                            <div class="product-header">
-                                                <span class="product-icon">🛡️</span>
-                                                <h3><?php esc_html_e('NETWORK ACCESS CONTROL', 'alepo'); ?></h3>
+                                <?php
+                                // Load Solutions mega menu content from WordPress admin
+                                $solutions_content = function_exists('alepo_get_mega_menu_content') ? alepo_get_mega_menu_content('solutions') : '';
+                                if (!empty($solutions_content)) {
+                                    echo $solutions_content;
+                                } else {
+                                    // Fallback to hardcoded content if no admin content exists
+                                    ?>
+                                    <div class="mega-menu-content">
+                                        <h2 class="mega-menu-header"><?php esc_html_e('OUR SOLUTION PORTFOLIO', 'alepo'); ?></h2>
+                                        <div class="solutions-grid">
+                                            <!-- Network Access Control -->
+                                            <div class="product-column">
+                                                <div class="product-header">
+                                                    <span class="product-icon">🛡️</span>
+                                                    <h3><?php esc_html_e('NETWORK ACCESS CONTROL', 'alepo'); ?></h3>
+                                                </div>
+                                                <p class="product-tagline"><?php esc_html_e('Secure Every Connection', 'alepo'); ?></p>
+                                                <a href="/solutions/network-access-control" class="product-overview-btn"><?php esc_html_e('Solution Overview', 'alepo'); ?></a>
+                                                
+                                                <h4><?php esc_html_e('Highlights:', 'alepo'); ?></h4>
+                                                <ul class="feature-list">
+                                                    <li><a href="/products/aaa-server" class="feature-link"><?php esc_html_e('AAA Server', 'alepo'); ?></a></li>
+                                                    <li><?php esc_html_e('RADIUS, Diameter, TACACS+', 'alepo'); ?></li>
+                                                    <li><a href="/products/5g-ausf" class="feature-link"><?php esc_html_e('AUSF for 5G Authentication', 'alepo'); ?></a></li>
+                                                    <li><?php esc_html_e('99.999% Uptime', 'alepo'); ?></li>
+                                                </ul>
+                                                
+                                                <div class="stat-card">
+                                                    <div class="stat">36,000 TPS</div>
+                                                    <div class="label"><?php esc_html_e('Transaction Speed', 'alepo'); ?></div>
+                                                </div>
                                             </div>
-                                            <p class="product-tagline"><?php esc_html_e('Secure Every Connection', 'alepo'); ?></p>
-                                            <a href="/solutions/network-access-control" class="product-overview-btn"><?php esc_html_e('Solution Overview', 'alepo'); ?></a>
                                             
-                                            <h4><?php esc_html_e('Highlights:', 'alepo'); ?></h4>
-                                            <ul class="feature-list">
-                                                <li><a href="/products/aaa-server" class="feature-link"><?php esc_html_e('AAA Server', 'alepo'); ?></a></li>
-                                                <li><?php esc_html_e('RADIUS, Diameter, TACACS+', 'alepo'); ?></li>
-                                                <li><a href="/products/5g-ausf" class="feature-link"><?php esc_html_e('AUSF for 5G Authentication', 'alepo'); ?></a></li>
-                                                <li><?php esc_html_e('99.999% Uptime', 'alepo'); ?></li>
-                                            </ul>
+                                            <!-- Digital BSS -->
+                                            <div class="product-column">
+                                                <div class="product-header">
+                                                    <span class="product-icon">💼</span>
+                                                    <h3><?php esc_html_e('DIGITAL BSS', 'alepo'); ?></h3>
+                                                </div>
+                                                <p class="product-tagline"><?php esc_html_e('Complete Business Support System', 'alepo'); ?></p>
+                                                <a href="/products/digital-bss" class="product-overview-btn"><?php esc_html_e('Solution Overview', 'alepo'); ?></a>
+                                                
+                                                <h4><?php esc_html_e('Highlights:', 'alepo'); ?></h4>
+                                                <ul class="feature-list">
+                                                    <li><?php esc_html_e('Convergent Charging', 'alepo'); ?></li>
+                                                    <li><?php esc_html_e('Customer Management', 'alepo'); ?></li>
+                                                    <li><?php esc_html_e('Product Catalog', 'alepo'); ?></li>
+                                                    <li><?php esc_html_e('Real-time Analytics', 'alepo'); ?></li>
+                                                </ul>
+                                                
+                                                <div class="stat-card bss-now">
+                                                    <div class="stat"><?php esc_html_e('BSS Now', 'alepo'); ?></div>
+                                                    <div class="label"><?php esc_html_e('SaaS - Launch in 30 days', 'alepo'); ?></div>
+                                                </div>
+                                            </div>
                                             
-                                            <div class="stat-card">
-                                                <div class="stat">36,000 TPS</div>
-                                                <div class="label"><?php esc_html_e('Transaction Speed', 'alepo'); ?></div>
+                                            <!-- AI-Powered CX -->
+                                            <div class="product-column">
+                                                <div class="product-header">
+                                                    <span class="product-icon">🤖</span>
+                                                    <h3><?php esc_html_e('AI-POWERED CX', 'alepo'); ?></h3>
+                                                </div>
+                                                <p class="product-tagline"><?php esc_html_e('Transform Customer Engagement', 'alepo'); ?></p>
+                                                <a href="/products/ai-customer-assistant" class="product-overview-btn"><?php esc_html_e('Solution Overview', 'alepo'); ?></a>
+                                                
+                                                <h4><?php esc_html_e('Highlights:', 'alepo'); ?></h4>
+                                                <ul class="feature-list">
+                                                    <li><?php esc_html_e('AI Customer Assistant', 'alepo'); ?></li>
+                                                    <li><?php esc_html_e('AI Agent Assistant', 'alepo'); ?></li>
+                                                    <li><?php esc_html_e('Digital Self-Care Suite', 'alepo'); ?></li>
+                                                    <li><?php esc_html_e('100+ Language Support', 'alepo'); ?></li>
+                                                </ul>
+                                                
+                                                <div class="stat-card">
+                                                    <div class="stat">90%</div>
+                                                    <div class="label"><?php esc_html_e('Resolution Rate', 'alepo'); ?></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Quick Links Section -->
+                                            <div class="quick-links-section">
+                                                <h3><span>🚀</span> <?php esc_html_e('Quick Access', 'alepo'); ?></h3>
+                                                <ul>
+                                                    <li><a href="/resources/roi-calculator"><span class="resource-icon">📊</span> <?php esc_html_e('ROI Calculator', 'alepo'); ?></a></li>
+                                                    <li><a href="/request-demo"><span class="resource-icon">📅</span> <?php esc_html_e('Schedule Consultation', 'alepo'); ?></a></li>
+                                                    <li><a href="/resources/solution-finder"><span class="resource-icon">📄</span> <?php esc_html_e('Solution Finder Quiz', 'alepo'); ?></a></li>
+                                                    <li><a href="/security"><span class="resource-icon">🔒</span> <?php esc_html_e('Security', 'alepo'); ?></a></li>
+                                                    <li><a href="/integrations"><span class="resource-icon">🔗</span> <?php esc_html_e('Integrations', 'alepo'); ?></a></li>
+                                                    <li><a href="/contact"><span class="resource-icon">💬</span> <?php esc_html_e('Live Chat', 'alepo'); ?></a></li>
+                                                </ul>
                                             </div>
                                         </div>
-                                        
-                                        <!-- Digital BSS -->
-                                        <div class="product-column">
-                                            <div class="product-header">
-                                                <span class="product-icon">💼</span>
-                                                <h3><?php esc_html_e('DIGITAL BSS', 'alepo'); ?></h3>
+                                        <div class="solutions-mega-footer">
+                                            <div class="other-solutions">
+                                                <span class="other-solutions-label"><?php esc_html_e('Other Solutions:', 'alepo'); ?></span>
+                                                <a href="/solutions/carrier-wifi"><?php esc_html_e('Carrier Wi-Fi', 'alepo'); ?></a>
+                                                <a href="/solutions/pcf"><?php esc_html_e('PCF', 'alepo'); ?></a>
+                                                <a href="/solutions/sdm"><?php esc_html_e('SDM', 'alepo'); ?></a>
                                             </div>
-                                            <p class="product-tagline"><?php esc_html_e('Complete Business Support System', 'alepo'); ?></p>
-                                            <a href="/products/digital-bss" class="product-overview-btn"><?php esc_html_e('Solution Overview', 'alepo'); ?></a>
-                                            
-                                            <h4><?php esc_html_e('Highlights:', 'alepo'); ?></h4>
-                                            <ul class="feature-list">
-                                                <li><?php esc_html_e('Convergent Charging', 'alepo'); ?></li>
-                                                <li><?php esc_html_e('Customer Management', 'alepo'); ?></li>
-                                                <li><?php esc_html_e('Product Catalog', 'alepo'); ?></li>
-                                                <li><?php esc_html_e('Real-time Analytics', 'alepo'); ?></li>
-                                            </ul>
-                                            
-                                            <div class="stat-card bss-now">
-                                                <div class="stat"><?php esc_html_e('BSS Now', 'alepo'); ?></div>
-                                                <div class="label"><?php esc_html_e('SaaS - Launch in 30 days', 'alepo'); ?></div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- AI-Powered CX -->
-                                        <div class="product-column">
-                                            <div class="product-header">
-                                                <span class="product-icon">🤖</span>
-                                                <h3><?php esc_html_e('AI-POWERED CX', 'alepo'); ?></h3>
-                                            </div>
-                                            <p class="product-tagline"><?php esc_html_e('Transform Customer Engagement', 'alepo'); ?></p>
-                                            <a href="/products/ai-customer-assistant" class="product-overview-btn"><?php esc_html_e('Solution Overview', 'alepo'); ?></a>
-                                            
-                                            <h4><?php esc_html_e('Highlights:', 'alepo'); ?></h4>
-                                            <ul class="feature-list">
-                                                <li><?php esc_html_e('AI Customer Assistant', 'alepo'); ?></li>
-                                                <li><?php esc_html_e('AI Agent Assistant', 'alepo'); ?></li>
-                                                <li><?php esc_html_e('Digital Self-Care Suite', 'alepo'); ?></li>
-                                                <li><?php esc_html_e('100+ Language Support', 'alepo'); ?></li>
-                                            </ul>
-                                            
-                                            <div class="stat-card">
-                                                <div class="stat">90%</div>
-                                                <div class="label"><?php esc_html_e('Resolution Rate', 'alepo'); ?></div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Quick Links Section -->
-                                        <div class="quick-links-section">
-                                            <h3><span>🚀</span> <?php esc_html_e('Quick Access', 'alepo'); ?></h3>
-                                            <ul>
-                                                <li><a href="/resources/roi-calculator"><span class="resource-icon">📊</span> <?php esc_html_e('ROI Calculator', 'alepo'); ?></a></li>
-                                                <li><a href="/request-demo"><span class="resource-icon">📅</span> <?php esc_html_e('Schedule Consultation', 'alepo'); ?></a></li>
-                                                <li><a href="/resources/solution-finder"><span class="resource-icon">📄</span> <?php esc_html_e('Solution Finder Quiz', 'alepo'); ?></a></li>
-                                                <li><a href="/security"><span class="resource-icon">🔒</span> <?php esc_html_e('Security', 'alepo'); ?></a></li>
-                                                <li><a href="/integrations"><span class="resource-icon">🔗</span> <?php esc_html_e('Integrations', 'alepo'); ?></a></li>
-                                                <li><a href="/contact"><span class="resource-icon">💬</span> <?php esc_html_e('Live Chat', 'alepo'); ?></a></li>
-                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="solutions-mega-footer">
-                                        <div class="other-solutions">
-                                            <span class="other-solutions-label"><?php esc_html_e('Other Solutions:', 'alepo'); ?></span>
-                                            <a href="/solutions/carrier-wifi"><?php esc_html_e('Carrier Wi-Fi', 'alepo'); ?></a>
-                                            <a href="/solutions/pcf"><?php esc_html_e('PCF', 'alepo'); ?></a>
-                                            <a href="/solutions/sdm"><?php esc_html_e('SDM', 'alepo'); ?></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </li>
 
@@ -170,56 +181,67 @@
                                 <span class="dropdown-arrow">▼</span>
                             </a>
                             <div class="mega-menu industries-mega-menu">
-                                <div class="mega-menu-content">
-                                    <h2 class="mega-menu-header"><?php esc_html_e('SOLUTIONS BY INDUSTRY', 'alepo'); ?></h2>
-                                    <div class="industries-grid">
-                                        <div class="industry-card">
-                                            <div class="industry-icon">📱</div>
-                                            <h4><?php esc_html_e('Mobile Network Operators', 'alepo'); ?></h4>
-                                            <p><?php esc_html_e('Tier-1 to regional MNOs', 'alepo'); ?></p>
-                                            <a href="/industries/mobile-operators"><?php esc_html_e('View MNO Solutions', 'alepo'); ?></a>
+                                <?php
+                                // Load Industries mega menu content from WordPress admin
+                                $industries_content = function_exists('alepo_get_mega_menu_content') ? alepo_get_mega_menu_content('industries') : '';
+                                if (!empty($industries_content)) {
+                                    echo $industries_content;
+                                } else {
+                                    // Fallback to hardcoded content if no admin content exists
+                                    ?>
+                                    <div class="mega-menu-content">
+                                        <h2 class="mega-menu-header"><?php esc_html_e('SOLUTIONS BY INDUSTRY', 'alepo'); ?></h2>
+                                        <div class="industries-grid">
+                                            <div class="industry-card">
+                                                <div class="industry-icon">📱</div>
+                                                <h4><?php esc_html_e('Mobile Network Operators', 'alepo'); ?></h4>
+                                                <p><?php esc_html_e('Tier-1 to regional MNOs', 'alepo'); ?></p>
+                                                <a href="/industries/mobile-operators"><?php esc_html_e('View MNO Solutions', 'alepo'); ?></a>
+                                            </div>
+                                            <div class="industry-card">
+                                                <div class="industry-icon">🌐</div>
+                                                <h4><?php esc_html_e('ISPs', 'alepo'); ?></h4>
+                                                <p><?php esc_html_e('Regional & national providers', 'alepo'); ?></p>
+                                                <a href="/industries/internet-service-providers"><?php esc_html_e('View ISP Solutions', 'alepo'); ?></a>
+                                            </div>
+                                            <div class="industry-card">
+                                                <div class="industry-icon">📡</div>
+                                                <h4><?php esc_html_e('Cable & Broadband', 'alepo'); ?></h4>
+                                                <p><?php esc_html_e('Fiber & cable operators', 'alepo'); ?></p>
+                                                <a href="/industries/cable-broadband"><?php esc_html_e('View Cable Solutions', 'alepo'); ?></a>
+                                            </div>
+                                            <div class="industry-card">
+                                                <div class="industry-icon">🚀</div>
+                                                <h4><?php esc_html_e('MVNOs', 'alepo'); ?></h4>
+                                                <p><?php esc_html_e('Quick launch solutions', 'alepo'); ?></p>
+                                                <a href="/industries/mvno"><?php esc_html_e('View MVNO Solutions', 'alepo'); ?></a>
+                                            </div>
+                                            <div class="industry-card">
+                                                <div class="industry-icon">🎧</div>
+                                                <h4><?php esc_html_e('CCaaS', 'alepo'); ?></h4>
+                                                <p><?php esc_html_e('Enhances service with Voice AI', 'alepo'); ?></p>
+                                                <a href="/industries/ccaas"><?php esc_html_e('View CCaaS Solutions', 'alepo'); ?></a>
+                                            </div>
+                                            <div class="industry-card">
+                                                <div class="industry-icon">🏛️</div>
+                                                <h4><?php esc_html_e('Gov & Smart Cities', 'alepo'); ?></h4>
+                                                <p><?php esc_html_e('Secure citizen services', 'alepo'); ?></p>
+                                                <a href="/industries/government-smart-cities"><?php esc_html_e('View Gov Solutions', 'alepo'); ?></a>
+                                            </div>
                                         </div>
-                                        <div class="industry-card">
-                                            <div class="industry-icon">🌐</div>
-                                            <h4><?php esc_html_e('ISPs', 'alepo'); ?></h4>
-                                            <p><?php esc_html_e('Regional & national providers', 'alepo'); ?></p>
-                                            <a href="/industries/internet-service-providers"><?php esc_html_e('View ISP Solutions', 'alepo'); ?></a>
-                                        </div>
-                                        <div class="industry-card">
-                                            <div class="industry-icon">📡</div>
-                                            <h4><?php esc_html_e('Cable & Broadband', 'alepo'); ?></h4>
-                                            <p><?php esc_html_e('Fiber & cable operators', 'alepo'); ?></p>
-                                            <a href="/industries/cable-broadband"><?php esc_html_e('View Cable Solutions', 'alepo'); ?></a>
-                                        </div>
-                                        <div class="industry-card">
-                                            <div class="industry-icon">🚀</div>
-                                            <h4><?php esc_html_e('MVNOs', 'alepo'); ?></h4>
-                                            <p><?php esc_html_e('Quick launch solutions', 'alepo'); ?></p>
-                                            <a href="/industries/mvno"><?php esc_html_e('View MVNO Solutions', 'alepo'); ?></a>
-                                        </div>
-                                        <div class="industry-card">
-                                            <div class="industry-icon">🎧</div>
-                                            <h4><?php esc_html_e('CCaaS', 'alepo'); ?></h4>
-                                            <p><?php esc_html_e('Enhances service with Voice AI', 'alepo'); ?></p>
-                                            <a href="/industries/ccaas"><?php esc_html_e('View CCaaS Solutions', 'alepo'); ?></a>
-                                        </div>
-                                        <div class="industry-card">
-                                            <div class="industry-icon">🏛️</div>
-                                            <h4><?php esc_html_e('Gov & Smart Cities', 'alepo'); ?></h4>
-                                            <p><?php esc_html_e('Secure citizen services', 'alepo'); ?></p>
-                                            <a href="/industries/government-smart-cities"><?php esc_html_e('View Gov Solutions', 'alepo'); ?></a>
+                                        
+                                        <div class="success-story">
+                                            <div class="story-logo">SaskTel</div>
+                                            <div class="story-content">
+                                                <p class="story-quote"><?php esc_html_e('"Alepo\'s solutions enabled us to reduce operational costs by 40% while improving customer satisfaction to 65% NPS"', 'alepo'); ?></p>
+                                                <p class="story-attribution"><strong><?php esc_html_e('CTO, Major Operator', 'alepo'); ?></strong> • <?php esc_html_e('Saskatchewan, Canada', 'alepo'); ?></p>
+                                                <a href="/customers/case-studies"><?php esc_html_e('Read Full Case Study', 'alepo'); ?> →</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="success-story">
-                                        <div class="story-logo">SaskTel</div>
-                                        <div class="story-content">
-                                            <p class="story-quote"><?php esc_html_e('"Alepo\'s solutions enabled us to reduce operational costs by 40% while improving customer satisfaction to 65% NPS"', 'alepo'); ?></p>
-                                            <p class="story-attribution"><strong><?php esc_html_e('CTO, Major Operator', 'alepo'); ?></strong> • <?php esc_html_e('Saskatchewan, Canada', 'alepo'); ?></p>
-                                            <a href="/customers/case-studies"><?php esc_html_e('Read Full Case Study', 'alepo'); ?> →</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </li>
 
@@ -230,49 +252,60 @@
                                 <span class="dropdown-arrow">▼</span>
                             </a>
                             <div class="mega-menu customers-mega-menu">
-                                <div class="mega-menu-content">
-                                    <h2 class="mega-menu-header"><?php esc_html_e('OUR GLOBAL CUSTOMERS', 'alepo'); ?></h2>
-                                    <div class="customers-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
-                                        <div class="customers-section">
-                                            <h3 style="font-size: 18px; margin-bottom: 24px;"><?php esc_html_e('🌟 Case Studies', 'alepo'); ?></h3>
-                                            <div class="customer-story" style="background: var(--light-gray); padding: 24px; border-radius: 8px; margin-bottom: 16px;">
-                                                <h4 style="color: var(--primary-blue); margin-bottom: 8px;"><?php esc_html_e('Lüm Mobile (SaskTel)', 'alepo'); ?></h4>
-                                                <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 12px;"><?php esc_html_e('AI transformation success: 70% support automation, 25% churn reduction', 'alepo'); ?></p>
-                                                <a href="/customers/case-studies/lum-mobile" style="color: var(--primary-blue); font-weight: 500; text-decoration: none;"><?php esc_html_e('Read Case Study →', 'alepo'); ?></a>
-                                            </div>
-                                            <div class="customer-story" style="background: var(--light-gray); padding: 24px; border-radius: 8px; margin-bottom: 16px;">
-                                                <h4 style="color: var(--primary-blue); margin-bottom: 8px;"><?php esc_html_e('STC', 'alepo'); ?></h4>
-                                                <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 12px;"><?php esc_html_e('BSS modernization: Unified platform for fiber & mobile services', 'alepo'); ?></p>
-                                                <a href="/customers/case-studies/stc" style="color: var(--primary-blue); font-weight: 500; text-decoration: none;"><?php esc_html_e('Read Case Study →', 'alepo'); ?></a>
-                                            </div>
-                                            <div class="customer-story" style="background: var(--light-gray); padding: 24px; border-radius: 8px;">
-                                                <h4 style="color: var(--primary-blue); margin-bottom: 8px;"><?php esc_html_e('Global Tier-1 Operator', 'alepo'); ?></h4>
-                                                <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 12px;"><?php esc_html_e('Zero-downtime AAA migration for 50M+ subscribers', 'alepo'); ?></p>
-                                                <a href="/customers/case-studies/tier1-operator" style="color: var(--primary-blue); font-weight: 500; text-decoration: none;"><?php esc_html_e('Read Case Study →', 'alepo'); ?></a>
-                                            </div>
-                                        </div>
-                                        <div class="customers-right">
-                                            <h3 style="font-size: 18px; margin-bottom: 24px;"><?php esc_html_e('🌍 Client Experience', 'alepo'); ?></h3>
-                                            <div style="background: var(--light-gray); padding: 24px; border-radius: 8px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-                                                <p style="color: var(--text-gray);"><?php esc_html_e('[Interactive World Map]', 'alepo'); ?></p>
-                                            </div>
-                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-                                                <div style="text-align: center;">
-                                                    <div style="font-size: 32px; font-weight: bold; color: var(--primary-blue);">100+</div>
-                                                    <div style="font-size: 14px; color: var(--text-gray);"><?php esc_html_e('Service Providers', 'alepo'); ?></div>
+                                <?php
+                                // Load Customers mega menu content from WordPress admin
+                                $customers_content = function_exists('alepo_get_mega_menu_content') ? alepo_get_mega_menu_content('customers') : '';
+                                if (!empty($customers_content)) {
+                                    echo $customers_content;
+                                } else {
+                                    // Fallback to hardcoded content if no admin content exists
+                                    ?>
+                                    <div class="mega-menu-content">
+                                        <h2 class="mega-menu-header"><?php esc_html_e('OUR GLOBAL CUSTOMERS', 'alepo'); ?></h2>
+                                        <div class="customers-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+                                            <div class="customers-section">
+                                                <h3 style="font-size: 18px; margin-bottom: 24px;"><?php esc_html_e('🌟 Case Studies', 'alepo'); ?></h3>
+                                                <div class="customer-story" style="background: var(--light-gray); padding: 24px; border-radius: 8px; margin-bottom: 16px;">
+                                                    <h4 style="color: var(--primary-blue); margin-bottom: 8px;"><?php esc_html_e('Lüm Mobile (SaskTel)', 'alepo'); ?></h4>
+                                                    <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 12px;"><?php esc_html_e('AI transformation success: 70% support automation, 25% churn reduction', 'alepo'); ?></p>
+                                                    <a href="/customers/case-studies/lum-mobile" style="color: var(--primary-blue); font-weight: 500; text-decoration: none;"><?php esc_html_e('Read Case Study →', 'alepo'); ?></a>
                                                 </div>
-                                                <div style="text-align: center;">
-                                                    <div style="font-size: 32px; font-weight: bold; color: var(--primary-blue);">6</div>
-                                                    <div style="font-size: 14px; color: var(--text-gray);"><?php esc_html_e('Continents', 'alepo'); ?></div>
+                                                <div class="customer-story" style="background: var(--light-gray); padding: 24px; border-radius: 8px; margin-bottom: 16px;">
+                                                    <h4 style="color: var(--primary-blue); margin-bottom: 8px;"><?php esc_html_e('STC', 'alepo'); ?></h4>
+                                                    <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 12px;"><?php esc_html_e('BSS modernization: Unified platform for fiber & mobile services', 'alepo'); ?></p>
+                                                    <a href="/customers/case-studies/stc" style="color: var(--primary-blue); font-weight: 500; text-decoration: none;"><?php esc_html_e('Read Case Study →', 'alepo'); ?></a>
+                                                </div>
+                                                <div class="customer-story" style="background: var(--light-gray); padding: 24px; border-radius: 8px;">
+                                                    <h4 style="color: var(--primary-blue); margin-bottom: 8px;"><?php esc_html_e('Global Tier-1 Operator', 'alepo'); ?></h4>
+                                                    <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 12px;"><?php esc_html_e('Zero-downtime AAA migration for 50M+ subscribers', 'alepo'); ?></p>
+                                                    <a href="/customers/case-studies/tier1-operator" style="color: var(--primary-blue); font-weight: 500; text-decoration: none;"><?php esc_html_e('Read Case Study →', 'alepo'); ?></a>
                                                 </div>
                                             </div>
-                                            <p style="font-size: 14px; color: var(--text-gray);"><?php esc_html_e('Trusted by leading operators worldwide including STC, Digicel, Orange, Zain, SaskTel, and many more.', 'alepo'); ?></p>
+                                            <div class="customers-right">
+                                                <h3 style="font-size: 18px; margin-bottom: 24px;"><?php esc_html_e('🌍 Client Experience', 'alepo'); ?></h3>
+                                                <div style="background: var(--light-gray); padding: 24px; border-radius: 8px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                                                    <p style="color: var(--text-gray);"><?php esc_html_e('[Interactive World Map]', 'alepo'); ?></p>
+                                                </div>
+                                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+                                                    <div style="text-align: center;">
+                                                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-blue);">100+</div>
+                                                        <div style="font-size: 14px; color: var(--text-gray);"><?php esc_html_e('Service Providers', 'alepo'); ?></div>
+                                                    </div>
+                                                    <div style="text-align: center;">
+                                                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-blue);">6</div>
+                                                        <div style="font-size: 14px; color: var(--text-gray);"><?php esc_html_e('Continents', 'alepo'); ?></div>
+                                                    </div>
+                                                </div>
+                                                <p style="font-size: 14px; color: var(--text-gray);"><?php esc_html_e('Trusted by leading operators worldwide including STC, Digicel, Orange, Zain, SaskTel, and many more.', 'alepo'); ?></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="mega-menu-footer">
-                                    <?php esc_html_e('🛠️ Customer Support: Access our global technical assistance center →', 'alepo'); ?> <a href="/support"><?php esc_html_e('Get Support', 'alepo'); ?></a>
-                                </div>
+                                    <div class="mega-menu-footer">
+                                        <?php esc_html_e('🛠️ Customer Support: Access our global technical assistance center →', 'alepo'); ?> <a href="/support"><?php esc_html_e('Get Support', 'alepo'); ?></a>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </li>
 
@@ -283,52 +316,63 @@
                                 <span class="dropdown-arrow">▼</span>
                             </a>
                             <div class="mega-menu resources-mega-menu">
-                                <div class="mega-menu-content">
-                                    <h2 class="mega-menu-header"><?php esc_html_e('EXPLORE OUR RESOURCES', 'alepo'); ?></h2>
-                                    <div class="resources-grid">
-                                        <div class="resources-section clean-nav">
-                                            <ul class="clean-nav-list">
-                                                <li><a href="/resources"><?php esc_html_e('Resource Library', 'alepo'); ?></a></li>
-                                                <li><a href="/resources/blog"><?php esc_html_e('Blog', 'alepo'); ?></a></li>
-                                                <li><a href="/resources/roi-calculator"><?php esc_html_e('ROI Tools', 'alepo'); ?></a></li>
-                                                <li><a href="/events"><?php esc_html_e('Events', 'alepo'); ?></a></li>
-                                                <li><a href="/news"><?php esc_html_e('News', 'alepo'); ?></a></li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="resources-section featured-blog">
-                                            <div class="featured-blog-post">
-                                                <div class="featured-badge"><?php esc_html_e('FEATURED', 'alepo'); ?></div>
-                                                <div class="blog-image-placeholder"><?php esc_html_e('[Blog Image]', 'alepo'); ?></div>
-                                                <div class="blog-content">
-                                                    <h4><?php esc_html_e('How AI is Revolutionizing Telecom Customer Service', 'alepo'); ?></h4>
-                                                    <p><?php esc_html_e('5 min read • Dec 2024', 'alepo'); ?></p>
-                                                </div>
+                                <?php
+                                // Load Resources mega menu content from WordPress admin
+                                $resources_content = function_exists('alepo_get_mega_menu_content') ? alepo_get_mega_menu_content('resources') : '';
+                                if (!empty($resources_content)) {
+                                    echo $resources_content;
+                                } else {
+                                    // Fallback to hardcoded content if no admin content exists
+                                    ?>
+                                    <div class="mega-menu-content">
+                                        <h2 class="mega-menu-header"><?php esc_html_e('EXPLORE OUR RESOURCES', 'alepo'); ?></h2>
+                                        <div class="resources-grid">
+                                            <div class="resources-section clean-nav">
+                                                <ul class="clean-nav-list">
+                                                    <li><a href="/resources"><?php esc_html_e('Resource Library', 'alepo'); ?></a></li>
+                                                    <li><a href="/resources/blog"><?php esc_html_e('Blog', 'alepo'); ?></a></li>
+                                                    <li><a href="/resources/roi-calculator"><?php esc_html_e('ROI Tools', 'alepo'); ?></a></li>
+                                                    <li><a href="/events"><?php esc_html_e('Events', 'alepo'); ?></a></li>
+                                                    <li><a href="/news"><?php esc_html_e('News', 'alepo'); ?></a></li>
+                                                </ul>
                                             </div>
                                             
-                                            <div class="featured-blog-post">
-                                                <div class="featured-badge"><?php esc_html_e('FEATURED', 'alepo'); ?></div>
-                                                <div class="blog-image-placeholder"><?php esc_html_e('[ROI Tool Image]', 'alepo'); ?></div>
-                                                <div class="blog-content">
-                                                    <h4><?php esc_html_e('Featured ROI tool and Description here', 'alepo'); ?></h4>
-                                                    <p><?php esc_html_e('Interactive calculator • Nov 2024', 'alepo'); ?></p>
+                                            <div class="resources-section featured-blog">
+                                                <div class="featured-blog-post">
+                                                    <div class="featured-badge"><?php esc_html_e('FEATURED', 'alepo'); ?></div>
+                                                    <div class="blog-image-placeholder"><?php esc_html_e('[Blog Image]', 'alepo'); ?></div>
+                                                    <div class="blog-content">
+                                                        <h4><?php esc_html_e('How AI is Revolutionizing Telecom Customer Service', 'alepo'); ?></h4>
+                                                        <p><?php esc_html_e('5 min read • Dec 2024', 'alepo'); ?></p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="featured-blog-post">
+                                                    <div class="featured-badge"><?php esc_html_e('FEATURED', 'alepo'); ?></div>
+                                                    <div class="blog-image-placeholder"><?php esc_html_e('[ROI Tool Image]', 'alepo'); ?></div>
+                                                    <div class="blog-content">
+                                                        <h4><?php esc_html_e('Featured ROI tool and Description here', 'alepo'); ?></h4>
+                                                        <p><?php esc_html_e('Interactive calculator • Nov 2024', 'alepo'); ?></p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="resources-mega-footer">
-                                    <div class="newsletter-signup">
-                                        <div class="newsletter-content">
-                                            <h4><?php esc_html_e('📧 Stay Updated', 'alepo'); ?></h4>
-                                            <p><?php esc_html_e('Get the latest telco insights delivered to your inbox', 'alepo'); ?></p>
-                                        </div>
-                                        <div class="newsletter-form">
-                                            <input type="email" placeholder="<?php esc_attr_e('Enter your email address', 'alepo'); ?>" class="email-input">
-                                            <button class="subscribe-btn"><?php esc_html_e('Subscribe', 'alepo'); ?></button>
+                                    <div class="resources-mega-footer">
+                                        <div class="newsletter-signup">
+                                            <div class="newsletter-content">
+                                                <h4><?php esc_html_e('📧 Stay Updated', 'alepo'); ?></h4>
+                                                <p><?php esc_html_e('Get the latest telco insights delivered to your inbox', 'alepo'); ?></p>
+                                            </div>
+                                            <div class="newsletter-form">
+                                                <input type="email" placeholder="<?php esc_attr_e('Enter your email address', 'alepo'); ?>" class="email-input">
+                                                <button class="subscribe-btn"><?php esc_html_e('Subscribe', 'alepo'); ?></button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </li>
 

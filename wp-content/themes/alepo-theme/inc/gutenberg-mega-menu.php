@@ -360,18 +360,437 @@ function alepo_generate_solutions_gutenberg_content() {
  * Generate other mega menu content functions
  */
 function alepo_generate_industries_gutenberg_content() {
-    // Similar Gutenberg block structure for Industries mega menu
-    return '<!-- Industries mega menu content in Gutenberg blocks -->';
+    return '<!-- wp:group {"className":"mega-menu-header","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--50)","bottom":"var(--wp--preset--spacing--30)"}}}} -->
+<div class="wp-block-group mega-menu-header" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
+    <!-- wp:heading {"level":2,"className":"mega-menu-title","style":{"typography":{"fontSize":"0.875rem","textTransform":"uppercase","letterSpacing":"0.05em"},"color":{"text":"#666666"}}} -->
+    <h2 class="wp-block-heading mega-menu-title has-text-color" style="color:#666666;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em">SOLUTIONS BY INDUSTRY</h2>
+    <!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:columns {"className":"industries-grid","style":{"spacing":{"blockGap":{"top":"var(--wp--preset--spacing--50)","left":"var(--wp--preset--spacing--50)"}}}} -->
+<div class="wp-block-columns industries-grid">
+    <!-- wp:column {"className":"industry-card"} -->
+    <div class="wp-block-column industry-card">
+        <!-- wp:paragraph {"className":"industry-icon","style":{"typography":{"fontSize":"3rem"}}} -->
+        <p class="industry-icon" style="font-size:3rem">📱</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+        <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:600">Mobile Network Operators</h4>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#666666"}}} -->
+        <p class="has-text-color" style="color:#666666;font-size:0.75rem">Tier-1 to regional MNOs</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:paragraph -->
+        <p><a href="/industries/mobile-operators">View MNO Solutions</a></p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+    
+    <!-- wp:column {"className":"industry-card"} -->
+    <div class="wp-block-column industry-card">
+        <!-- wp:paragraph {"className":"industry-icon","style":{"typography":{"fontSize":"3rem"}}} -->
+        <p class="industry-icon" style="font-size:3rem">🌐</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+        <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:600">ISPs</h4>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#666666"}}} -->
+        <p class="has-text-color" style="color:#666666;font-size:0.75rem">Regional & national providers</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:paragraph -->
+        <p><a href="/industries/internet-service-providers">View ISP Solutions</a></p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+    
+    <!-- wp:column {"className":"industry-card"} -->
+    <div class="wp-block-column industry-card">
+        <!-- wp:paragraph {"className":"industry-icon","style":{"typography":{"fontSize":"3rem"}}} -->
+        <p class="industry-icon" style="font-size:3rem">📡</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+        <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:600">Cable & Broadband</h4>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#666666"}}} -->
+        <p class="has-text-color" style="color:#666666;font-size:0.75rem">Fiber & cable operators</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:paragraph -->
+        <p><a href="/industries/cable-broadband">View Cable Solutions</a></p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+    
+    <!-- wp:column {"className":"industry-card"} -->
+    <div class="wp-block-column industry-card">
+        <!-- wp:paragraph {"className":"industry-icon","style":{"typography":{"fontSize":"3rem"}}} -->
+        <p class="industry-icon" style="font-size:3rem">🚀</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+        <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:600">MVNOs</h4>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#666666"}}} -->
+        <p class="has-text-color" style="color:#666666;font-size:0.75rem">Quick launch solutions</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:paragraph -->
+        <p><a href="/industries/mvno">View MVNO Solutions</a></p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+    
+    <!-- wp:column {"className":"industry-card"} -->
+    <div class="wp-block-column industry-card">
+        <!-- wp:paragraph {"className":"industry-icon","style":{"typography":{"fontSize":"3rem"}}} -->
+        <p class="industry-icon" style="font-size:3rem">🎧</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+        <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:600">CCaaS</h4>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#666666"}}} -->
+        <p class="has-text-color" style="color:#666666;font-size:0.75rem">Enhances service with Voice AI</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:paragraph -->
+        <p><a href="/industries/ccaas">View CCaaS Solutions</a></p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+    
+    <!-- wp:column {"className":"industry-card"} -->
+    <div class="wp-block-column industry-card">
+        <!-- wp:paragraph {"className":"industry-icon","style":{"typography":{"fontSize":"3rem"}}} -->
+        <p class="industry-icon" style="font-size:3rem">🏛️</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+        <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:600">Gov & Smart Cities</h4>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#666666"}}} -->
+        <p class="has-text-color" style="color:#666666;font-size:0.75rem">Secure citizen services</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:paragraph -->
+        <p><a href="/industries/government-smart-cities">View Gov Solutions</a></p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+<!-- wp:group {"className":"success-story","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--50)","bottom":"var(--wp--preset--spacing--50)","left":"var(--wp--preset--spacing--50)","right":"var(--wp--preset--spacing--50)"},"margin":{"top":"var(--wp--preset--spacing--50)"}},"color":{"background":"#F5F7FA"}}} -->
+<div class="wp-block-group success-story has-background" style="background-color:#F5F7FA;margin-top:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+    <!-- wp:columns -->
+    <div class="wp-block-columns">
+        <!-- wp:column {"width":"140px"} -->
+        <div class="wp-block-column" style="flex-basis:140px">
+            <!-- wp:group {"className":"story-logo","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--40)","bottom":"var(--wp--preset--spacing--40)","left":"var(--wp--preset--spacing--40)","right":"var(--wp--preset--spacing--40)"}},"color":{"background":"#ffffff"},"border":{"radius":"12px"}}} -->
+            <div class="wp-block-group story-logo has-background" style="border-radius:12px;background-color:#ffffff;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"},"color":{"text":"#0066CC"}}} -->
+                <p class="has-text-align-center has-text-color" style="color:#0066CC;font-size:1.5rem;font-weight:700">SaskTel</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:column -->
+        
+        <!-- wp:column -->
+        <div class="wp-block-column">
+            <!-- wp:paragraph {"className":"story-quote","style":{"typography":{"fontStyle":"italic","fontSize":"1rem","fontWeight":"500"},"color":{"text":"#2C3E50"}}} -->
+            <p class="story-quote has-text-color" style="color:#2C3E50;font-size:1rem;font-style:italic;font-weight:500">"Alepo\'s solutions enabled us to reduce operational costs by 40% while improving customer satisfaction to 65% NPS"</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:paragraph {"className":"story-attribution","style":{"typography":{"fontSize":"0.875rem"},"color":{"text":"#666666"}}} -->
+            <p class="story-attribution has-text-color" style="color:#666666;font-size:0.875rem"><strong>CTO, Major Operator</strong> • Saskatchewan, Canada</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:button {"className":"story-cta","style":{"color":{"text":"#0066CC","background":"#ffffff"},"border":{"radius":"6px"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}}}} -->
+            <div class="wp-block-button story-cta"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="/case-studies/sasktel" style="border-radius:6px;color:#0066CC;background-color:#ffffff;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Read Full Case Study →</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+</div>
+<!-- /wp:group -->';
 }
 
 function alepo_generate_resources_gutenberg_content() {
-    // Similar Gutenberg block structure for Resources mega menu
-    return '<!-- Resources mega menu content in Gutenberg blocks -->';
+    return '<!-- wp:group {"className":"mega-menu-header","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--50)","bottom":"var(--wp--preset--spacing--30)"}}}} -->
+<div class="wp-block-group mega-menu-header" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
+    <!-- wp:heading {"level":2,"className":"mega-menu-title","style":{"typography":{"fontSize":"0.875rem","textTransform":"uppercase","letterSpacing":"0.05em"},"color":{"text":"#666666"}}} -->
+    <h2 class="wp-block-heading mega-menu-title has-text-color" style="color:#666666;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em">EXPLORE OUR RESOURCES</h2>
+    <!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:columns {"className":"resources-grid","style":{"spacing":{"blockGap":{"top":"var(--wp--preset--spacing--50)","left":"var(--wp--preset--spacing--50)"}}}} -->
+<div class="wp-block-columns resources-grid">
+    <!-- wp:column {"className":"resources-section clean-nav"} -->
+    <div class="wp-block-column resources-section clean-nav">
+        <!-- wp:list {"className":"clean-nav-list","style":{"typography":{"fontSize":"0.875rem"},"spacing":{"padding":{"left":"0"}}}} -->
+        <ul class="wp-block-list clean-nav-list" style="padding-left:0;font-size:0.875rem">
+            <!-- wp:list-item -->
+            <li><a href="/resources">Resource Library</a></li>
+            <!-- /wp:list-item -->
+            
+            <!-- wp:list-item -->
+            <li><a href="/resources/blog">Blog</a></li>
+            <!-- /wp:list-item -->
+            
+            <!-- wp:list-item -->
+            <li><a href="/resources/roi-calculator">ROI Tools</a></li>
+            <!-- /wp:list-item -->
+            
+            <!-- wp:list-item -->
+            <li><a href="/events">Events</a></li>
+            <!-- /wp:list-item -->
+            
+            <!-- wp:list-item -->
+            <li><a href="/news">News</a></li>
+            <!-- /wp:list-item -->
+        </ul>
+        <!-- /wp:list -->
+    </div>
+    <!-- /wp:column -->
+    
+    <!-- wp:column {"className":"resources-section featured-blog"} -->
+    <div class="wp-block-column resources-section featured-blog">
+        <!-- wp:group {"className":"featured-blog-post","style":{"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}},"border":{"radius":"8px"},"color":{"background":"#F8F9FA"}}} -->
+        <div class="wp-block-group featured-blog-post has-background" style="border-radius:8px;background-color:#F8F9FA;margin-bottom:var(--wp--preset--spacing--40)">
+            <!-- wp:paragraph {"className":"featured-badge","style":{"typography":{"fontSize":"0.75rem","fontWeight":"600"},"color":{"text":"#0066CC","background":"#E3F2FD"},"spacing":{"padding":{"top":"4px","bottom":"4px","left":"8px","right":"8px"}},"border":{"radius":"4px"}}} -->
+            <p class="featured-badge has-text-color has-background" style="border-radius:4px;color:#0066CC;background-color:#E3F2FD;padding-top:4px;padding-right:8px;padding-bottom:4px;padding-left:8px;font-size:0.75rem;font-weight:600">FEATURED</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:group {"className":"blog-image-placeholder","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--50)","bottom":"var(--wp--preset--spacing--50)"}},"color":{"background":"#E8F2FF"},"border":{"radius":"6px"}}} -->
+            <div class="wp-block-group blog-image-placeholder has-background" style="border-radius:6px;background-color:#E8F2FF;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+                <!-- wp:paragraph {"align":"center","style":{"color":{"text":"#666666"}}} -->
+                <p class="has-text-align-center has-text-color" style="color:#666666">[Blog Image]</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
+            
+            <!-- wp:group {"className":"blog-content","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--30)","bottom":"var(--wp--preset--spacing--30)","left":"var(--wp--preset--spacing--30)","right":"var(--wp--preset--spacing--30)"}}}} -->
+            <div class="wp-block-group blog-content" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+                <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+                <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:600">How AI is Revolutionizing Telecom Customer Service</h4>
+                <!-- /wp:heading -->
+                
+                <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#666666"}}} -->
+                <p class="has-text-color" style="color:#666666;font-size:0.75rem">5 min read • Dec 2024</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+        
+        <!-- wp:group {"className":"featured-blog-post","style":{"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}},"border":{"radius":"8px"},"color":{"background":"#F8F9FA"}}} -->
+        <div class="wp-block-group featured-blog-post has-background" style="border-radius:8px;background-color:#F8F9FA;margin-bottom:var(--wp--preset--spacing--40)">
+            <!-- wp:paragraph {"className":"featured-badge","style":{"typography":{"fontSize":"0.75rem","fontWeight":"600"},"color":{"text":"#0066CC","background":"#E3F2FD"},"spacing":{"padding":{"top":"4px","bottom":"4px","left":"8px","right":"8px"}},"border":{"radius":"4px"}}} -->
+            <p class="featured-badge has-text-color has-background" style="border-radius:4px;color:#0066CC;background-color:#E3F2FD;padding-top:4px;padding-right:8px;padding-bottom:4px;padding-left:8px;font-size:0.75rem;font-weight:600">FEATURED</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:group {"className":"blog-image-placeholder","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--50)","bottom":"var(--wp--preset--spacing--50)"}},"color":{"background":"#E8F2FF"},"border":{"radius":"6px"}}} -->
+            <div class="wp-block-group blog-image-placeholder has-background" style="border-radius:6px;background-color:#E8F2FF;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+                <!-- wp:paragraph {"align":"center","style":{"color":{"text":"#666666"}}} -->
+                <p class="has-text-align-center has-text-color" style="color:#666666">[ROI Tool Image]</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
+            
+            <!-- wp:group {"className":"blog-content","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--30)","bottom":"var(--wp--preset--spacing--30)","left":"var(--wp--preset--spacing--30)","right":"var(--wp--preset--spacing--30)"}}}} -->
+            <div class="wp-block-group blog-content" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+                <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+                <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:600">Featured ROI tool and Description here</h4>
+                <!-- /wp:heading -->
+                
+                <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#666666"}}} -->
+                <p class="has-text-color" style="color:#666666;font-size:0.75rem">Interactive calculator • Nov 2024</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+<!-- wp:group {"className":"resources-mega-footer","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--50)","bottom":"var(--wp--preset--spacing--50)","left":"var(--wp--preset--spacing--50)","right":"var(--wp--preset--spacing--50)"}},"color":{"background":"#E8F2FF"}}} -->
+<div class="wp-block-group resources-mega-footer has-background" style="background-color:#E8F2FF;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+    <!-- wp:columns -->
+    <div class="wp-block-columns">
+        <!-- wp:column {"width":"60%"} -->
+        <div class="wp-block-column" style="flex-basis:60%">
+            <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"1rem","fontWeight":"600"},"color":{"text":"#2C3E50"}}} -->
+            <h4 class="wp-block-heading has-text-color" style="color:#2C3E50;font-size:1rem;font-weight:600">📧 Stay Updated</h4>
+            <!-- /wp:heading -->
+            
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem"},"color":{"text":"#666666"}}} -->
+            <p class="has-text-color" style="color:#666666;font-size:0.875rem">Get the latest telco insights delivered to your inbox</p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:column -->
+        
+        <!-- wp:column {"width":"40%"} -->
+        <div class="wp-block-column" style="flex-basis:40%">
+            <!-- wp:group {"className":"newsletter-form","style":{"spacing":{"blockGap":"var(--wp--preset--spacing--20)"}}} -->
+            <div class="wp-block-group newsletter-form">
+                <!-- wp:html -->
+                <input type="email" placeholder="Enter your email address" class="email-input" style="width: 100%; padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 8px;">
+                <!-- /wp:html -->
+                
+                <!-- wp:button {"className":"subscribe-btn","style":{"color":{"text":"#ffffff","background":"#0066CC"},"border":{"radius":"4px"},"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}}}} -->
+                <div class="wp-block-button subscribe-btn"><a class="wp-block-button__link has-text-color has-background wp-element-button" style="border-radius:4px;color:#ffffff;background-color:#0066CC;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Subscribe</a></div>
+                <!-- /wp:button -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+</div>
+<!-- /wp:group -->';
 }
 
 function alepo_generate_customers_gutenberg_content() {
-    // Similar Gutenberg block structure for Customers mega menu
-    return '<!-- Customers mega menu content in Gutenberg blocks -->';
+    return '<!-- wp:group {"className":"mega-menu-header","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--50)","bottom":"var(--wp--preset--spacing--30)"}}}} -->
+<div class="wp-block-group mega-menu-header" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
+    <!-- wp:heading {"level":2,"className":"mega-menu-title","style":{"typography":{"fontSize":"0.875rem","textTransform":"uppercase","letterSpacing":"0.05em"},"color":{"text":"#666666"}}} -->
+    <h2 class="wp-block-heading mega-menu-title has-text-color" style="color:#666666;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em">OUR GLOBAL CUSTOMERS</h2>
+    <!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:columns {"className":"customers-grid","style":{"spacing":{"blockGap":{"top":"var(--wp--preset--spacing--50)","left":"var(--wp--preset--spacing--50)"}}}} -->
+<div class="wp-block-columns customers-grid">
+    <!-- wp:column {"className":"customers-section"} -->
+    <div class="wp-block-column customers-section">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem","fontWeight":"600"},"color":{"text":"#2C3E50"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
+        <h3 class="wp-block-heading has-text-color" style="color:#2C3E50;margin-bottom:var(--wp--preset--spacing--40);font-size:1.125rem;font-weight:600">🌟 Case Studies</h3>
+        <!-- /wp:heading -->
+        
+        <!-- wp:group {"className":"customer-story","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--40)","bottom":"var(--wp--preset--spacing--40)","left":"var(--wp--preset--spacing--40)","right":"var(--wp--preset--spacing--40)"},"margin":{"bottom":"var(--wp--preset--spacing--30)"}},"color":{"background":"#F8F9FA"},"border":{"radius":"8px"}}} -->
+        <div class="wp-block-group customer-story has-background" style="border-radius:8px;background-color:#F8F9FA;margin-bottom:var(--wp--preset--spacing--30);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+            <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#0066CC"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
+            <h4 class="wp-block-heading has-text-color" style="color:#0066CC;margin-bottom:var(--wp--preset--spacing--20);font-size:0.875rem;font-weight:600">Lüm Mobile (SaskTel)</h4>
+            <!-- /wp:heading -->
+            
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem"},"color":{"text":"#666666"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
+            <p class="has-text-color" style="color:#666666;margin-bottom:var(--wp--preset--spacing--20);font-size:0.8125rem">AI transformation success: 70% support automation, 25% churn reduction</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem","fontWeight":"500"}}} -->
+            <p style="font-size:0.8125rem;font-weight:500"><a href="/customers/case-studies/lum-mobile" style="color:#0066CC;text-decoration:none">Read Case Study →</a></p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
+        
+        <!-- wp:group {"className":"customer-story","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--40)","bottom":"var(--wp--preset--spacing--40)","left":"var(--wp--preset--spacing--40)","right":"var(--wp--preset--spacing--40)"},"margin":{"bottom":"var(--wp--preset--spacing--30)"}},"color":{"background":"#F8F9FA"},"border":{"radius":"8px"}}} -->
+        <div class="wp-block-group customer-story has-background" style="border-radius:8px;background-color:#F8F9FA;margin-bottom:var(--wp--preset--spacing--30);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+            <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#0066CC"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
+            <h4 class="wp-block-heading has-text-color" style="color:#0066CC;margin-bottom:var(--wp--preset--spacing--20);font-size:0.875rem;font-weight:600">STC</h4>
+            <!-- /wp:heading -->
+            
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem"},"color":{"text":"#666666"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
+            <p class="has-text-color" style="color:#666666;margin-bottom:var(--wp--preset--spacing--20);font-size:0.8125rem">BSS modernization: Unified platform for fiber & mobile services</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem","fontWeight":"500"}}} -->
+            <p style="font-size:0.8125rem;font-weight:500"><a href="/customers/case-studies/stc" style="color:#0066CC;text-decoration:none">Read Case Study →</a></p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
+        
+        <!-- wp:group {"className":"customer-story","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--40)","bottom":"var(--wp--preset--spacing--40)","left":"var(--wp--preset--spacing--40)","right":"var(--wp--preset--spacing--40)"}},"color":{"background":"#F8F9FA"},"border":{"radius":"8px"}}} -->
+        <div class="wp-block-group customer-story has-background" style="border-radius:8px;background-color:#F8F9FA;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+            <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.875rem","fontWeight":"600"},"color":{"text":"#0066CC"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
+            <h4 class="wp-block-heading has-text-color" style="color:#0066CC;margin-bottom:var(--wp--preset--spacing--20);font-size:0.875rem;font-weight:600">Global Tier-1 Operator</h4>
+            <!-- /wp:heading -->
+            
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem"},"color":{"text":"#666666"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--20)"}}}} -->
+            <p class="has-text-color" style="color:#666666;margin-bottom:var(--wp--preset--spacing--20);font-size:0.8125rem">Zero-downtime AAA migration for 50M+ subscribers</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem","fontWeight":"500"}}} -->
+            <p style="font-size:0.8125rem;font-weight:500"><a href="/customers/case-studies/tier1-operator" style="color:#0066CC;text-decoration:none">Read Case Study →</a></p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:column -->
+    
+    <!-- wp:column {"className":"customers-right"} -->
+    <div class="wp-block-column customers-right">
+        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.125rem","fontWeight":"600"},"color":{"text":"#2C3E50"},"spacing":{"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
+        <h3 class="wp-block-heading has-text-color" style="color:#2C3E50;margin-bottom:var(--wp--preset--spacing--40);font-size:1.125rem;font-weight:600">🌍 Client Experience</h3>
+        <!-- /wp:heading -->
+        
+        <!-- wp:group {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--80)","bottom":"var(--wp--preset--spacing--80)","left":"var(--wp--preset--spacing--40)","right":"var(--wp--preset--spacing--40)"},"margin":{"bottom":"var(--wp--preset--spacing--40)"}},"color":{"background":"#F8F9FA"},"border":{"radius":"8px"}}} -->
+        <div class="wp-block-group has-background" style="border-radius:8px;background-color:#F8F9FA;margin-bottom:var(--wp--preset--spacing--40);padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--40)">
+            <!-- wp:paragraph {"align":"center","style":{"color":{"text":"#666666"}}} -->
+            <p class="has-text-align-center has-text-color" style="color:#666666">[Interactive World Map]</p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
+        
+        <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var(--wp--preset--spacing--30)","left":"var(--wp--preset--spacing--30)"},"margin":{"bottom":"var(--wp--preset--spacing--40)"}}}} -->
+        <div class="wp-block-columns" style="margin-bottom:var(--wp--preset--spacing--40)">
+            <!-- wp:column -->
+            <div class="wp-block-column">
+                <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"2rem","fontWeight":"700"},"color":{"text":"#0066CC"}}} -->
+                <p class="has-text-align-center has-text-color" style="color:#0066CC;font-size:2rem;font-weight:700">100+</p>
+                <!-- /wp:paragraph -->
+                
+                <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.875rem"},"color":{"text":"#666666"}}} -->
+                <p class="has-text-align-center has-text-color" style="color:#666666;font-size:0.875rem">Service Providers</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:column -->
+            
+            <!-- wp:column -->
+            <div class="wp-block-column">
+                <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"2rem","fontWeight":"700"},"color":{"text":"#0066CC"}}} -->
+                <p class="has-text-align-center has-text-color" style="color:#0066CC;font-size:2rem;font-weight:700">6</p>
+                <!-- /wp:paragraph -->
+                
+                <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.875rem"},"color":{"text":"#666666"}}} -->
+                <p class="has-text-align-center has-text-color" style="color:#666666;font-size:0.875rem">Continents</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:column -->
+        </div>
+        <!-- /wp:columns -->
+        
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem"},"color":{"text":"#666666"}}} -->
+        <p class="has-text-color" style="color:#666666;font-size:0.875rem">Trusted by leading operators worldwide including STC, Digicel, Orange, Zain, SaskTel, and many more.</p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+<!-- wp:group {"className":"mega-menu-footer","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--40)","bottom":"var(--wp--preset--spacing--40)","left":"var(--wp--preset--spacing--50)","right":"var(--wp--preset--spacing--50)"}},"color":{"background":"#E8F2FF"}}} -->
+<div class="wp-block-group mega-menu-footer has-background" style="background-color:#E8F2FF;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--50)">
+    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem","fontWeight":"500"},"color":{"text":"#2C3E50"}}} -->
+    <p class="has-text-color" style="color:#2C3E50;font-size:0.875rem;font-weight:500">🛠️ Customer Support: Access our global technical assistance center → <a href="/support" style="color:#0066CC;text-decoration:none">Get Support</a></p>
+    <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->';
 }
 
 /**
@@ -395,3 +814,21 @@ function alepo_get_mega_menu_content($menu_type) {
 
 // Auto-create mega menu content on theme activation
 add_action('after_switch_theme', 'alepo_create_default_mega_menu_content');
+
+/**
+ * Add admin notice about mega menu functionality
+ */
+function alepo_mega_menu_admin_notice() {
+    $posts = get_posts(array(
+        'post_type' => 'mega_menu_content',
+        'numberposts' => 1,
+        'post_status' => 'any'
+    ));
+    
+    if (!empty($posts)) {
+        echo '<div class="notice notice-info is-dismissible">';
+        echo '<p><strong>Alepo Mega Menus:</strong> You can now edit your website\'s mega menu content in the <a href="' . admin_url('edit.php?post_type=mega_menu_content') . '">Mega Menus</a> section. Each menu dropdown is now fully editable using the WordPress block editor!</p>';
+        echo '</div>';
+    }
+}
+add_action('admin_notices', 'alepo_mega_menu_admin_notice');

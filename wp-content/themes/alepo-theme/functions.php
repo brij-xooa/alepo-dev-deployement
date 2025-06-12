@@ -1691,6 +1691,22 @@ if (file_exists(get_template_directory() . '/inc/mega-menu-walker.php')) {
 }
 if (file_exists(get_template_directory() . '/inc/gutenberg-mega-menu.php')) {
     require get_template_directory() . '/inc/gutenberg-mega-menu.php';
+    
+    // Create mega menu content on theme activation
+    add_action('after_switch_theme', 'alepo_create_default_mega_menu_content');
+    
+    // Also create on admin_init if not exists (for existing installations)
+    add_action('admin_init', function() {
+        $existing = get_posts(array(
+            'post_type' => 'mega_menu_content',
+            'numberposts' => 1,
+            'post_status' => 'any'
+        ));
+        
+        if (empty($existing)) {
+            alepo_create_default_mega_menu_content();
+        }
+    });
 }
 // Customizer functions are already in this file, so we don't need to include customizer.php
 // require get_template_directory() . '/inc/customizer.php';

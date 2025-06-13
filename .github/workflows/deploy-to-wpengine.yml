@@ -18,18 +18,28 @@ jobs:
         # Create SSH directory
         mkdir -p $HOME/.ssh
         
-        # Add WP Engine SSH key
-        echo "${{ secrets.WPE_SSHG_KEY_PRIVATE }}" > $HOME/.ssh/wpengine_key
-        chmod 600 $HOME/.ssh/wpengine_key
+        # Add WP Engine SSH key (ED25519 format)
+        echo "${{ secrets.WPE_SSHG_KEY_PRIVATE }}" > $HOME/.ssh/wpengine_ed25519
+        chmod 600 $HOME/.ssh/wpengine_ed25519
         
         # Configure SSH to use the key
         cat >> $HOME/.ssh/config <<END
         Host git.wpengine.com
           HostName git.wpengine.com
           User git
-          IdentityFile $HOME/.ssh/wpengine_key
+          IdentityFile $HOME/.ssh/wpengine_ed25519
+          IdentitiesOnly yes
           StrictHostKeyChecking no
+          PreferredAuthentications publickey
         END
+        
+        # Test SSH connection
+        ssh-keyscan -H git.wpengine.com >> $HOME/.ssh/known_hosts
+        
+    - name: Test SSH Connection
+      run: |
+        # Test the SSH connection to WP Engine
+        ssh -T git@git.wpengine.com || true
         
     - name: Add WP Engine remote
       run: |

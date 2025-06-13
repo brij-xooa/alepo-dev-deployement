@@ -22,6 +22,11 @@ jobs:
         echo "${{ secrets.WPE_SSHG_KEY_PRIVATE }}" > $HOME/.ssh/wpengine_ed25519
         chmod 600 $HOME/.ssh/wpengine_ed25519
         
+        # Debug: Check key format (first and last lines only for security)
+        echo "Key format check:"
+        head -n 1 $HOME/.ssh/wpengine_ed25519
+        tail -n 1 $HOME/.ssh/wpengine_ed25519
+        
         # Configure SSH to use the key
         cat >> $HOME/.ssh/config <<END
         Host git.wpengine.com
@@ -31,6 +36,7 @@ jobs:
           IdentitiesOnly yes
           StrictHostKeyChecking no
           PreferredAuthentications publickey
+          LogLevel DEBUG
         END
         
         # Test SSH connection
@@ -39,7 +45,9 @@ jobs:
     - name: Test SSH Connection
       run: |
         # Test the SSH connection to WP Engine
-        ssh -T git@git.wpengine.com || true
+        echo "Testing SSH connection to WP Engine..."
+        ssh -vT git@git.wpengine.com 2>&1 | grep -E "(debug1:|Hi|Permission|publickey)" || true
+        echo "SSH test completed."
         
     - name: Add WP Engine remote
       run: |

@@ -1,0 +1,35 @@
+name: Deploy to WP Engine (Official Action)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy to WP Engine
+      uses: wpengine/github-action-wpe-site-deploy@v3
+      with:
+        # Your WP Engine install name
+        WPE_ENV: alepodev
+        
+        # Deploy from current directory
+        SRC_PATH: "."
+        
+        # Deploy to root of WP Engine
+        REMOTE_PATH: "."
+        
+        # Use the SSH private key
+        WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+        
+        # Flags for rsync
+        FLAGS: -azvr --delete --exclude=alepo-docs/ --exclude=.github/ --exclude=tools/deprecated/ --exclude=tools/theme-utilities/debug-*.html --exclude=*.md --exclude=.git* --exclude=node_modules/ --exclude=.env
+        
+        # PHP version (optional)
+        PHP_LINT: "8.0"

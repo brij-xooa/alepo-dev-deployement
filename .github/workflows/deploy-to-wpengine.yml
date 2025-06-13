@@ -22,8 +22,18 @@ jobs:
         echo "${{ secrets.WPE_SSHG_KEY_PRIVATE }}" > $HOME/.ssh/wpengine_ed25519
         chmod 600 $HOME/.ssh/wpengine_ed25519
         
+        # Generate public key from private key
+        ssh-keygen -y -f $HOME/.ssh/wpengine_ed25519 > $HOME/.ssh/wpengine_ed25519.pub
+        
+        # Debug: Show key fingerprints
+        echo "=== SSH Key Fingerprints ==="
+        echo "MD5 fingerprint:"
+        ssh-keygen -l -E md5 -f $HOME/.ssh/wpengine_ed25519.pub
+        echo "SHA256 fingerprint:"
+        ssh-keygen -l -E sha256 -f $HOME/.ssh/wpengine_ed25519.pub
+        
         # Debug: Check key format (first and last lines only for security)
-        echo "Key format check:"
+        echo -e "\n=== Key format check ==="
         head -n 1 $HOME/.ssh/wpengine_ed25519
         tail -n 1 $HOME/.ssh/wpengine_ed25519
         
@@ -88,7 +98,11 @@ jobs:
         git commit -m "Deploy to WP Engine: ${{ github.sha }}" || echo "No changes to commit"
         
         # Force push to WP Engine
-        git push wpengine deploy-${{ github.sha }}:master --force
+        echo "Pushing to WP Engine..."
+        git push -v wpengine deploy-${{ github.sha }}:master --force 2>&1 || {
+          echo "Push failed. Trying alternative branch name..."
+          git push -v wpengine deploy-${{ github.sha }}:main --force 2>&1
+        }
         
     - name: Cleanup
       if: always()

@@ -1,0 +1,36 @@
+# WP Engine deployment exclusions
+# This file is used during deployment to exclude files from WP Engine
+
+# Documentation (not needed on production)
+alepo-docs/
+*.md
+
+# Development and CI/CD
+.github/
+.git/
+.gitignore
+
+# Development tools
+tools/deprecated/
+tools/theme-utilities/debug-*.html
+tools/theme-utilities/*-backup.php
+
+# Development files
+node_modules/
+.env
+.env.*
+.DS_Store
+*.log
+*.sql
+*.zip
+*.tar.gz
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+desktop.ini

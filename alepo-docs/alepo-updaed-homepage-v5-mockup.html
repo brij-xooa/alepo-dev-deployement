@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alepo - Transform Your Telecom Business</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* CSS Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CSS Variables from v5 Design Guide */
+        :root {
+            /* Primary (Azure → Royal) */
+            --c-primary-50: #EEF7FF;
+            --c-primary-100: #D9ECFF;
+            --c-primary-200: #BCDEFF;
+            --c-primary-300: #8DCBFF;
+            --c-primary-400: #58ACFF;
+            --c-primary-500: #318AFF;
+            --c-primary-600: #1A6AF6;
+            --c-primary-700: #1353E2;
+            --c-primary-800: #1644B7;
+            --c-primary-900: #183D90;
+            --c-primary-950: #172D66;
+            
+            /* Secondary (Teal → Charcoal) */
+            --c-secondary-50: #F2F9F9;
+            --c-secondary-100: #DDF0F0;
+            --c-secondary-200: #BEE1E3;
+            --c-secondary-300: #92CACE;
+            --c-secondary-400: #5EABB2;
+            --c-secondary-500: #4697A0;
+            --c-secondary-600: #3A7680;
+            --c-secondary-700: #34606A;
+            --c-secondary-800: #315159;
+            --c-secondary-900: #2D454C;
+            --c-secondary-950: #1A2C32;
+            
+            /* Utility */
+            --c-black: #000000;
+            --c-white: #FFFFFF;
+            --c-gray-50: #FAFAFA;
+            --c-gray-100: #F7F7F9;
+            --c-gray-200: #E9ECEF;
+            --c-gray-300: #DEE2E6;
+            --c-gray-400: #CED4DA;
+            --c-gray-500: #ADB5BD;
+            --c-gray-600: #6C757D;
+            --c-gray-700: #495057;
+            --c-gray-800: #343A40;
+            --c-gray-900: #212529;
+            
+            /* Semantic Colors */
+            --c-success: #28A745;
+            --c-warning: #FFC107;
+            --c-danger: #DC3545;
+            --c-info: #17A2B8;
+
+            /* Shadows */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
+            --shadow-primary: 0 8px 24px rgba(49, 138, 255, 0.15);
+            --shadow-primary-lg: 0 12px 32px rgba(49, 138, 255, 0.20);
+
+            /* Typography */
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            
+            /* Font Sizes - Fluid */
+            --font-size-hero: clamp(2rem, 4vw + 1rem, 3rem);
+            --font-size-display: clamp(1.75rem, 3vw + 0.5rem, 2rem);
+            --font-size-h1: clamp(1.75rem, 3vw + 0.5rem, 2rem);
+            --font-size-h2: clamp(1.5rem, 2.5vw + 0.5rem, 1.5rem);
+            --font-size-h3: clamp(1.25rem, 2vw + 0.25rem, 1.25rem);
+            --font-size-h4: 1.125rem;
+            --font-size-h5: 1rem;
+            --font-size-h6: 0.875rem;
+            --font-size-body: 1rem;
+            --font-size-body-lg: 1.125rem;
+            --font-size-small: 0.875rem;
+            --font-size-tiny: 0.8125rem;
+            --font-size-micro: 0.75rem;
+            
+            /* Font Weights */
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Line Heights */
+            --line-height-tight: 1.2;
+            --line-height-snug: 1.4;
+            --line-height-normal: 1.6;
+            --line-height-relaxed: 1.8;
+            
+            /* Letter Spacing */
+            --letter-spacing-tight: -0.02em;
+            --letter-spacing-normal: 0;
+            --letter-spacing-wide: 0.05em;
+            
+            /* Spacing Scale (8px grid) */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 24px;
+            --space-6: 32px;
+            --space-7: 48px;
+            --space-8: 64px;
+            --space-9: 80px;
+            --space-10: 96px;
+            --space-11: 120px;
+            
+            /* Container Widths */
+            --container-max: 1440px;
+            --container-xl: 1200px;
+            --container-lg: 1140px;
+            --container-md: 960px;
+            --container-sm: 768px;
+            --container-xs: 576px;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.3s ease;
+            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-body);
+            line-height: var(--line-height-normal);
+            color: var(--c-gray-700);
+            background: var(--c-white);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-xl);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--c-gray-900);
+            line-height: var(--line-height-tight);
+            letter-spacing: var(--letter-spacing-tight);
+        }
+
+        h1 { font-size: var(--font-size-h1); font-weight: var(--font-weight-bold); }
+        h2 { font-size: var(--font-size-h2); font-weight: var(--font-weight-semibold); }
+        h3 { font-size: var(--font-size-h3); font-weight: var(--font-weight-semibold); }
+        h4 { font-size: var(--font-size-h4); font-weight: var(--font-weight-semibold); }
+
+        p {
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--space-4);
+        }
+
+        /* Gradient text animation from v4 */
+        .heading-gradient {
+            background: linear-gradient(135deg, var(--c-primary-600) 0%, var(--c-secondary-600) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .heading-gradient-animated {
+            background: linear-gradient(135deg, var(--c-primary-500), var(--c-secondary-500), var(--c-primary-500), var(--c-secondary-500));
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-text 5s ease infinite;
+        }
+
+        @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Skip to content */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--c-primary-600);
+            color: var(--c-white);
+            padding: var(--space-3) var(--space-5);
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            transition: top var(--transition-medium);
+            z-index: 9999;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
+        /* Navigation */
+        .navbar {
+            height: 72px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--c-gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all var(--transition-medium);
+        }
+
+        .navbar-scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--c-primary-600);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--c-gray-700);
+            font-weight: var(--font-weight-medium);
+            padding: var(--space-2) 0;
+            position: relative;
+            transition: color var(--transition-medium);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--c-primary-500);
+            transition: width var(--transition-medium);
+        }
+
+        .nav-link:hover {
+            color: var(--c-primary-600);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 32px;
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-body);
+            border-radius: 6px;
+            border: none;
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            text-decoration: none;
+            min-height: 44px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-primary-600) 100%);
+            color: var(--c-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-primary);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--c-primary-600);
+            border: 2px solid var(--c-primary-600);
+            padding: 12px 30px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--c-primary-600);
+            color: var(--c-white);
+            transform: translateY(-2px);
+        }
+
+        /* On gradient backgrounds - from v4 */
+        .hero .btn-secondary {
+            color: var(--c-white);
+            border-color: var(--c-white);
+        }
+
+        .hero .btn-secondary:hover {
+            background: var(--c-white);
+            color: var(--c-primary-600);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-text {
+            background: transparent;
+            color: var(--c-primary-600);
+            padding: var(--space-2) var(--space-4);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .btn-text:hover {
+            color: var(--c-primary-700);
+        }
+
+        .btn-text::after {
+            content: '→';
+            margin-left: var(--space-2);
+            transition: transform var(--transition-medium);
+        }
+
+        .btn-text:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: var(--space-11) 0 var(--space-9);
+            background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-secondary-500) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+        }
+
+        .hero-bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, var(--c-white) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: hero-drift 20s linear infinite;
+        }
+
+        @keyframes hero-drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: var(--font-size-hero);
+            font-weight: var(--font-weight-bold);
+            color: var(--c-white);
+            margin-bottom: var(--space-4);
+            line-height: var(--line-height-tight);
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-body-lg);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-6);
+            line-height: var(--line-height-normal);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--space-9) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-3);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--c-gray-600);
+            max-width: 600px;
+            margin: 0 auto var(--space-7);
+        }
+
+        /* Why Alepo Section - Typography from v3 */
+        .section-why {
+            background: var(--c-gray-50);
+        }
+
+        .section-why .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-why .section-subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--c-gray-600);
+            margin-bottom: 3rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: var(--c-primary-50);
+            color: var(--c-primary-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-4);
+            transition: all var(--transition-medium);
+            font-size: 24px;
+        }
+
+        .icon-box:hover {
+            background: var(--c-primary-100);
+            transform: scale(1.05);
+        }
+
+        /* Solutions Section - Typography from v3 */
+        .section-solutions {
+            background: linear-gradient(180deg, var(--c-white) 0%, var(--c-primary-50) 100%);
+            padding: var(--space-10) 0;
+        }
+
+        .section-solutions .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--c-gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-solutions .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--c-gray-600);
+            margin-bottom: 3rem;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+
+        /* Three Core Solutions Cards - from v4 */
+        .card-feature {
+            background: var(--c-white);
+            border: 1px solid var(--c-gray-200);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        /* Modern Hover Effect from v4 */
+        .card-feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--c-primary-500), var(--c-secondary-500));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card-feature:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-feature:hover {
+            border-color: transparent;
+            box-shadow: 0 10px 40px rgba(49, 138, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            color: var(--c-primary-500);
+            background: var(--c-primary-50);
+            padding: 16px;
+            border-radius: 12px;
+            display: inline-flex;
+            width: 64px;
+            height: 64px;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-feature:hover .feature-icon {
+            background: var(--c-primary-100);
+            transform: scale(1.1);
+        }
+
+        .feature-title {
+            color: var(--c-gray-900);
+            margin-bottom: var(--space-3);
+        }
+
+        .feature-description {
+            color: var(--c-gray-600);
+            margin-bottom: var(--space-4);
+        }
+
+        /* Customer Portfolio Section */
+        .section-portfolio {
+            background: linear-gradient(135deg, var(--c-primary-50) 0%, var(--c-secondary-50) 100%);
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-5);
+            align-items: center;
+        }
+
+        .logo-item {
+            background: var(--c-white);
+            padding: var(--space-4);
+            border-radius: 8px;
+            text-align: center;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-medium);
+            box-shadow: var(--shadow-sm);
+            color: var(--c-gray-600);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .logo-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Stats Section with Counter Animation */
+        .section-stats {
+            background: var(--c-white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: var(--space-6);
+            background: var(--c-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-medium);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--c-primary-600);
+            margin-bottom: var(--space-2);
+            display: inline-block;
+        }
+
+        .stat-number[data-target] {
+            animation: countUp 2s ease-out;
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stat-label {
+            color: var(--c-gray-600);
+            font-size: var(--font-size-body);
+        }
+
+        /* Testimonials Section - background from v4 */
+        .section-testimonials {
+            background: var(--c-primary-950);
+            color: var(--c-white);
+        }
+
+        .section-testimonials .section-title {
+            color: var(--c-white);
+        }
+
+        .section-testimonials .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonial-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 280px;
+        }
+
+        .testimonial-slide {
+            display: none;
+            text-align: center;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Testimonial Card from v3 with v4 hover */
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--c-primary-500);
+            padding: var(--space-6);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 0 var(--space-9);
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .testimonial-quote {
+            font-size: var(--font-size-body-lg);
+            line-height: var(--line-height-relaxed);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-5);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: var(--font-weight-semibold);
+            color: var(--c-white);
+            margin-bottom: var(--space-1);
+        }
+
+        .testimonial-role {
+            color: var(--c-primary-300);
+            font-size: var(--font-size-small);
+        }
+
+        /* Enhanced carousel buttons - no background, extreme positions */
+        .testimonial-carousel-container {
+            position: relative;
+            max-width: var(--container-xl);
+            margin: 0 auto;
+        }
+
+        .testimonial-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 280px;
+            padding: 0 var(--space-8);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-medium);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.5rem;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: var(--c-white);
+        }
+
+        .carousel-btn-prev { 
+            left: 0;
+        }
+        
+        .carousel-btn-next { 
+            right: 0;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-2);
+            margin-top: var(--space-5);
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all var(--transition-medium);
+        }
+
+        .carousel-dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background: var(--c-primary-400);
+        }
+
+        /* Resources Section */
+        .section-resources {
+            background: var(--c-gray-50);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .resource-card {
+            background: var(--c-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-bottom: 3px solid transparent;
+            transition: all var(--transition-medium);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-bottom-color: var(--c-primary-500);
+        }
+
+        .resource-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--c-primary-100) 0%, var(--c-secondary-100) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .resource-content {
+            padding: var(--space-5);
+        }
+
+        .resource-badge {
+            display: inline-block;
+            background: var(--c-primary-500);
+            color: var(--c-white);
+            padding: var(--space-1) var(--space-3);
+            border-radius: 4px;
+            font-size: var(--font-size-micro);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-3);
+        }
+
+        .resource-title {
+            color: var(--c-gray-900);
+            margin-bottom: var(--space-2);
+        }
+
+        .resource-meta {
+            color: var(--c-gray-600);
+            font-size: var(--font-size-small);
+            margin-bottom: var(--space-3);
+        }
+
+        /* Newsletter Section */
+        .section-newsletter {
+            background: var(--c-primary-950);
+            padding: var(--space-8) 0;
+        }
+
+        .newsletter-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: var(--space-7);
+            border-radius: 16px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .newsletter-title {
+            color: var(--c-white);
+            margin-bottom: var(--space-3);
+        }
+
+        .newsletter-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-5);
+        }
+
+        .newsletter-input-group {
+            display: flex;
+            gap: var(--space-3);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--c-white);
+            padding: var(--space-3) var(--space-4);
+            border-radius: 6px;
+            font-size: var(--font-size-body);
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--c-primary-300);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* CTA Section */
+        .section-cta {
+            background: linear-gradient(135deg, var(--c-primary-600) 0%, var(--c-primary-700) 100%);
+            padding: var(--space-10) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -30px) rotate(180deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            color: var(--c-white);
+            font-size: var(--font-size-display);
+            margin-bottom: var(--space-4);
+        }
+
+        .cta-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-size-body-lg);
+            margin-bottom: var(--space-6);
+        }
+
+        .btn-cta {
+            background: var(--c-white);
+            color: var(--c-primary-600);
+            padding: 16px 40px;
+            font-size: var(--font-size-body-lg);
+        }
+
+        .btn-cta:hover {
+            background: var(--c-gray-100);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer - Added contact section */
+        footer {
+            background: var(--c-secondary-950);
+            color: var(--c-white);
+            padding: var(--space-8) 0 var(--space-6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .footer-title {
+            font-size: var(--font-size-h5);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            color: var(--c-white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            padding: var(--space-1) 0;
+            display: block;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: var(--c-primary-300);
+        }
+
+        .footer-contact {
+            margin-top: var(--space-4);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-3);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-contact-item i {
+            color: var(--c-primary-400);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            transition: all var(--transition-fast);
+        }
+
+        .footer-social a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-5);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+            }
+
+            .hero {
+                padding: var(--space-9) 0 var(--space-8);
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .section {
+                padding: var(--space-7) 0;
+            }
+
+            .newsletter-input-group {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                width: 100%;
+            }
+
+            .carousel-btn {
+                display: none;
+            }
+        }
+
+        /* Focus States */
+        :focus-visible {
+            outline: 3px solid var(--c-primary-400);
+            outline-offset: 2px;
+        }
+
+        .btn:focus-visible {
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="#" class="navbar-brand">
+                    <i class="bi bi-circle-fill"></i>
+                    Alepo
+                </a>
+                <ul class="navbar-nav">
+                    <li><a href="#" class="nav-link">Solutions</a></li>
+                    <li><a href="#" class="nav-link">Industries</a></li>
+                    <li><a href="#" class="nav-link">Customers</a></li>
+                    <li><a href="#" class="nav-link">Resources</a></li>
+                    <li><a href="#" class="nav-link">Company</a></li>
+                    <li><a href="#" class="btn btn-primary">Get Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- 1. Hero Section -->
+        <section class="hero">
+            <div class="hero-bg-animation"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Transform Your Telecom Business</h1>
+                    <p class="hero-subtitle">Empower your network with AI-driven solutions that scale, secure, and revolutionize customer experiences</p>
+                    <div class="hero-cta">
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                        <a href="#" class="btn btn-secondary">Watch Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Why Alepo Section -->
+        <section class="section section-why">
+            <div class="container">
+                <h2 class="section-title heading-gradient-animated">Why Choose Alepo?</h2>
+                <p class="section-subtitle">Three decades of telecom innovation, powering 500M+ subscribers globally</p>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <div class="icon-box">🌐</div>
+                        <h4>Global Scale</h4>
+                        <p>Deployed across 6 continents with 24/7 support in multiple languages</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="icon-box">⚡</div>
+                        <h4>Performance</h4>
+                        <p>36,000 TPS transaction speed with 99.999% uptime SLA</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="icon-box">🏆</div>
+                        <h4>Innovation</h4>
+                        <p>Industry-leading AI capabilities with 90% resolution rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Three Core Solutions -->
+        <section class="section section-solutions">
+            <div class="container">
+                <h2 class="section-title heading-gradient">Three Core Solutions</h2>
+                <p class="section-subtitle">Comprehensive platform for modern telecom operators</p>
+                <div class="solutions-grid">
+                    <div class="card-feature">
+                        <div class="feature-icon">🔐</div>
+                        <h3 class="feature-title">Network Access Control</h3>
+                        <p class="feature-description">Enterprise-grade AAA with 99.999% uptime. Support for RADIUS, Diameter, TACACS+, and 5G AUSF.</p>
+                        <a href="#" class="btn btn-text">Learn more</a>
+                    </div>
+                    <div class="card-feature">
+                        <div class="feature-icon">💼</div>
+                        <h3 class="feature-title">Digital BSS</h3>
+                        <p class="feature-description">Complete business support system with convergent charging, customer management, and real-time analytics.</p>
+                        <a href="#" class="btn btn-text">Learn more</a>
+                    </div>
+                    <div class="card-feature">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">AI-Powered CX</h3>
+                        <p class="feature-description">Transform customer engagement with AI assistants, digital self-care, and 100+ language support.</p>
+                        <a href="#" class="btn btn-text">Learn more</a>
+                    </div>
+                </div>
+                <div class="resources-cta">
+                    <a href="#" class="btn btn-primary">View All Resources</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Customer Portfolio -->
+        <section class="section section-portfolio">
+            <div class="container">
+                <h2 class="section-title">Trusted by Industry Leaders</h2>
+                <p class="section-subtitle">Powering innovation for service providers worldwide</p>
+                <div class="logo-grid">
+                    <div class="logo-item">SaskTel</div>
+                    <div class="logo-item">STC</div>
+                    <div class="logo-item">Lüm Mobile</div>
+                    <div class="logo-item">Tier-1 Operator</div>
+                    <div class="logo-item">Global Telecom</div>
+                    <div class="logo-item">Regional ISP</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Stats Section -->
+        <section class="section section-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="100">0</div><span class="stat-number">+</span>
+                        <div class="stat-label">Service Providers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="500">0</div><span class="stat-number">M+</span>
+                        <div class="stat-label">Subscribers Served</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="99.999">0</div><span class="stat-number">%</span>
+                        <div class="stat-label">Uptime SLA</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Global Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Customer Success Stories -->
+        <section class="section section-testimonials">
+            <div class="container">
+                <h2 class="section-title">Customer Success Stories</h2>
+                <p class="section-subtitle">Real results from industry leaders</p>
+                <div class="testimonial-carousel-container">
+                    <div class="testimonial-carousel">
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">"Alepo's AI Customer Assistant has transformed our customer service operations. We've seen a 90% resolution rate and significant cost savings while improving customer satisfaction scores."</p>
+                                <div class="testimonial-author">Sarah Johnson</div>
+                                <div class="testimonial-role">VP of Customer Experience, SaskTel</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">"The BSS modernization with Alepo reduced our time-to-market for new products by 70%. Their solution is truly next-generation."</p>
+                                <div class="testimonial-author">Mohammed Al-Rashid</div>
+                                <div class="testimonial-role">CTO, STC</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">"Network reliability improved dramatically with Alepo's AAA solution. The 99.999% uptime commitment is real, not just marketing."</p>
+                                <div class="testimonial-author">Jennifer Chen</div>
+                                <div class="testimonial-role">Network Director, Global Tier-1 Operator</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-prev" onclick="changeSlide(-1)">‹</button>
+                    <button class="carousel-btn carousel-btn-next" onclick="changeSlide(1)">›</button>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                        <span class="carousel-dot" onclick="goToSlide(1)"></span>
+                        <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Resources Section -->
+        <section class="section section-resources">
+            <div class="container">
+                <h2 class="section-title">Latest Resources</h2>
+                <p class="section-subtitle">Insights and tools to help you succeed</p>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-image">📱</div>
+                        <div class="resource-content">
+                            <span class="resource-badge">FEATURED</span>
+                            <h4 class="resource-title">How AI is Revolutionizing Telecom Customer Service</h4>
+                            <p class="resource-meta">Blog Post • 5 min read</p>
+                            <a href="#" class="btn btn-text">Read more</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-image">📊</div>
+                        <div class="resource-content">
+                            <h4 class="resource-title">5G Monetization Strategies Guide</h4>
+                            <p class="resource-meta">Whitepaper • 15 pages</p>
+                            <a href="#" class="btn btn-text">Download</a>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-image">💰</div>
+                        <div class="resource-content">
+                            <h4 class="resource-title">ROI Calculator for BSS Modernization</h4>
+                            <p class="resource-meta">Interactive Tool</p>
+                            <a href="#" class="btn btn-text">Calculate ROI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Newsletter Section -->
+        <section class="section-newsletter">
+            <div class="container">
+                <div class="newsletter-form">
+                    <h3 class="newsletter-title">Stay Updated</h3>
+                    <p class="newsletter-subtitle">Get the latest telecom insights and product updates delivered to your inbox</p>
+                    <form class="newsletter-input-group">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CTA Section -->
+        <section class="section-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Transform Your Network?</h2>
+                    <p class="cta-subtitle">Join leading operators worldwide who trust Alepo</p>
+                    <a href="#" class="btn btn-cta">Schedule a Demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h5 class="footer-title">Solutions</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Network Access Control</a></li>
+                        <li><a href="#" class="footer-link">Digital BSS</a></li>
+                        <li><a href="#" class="footer-link">AI-Powered CX</a></li>
+                        <li><a href="#" class="footer-link">Carrier Wi-Fi</a></li>
+                        <li><a href="#" class="footer-link">PCF</a></li>
+                        <li><a href="#" class="footer-link">SDM</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-title">Industries</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Mobile Network Operators</a></li>
+                        <li><a href="#" class="footer-link">ISPs</a></li>
+                        <li><a href="#" class="footer-link">Cable & Broadband</a></li>
+                        <li><a href="#" class="footer-link">MVNOs</a></li>
+                        <li><a href="#" class="footer-link">CCaaS</a></li>
+                        <li><a href="#" class="footer-link">Gov & Smart Cities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Alepo</a></li>
+                        <li><a href="#" class="footer-link">Leadership Team</a></li>
+                        <li><a href="#" class="footer-link">Why Alepo</a></li>
+                        <li><a href="#" class="footer-link">Partners</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Locations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-title">Connect</h5>
+                    <div class="footer-social">
+                        <a href="#" class="footer-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="footer-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="footer-link"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="footer-link"><i class="bi bi-facebook"></i></a>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <h6 style="font-weight: 600; margin-bottom: 0.5rem;">Global Support</h6>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-bottom: 0.25rem;">24/7 Technical Assistance</p>
+                        <a href="#" class="footer-link">Get Support →</a>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <h6 style="font-weight: 600; margin-bottom: 0.5rem;">Newsletter</h6>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-bottom: 0.5rem;">Stay updated with our latest insights</p>
+                        <a href="#" class="footer-link">Subscribe →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alepo Technologies. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Testimonial carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Counter animation for stats
+        const animateCounter = (element) => {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            };
+            
+            updateCounter();
+        };
+
+        // Trigger counter animation when stats section is in view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('[data-target]');
+                    counters.forEach(counter => {
+                        animateCounter(counter);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.section-stats');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

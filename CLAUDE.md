@@ -13,9 +13,11 @@ You will generate unique, customized content for each of the 47 Alepo website pa
 
 ### Current Project Structure
 ```
-/mnt/d/Website Works/alepo-dryrun/
+/mnt/d/Website Works/alepo-new-website-project/
 ├── alepo-docs/                    # Documentation and reference files
 ├── wp-content/themes/alepo-theme/ # WordPress theme location
+├── alepo-generated-content/       # Generated content for WordPress
+├── tools/                         # Development and maintenance tools
 └── CLAUDE.md                      # This file
 ```
 
@@ -589,7 +591,7 @@ Examples:
 ### Development Commands
 ```bash
 # WordPress Theme Development
-cd /mnt/d/Website\ Works/alepo-dryrun/wp-content/themes/alepo-theme/
+cd /mnt/d/Website\ Works/alepo-new-website-project/wp-content/themes/alepo-theme/
 npm install              # Install dependencies
 npm run dev             # Start development server
 npm run build           # Build for production
@@ -650,7 +652,7 @@ php seo-audit.php          # SEO validation
 
 ### Documentation Files
 ```
-/mnt/d/Website Works/alepo-dryrun/alepo-docs/
+/mnt/d/Website Works/alepo-new-website-project/alepo-docs/
 ├── alepo_website_structure.md
 ├── alepo_company_profile.md
 ├── design-system.md
@@ -661,30 +663,28 @@ php seo-audit.php          # SEO validation
 
 ### Generated Content Locations
 ```
-/mnt/d/Website Works/alepo-dryrun/
-├── 01-content-generation/
-│   ├── pages/               # Markdown content files
-│   ├── custom-post-types/   # JSON data structures
-│   ├── media-assets/        # Image specifications
-│   └── navigation/          # Menu configurations
+/mnt/d/Website Works/alepo-new-website-project/
+├── alepo-generated-content/
+│   ├── 01-page-content/     # HTML content files
+│   ├── 02-wordpress-integration/  # Import scripts
+│   └── 03-assets/           # Image and media specifications
 └── wp-content/themes/alepo-theme/  # WordPress theme files
 ```
 
 ### Automation Scripts
 ```
-/mnt/d/Website Works/alepo-dryrun/03-automation-scripts/
-├── content-import/
-│   ├── import-all-content.php
-│   ├── parse-markdown.php
-│   └── create-acf-fields.php
-├── page-creation/
-│   ├── create-page-structure.php
-│   ├── generate-templates.php
-│   └── populate-content.php
-└── deployment/
-    ├── deploy.sh
-    ├── backup-site.sh
-    └── rollback.sh
+/mnt/d/Website Works/alepo-new-website-project/tools/
+├── theme-utilities/         # WordPress theme management tools
+│   ├── create-claude-pages.php
+│   ├── import-claude-content.php
+│   └── regenerate-mega-menu.php
+├── database/                # Database management
+│   └── cleanup-queries.sql
+├── maintenance/             # System maintenance scripts
+│   ├── fix-structure.sh
+│   └── wp-config-debug.txt
+└── wordpress-integration/   # WordPress import tools
+    └── import-claude-content.php
 ```
 
 ---

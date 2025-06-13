@@ -1,0 +1,81 @@
+name: Deploy to WP Engine
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup SSH
+      run: |
+        # Create SSH directory
+        mkdir -p $HOME/.ssh
+        
+        # Add WP Engine SSH key
+        echo "${{ secrets.WPE_SSHG_KEY_PRIVATE }}" > $HOME/.ssh/wpengine_key
+        chmod 600 $HOME/.ssh/wpengine_key
+        
+        # Configure SSH to use the key
+        cat >> $HOME/.ssh/config <<END
+        Host git.wpengine.com
+          HostName git.wpengine.com
+          User git
+          IdentityFile $HOME/.ssh/wpengine_key
+          StrictHostKeyChecking no
+        END
+        
+    - name: Add WP Engine remote
+      run: |
+        # Add WP Engine as a remote if it doesn't exist
+        git remote | grep -q wpengine || git remote add wpengine git@git.wpengine.com:alepodev.git
+        
+    - name: Deploy to WP Engine
+      env:
+        WPE_ENV: alepodev
+        SRC_PATH: '.'
+        REMOTE_PATH: '.'
+        FLAGS: '--delete'
+      run: |
+        # Create deployment branch
+        git checkout -b deploy-${{ github.sha }}
+        
+        # Configure git
+        git config user.email "github-actions@github.com"
+        git config user.name "GitHub Actions"
+        
+        # Create .gitignore for WP Engine deployment
+        cat > .gitignore <<EOF
+        # Exclude documentation and development files from deployment
+        alepo-docs/
+        .github/
+        tools/deprecated/
+        tools/theme-utilities/debug-*.html
+        *.md
+        .git*
+        node_modules/
+        .env
+        .DS_Store
+        *.log
+        EOF
+        
+        # Add and commit deployment-ready files
+        git add -A
+        git commit -m "Deploy to WP Engine: ${{ github.sha }}" || echo "No changes to commit"
+        
+        # Force push to WP Engine
+        git push wpengine deploy-${{ github.sha }}:master --force
+        
+    - name: Cleanup
+      if: always()
+      run: |
+        # Return to main branch
+        git checkout main || true
+        # Delete deployment branch
+        git branch -D deploy-${{ github.sha }} || true

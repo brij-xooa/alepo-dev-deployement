@@ -54,9 +54,13 @@ jobs:
         
     - name: Test SSH Connection
       run: |
+        # Show the public key for debugging
+        echo "=== Public key content ==="
+        cat $HOME/.ssh/wpengine_ed25519.pub
+        
         # Test the SSH connection to WP Engine
-        echo "Testing SSH connection to WP Engine..."
-        ssh -vT git@git.wpengine.com 2>&1 | grep -E "(debug1:|Hi|Permission|publickey)" || true
+        echo -e "\n=== Testing SSH connection to WP Engine ==="
+        ssh -vT git@git.wpengine.com 2>&1 | grep -E "(debug1:|Hi|hello|Permission|publickey)" || true
         echo "SSH test completed."
         
     - name: Add WP Engine remote

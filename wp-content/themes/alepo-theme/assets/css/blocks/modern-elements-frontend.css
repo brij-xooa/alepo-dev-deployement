@@ -1,0 +1,299 @@
+/**
+ * Modern Elements Frontend Styles
+ */
+
+/* Floating Badge Styles */
+.alepo-floating-badge {
+    position: absolute;
+    z-index: 10;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.alepo-floating-badge.position-top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.alepo-floating-badge.position-top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.alepo-floating-badge.position-bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.alepo-floating-badge.position-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+.alepo-floating-badge.style-angled {
+    padding: 15px 25px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.alepo-floating-badge.style-rounded {
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+.alepo-floating-badge.style-square {
+    padding: 10px 20px;
+}
+
+/* Image Overlay Container */
+.alepo-image-overlay-container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.alepo-image-overlay-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.alepo-overlay-badge {
+    position: absolute;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.alepo-overlay-badge.position-top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.alepo-overlay-badge.position-top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.alepo-overlay-badge.position-bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.alepo-overlay-badge.position-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+.alepo-overlay-badge.position-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Floating Info Card */
+.alepo-floating-info {
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 200px;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.alepo-floating-info.has-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.alepo-floating-info.has-arrow::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffffff;
+}
+
+.alepo-floating-info.has-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #dee2e6;
+}
+
+.alepo-floating-info-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #212529;
+}
+
+.alepo-floating-info-content {
+    margin: 0;
+    font-size: 14px;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+/* Modern CTA Button */
+.alepo-modern-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.alepo-modern-cta .alepo-cta-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.alepo-modern-cta.icon-before .alepo-cta-icon {
+    margin-right: 8px;
+}
+
+.alepo-modern-cta.icon-after .alepo-cta-icon {
+    margin-left: 8px;
+}
+
+/* CTA Style: Gradient Shift */
+.alepo-modern-cta.style-gradient-shift {
+    background: linear-gradient(135deg, #0056b3 0%, #17a2b8 100%);
+    color: #ffffff;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.alepo-modern-cta.style-gradient-shift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
+}
+
+.alepo-modern-cta.style-gradient-shift:hover .alepo-cta-icon {
+    transform: translateX(3px);
+}
+
+/* CTA Style: Glow Effect */
+.alepo-modern-cta.style-glow {
+    background: #0056b3;
+    color: #ffffff;
+    box-shadow: 0 0 0 rgba(0, 86, 179, 0.4);
+}
+
+.alepo-modern-cta.style-glow:hover {
+    box-shadow: 0 0 20px rgba(0, 86, 179, 0.6);
+}
+
+/* CTA Style: Slide Effect */
+.alepo-modern-cta.style-slide {
+    background: #0056b3;
+    color: #ffffff;
+    z-index: 1;
+}
+
+.alepo-modern-cta.style-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #17a2b8;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.alepo-modern-cta.style-slide:hover::before {
+    left: 0;
+}
+
+/* CTA Style: Pulse Effect */
+.alepo-modern-cta.style-pulse {
+    background: #0056b3;
+    color: #ffffff;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.alepo-modern-cta.style-pulse:hover {
+    animation: none;
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .alepo-floating-badge {
+        font-size: 0.8em;
+    }
+    
+    .alepo-floating-badge.style-angled {
+        padding: 10px 20px;
+    }
+    
+    .alepo-overlay-badge {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    
+    .alepo-floating-info {
+        min-width: 150px;
+        padding: 15px;
+    }
+    
+    .alepo-floating-info-title {
+        font-size: 16px;
+    }
+    
+    .alepo-modern-cta {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .alepo-floating-badge,
+    .alepo-overlay-badge,
+    .alepo-floating-info {
+        position: static !important;
+        transform: none !important;
+        margin: 10px 0;
+    }
+}

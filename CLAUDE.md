@@ -5,48 +5,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Claude Code Instructions: Alepo Website Generation
 *Creative content generation and WordPress integration*
 
----
-
-# ✅ CURRENT IMPLEMENTATION STATUS
-
-## Recently Completed Systems
-
-### 🎛️ Gutenberg Mega Menu Management System
-- **Status**: ✅ Complete and functional
-- **Location**: WordPress Admin > Mega Menu Content
-- **Features**: 
-  - Full Gutenberg editing of mega menu dropdown content
-  - Auto-creation of default menu content on theme activation
-  - Dynamic loading in header with fallback system
-- **Files**: `inc/gutenberg-mega-menu.php`, `inc/mega-menu-walker.php`
-
-### 🔧 Gutenberg Footer Management System  
-- **Status**: ✅ Complete and functional
-- **Location**: WordPress Admin > Footer Content
-- **Features**:
-  - 6 editable footer sections (Company, Solutions, Products, Resources, Newsletter, Bottom)
-  - Complete footer editing via Gutenberg blocks
-  - Auto-creation of structured footer content on activation
-- **Files**: `inc/gutenberg-footer.php`
-
-## 🚧 In Progress: Marketing Team Independence
-
-### ✅ Completed
-- Mega menu dropdown content editing
-- Footer content management
-- WordPress admin interfaces created
-
-### 🔄 Still Needed for Full Independence
-- **Header sections** - Logo, navigation styling, utility menu
-- **Footer refinements** - Complete styling and layout control
-- **Page content compatibility** - Ensuring all generated content works with Gutenberg
-- **Non-Gutenberg content handling** - Fallbacks for complex layouts
-
-### 🎯 Goal: Complete Marketing Independence
-Marketing team should be able to edit all website content without developer intervention, including headers, footers, navigation, and page content.
-
----
-
 ## Overview for Claude Code
 
 You will generate unique, customized content for each of the 47 Alepo website pages. Each page should be crafted with creativity, personality, and specific details while maintaining brand consistency. Pages will be generated as HTML/content files and then pushed to WordPress. Reference documents in `alepo-docs/` folder for company information and guidelines.
@@ -301,11 +259,10 @@ alepo-theme/
 │   ├── cta/
 │   └── navigation/
 ├── inc/
-│   ├── customizer.php
-│   ├── gutenberg-footer.php       # Footer content management
-│   ├── gutenberg-mega-menu.php    # Mega menu content management
-│   ├── mega-menu-walker.php       # Navigation walker
-│   └── template-functions.php     # Template helpers
+│   ├── custom-post-types.php
+│   ├── acf-fields.php
+│   ├── enqueue-scripts.php
+│   └── seo-functions.php
 └── assets/
     ├── css/
     ├── js/
@@ -341,11 +298,10 @@ function alepo_theme_setup() {
 add_action('after_setup_theme', 'alepo_theme_setup');
 
 // Include all theme components
-require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/gutenberg-footer.php';
-require get_template_directory() . '/inc/gutenberg-mega-menu.php';
-require get_template_directory() . '/inc/mega-menu-walker.php';
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/custom-post-types.php';
+require get_template_directory() . '/inc/acf-fields.php';
+require get_template_directory() . '/inc/enqueue-scripts.php';
+require get_template_directory() . '/inc/seo-functions.php';
 ```
 
 #### Page template consistency requirements:
@@ -356,49 +312,6 @@ Each page template must include:
 4. **CTA sections** at logical intervals
 5. **Related content** section
 6. **Footer integration** points
-
----
-
-## WordPress Admin Interfaces for Marketing Team
-
-### 🎛️ Mega Menu Content Management
-**Location**: WordPress Admin > Mega Menu Content
-
-**Functionality**:
-- Edit dropdown content for Solutions, Products, Industries, Resources menus
-- Full Gutenberg block editor for rich content creation
-- Auto-generated default content on theme activation
-- Changes reflect immediately on frontend
-
-**Usage**:
-1. Navigate to WordPress Admin > Mega Menu Content
-2. Select the menu section to edit (Solutions, Products, etc.)
-3. Use Gutenberg blocks to create content
-4. Publish changes - they appear instantly in mega menu dropdowns
-
-### 🔧 Footer Content Management  
-**Location**: WordPress Admin > Footer Content
-
-**Sections Available**:
-- **Company**: About, contact, company links
-- **Solutions**: Solution categories and links
-- **Products**: Product listings and descriptions
-- **Resources**: Documentation, support, downloads
-- **Newsletter**: Newsletter signup and messaging
-- **Bottom**: Copyright, legal, social links
-
-**Features**:
-- Individual Gutenberg editing for each footer section
-- Auto-creation of structured content on theme activation
-- Maintains footer layout while allowing content flexibility
-
-### 🎯 Current Admin Capabilities
-**Marketing Team Can Edit**:
-- ✅ Mega menu dropdown content
-- ✅ Footer content (all 6 sections)
-- ✅ Page content (standard WordPress pages)
-- 🔄 Header elements (logo, utility menu) - *In Progress*
-- 🔄 Complex page layouts - *Needs Gutenberg compatibility*
 
 ---
 
@@ -603,127 +516,6 @@ This approach ensures every page is crafted with care and creativity, avoiding t
 
 ---
 
-## Modern Design Elements: Block Style Variations Approach
-
-### 🎨 Marketing Team Design Control
-Instead of using ACF fields, we implement **WordPress Block Style Variations** for marketing team control over:
-
-**Background Styles**:
-- Dots pattern background
-- Angled/diagonal backgrounds  
-- SVG pattern overlays
-- Clean/minimal (none)
-
-**Overlay Styles**:
-- Badge overlays on images
-- Card-style content containers
-- Floating info tags
-- Feature callout boxes
-
-### Implementation Strategy
-
-#### 1. Register Block Style Variations
-```php
-// In template-functions.php
-function alepo_register_block_styles() {
-    // Background styles for Group blocks
-    register_block_style('core/group', array(
-        'name'  => 'dots-background',
-        'label' => 'Dots Background'
-    ));
-    
-    register_block_style('core/group', array(
-        'name'  => 'angled-background', 
-        'label' => 'Angled Background'
-    ));
-    
-    register_block_style('core/group', array(
-        'name'  => 'svg-pattern',
-        'label' => 'SVG Pattern Background'
-    ));
-    
-    // Overlay styles for Image blocks
-    register_block_style('core/image', array(
-        'name'  => 'floating-info',
-        'label' => 'Floating Info Overlay'
-    ));
-    
-    register_block_style('core/image', array(
-        'name'  => 'badge-overlay',
-        'label' => 'Badge Overlay'
-    ));
-}
-add_action('init', 'alepo_register_block_styles');
-```
-
-#### 2. CSS Implementation
-```css
-/* Background Variations */
-.wp-block-group.is-style-dots-background {
-    background-image: radial-gradient(circle, #dee2e6 2px, transparent 2px);
-    background-size: 20px 20px;
-    position: relative;
-}
-
-.wp-block-group.is-style-angled-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, transparent 49%, #f8f9fa 50%);
-    z-index: -1;
-}
-
-/* Overlay Variations */
-.wp-block-image.is-style-floating-info {
-    position: relative;
-}
-
-.wp-block-image.is-style-floating-info::after {
-    content: attr(data-info);
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(0, 86, 179, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.wp-block-image.is-style-badge-overlay::before {
-    content: '✨ Featured';
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    background: #17a2b8;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    z-index: 2;
-}
-```
-
-### 🎯 Benefits of This Approach
-
-1. **No Plugin Dependencies** - Pure WordPress core functionality
-2. **Marketing Team Control** - Appears in Gutenberg block style picker
-3. **Theme Integration** - All styles managed in theme files
-4. **Performance Optimized** - CSS-only implementations
-5. **Future-Proof** - WordPress native feature, no external dependencies
-
-### Usage for Marketing Team
-1. Select any Group or Image block in Gutenberg
-2. In the block sidebar, look for "Styles" section
-3. Choose from available style variations
-4. Styles apply immediately with live preview
-
----
-
 ## Design System from Mega Menu
 
 ### Visual Hierarchy
@@ -907,17 +699,12 @@ php seo-audit.php          # SEO validation
 - **Company**: `page-templates/page-company.php`
 - **Landing**: `page-templates/page-landing.php`
 
-### WordPress Admin Sections (Marketing Team Access)
-- **Mega Menu Content** - Edit dropdown content for navigation menus
-- **Footer Content** - Edit all 6 footer sections (Company, Solutions, Products, Resources, Newsletter, Bottom)
-- **Pages** - Standard WordPress page editing with Gutenberg
-- **Posts** - Blog and news content management
-- **Media Library** - Image and file uploads
-
-### Block Style Variations Available
-- **Group Blocks**: dots-background, angled-background, svg-pattern
-- **Image Blocks**: floating-info, badge-overlay
-- **Future Additions**: card-style, feature-callout (planned)
+### ACF Field Groups
+- `product_details` - Product specifications and features
+- `solution_components` - Solution architecture and benefits
+- `industry_challenges` - Industry-specific content
+- `company_info` - About and team information
+- `global_cta` - Call-to-action components
 
 ### Content Priorities
 1. Homepage and main navigation pages
@@ -925,49 +712,5 @@ php seo-audit.php          # SEO validation
 3. Solution pages (15 solutions)
 4. Industry pages (6 industries)
 5. Company and support pages
-
----
-
-## 🔄 Remaining Work for Complete Marketing Independence
-
-### Phase 1: Header Enhancements (High Priority)
-- **Logo Management**: Gutenberg-based logo upload and sizing
-- **Utility Menu Editing**: Contact, support, language selector controls
-- **Header Layout Options**: Different header styles for various page types
-- **Mobile Navigation**: Enhanced mobile menu customization
-
-### Phase 2: Advanced Page Content (High Priority)  
-- **Gutenberg Compatibility**: Ensure all generated content works with block editor
-- **Complex Layout Fallbacks**: Handle non-Gutenberg content gracefully
-- **Page Template Variations**: Multiple layout options per page type
-- **Content Import Refinements**: Preserve custom content during updates
-
-### Phase 3: Design System Expansion (Medium Priority)
-- **Additional Block Styles**: More background and overlay variations
-- **Interactive Elements**: Hover effects, animations, micro-interactions
-- **Advanced Layouts**: Multi-column designs, grid systems
-- **Brand Customization**: Color scheme and typography controls
-
-### Phase 4: Content Generation Optimization (Lower Priority)
-- **AI Content Integration**: Streamlined content generation workflow
-- **SEO Enhancement**: Advanced meta tag and schema markup controls
-- **Performance Optimization**: Image optimization, caching, speed improvements
-- **Analytics Integration**: User behavior tracking and conversion optimization
-
-### Success Criteria for Full Independence
-- [ ] Marketing team can edit all website elements without developer assistance
-- [ ] Header, navigation, footer, and page content fully controllable via WordPress admin
-- [ ] All generated content compatible with Gutenberg block editor
-- [ ] Block style variations provide sufficient design flexibility
-- [ ] Content import/export preserves customizations
-- [ ] Mobile responsiveness maintained across all customizations
-
-### Next Development Session Priorities
-1. **Header Gutenberg Integration** - Create header content management system
-2. **Page Content Compatibility** - Ensure all generated content works with blocks
-3. **Block Style Implementation** - Add the documented block style variations
-4. **Testing & Refinement** - Validate marketing team workflow end-to-end
-
----
 
 This comprehensive structure ensures consistent, high-quality output across all generated files while maintaining Alepo's brand standards and technical requirements.

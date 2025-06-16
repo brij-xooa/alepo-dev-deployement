@@ -1741,8 +1741,3 @@ if (file_exists(get_template_directory() . '/admin-page-creator.php')) {
 if (file_exists(get_template_directory() . '/cleanup-generated-pages.php')) {
     require get_template_directory() . '/cleanup-generated-pages.php';
 }
-
-// Include modern elements functionality
-if (file_exists(get_template_directory() . '/inc/gutenberg-modern-elements.php')) {
-    require get_template_directory() . '/inc/gutenberg-modern-elements.php';
-}

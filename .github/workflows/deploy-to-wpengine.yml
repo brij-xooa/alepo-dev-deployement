@@ -21,7 +21,6 @@ jobs:
         mkdir -p $HOME/.ssh
         
         # Add WP Engine SSH key (ED25519 format)
-        # yamllint disable-line
         echo "${{ secrets.WPE_SSHG_KEY_PRIVATE }}" > $HOME/.ssh/wpengine_ed25519
         chmod 600 $HOME/.ssh/wpengine_ed25519
         

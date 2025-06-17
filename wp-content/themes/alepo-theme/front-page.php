@@ -13,10 +13,11 @@ get_header();
 <main id="main" class="site-main homepage" role="main">
     <?php while (have_posts()) : the_post(); ?>
         
-        <?php 
-        // Force template structure - ignore static page content
-        // This ensures our homepage template always displays
-        ?>
+        <?php if (has_blocks()) : ?>
+            <!-- If page has Gutenberg blocks, display them -->
+            <?php the_content(); ?>
+        <?php else : ?>
+            <!-- Fallback template structure -->
         
         <!-- Hero Section -->
         <!-- wp:cover {"customGradient":"linear-gradient(135deg,rgb(49,138,255) 0%,rgb(70,151,160) 100%)","className":"hero-section"} -->
@@ -1072,6 +1073,8 @@ get_header();
         </div>
         <!-- /wp:group -->
         
+        
+        <?php endif; // End conditional ?>
         
     <?php endwhile; ?>
 </main>

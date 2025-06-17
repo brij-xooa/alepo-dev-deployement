@@ -1,0 +1,248 @@
+<!-- WIREFRAME-BASED CUSTOMER SUCCESS SECTION -->
+<!-- Full-width with dark background, Word Count: 40-60 words -->
+
+<!-- wp:group {"align":"full","className":"alepo-customer-success-wireframe section-pattern-5","style":{"spacing":{"padding":{"top":"var(--space-9)","bottom":"var(--space-9)"}}}} -->
+<div class="wp-block-group alignfull alepo-customer-success-wireframe section-pattern-5" style="padding-top:var(--space-9);padding-bottom:var(--space-9)">
+
+    <!-- Dark Background Overlay -->
+    <!-- wp:cover {"customGradient":"linear-gradient(135deg, var(--c-secondary-950) 0%, var(--c-primary-900) 100%)","dimRatio":0,"minHeight":300,"minHeightUnit":"px","isDark":true,"align":"full","className":"customer-success-bg"} -->
+    <div class="wp-block-cover alignfull is-dark customer-success-bg" style="background:linear-gradient(135deg, var(--c-secondary-950) 0%, var(--c-primary-900) 100%);min-height:300px">
+        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
+        
+        <div class="wp-block-cover__inner-container">
+            
+            <!-- Main Container -->
+            <!-- wp:group {"layout":{"type":"constrained","contentSize":"900px"}} -->
+            <div class="wp-block-group">
+                
+                <!-- Section Header (H2: 2-3 words) -->
+                <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"var(--font-size-h2)","fontWeight":"var(--font-weight-bold)","lineHeight":"var(--line-height-tight)"},"spacing":{"margin":{"bottom":"var(--space-7)"}}},"textColor":"white"} -->
+                <h2 class="wp-block-heading has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-7);font-size:var(--font-size-h2);font-weight:var(--font-weight-bold);line-height:var(--line-height-tight)">{{customerSuccessTitle}}</h2>
+                <!-- /wp:heading -->
+                
+                <!-- Customer Quote Container -->
+                <!-- wp:group {"className":"customer-quote-container","style":{"spacing":{"padding":{"top":"var(--space-6)","bottom":"var(--space-6)","left":"var(--space-6)","right":"var(--space-6)"}},"border":{"radius":"12px","color":"rgba(255,255,255,0.2)","width":"1px"}},"layout":{"type":"constrained"}} -->
+                <div class="wp-block-group customer-quote-container has-border-color" style="border-color:rgba(255,255,255,0.2);border-width:1px;border-radius:12px;padding-top:var(--space-6);padding-right:var(--space-6);padding-bottom:var(--space-6);padding-left:var(--space-6)">
+                    
+                    <!-- Quote Mark -->
+                    <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"3rem","lineHeight":"1"},"spacing":{"margin":{"bottom":"var(--space-4)"}},"color":{"text":"rgba(255,255,255,0.3)"}} -->
+                    <p class="has-text-align-center has-text-color" style="color:rgba(255,255,255,0.3);margin-bottom:var(--space-4);font-size:3rem;line-height:1">"</p>
+                    <!-- /wp:paragraph -->
+                    
+                    <!-- Customer Quote (25-40 words) -->
+                    <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var(--font-size-body-lg)","fontWeight":"var(--font-weight-medium)","lineHeight":"var(--line-height-relaxed)","fontStyle":"italic"},"spacing":{"margin":{"bottom":"var(--space-6)"}}},"textColor":"white"} -->
+                    <p class="has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-6);font-size:var(--font-size-body-lg);font-style:italic;font-weight:var(--font-weight-medium);line-height:var(--line-height-relaxed)">{{customerQuote}}</p>
+                    <!-- /wp:paragraph -->
+                    
+                    <!-- Attribution Container -->
+                    <!-- wp:group {"className":"quote-attribution","layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
+                    <div class="wp-block-group quote-attribution">
+                        
+                        <!-- Customer Photo/Avatar Placeholder -->
+                        <!-- wp:group {"className":"customer-avatar","style":{"spacing":{"margin":{"right":"var(--space-4)"}},"dimensions":{"minHeight":"60px"}},"layout":{"type":"flex","justifyContent":"center","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group customer-avatar" style="min-height:60px;margin-right:var(--space-4)">
+                            <!-- wp:paragraph {"style":{"typography":{"fontSize":"3rem"},"spacing":{"margin":{"bottom":"0"}}},"textColor":"primary-400"} -->
+                            <p class="has-primary-400-color has-text-color" style="margin-bottom:0;font-size:3rem">👤</p>
+                            <!-- /wp:paragraph -->
+                        </div>
+                        <!-- /wp:group -->
+                        
+                        <!-- Attribution Text -->
+                        <!-- wp:group {"className":"attribution-text","layout":{"type":"constrained"}} -->
+                        <div class="wp-block-group attribution-text">
+                            
+                            <!-- Customer Name & Title (8-12 words) -->
+                            <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)","lineHeight":"var(--line-height-snug)"},"spacing":{"margin":{"bottom":"var(--space-1)"}}},"textColor":"white"} -->
+                            <p class="has-white-color has-text-color" style="margin-bottom:var(--space-1);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold);line-height:var(--line-height-snug)">{{customerName}}</p>
+                            <!-- /wp:paragraph -->
+                            
+                            <!-- Company Type -->
+                            <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-small)","fontWeight":"var(--font-weight-medium)"},"spacing":{"margin":{"bottom":"0"}},"color":{"text":"rgba(255,255,255,0.8)"}} -->
+                            <p class="has-text-color" style="color:rgba(255,255,255,0.8);margin-bottom:0;font-size:var(--font-size-small);font-weight:var(--font-weight-medium)">{{customerCompany}}</p>
+                            <!-- /wp:paragraph -->
+                            
+                        </div>
+                        <!-- /wp:group -->
+                        
+                    </div>
+                    <!-- /wp:group -->
+                    
+                    <!-- Company Logo (if available) -->
+                    {{#if companyLogo}}
+                    <!-- wp:group {"className":"company-logo","style":{"spacing":{"margin":{"top":"var(--space-5)"}},"dimensions":{"minHeight":"40px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
+                    <div class="wp-block-group company-logo" style="min-height:40px;margin-top:var(--space-5)">
+                        <!-- wp:image {"width":120,"height":40,"sizeSlug":"thumbnail","className":"customer-logo-img"} -->
+                        <figure class="wp-block-image size-thumbnail is-resized customer-logo-img">
+                            <img src="{{companyLogo}}" alt="{{customerCompany}} logo" class="wp-image-0" style="width:120px;height:40px;object-fit:contain;opacity:0.7;" />
+                        </figure>
+                        <!-- /wp:image -->
+                    </div>
+                    <!-- /wp:group -->
+                    {{/if}}
+                    
+                </div>
+                <!-- /wp:group -->
+                
+                <!-- Trust Indicators (Optional) -->
+                {{#if trustIndicators}}
+                <!-- wp:group {"className":"trust-indicators","style":{"spacing":{"margin":{"top":"var(--space-6)"}}}} -->
+                <div class="wp-block-group trust-indicators" style="margin-top:var(--space-6)">
+                    
+                    <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var(--font-size-small)","fontWeight":"var(--font-weight-medium)","textTransform":"uppercase","letterSpacing":"var(--letter-spacing-wide)"},"spacing":{"margin":{"bottom":"var(--space-3)"}},"color":{"text":"rgba(255,255,255,0.6)"}} -->
+                    <p class="has-text-align-center has-text-color" style="color:rgba(255,255,255,0.6);margin-bottom:var(--space-3);font-size:var(--font-size-small);font-weight:var(--font-weight-medium);text-transform:uppercase;letter-spacing:var(--letter-spacing-wide)">Trusted Worldwide</p>
+                    <!-- /wp:paragraph -->
+                    
+                    <!-- Trust Logos Grid -->
+                    <!-- wp:group {"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
+                    <div class="wp-block-group">
+                        {{#each trustIndicators}}
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-small)"},"spacing":{"margin":{"left":"var(--space-4)","right":"var(--space-4)","bottom":"0"}},"color":{"text":"rgba(255,255,255,0.5)"}} -->
+                        <p class="has-text-color" style="color:rgba(255,255,255,0.5);margin-right:var(--space-4);margin-bottom:0;margin-left:var(--space-4);font-size:var(--font-size-small)">{{this}}</p>
+                        <!-- /wp:paragraph -->
+                        {{/each}}
+                    </div>
+                    <!-- /wp:group -->
+                    
+                </div>
+                <!-- /wp:group -->
+                {{/if}}
+                
+            </div>
+            <!-- /wp:group -->
+            
+        </div>
+    </div>
+    <!-- /wp:cover -->
+    
+</div>
+<!-- /wp:group -->
+
+<style>
+/* Wireframe Customer Success Styles Using Design System */
+.alepo-customer-success-wireframe {
+    background-color: var(--c-secondary-950);
+    color: var(--c-white);
+}
+
+.alepo-customer-success-wireframe .customer-success-bg {
+    background-image: 
+        radial-gradient(at 20% 20%, rgba(49, 138, 255, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 80%, rgba(70, 151, 160, 0.15) 0px, transparent 50%),
+        linear-gradient(135deg, var(--c-secondary-950) 0%, var(--c-primary-900) 100%);
+}
+
+.alepo-customer-success-wireframe .customer-quote-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-xl);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.alepo-customer-success-wireframe .customer-quote-container:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl), 0 0 40px rgba(49, 138, 255, 0.2);
+}
+
+.alepo-customer-success-wireframe .customer-avatar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.alepo-customer-success-wireframe .quote-attribution {
+    align-items: center;
+}
+
+.alepo-customer-success-wireframe .customer-logo-img img {
+    filter: brightness(0) invert(1);
+    opacity: 0.7 !important;
+    transition: opacity 0.3s ease;
+}
+
+.alepo-customer-success-wireframe .customer-logo-img:hover img {
+    opacity: 1 !important;
+}
+
+/* Typography Enhancements */
+.alepo-customer-success-wireframe .customer-quote-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--c-primary-400) 0%, var(--c-secondary-400) 100%);
+    border-radius: 2px;
+}
+
+.alepo-customer-success-wireframe .customer-quote-container {
+    position: relative;
+}
+
+/* Trust Indicators */
+.alepo-customer-success-wireframe .trust-indicators p {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 20px;
+    margin: var(--space-1);
+    transition: all 0.3s ease;
+}
+
+.alepo-customer-success-wireframe .trust-indicators p:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .alepo-customer-success-wireframe .quote-attribution {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .alepo-customer-success-wireframe .customer-avatar {
+        margin-right: 0 !important;
+        margin-bottom: var(--space-3);
+    }
+    
+    .alepo-customer-success-wireframe .trust-indicators .wp-block-group {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Accessibility */
+.alepo-customer-success-wireframe .customer-quote-container:focus-within {
+    outline: 2px solid var(--c-primary-400);
+    outline-offset: 4px;
+}
+
+/* Color System Implementation */
+.alepo-customer-success-wireframe .has-white-color {
+    color: var(--c-white) !important;
+}
+
+.alepo-customer-success-wireframe .has-primary-400-color {
+    color: var(--c-primary-400) !important;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alepo-customer-success-wireframe .customer-quote-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+</style>

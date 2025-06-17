@@ -1,0 +1,287 @@
+{
+  "templateName": "solution-wireframe-template",
+  "version": "1.0",
+  "description": "Wireframe-based solution template with exact specifications (550-650 words)",
+  "wordCountTarget": {
+    "min": 550,
+    "max": 650,
+    "distribution": {
+      "hero": "60-80",
+      "capability1": "120-150", 
+      "capability2": "120-150",
+      "technicalFeatures": "80-120",
+      "businessBenefits": "160-200",
+      "customerSuccess": "40-60",
+      "finalCTA": "25-40"
+    }
+  },
+  "sections": [
+    {
+      "name": "hero",
+      "type": "alepo/solution-hero-wireframe",
+      "required": true,
+      "template_variation": "wireframe",
+      "wordCount": "60-80",
+      "height": "400px",
+      "attributes": {
+        "layout": "full-width-gradient",
+        "backgroundPattern": "subtle-network",
+        "typography": {
+          "h1": "clamp(2rem, 4vw, 3rem)",
+          "body": "clamp(1rem, 2vw, 1.125rem)"
+        }
+      },
+      "contentStructure": {
+        "h1": {
+          "wordCount": "8-12",
+          "pattern": "[Solution Name] + [Key Benefit]",
+          "example": "Carrier-Grade Authentication for Modern Networks"
+        },
+        "subheadline": {
+          "wordCount": "12-18", 
+          "pattern": "Value Proposition",
+          "example": "Secure, Scale, and Simplify Network Access Control"
+        },
+        "problemStatement": {
+          "wordCount": "20-30",
+          "pattern": "Legacy pain point + modern demands"
+        },
+        "solutionStatement": {
+          "wordCount": "25-35",
+          "pattern": "Alepo solution + key benefits + technical advantage"
+        },
+        "trustBadge": {
+          "wordCount": "8-15",
+          "pattern": "Social proof + metrics"
+        },
+        "primaryCTA": {
+          "wordCount": "2-4",
+          "pattern": "Request [Solution] Demo"
+        }
+      }
+    },
+    {
+      "name": "capability1",
+      "type": "alepo/capability-section-wireframe",
+      "required": true,
+      "template_variation": "wireframe-left",
+      "wordCount": "120-150",
+      "attributes": {
+        "layout": "text-left-visual-right",
+        "textWidth": "60%",
+        "visualWidth": "40%"
+      },
+      "contentStructure": {
+        "h2": {
+          "wordCount": "3-6",
+          "pattern": "Primary Capability Group"
+        },
+        "capabilities": {
+          "count": 3,
+          "structure": {
+            "h3": "3-5 words",
+            "description": "25-35 words"
+          }
+        }
+      }
+    },
+    {
+      "name": "capability2", 
+      "type": "alepo/capability-section-wireframe",
+      "required": true,
+      "template_variation": "wireframe-right",
+      "wordCount": "120-150",
+      "attributes": {
+        "layout": "visual-left-text-right",
+        "visualWidth": "40%",
+        "textWidth": "60%"
+      },
+      "contentStructure": {
+        "h2": {
+          "wordCount": "3-6",
+          "pattern": "Secondary Capability Group"
+        },
+        "capabilities": {
+          "count": 3,
+          "structure": {
+            "h3": "3-5 words",
+            "description": "25-35 words"
+          }
+        }
+      }
+    },
+    {
+      "name": "technicalFeatures",
+      "type": "alepo/technical-features-wireframe", 
+      "required": true,
+      "template_variation": "wireframe",
+      "wordCount": "80-120",
+      "attributes": {
+        "layout": "centered-grid",
+        "gridColumns": {
+          "desktop": 2,
+          "tablet": 2, 
+          "mobile": 1
+        }
+      },
+      "contentStructure": {
+        "h2": {
+          "wordCount": "3-5",
+          "pattern": "Technical Features/Capabilities"
+        },
+        "features": {
+          "count": "6-8",
+          "structure": {
+            "bullet": "8-12 words each",
+            "icon": "technical icon",
+            "format": "brief description"
+          }
+        }
+      }
+    },
+    {
+      "name": "businessBenefits",
+      "type": "alepo/business-benefits-wireframe",
+      "required": true, 
+      "template_variation": "wireframe",
+      "wordCount": "160-200",
+      "attributes": {
+        "layout": "card-grid",
+        "gridColumns": {
+          "desktop": 4,
+          "tablet": 2,
+          "mobile": 1
+        }
+      },
+      "contentStructure": {
+        "h2": {
+          "wordCount": "2-3",
+          "pattern": "Business Benefits"
+        },
+        "benefits": {
+          "count": 4,
+          "structure": {
+            "h3": "3-5 words",
+            "description": "25-35 words",
+            "metric": "5-8 words (optional)"
+          }
+        }
+      }
+    },
+    {
+      "name": "customerSuccess",
+      "type": "alepo/customer-success-wireframe",
+      "required": true,
+      "template_variation": "wireframe",
+      "wordCount": "40-60",
+      "attributes": {
+        "layout": "full-width-dark",
+        "background": "dark"
+      },
+      "contentStructure": {
+        "h2": {
+          "wordCount": "2-3",
+          "pattern": "Customer Success/Results"
+        },
+        "quote": {
+          "wordCount": "25-40",
+          "pattern": "Specific testimonial with quantified results"
+        },
+        "attribution": {
+          "wordCount": "8-12",
+          "pattern": "Title, Company Type"
+        }
+      }
+    },
+    {
+      "name": "finalCTA",
+      "type": "alepo/final-cta-wireframe",
+      "required": true,
+      "template_variation": "wireframe", 
+      "wordCount": "25-40",
+      "attributes": {
+        "layout": "full-width-gradient",
+        "background": "gradient"
+      },
+      "contentStructure": {
+        "h2": {
+          "wordCount": "6-10",
+          "pattern": "Action-oriented headline"
+        },
+        "supportingText": {
+          "wordCount": "10-20",
+          "pattern": "Benefits summary"
+        },
+        "primaryCTA": {
+          "wordCount": "3-5",
+          "pattern": "Download/Schedule action"
+        },
+        "secondaryCTA": {
+          "wordCount": "3-5", 
+          "pattern": "Alternative action"
+        }
+      }
+    }
+  ],
+  "designSystem": {
+    "colors": {
+      "primary": "var(--c-primary-500)",
+      "secondary": "var(--c-secondary-500)", 
+      "backgrounds": [
+        "var(--c-white)",
+        "var(--c-gray-50)",
+        "var(--c-primary-50)",
+        "var(--c-secondary-950)"
+      ]
+    },
+    "typography": {
+      "h1": "var(--font-size-hero)",
+      "h2": "var(--font-size-h2)", 
+      "h3": "var(--font-size-h3)",
+      "body": "var(--font-size-body)",
+      "lineHeights": {
+        "headlines": "var(--line-height-tight)",
+        "body": "var(--line-height-normal)"
+      }
+    },
+    "spacing": {
+      "sections": "var(--space-9)",
+      "elements": "var(--space-6)",
+      "cards": "var(--space-5)"
+    }
+  },
+  "responsiveBreakpoints": {
+    "desktop": "1200px+",
+    "tablet": "768px-1199px", 
+    "mobile": "320px-767px"
+  },
+  "ctaStrategy": {
+    "maxPrimary": 2,
+    "patterns": {
+      "network": ["Request Demo", "Download Datasheet"],
+      "bss": ["Explore Capabilities", "Request Demo"],
+      "ai": ["See AI in Action", "Download ROI Calculator"]
+    },
+    "placement": ["hero", "finalCTA"]
+  },
+  "contentVariations": {
+    "network": {
+      "focus": "Technical performance and reliability",
+      "metrics": ["99.999% uptime", "36,000+ TPS", "sub-ms latency"],
+      "benefits": ["Performance", "Scalability", "Integration"],
+      "visuals": ["Network diagrams", "Architecture illustrations"]
+    },
+    "bss": {
+      "focus": "Business agility and time-to-market", 
+      "metrics": ["Days vs months launch", "30% cost reduction"],
+      "benefits": ["Innovation speed", "Efficiency", "Revenue growth"],
+      "visuals": ["Dashboard screenshots", "Workflow diagrams"]
+    },
+    "ai": {
+      "focus": "Results and ROI metrics",
+      "metrics": ["90% resolution rates", "70% cost reduction", "20% revenue increase"],
+      "benefits": ["Cost savings", "Customer satisfaction", "Revenue growth"],
+      "visuals": ["Chat interfaces", "Analytics dashboards"]
+    }
+  }
+}

@@ -1,0 +1,275 @@
+<!-- WIREFRAME-BASED FINAL CTA SECTION -->
+<!-- Full-width with gradient background, Word Count: 25-40 words -->
+
+<!-- wp:group {"align":"full","className":"alepo-final-cta-wireframe section-pattern-4","style":{"spacing":{"padding":{"top":"var(--space-9)","bottom":"var(--space-9)"}}}} -->
+<div class="wp-block-group alignfull alepo-final-cta-wireframe section-pattern-4" style="padding-top:var(--space-9);padding-bottom:var(--space-9)">
+
+    <!-- Gradient Background Cover -->
+    <!-- wp:cover {"customGradient":"linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-secondary-600) 100%)","dimRatio":0,"minHeight":300,"minHeightUnit":"px","isDark":true,"align":"full","className":"final-cta-bg"} -->
+    <div class="wp-block-cover alignfull is-dark final-cta-bg" style="background:linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-secondary-600) 100%);min-height:300px">
+        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
+        
+        <div class="wp-block-cover__inner-container">
+            
+            <!-- Main Container -->
+            <!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
+            <div class="wp-block-group">
+                
+                <!-- CTA Content Container -->
+                <!-- wp:group {"className":"cta-content-container","style":{"spacing":{"padding":{"top":"var(--space-7)","bottom":"var(--space-7)","left":"var(--space-6)","right":"var(--space-6)"}},"border":{"radius":"16px"}},"layout":{"type":"constrained"}} -->
+                <div class="wp-block-group cta-content-container" style="border-radius:16px;padding-top:var(--space-7);padding-right:var(--space-6);padding-bottom:var(--space-7);padding-left:var(--space-6)">
+                    
+                    <!-- Action-oriented Headline (H2: 6-10 words) -->
+                    <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"var(--font-size-h1)","fontWeight":"var(--font-weight-bold)","lineHeight":"var(--line-height-tight)"},"spacing":{"margin":{"bottom":"var(--space-5)"}}},"textColor":"white"} -->
+                    <h2 class="wp-block-heading has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-5);font-size:var(--font-size-h1);font-weight:var(--font-weight-bold);line-height:var(--line-height-tight)">{{ctaHeadline}}</h2>
+                    <!-- /wp:heading -->
+                    
+                    <!-- Supporting Text (10-20 words) -->
+                    <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var(--font-size-body-lg)","lineHeight":"var(--line-height-normal)","fontWeight":"var(--font-weight-medium)"},"spacing":{"margin":{"bottom":"var(--space-7)"}}},"textColor":"white"} -->
+                    <p class="has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-7);font-size:var(--font-size-body-lg);font-weight:var(--font-weight-medium);line-height:var(--line-height-normal)">{{ctaSupportingText}}</p>
+                    <!-- /wp:paragraph -->
+                    
+                    <!-- CTA Buttons Container -->
+                    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var(--space-4)"}}} -->
+                    <div class="wp-block-buttons">
+                        
+                        <!-- Primary CTA Button (3-5 words) -->
+                        <!-- wp:button {"className":"cta-primary-wireframe","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-7)","right":"var(--space-7)","top":"16px","bottom":"16px"}},"border":{"radius":"8px"}},"backgroundColor":"white","textColor":"primary-600"} -->
+                        <div class="wp-block-button cta-primary-wireframe">
+                            <a class="wp-block-button__link has-primary-600-color has-white-background-color has-text-color has-background wp-element-button" href="{{primaryCTAUrl}}" style="border-radius:8px;padding-top:16px;padding-right:var(--space-7);padding-bottom:16px;padding-left:var(--space-7);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold)">{{primaryCTAText}}</a>
+                        </div>
+                        <!-- /wp:button -->
+                        
+                        <!-- Secondary CTA Button (3-5 words) -->
+                        <!-- wp:button {"className":"cta-secondary-wireframe","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-7)","right":"var(--space-7)","top":"16px","bottom":"16px"}},"border":{"radius":"8px","width":"2px","color":"rgba(255,255,255,0.5)"}},"backgroundColor":"transparent","textColor":"white"} -->
+                        <div class="wp-block-button cta-secondary-wireframe">
+                            <a class="wp-block-button__link has-white-color has-transparent-background-color has-text-color has-background has-border-color wp-element-button" href="{{secondaryCTAUrl}}" style="border-color:rgba(255,255,255,0.5);border-width:2px;border-radius:8px;padding-top:16px;padding-right:var(--space-7);padding-bottom:16px;padding-left:var(--space-7);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold)">{{secondaryCTAText}}</a>
+                        </div>
+                        <!-- /wp:button -->
+                        
+                    </div>
+                    <!-- /wp:buttons -->
+                    
+                    <!-- Optional Trust Signals -->
+                    {{#if trustSignals}}
+                    <!-- wp:group {"className":"trust-signals","style":{"spacing":{"margin":{"top":"var(--space-6)"}}}} -->
+                    <div class="wp-block-group trust-signals" style="margin-top:var(--space-6)">
+                        
+                        <!-- Trust Signals Container -->
+                        <!-- wp:group {"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
+                        <div class="wp-block-group">
+                            
+                            {{#each trustSignals}}
+                            <!-- Trust Signal Item -->
+                            <!-- wp:group {"className":"trust-signal-item","style":{"spacing":{"padding":{"top":"var(--space-2)","bottom":"var(--space-2)","left":"var(--space-3)","right":"var(--space-3)"}},"border":{"radius":"20px"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+                            <div class="wp-block-group trust-signal-item" style="border-radius:20px;padding-top:var(--space-2);padding-right:var(--space-3);padding-bottom:var(--space-2);padding-left:var(--space-3)">
+                                <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-small)","fontWeight":"var(--font-weight-medium)"},"spacing":{"margin":{"bottom":"0"}},"color":{"text":"rgba(255,255,255,0.8)"}} -->
+                                <p class="has-text-color" style="color:rgba(255,255,255,0.8);margin-bottom:0;font-size:var(--font-size-small);font-weight:var(--font-weight-medium)">{{this}}</p>
+                                <!-- /wp:paragraph -->
+                            </div>
+                            <!-- /wp:group -->
+                            {{/each}}
+                            
+                        </div>
+                        <!-- /wp:group -->
+                        
+                    </div>
+                    <!-- /wp:group -->
+                    {{/if}}
+                    
+                    <!-- Contact Information (Optional) -->
+                    {{#if contactInfo}}
+                    <!-- wp:group {"className":"contact-info","style":{"spacing":{"margin":{"top":"var(--space-5)"}}}} -->
+                    <div class="wp-block-group contact-info" style="margin-top:var(--space-5)">
+                        
+                        <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var(--font-size-small)","fontWeight":"var(--font-weight-medium)"},"spacing":{"margin":{"bottom":"0"}},"color":{"text":"rgba(255,255,255,0.7)"}} -->
+                        <p class="has-text-align-center has-text-color" style="color:rgba(255,255,255,0.7);margin-bottom:0;font-size:var(--font-size-small);font-weight:var(--font-weight-medium)">{{contactInfo}}</p>
+                        <!-- /wp:paragraph -->
+                        
+                    </div>
+                    <!-- /wp:group -->
+                    {{/if}}
+                    
+                </div>
+                <!-- /wp:group -->
+                
+            </div>
+            <!-- /wp:group -->
+            
+        </div>
+    </div>
+    <!-- /wp:cover -->
+    
+</div>
+<!-- /wp:group -->
+
+<style>
+/* Wireframe Final CTA Styles Using Design System */
+.alepo-final-cta-wireframe {
+    background-color: var(--c-primary-500);
+}
+
+.alepo-final-cta-wireframe .final-cta-bg {
+    background-image: 
+        radial-gradient(at 30% 20%, rgba(255, 255, 255, 0.1) 0px, transparent 40%),
+        radial-gradient(at 70% 80%, rgba(255, 255, 255, 0.05) 0px, transparent 40%),
+        linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-secondary-600) 100%);
+}
+
+.alepo-final-cta-wireframe .cta-content-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.alepo-final-cta-wireframe .cta-content-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+/* Button Styles */
+.alepo-final-cta-wireframe .cta-primary-wireframe .wp-block-button__link {
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.alepo-final-cta-wireframe .cta-primary-wireframe .wp-block-button__link:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+}
+
+.alepo-final-cta-wireframe .cta-primary-wireframe .wp-block-button__link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.alepo-final-cta-wireframe .cta-primary-wireframe .wp-block-button__link:hover::before {
+    transform: translateX(100%);
+}
+
+.alepo-final-cta-wireframe .cta-secondary-wireframe .wp-block-button__link {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.alepo-final-cta-wireframe .cta-secondary-wireframe .wp-block-button__link:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    transform: translateY(-2px);
+}
+
+/* Trust Signals */
+.alepo-final-cta-wireframe .trust-signal-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    margin: var(--space-1);
+    transition: all 0.3s ease;
+}
+
+.alepo-final-cta-wireframe .trust-signal-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Typography Enhancement */
+.alepo-final-cta-wireframe h2 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alepo-final-cta-wireframe p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .alepo-final-cta-wireframe .wp-block-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .alepo-final-cta-wireframe .wp-block-button {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .alepo-final-cta-wireframe .wp-block-button__link {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .alepo-final-cta-wireframe .trust-signals .wp-block-group {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Accessibility */
+.alepo-final-cta-wireframe .wp-block-button__link:focus {
+    outline: 2px solid var(--c-white);
+    outline-offset: 2px;
+}
+
+.alepo-final-cta-wireframe .cta-content-container:focus-within {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Color System Implementation */
+.alepo-final-cta-wireframe .has-white-color {
+    color: var(--c-white) !important;
+}
+
+.alepo-final-cta-wireframe .has-primary-600-color {
+    color: var(--c-primary-600) !important;
+}
+
+.alepo-final-cta-wireframe .has-white-background-color {
+    background-color: var(--c-white) !important;
+}
+
+.alepo-final-cta-wireframe .has-transparent-background-color {
+    background-color: transparent !important;
+}
+
+/* Performance Optimization */
+.alepo-final-cta-wireframe .cta-content-container {
+    will-change: transform;
+}
+
+.alepo-final-cta-wireframe .wp-block-button__link {
+    will-change: transform, box-shadow;
+}
+
+/* Loading State (for dynamic content) */
+.alepo-final-cta-wireframe.loading .cta-content-container {
+    opacity: 0.7;
+}
+
+.alepo-final-cta-wireframe.loading .wp-block-button__link {
+    pointer-events: none;
+}
+</style>

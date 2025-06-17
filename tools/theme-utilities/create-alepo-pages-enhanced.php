@@ -123,9 +123,10 @@ class AlepoPageCreator {
         
         // Determine which template to use
         // Handle plural section names by converting to singular for template lookup
+        // Priority: wireframe templates for solutions, fallback to standard templates
         $template_mapping = [
             'products' => 'product-template',
-            'solutions' => 'solution-template', 
+            'solutions' => 'solution-wireframe-template', // Use wireframe-based template
             'industries' => 'industry-template'
         ];
         
@@ -271,8 +272,37 @@ class AlepoPageCreator {
         $template_variation = $section_config['template_variation'] ?? 'gutenberg';
         $block_type = str_replace('alepo/', '', $section_config['type']);
         
-        // Try variation-specific template first (e.g., product-hero-modern.html)
-        $block_template_file = $this->template_base_dir . '/block-library/hero-blocks/' . $block_type . '-' . $template_variation . '.html';
+        // Enhanced block template loading for wireframe templates
+        $block_template_file = null;
+        
+        // For wireframe templates, the block_type already includes "-wireframe"
+        if (strpos($template_variation, 'wireframe') !== false || strpos($block_type, '-wireframe') !== false) {
+            // If block_type already has '-wireframe', use it directly
+            if (strpos($block_type, '-wireframe') !== false) {
+                $wireframe_paths = [
+                    $this->template_base_dir . '/block-library/content-blocks/' . $block_type . '.html',
+                    $this->template_base_dir . '/block-library/hero-blocks/' . $block_type . '.html'
+                ];
+            } else {
+                // Otherwise append '-wireframe'
+                $wireframe_paths = [
+                    $this->template_base_dir . '/block-library/content-blocks/' . $block_type . '-wireframe.html',
+                    $this->template_base_dir . '/block-library/hero-blocks/' . $block_type . '-wireframe.html'
+                ];
+            }
+            
+            foreach ($wireframe_paths as $path) {
+                if (file_exists($path)) {
+                    $block_template_file = $path;
+                    break;
+                }
+            }
+        }
+        
+        // Fallback to variation-specific template (e.g., product-hero-modern.html)
+        if (!$block_template_file) {
+            $block_template_file = $this->template_base_dir . '/block-library/hero-blocks/' . $block_type . '-' . $template_variation . '.html';
+        }
         
         // Fallback to standard template
         if (!file_exists($block_template_file)) {
@@ -286,8 +316,8 @@ class AlepoPageCreator {
         
         $block_template = file_get_contents($block_template_file);
         
-        // Replace template variables
-        $replacements = $this->prepare_replacements($section_config, $content_data, $metadata);
+        // Replace template variables with wireframe-specific logic
+        $replacements = $this->prepare_wireframe_replacements($section_config, $content_data, $metadata);
         
         foreach ($replacements as $key => $value) {
             $block_template = str_replace('{{' . $key . '}}', $value, $block_template);
@@ -432,6 +462,160 @@ class AlepoPageCreator {
         }
         
         return $replacements;
+    }
+    
+    /**
+     * Prepare wireframe-specific template variable replacements
+     */
+    private function prepare_wireframe_replacements($section_config, $content_data, $metadata) {
+        $replacements = $this->prepare_replacements($section_config, $content_data, $metadata);
+        
+        // Add wireframe-specific variables based on section type
+        $section_name = $section_config['name'];
+        
+        switch ($section_name) {
+            case 'hero':
+                $replacements = array_merge($replacements, $this->get_wireframe_hero_vars($metadata));
+                break;
+                
+            case 'capability-section':
+                $replacements = array_merge($replacements, $this->get_wireframe_capability_vars($metadata, $content_data));
+                break;
+                
+            case 'technical-features':
+                $replacements = array_merge($replacements, $this->get_wireframe_technical_vars($metadata));
+                break;
+                
+            case 'business-benefits':
+                $replacements = array_merge($replacements, $this->get_wireframe_benefits_vars($metadata));
+                break;
+                
+            case 'customer-success':
+                $replacements = array_merge($replacements, $this->get_wireframe_customer_vars($metadata));
+                break;
+                
+            case 'final-cta':
+                $replacements = array_merge($replacements, $this->get_wireframe_cta_vars($metadata));
+                break;
+        }
+        
+        return $replacements;
+    }
+    
+    /**
+     * Get wireframe hero section variables
+     */
+    private function get_wireframe_hero_vars($metadata) {
+        return [
+            'heroHeadline' => $metadata['title'] ?? 'Solution Name',
+            'heroSubheadline' => $metadata['hero_subheadline'] ?? 'Transform your telecom operations with our proven solution.',
+            'heroBreadcrumb' => 'Solutions',
+            'primaryCTAText' => $metadata['acf_fields']['cta_primary']['text'] ?? 'Explore Solution',
+            'primaryCTAUrl' => $metadata['acf_fields']['cta_primary']['url'] ?? '#contact',
+            'secondaryCTAText' => $metadata['acf_fields']['cta_secondary']['text'] ?? 'Download Guide',
+            'secondaryCTAUrl' => $metadata['acf_fields']['cta_secondary']['url'] ?? '#resources'
+        ];
+    }
+    
+    /**
+     * Get wireframe capability section variables
+     */
+    private function get_wireframe_capability_vars($metadata, $content_data) {
+        return [
+            'capabilityGroupTitle' => $metadata['capability_group_title'] ?? 'Core Capabilities',
+            'capability1Title' => $metadata['capability_1_title'] ?? 'Advanced Analytics',
+            'capability1Description' => $metadata['capability_1_desc'] ?? 'Real-time insights and predictive analytics to optimize network performance and reduce operational costs.',
+            'capability2Title' => $metadata['capability_2_title'] ?? 'Seamless Integration',
+            'capability2Description' => $metadata['capability_2_desc'] ?? 'Native APIs and protocols ensure smooth integration with existing infrastructure and third-party systems.',
+            'capability3Title' => $metadata['capability_3_title'] ?? 'Scalable Architecture',
+            'capability3Description' => $metadata['capability_3_desc'] ?? 'Cloud-native design supports millions of subscribers with elastic scaling and high availability.',
+            'layoutVariation' => 'layout-left',
+            'contentWidth' => '60%',
+            'visualWidth' => '40%',
+            'visualPlaceholder' => 'Capability+Diagram',
+            'visualAltText' => 'Solution capability diagram',
+            'visualCaption' => 'Integrated solution architecture'
+        ];
+    }
+    
+    /**
+     * Get wireframe technical features variables
+     */
+    private function get_wireframe_technical_vars($metadata) {
+        return [
+            'technicalFeaturesTitle' => 'Technical Features',
+            'feature1Icon' => '🔗',
+            'feature1Description' => 'Protocol Support (RADIUS, Diameter, 5G)',
+            'feature2Icon' => '⚡',
+            'feature2Description' => 'High Performance (36,000+ TPS)',
+            'feature3Icon' => '🛡️',
+            'feature3Description' => 'Enterprise Security & Compliance',
+            'feature4Icon' => '🏗️',
+            'feature4Description' => 'Microservices Architecture',
+            'feature5Icon' => '📊',
+            'feature5Description' => 'Real-time Analytics Dashboard',
+            'feature6Icon' => '🔄',
+            'feature6Description' => 'Zero-downtime Updates',
+            'feature7Icon' => '🌐',
+            'feature7Description' => 'Multi-tenant Support',
+            'feature8Icon' => '🚀',
+            'feature8Description' => 'Auto-scaling Capabilities'
+        ];
+    }
+    
+    /**
+     * Get wireframe business benefits variables
+     */
+    private function get_wireframe_benefits_vars($metadata) {
+        return [
+            'businessBenefitsTitle' => 'Business Benefits',
+            'benefit1Icon' => '💰',
+            'benefit1Title' => 'Cost Reduction',
+            'benefit1Description' => 'Reduce operational expenses by 30-50% through automation and efficient resource utilization.',
+            'benefit1Metric' => 'Up to 50% savings',
+            'benefit2Icon' => '⚡',
+            'benefit2Title' => 'Faster Time-to-Market',
+            'benefit2Description' => 'Launch new services 3x faster with pre-built templates and automated provisioning.',
+            'benefit2Metric' => '3x faster deployment',
+            'benefit3Icon' => '📈',
+            'benefit3Title' => 'Revenue Growth',
+            'benefit3Description' => 'Increase ARPU through personalized services and improved customer experience.',
+            'benefit3Metric' => '15-25% ARPU increase',
+            'benefit4Icon' => '🎯',
+            'benefit4Title' => 'Operational Excellence',
+            'benefit4Description' => 'Achieve 99.99% uptime with proactive monitoring and automated incident response.',
+            'benefit4Metric' => '99.99% uptime'
+        ];
+    }
+    
+    /**
+     * Get wireframe customer success variables
+     */
+    private function get_wireframe_customer_vars($metadata) {
+        return [
+            'customerSuccessTitle' => 'Customer Success',
+            'customerQuote' => '"This solution transformed our network operations and reduced costs by 40% within six months."',
+            'customerName' => 'Sarah Chen, CTO',
+            'customerCompany' => 'Global Telecom Leader',
+            'companyLogo' => null, // Will be set if available
+            'trustIndicators' => ['500M+ Subscribers', 'Global Deployment', 'Telecom Leader']
+        ];
+    }
+    
+    /**
+     * Get wireframe final CTA variables
+     */
+    private function get_wireframe_cta_vars($metadata) {
+        return [
+            'ctaHeadline' => 'Ready to Transform Your Operations?',
+            'ctaSupportingText' => 'Join leading operators who trust Alepo for mission-critical solutions.',
+            'primaryCTAText' => 'Schedule Demo',
+            'primaryCTAUrl' => '/contact',
+            'secondaryCTAText' => 'Download Guide',
+            'secondaryCTAUrl' => '/resources',
+            'trustSignals' => ['99.99% Uptime', 'SOC2 Certified', '24/7 Support'],
+            'contactInfo' => 'Contact our solution architects: solutions@alepo.com'
+        ];
     }
     
     /**
@@ -642,7 +826,7 @@ function alepo_page_creator_admin_page() {
         jQuery(document).ready(function($) {
             const templateDescriptions = {
                 'products': 'Product pages with hero, challenge/solution comparison, features, technical specs, ROI, and testimonials.',
-                'solutions': 'Solution pages with problem narrative, approach methodology, benefits, implementation, and case studies.',
+                'solutions': 'WIREFRAME-BASED: Hero (60-80 words) → 3 Capability Sections (120-150 words each) → Technical Features (80-120 words) → Business Benefits (160-200 words) → Customer Success (40-60 words) → Final CTA (25-40 words). Total: 550-650 words.',
                 'industries': 'Industry pages with sector overview, challenges, solutions, success stories, and industry-specific CTAs.'
             };
             

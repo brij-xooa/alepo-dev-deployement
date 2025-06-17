@@ -320,6 +320,13 @@ class AlepoPageCreator {
         $replacements = $this->prepare_wireframe_replacements($section_config, $content_data, $metadata);
         
         foreach ($replacements as $key => $value) {
+            // Convert arrays to strings for template replacement
+            if (is_array($value)) {
+                $value = implode(', ', $value);
+            } elseif (!is_string($value) && !is_numeric($value)) {
+                $value = (string) $value;
+            }
+            
             $block_template = str_replace('{{' . $key . '}}', $value, $block_template);
         }
         

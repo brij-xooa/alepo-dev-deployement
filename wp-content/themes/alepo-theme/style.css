@@ -872,21 +872,9 @@ ol {
     transition: all var(--transition-fast);
 }
 
+/* Checkmarks removed as per requirements */
 .feature-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--accent-green);
-    font-weight: bold;
-    background: rgba(0, 200, 81, 0.1);
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 11px;
-    top: 11px;
+    display: none;
 }
 
 .feature-list li:hover {
@@ -2463,14 +2451,31 @@ div[style*="margin: 40px 0"] br {
 .section-pattern-4 { background: var(--c-white, #ffffff); }
 .section-pattern-5 { background: var(--c-secondary-950, #1a2c32); color: var(--c-white, #ffffff); }
 
-/* Hero Section Styles - Two Column Layout */
+/* Hero Section Styles - Full Height with Background Image and Gradient Overlay */
 .hero-section {
-    min-height: 100vh;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    position: relative;
     display: flex;
     align-items: center;
-    background: var(--c-white);
+    background-image: url('https://alepo.com/wp-content/uploads/2024/03/landing_Solution-Brief-Digital-MVNO-in-a-Box.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin: 0;
     padding: 0;
-    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(49,138,255,0.85) 0%, rgba(70,151,160,0.75) 100%);
+    z-index: 1;
 }
 
 .hero-two-columns {
@@ -2478,8 +2483,10 @@ div[style*="margin: 40px 0"] br {
     grid-template-columns: 1fr 1fr;
     gap: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content-left {
@@ -2487,29 +2494,26 @@ div[style*="margin: 40px 0"] br {
     text-align: left;
     max-width: 600px;
     margin-left: auto;
+    position: relative;
+    z-index: 3;
 }
 
 .hero-content-right {
     position: relative;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    z-index: 3;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
     font-weight: 700;
     line-height: 1.1;
-    color: var(--c-gray-900);
+    color: var(--c-white) !important;
     margin-bottom: var(--space-5, 24px);
-    background: linear-gradient(135deg, var(--c-primary-600) 0%, var(--c-secondary-600) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-text 3s ease-in-out infinite alternate;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 @keyframes gradient-text {
@@ -2518,10 +2522,11 @@ div[style*="margin: 40px 0"] br {
 }
 
 .hero-description {
-    font-size: var(--font-size-body-lg, 1.125rem);
+    font-size: var(--font-size-body-lg, 1.125rem) !important;
     line-height: var(--line-height-relaxed, 1.8);
-    color: var(--c-gray-700);
+    color: rgba(255,255,255,0.95) !important;
     margin-bottom: var(--space-6, 32px);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .hero-cta-buttons {
@@ -2570,15 +2575,14 @@ div[style*="margin: 40px 0"] br {
     transform: translateY(-2px);
 }
 
-/* Hero Image with Floating Elements */
-.hero-image-container {
+/* Hero Floating Elements Container */
+.hero-floating-elements {
     position: relative;
     width: 100%;
-    height: 80vh;
-    background: url('/wp-content/themes/alepo-theme/assets/images/hero-business-team.jpg') center/cover;
-    border-radius: 16px;
-    margin: var(--space-6, 32px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .floating-card {

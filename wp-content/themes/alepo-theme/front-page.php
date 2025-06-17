@@ -19,96 +19,104 @@ get_header();
         <?php else : ?>
             <!-- Fallback template structure -->
         
-        <!-- Hero Section - Two Column Layout -->
-        <!-- wp:group {"className":"hero-section"} -->
-        <section class="wp-block-group hero-section">
-            
-            <!-- wp:group {"className":"hero-two-columns"} -->
-            <div class="wp-block-group hero-two-columns">
+        <!-- Hero Section - Full Height with Background Image and Gradient Overlay -->
+        <!-- wp:cover {"url":"https://alepo.com/wp-content/uploads/2024/03/landing_Solution-Brief-Digital-MVNO-in-a-Box.png","customGradient":"linear-gradient(135deg,rgba(49,138,255,0.85) 0%,rgba(70,151,160,0.75) 100%)","contentPosition":"center center","className":"hero-section","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}},"dimensions":{"minHeight":"100vh"}}} -->
+        <div class="wp-block-cover hero-section" style="min-height:100vh;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+            <span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim has-background-gradient" style="background:linear-gradient(135deg,rgba(49,138,255,0.85) 0%,rgba(70,151,160,0.75) 100%)"></span>
+            <img class="wp-block-cover__image-background" alt="" src="https://alepo.com/wp-content/uploads/2024/03/landing_Solution-Brief-Digital-MVNO-in-a-Box.png" data-object-fit="cover"/>
+            <div class="wp-block-cover__inner-container">
                 
-                <!-- Left Column: Content -->
-                <!-- wp:group {"className":"hero-content-left"} -->
-                <div class="wp-block-group hero-content-left">
+                <!-- wp:columns {"className":"hero-two-columns","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+                <div class="wp-block-columns hero-two-columns" style="margin-top:0;margin-bottom:0">
                     
-                    <!-- wp:heading {"level":1,"className":"hero-title"} -->
-                    <h1 class="wp-block-heading hero-title">
-                        Smart Software for Serious Networks
-                    </h1>
-                    <!-- /wp:heading -->
-                    
-                    <!-- wp:paragraph {"className":"hero-description"} -->
-                    <p class="hero-description">
-                        Alepo delivers cloud-native software that drives revenue growth, operational efficiency, and exceptional customer experiences for Communication Service Providers (CSPs) worldwide. From carrier-grade network infrastructure to AI-powered customer engagement, our proven platforms help CSPs move faster, operate smarter, and serve customers better.
-                    </p>
-                    <!-- /wp:paragraph -->
-                    
-                    <!-- wp:paragraph {"className":"hero-trust-badge","style":{"typography":{"fontWeight":"600"},"color":{"text":"#1a6af6"}}} -->
-                    <p class="hero-trust-badge has-text-color" style="color:#1a6af6;font-weight:600">
-                        Trusted by leading CSPs managing 100+ million subscribers globally
-                    </p>
-                    <!-- /wp:paragraph -->
-                    
-                    <!-- wp:group {"className":"hero-cta-buttons"} -->
-                    <div class="wp-block-group hero-cta-buttons">
-                        <!-- wp:html -->
-                        <a href="/request-demo" class="hero-btn-primary">
-                            Request Demo
-                            <span style="margin-left: 8px;">→</span>
-                        </a>
-                        <a href="/solutions" class="hero-btn-secondary">
-                            Our Solutions
-                        </a>
-                        <!-- /wp:html -->
-                    </div>
-                    <!-- /wp:group -->
-                    
-                </div>
-                <!-- /wp:group -->
-                
-                <!-- Right Column: Image with Floating Elements -->
-                <!-- wp:group {"className":"hero-content-right"} -->
-                <div class="wp-block-group hero-content-right">
-                    
-                    <!-- wp:html -->
-                    <div class="hero-image-container">
+                    <!-- Left Column: Content -->
+                    <!-- wp:column {"className":"hero-content-left"} -->
+                    <div class="wp-block-column hero-content-left">
                         
-                        <!-- Floating Card 1: Network Performance -->
-                        <div class="floating-card floating-card-1">
-                            <div class="card-title">Network Performance</div>
-                            <div class="card-value">99.999%</div>
-                            <div class="card-chart"></div>
-                            <div style="font-size: 0.75rem; color: #6c757d;">Uptime SLA</div>
-                        </div>
+                        <!-- wp:heading {"level":1,"className":"hero-title","style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"clamp(2.5rem, 5vw, 4rem)","fontWeight":"700","lineHeight":"1.1"}}} -->
+                        <h1 class="wp-block-heading hero-title has-text-color" style="color:#ffffff;font-size:clamp(2.5rem, 5vw, 4rem);font-weight:700;line-height:1.1">
+                            Smart Software for Serious Networks
+                        </h1>
+                        <!-- /wp:heading -->
                         
-                        <!-- Floating Card 2: Subscriber Analytics -->
-                        <div class="floating-card floating-card-2">
-                            <div class="card-title">CSP Success</div>
-                            <div class="team-avatars">
-                                <div class="avatar">ST</div>
-                                <div class="avatar">DC</div>
-                                <div class="avatar">OR</div>
-                                <div style="margin-left: 8px; font-size: 0.75rem; color: #6c757d;">+100 CSPs</div>
+                        <!-- wp:paragraph {"className":"hero-description","style":{"color":{"text":"rgba(255,255,255,0.95)"},"typography":{"fontSize":"1.125rem","lineHeight":"1.8"}}} -->
+                        <p class="hero-description has-text-color" style="color:rgba(255,255,255,0.95);font-size:1.125rem;line-height:1.8">
+                            Alepo delivers cloud-native software that drives revenue growth, operational efficiency, and exceptional customer experiences for Communication Service Providers (CSPs) worldwide. From carrier-grade network infrastructure to AI-powered customer engagement, our proven platforms help CSPs move faster, operate smarter, and serve customers better.
+                        </p>
+                        <!-- /wp:paragraph -->
+                        
+                        <!-- wp:paragraph {"className":"hero-trust-badge","style":{"typography":{"fontWeight":"600"},"color":{"text":"rgba(255,255,255,0.9)"}}} -->
+                        <p class="hero-trust-badge has-text-color" style="color:rgba(255,255,255,0.9);font-weight:600">
+                            Trusted by leading CSPs managing 100+ million subscribers globally
+                        </p>
+                        <!-- /wp:paragraph -->
+                        
+                        <!-- wp:buttons {"className":"hero-cta-buttons","layout":{"type":"flex","flexWrap":"wrap"}} -->
+                        <div class="wp-block-buttons hero-cta-buttons">
+                            <!-- wp:button {"backgroundColor":"white","textColor":"primary","className":"hero-btn-primary","style":{"border":{"radius":"8px"},"spacing":{"padding":{"top":"16px","bottom":"16px","left":"32px","right":"32px"}}}} -->
+                            <div class="wp-block-button hero-btn-primary">
+                                <a class="wp-block-button__link has-primary-color has-white-background-color has-text-color has-background wp-element-button" href="/request-demo" style="border-radius:8px;padding-top:16px;padding-right:32px;padding-bottom:16px;padding-left:32px">Request Demo →</a>
                             </div>
+                            <!-- /wp:button -->
+                            
+                            <!-- wp:button {"className":"hero-btn-secondary","style":{"border":{"radius":"8px","width":"2px","color":"#ffffff"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"30px","right":"30px"}},"color":{"text":"#ffffff"}}} -->
+                            <div class="wp-block-button hero-btn-secondary">
+                                <a class="wp-block-button__link has-text-color has-border-color wp-element-button" href="/solutions" style="border-color:#ffffff;border-width:2px;border-radius:8px;color:#ffffff;padding-top:14px;padding-right:30px;padding-bottom:14px;padding-left:30px">Our Solutions</a>
+                            </div>
+                            <!-- /wp:button -->
                         </div>
-                        
-                        <!-- Floating Card 3: Revenue Growth -->
-                        <div class="floating-card floating-card-3">
-                            <div class="card-title">AI Impact</div>
-                            <div class="card-value">90%</div>
-                            <div style="font-size: 0.75rem; color: #6c757d;">Resolution Rate</div>
-                        </div>
+                        <!-- /wp:buttons -->
                         
                     </div>
-                    <!-- /wp:html -->
+                    <!-- /wp:column -->
+                    
+                    <!-- Right Column: Floating Elements -->
+                    <!-- wp:column {"className":"hero-content-right"} -->
+                    <div class="wp-block-column hero-content-right">
+                        
+                        <!-- wp:group {"className":"hero-floating-elements"} -->
+                        <div class="wp-block-group hero-floating-elements">
+                            
+                            <!-- wp:html -->
+                            <!-- Floating Card 1: Network Performance -->
+                            <div class="floating-card floating-card-1">
+                                <div class="card-title">Network Performance</div>
+                                <div class="card-value">99.999%</div>
+                                <div class="card-chart"></div>
+                                <div style="font-size: 0.75rem; color: #6c757d;">Uptime SLA</div>
+                            </div>
+                            
+                            <!-- Floating Card 2: CSP Success -->
+                            <div class="floating-card floating-card-2">
+                                <div class="card-title">CSP Success</div>
+                                <div class="team-avatars">
+                                    <div class="avatar">ST</div>
+                                    <div class="avatar">DC</div>
+                                    <div class="avatar">OR</div>
+                                    <div style="margin-left: 8px; font-size: 0.75rem; color: #6c757d;">+100 CSPs</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Floating Card 3: AI Impact -->
+                            <div class="floating-card floating-card-3">
+                                <div class="card-title">AI Impact</div>
+                                <div class="card-value">90%</div>
+                                <div style="font-size: 0.75rem; color: #6c757d;">Resolution Rate</div>
+                            </div>
+                            <!-- /wp:html -->
+                            
+                        </div>
+                        <!-- /wp:group -->
+                        
+                    </div>
+                    <!-- /wp:column -->
                     
                 </div>
-                <!-- /wp:group -->
+                <!-- /wp:columns -->
                 
             </div>
-            <!-- /wp:group -->
-            
-        </section>
-        <!-- /wp:group -->
+        </div>
+        <!-- /wp:cover -->
 
         <!-- Three Pillars of CSP Success Section -->
         <!-- wp:group {"backgroundColor":"white","className":"section-solutions"} -->

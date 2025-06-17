@@ -7,10 +7,12 @@
       "name": "hero",
       "type": "alepo/product-hero",
       "required": true,
+      "template_variation": "modern",
       "attributes": {
-        "layout": "split-screen",
-        "backgroundType": "gradient",
-        "minHeight": 600
+        "layout": "modern-dashboard",
+        "backgroundType": "parallax-video",
+        "minHeight": 600,
+        "designStyle": "modern"
       },
       "content": {
         "breadcrumbs": true,

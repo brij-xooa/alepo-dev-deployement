@@ -267,12 +267,20 @@ class AlepoPageCreator {
      * Build a single section based on template
      */
     private function build_section($section_config, $content_data, $metadata) {
-        // Load block template
-        $block_template_file = $this->template_base_dir . '/block-library/' . 
-                              str_replace('alepo/', '', $section_config['type']) . '-gutenberg.html';
+        // Determine template file based on variation
+        $template_variation = $section_config['template_variation'] ?? 'gutenberg';
+        $block_type = str_replace('alepo/', '', $section_config['type']);
         
+        // Try variation-specific template first (e.g., product-hero-modern.html)
+        $block_template_file = $this->template_base_dir . '/block-library/hero-blocks/' . $block_type . '-' . $template_variation . '.html';
+        
+        // Fallback to standard template
         if (!file_exists($block_template_file)) {
-            // Fallback to content if template not found
+            $block_template_file = $this->template_base_dir . '/block-library/hero-blocks/' . $block_type . '-gutenberg.html';
+        }
+        
+        // Final fallback to content
+        if (!file_exists($block_template_file)) {
             return $content_data[$section_config['name']] ?? '';
         }
         
@@ -413,7 +421,87 @@ class AlepoPageCreator {
         $replacements['secondaryCTAText'] = $metadata['acf_fields']['cta_secondary']['text'] ?? 'Download Resources';
         $replacements['secondaryCTAUrl'] = $metadata['acf_fields']['cta_secondary']['url'] ?? '#';
         
+        // Enhanced data for modern templates
+        if (!empty($metadata['acf_fields']['performance_metrics'])) {
+            $replacements['productStats'] = $this->format_stats_for_template($metadata['acf_fields']['performance_metrics']);
+        }
+        
+        // Add more complex data structures
+        if (!empty($metadata['acf_fields']['key_features'])) {
+            $replacements['productFeatures'] = $this->format_features_for_template($metadata['acf_fields']['key_features']);
+        }
+        
         return $replacements;
+    }
+    
+    /**
+     * Format stats for modern template consumption
+     */
+    private function format_stats_for_template($stats) {
+        $formatted_stats = [];
+        foreach ($stats as $stat) {
+            $formatted_stats[] = [
+                'value' => $stat['metric'],
+                'label' => $stat['label'],
+                'description' => $stat['description'] ?? '',
+                'numericValue' => preg_replace('/[^0-9]/', '', $stat['metric']), // Extract numbers for animation
+                'percentage' => $this->calculate_stat_percentage($stat['metric']) // For progress bars
+            ];
+        }
+        return json_encode($formatted_stats);
+    }
+    
+    /**
+     * Calculate percentage for progress bar visualization
+     */
+    private function calculate_stat_percentage($metric) {
+        // Simple mapping logic - can be enhanced
+        if (strpos($metric, '%') !== false) {
+            return floatval($metric);
+        } elseif (strpos($metric, '36,000') !== false) {
+            return 95; // TPS performance
+        } elseif (strpos($metric, '500M') !== false) {
+            return 88; // Subscribers
+        } else {
+            return 75; // Default
+        }
+    }
+    
+    /**
+     * Format features for template consumption
+     */
+    private function format_features_for_template($features) {
+        $formatted_features = [];
+        foreach ($features as $index => $feature) {
+            $formatted_features[] = [
+                'title' => $feature,
+                'icon' => $this->get_feature_icon($feature),
+                'delay' => ($index + 1) * 100 // For staggered animations
+            ];
+        }
+        return json_encode($formatted_features);
+    }
+    
+    /**
+     * Get appropriate icon for feature
+     */
+    private function get_feature_icon($feature) {
+        $icons = [
+            'Performance' => '⚡',
+            'Uptime' => '🛡️',
+            'Protocol' => '🔗',
+            'Security' => '🔐',
+            'Architecture' => '🏗️',
+            'Migration' => '🚀'
+        ];
+        
+        foreach ($icons as $keyword => $icon) {
+            if (stripos($feature, $keyword) !== false) {
+                return $icon;
+            }
+        }
+        
+        return '✨'; // Default icon
     }
 }
 

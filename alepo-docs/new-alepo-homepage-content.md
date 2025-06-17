@@ -1,212 +1,298 @@
-**Alepo Homepage**
+# Alepo Homepage - Explicit Structure and Placement Guide
 
-_Meta Information_
+## Meta Information (HTML Head)
+- **Title:** Alepo - Smart Software for Serious Networks | CSP Solutions
+- **Meta Description:** Alepo empowers CSPs with carrier-grade AAA servers, digital BSS platforms, and AI-powered customer experience solutions. Trusted by operators worldwide.
+- **Primary Keywords:** CSP solutions, communication service provider software, telecom software
+- **Secondary Keywords:** AAA server, digital BSS, telecom AI, carrier-grade software
 
-- _Title: Alepo - Smart Software for Serious Networks | CSP Solutions_
-- _Meta Description: Alepo empowers CSPs with carrier-grade AAA servers, digital BSS platforms, and AI-powered customer experience solutions. Trusted by operators worldwide._
-- _Primary Keywords: CSP solutions, communication service provider software, telecom software_
-- _Secondary Keywords: AAA server, digital BSS, telecom AI, carrier-grade software_
+---
 
-**Smart Software for Serious Networks**
+## SECTION 1: Header/Navigation (Sticky)
+**Placement:** Fixed top of page
+- **Logo:** "Alepo" (left side)
+- **Main Navigation:** Solutions | Products | Customers | Resources | Company
+- **CTA Button:** "Request Demo" (right side, primary button style)
 
-**Empowering CSPs with Modern, Intelligent Solutions**
+---
 
-Alepo delivers cloud-native software that drives revenue growth, operational efficiency, and exceptional customer experiences for Communication Service Providers (CSPs) worldwide. From carrier-grade network infrastructure to AI-powered customer engagement, our proven platforms help CSPs move faster, operate smarter, and serve customers better.
+## SECTION 2: Hero Section
+**Placement:** Below header, full viewport height
+**Background:** Gradient or subtle pattern
 
-**Trusted by leading CSPs managing 100+ million subscribers globally**
+### Content Structure:
+**Headline (H1):** Smart Software for Serious Networks
 
-\[Request a Demo\]
+**Subheadline:** Empowering CSPs with Modern, Intelligent Solutions
 
-**Three Pillars of CSP Success**
+**Body Text:** Alepo delivers cloud-native software that drives revenue growth, operational efficiency, and exceptional customer experiences for Communication Service Providers (CSPs) worldwide. From carrier-grade network infrastructure to AI-powered customer engagement, our proven platforms help CSPs move faster, operate smarter, and serve customers better.
 
-**Network Access Control**
+**Trust Badge:** ✓ Trusted by leading CSPs managing 100+ million subscribers globally
 
-**Secure, scalable authentication for modern networks**
+**Primary CTA:** [Request a Demo]
 
-Carrier-grade AAA servers, policy control, and WiFi monetization solutions that optimize network performance while enabling service innovation.
+**Visual Element:** Right side or background - abstract network visualization
 
-- **99.999% uptime** with 36,000+ TPS performance
-- **Unified authentication** across 5G, WiFi, and broadband
-- **Real-time policy control** for service differentiation
+---
 
-\[Explore Network Solutions\]
+## SECTION 3: Three Pillars Section
+**Placement:** Below hero
+**Background:** White or light gray
+**Layout:** 3-column grid
 
-**Digital Business Support**
+### Pillar 1: Network Access Control
+**Icon:** 🔐 or network icon
+**Title:** Network Access Control
+**Subtitle:** Secure, scalable authentication for modern networks
+**Description:** Carrier-grade AAA servers, policy control, and WiFi monetization solutions that optimize network performance while enabling service innovation.
+**Features:**
+- 99.999% uptime with 36,000+ TPS performance
+- Unified authentication across 5G, WiFi, and broadband
+- Real-time policy control for service differentiation
+**CTA:** [Explore Network Solutions]
 
-**Cloud-native BSS that accelerates innovation**
+### Pillar 2: Digital Business Support
+**Icon:** 💼 or business icon
+**Title:** Digital Business Support
+**Subtitle:** Cloud-native BSS that accelerates innovation
+**Description:** Modern billing, customer management, and operational platforms designed for rapid service launches and superior customer experiences.
+**Features:**
+- Launch services in days, not months
+- Convergent charging across all access types
+- Omnichannel customer experience with AI integration
+**CTA:** [Discover BSS Platforms]
 
-Modern billing, customer management, and operational platforms designed for rapid service launches and superior customer experiences.
+### Pillar 3: AI-Powered Customer Experience
+**Icon:** 🤖 or AI icon
+**Title:** AI-Powered Customer Experience
+**Subtitle:** Generative AI that transforms customer engagement
+**Description:** Telecom-trained AI solutions that deliver 24/7 support, empower human agents, and drive intelligent sales automation.
+**Features:**
+- 90% first-contact resolution with AI customer assistant
+- 40-70% faster issue resolution for agents
+- 20% increase in upsell revenue through AI
+**CTA:** [See AI in Action]
 
-- **Launch services in days**, not months
-- **Convergent charging** across all access types
-- **Omnichannel customer experience** with AI integration
+---
 
-\[Discover BSS Platforms\]
+## SECTION 4: Why Choose Alepo
+**Placement:** Below Three Pillars
+**Background:** Light gradient
+**Layout:** 4-column grid
 
-**AI-Powered Customer Experience**
+### Card 1: Proven Expertise
+**Icon:** Trophy or badge
+**Title:** Proven Expertise
+**Bold Text:** 20+ years of telecom innovation
+**Description:** From powering early ISPs to enabling 5G networks, we've evolved alongside the industry with deep domain expertise and carrier-grade reliability.
 
-**Generative AI that transforms customer engagement**
+### Card 2: Future-Ready Architecture
+**Icon:** Rocket or architecture
+**Title:** Future-Ready Architecture
+**Bold Text:** Cloud-native, microservices design
+**Description:** Built for scale and flexibility with open APIs, multi-cloud deployment, and standards-compliant integration that avoids vendor lock-in.
 
-Telecom-trained AI solutions that deliver 24/7 support, empower human agents, and drive intelligent sales automation.
+### Card 3: Complete Solutions
+**Icon:** Puzzle or integration
+**Title:** Complete Solutions
+**Bold Text:** Network to customer experience
+**Description:** Unique breadth covering infrastructure, operations, and customer engagement with pre-integrated platforms that work together seamlessly.
 
-- **90% first-contact resolution** with AI customer assistant
-- **40-70% faster** issue resolution for agents
-- **20% increase** in upsell revenue through AI
+### Card 4: True Partnership
+**Icon:** Handshake or support
+**Title:** True Partnership
+**Bold Text:** 24/7 expert support included
+**Description:** Industry-leading support with 30-minute response times, dedicated customer success managers, and ongoing optimization guidance.
 
-\[See AI in Action\]
+---
 
-**Why Leading CSPs Choose Alepo**
+## SECTION 5: Customer Logos
+**Placement:** Below Why Choose
+**Background:** White
+**Layout:** Horizontal logo strip
 
-**Proven Expertise**
+**Headline:** Trusted Worldwide
+**Subtext:** Leading CSPs rely on Alepo to power their networks:
+**Logos:** Saudi Telecom | Digicel | Orange | SaskTel | Zain | Buckeye Broadband
+**Display:** Grayscale logos that colorize on hover
 
-**20+ years of telecom innovation** From powering early ISPs to enabling 5G networks, we've evolved alongside the industry with deep domain expertise and carrier-grade reliability.
+---
 
-**Future-Ready Architecture**
+## SECTION 6: Customer Success Stories
+**Placement:** Below Customer Logos
+**Background:** Dark blue or navy
+**Layout:** 3-column testimonial cards
 
-**Cloud-native, microservices design** Built for scale and flexibility with open APIs, multi-cloud deployment, and standards-compliant integration that avoids vendor lock-in.
+### Testimonial 1:
+**Quote:** "Alepo's AAA platform enabled our 5G launch with zero downtime migration. We migrated 50 million subscribers seamlessly."
+**Attribution:** - CTO, Major Asian Operator
 
-**Complete Solutions**
+### Testimonial 2:
+**Quote:** "The AI Customer Assistant handled 70% of our support volume within two months. Customer satisfaction improved while costs decreased."
+**Attribution:** - Operations Director, SaskTel Lüm Mobile
 
-**Network to customer experience** Unique breadth covering infrastructure, operations, and customer engagement with pre-integrated platforms that work together seamlessly.
+### Testimonial 3:
+**Quote:** "We launched 12 new services this year with Alepo's BSS compared to 2 with our legacy system. Time-to-market improved from 6 months to 2 weeks."
+**Attribution:** - CTO, Regional Mobile Operator
 
-**True Partnership**
+---
 
-**24/7 expert support included** Industry-leading support with 30-minute response times, dedicated customer success managers, and ongoing optimization guidance.
+## SECTION 7: Solutions by CSP Type
+**Placement:** Below Success Stories
+**Background:** White
+**Layout:** 3 expandable cards or tabs
 
-**Trusted Worldwide**
-
-**Leading CSPs rely on Alepo to power their networks:**
-
-\[Customer Logos: Saudi Telecom, Digicel, Orange, SaskTel, Zain, Buckeye Broadband\]
-
-**Customer Success Highlights**
-
-"Alepo's AAA platform enabled our 5G launch with zero downtime migration. We migrated 50 million subscribers seamlessly." _\- CTO, Major Asian Operator_
-
-"The AI Customer Assistant handled 70% of our support volume within two months. Customer satisfaction improved while costs decreased." _\- Operations Director, SaskTel Lüm Mobile_
-
-"We launched 12 new services this year with Alepo's BSS compared to 2 with our legacy system. Time-to-market improved from 6 months to 2 weeks." _\- CTO, Regional Mobile Operator_
-
-**Solutions by CSP Type**
-
-**Mobile Network Operators**
-
-Modernize core systems while enabling 5G innovation
-
+### Tab 1: Mobile Network Operators
+**Title:** Mobile Network Operators
+**Subtitle:** Modernize core systems while enabling 5G innovation
+**Features:**
 - Upgrade legacy AAA and BSS systems
 - Enable network slicing and edge services
 - Transform customer experience with AI
 - Support millions of subscribers with carrier-grade reliability
 
-**ISPs & Broadband Providers**
-
-Optimize network performance and customer engagement
-
+### Tab 2: ISPs & Broadband Providers
+**Title:** ISPs & Broadband Providers
+**Subtitle:** Optimize network performance and customer engagement
+**Features:**
 - Unify authentication across fiber, cable, and WiFi
 - Monetize broadband services with flexible billing
 - Reduce support costs with AI customer service
 - Enable rapid service innovation and competitive differentiation
 
-**MVNOs & Digital Brands**
-
-Launch and scale rapidly with SaaS platforms
-
+### Tab 3: MVNOs & Digital Brands
+**Title:** MVNOs & Digital Brands
+**Subtitle:** Launch and scale rapidly with SaaS platforms
+**Features:**
 - Go live in 30 days with BSS Now
 - Support digital-first customer experiences
 - Scale from thousands to millions of subscribers
 - Focus on growth while we handle the technology
 
-\[Find Your Solution\]
+**Section CTA:** [Find Your Solution]
 
-**Innovation That Drives Results**
+---
 
-Measurable Business Impact
+## SECTION 8: Innovation & Results
+**Placement:** Below Solutions by Type
+**Background:** Light gradient
+**Layout:** Split - metrics left, features right
 
-- 30% reduction in operational costs through automation
-- 15% ARPU increase via service innovation and AI upselling
-- 50% faster service launch capabilities
-- 25% improvement in customer satisfaction scores
+### Left Side: Measurable Business Impact
+**Metrics Grid (2x2):**
+- **30%** reduction in operational costs through automation
+- **15%** ARPU increase via service innovation and AI upselling
+- **50%** faster service launch capabilities
+- **25%** improvement in customer satisfaction scores
 
-Technical Excellence
-
+### Right Side: Technical Excellence
+**Feature List:**
 - Sub-millisecond response times at massive scale
 - Multi-cloud deployment with vendor-neutral architecture
 - Standards compliance ensuring broad compatibility
 - Continuous innovation with regular platform updates
 
-**Latest Innovations**
+---
 
-**Generative AI for Telecom**
+## SECTION 9: Latest Innovations
+**Placement:** Below Innovation & Results
+**Background:** White
+**Layout:** 3-column feature cards
 
-Revolutionary AI customer and agent assistants that understand telecom operations and deliver measurable results.
+### Innovation 1: Generative AI for Telecom
+**Icon:** AI brain or sparkle
+**Description:** Revolutionary AI customer and agent assistants that understand telecom operations and deliver measurable results.
 
-**5G-Ready Platforms**
+### Innovation 2: 5G-Ready Platforms
+**Icon:** 5G or network
+**Description:** Cloud-native solutions designed for 5G core integration, network slicing, and edge computing capabilities.
 
-Cloud-native solutions designed for 5G core integration, network slicing, and edge computing capabilities.
+### Innovation 3: SaaS BSS Innovation
+**Icon:** Cloud or SaaS
+**Description:** Complete business support systems delivered as a service, enabling rapid market entry with pay-as-you-grow pricing.
 
-**SaaS BSS Innovation**
+**Section CTA:** [Explore Our Innovations]
 
-Complete business support systems delivered as a service, enabling rapid market entry with pay-as-you-grow pricing.
+---
 
-\[Explore Our Innovations\]
+## SECTION 10: Call-to-Action Section
+**Placement:** Below Latest Innovations
+**Background:** Blue gradient
+**Layout:** Centered content with 3 action cards
 
-**Get Started Today**
+**Headline:** Get Started Today
+**Subheadline:** Ready to Transform Your Operations?
+**Description:** Discover how Alepo's proven platforms can accelerate your digital transformation while reducing complexity and costs.
 
-**Ready to Transform Your Operations?**
+### CTA Card 1: Free Consultation
+**Title:** Free Consultation
+**Description:** Schedule a personalized discussion about your specific requirements and challenges.
 
-Discover how Alepo's proven platforms can accelerate your digital transformation while reducing complexity and costs.
+### CTA Card 2: Solution Demo
+**Title:** Solution Demo
+**Description:** See our platforms in action with demonstrations tailored to your CSP type and needs.
 
-**Free Consultation** Schedule a personalized discussion about your specific requirements and challenges.
+### CTA Card 3: Technical Deep Dive
+**Title:** Technical Deep Dive
+**Description:** Get detailed technical information and architecture discussions with our experts.
 
-**Solution Demo** See our platforms in action with demonstrations tailored to your CSP type and needs.
+**Primary CTAs:** [Request Demo] [Schedule Consultation]
 
-**Technical Deep Dive** Get detailed technical information and architecture discussions with our experts.
+---
 
-\[Request Demo\] \[Schedule Consultation\]
+## SECTION 11: Resources
+**Placement:** Below CTA Section
+**Background:** Light gray
+**Layout:** 4-column grid
 
-**Resources to Explore**
+### Resource 1: Customer Success Stories
+**Icon:** Case study icon
+**Description:** Real-world implementations showing measurable results from CSPs worldwide.
+**Link:** [View Case Studies]
 
-**Customer Success Stories**
+### Resource 2: Solution Guides
+**Icon:** Document icon
+**Description:** Comprehensive resources on AAA modernization, BSS transformation, and AI implementation.
+**Link:** [Download Guides]
 
-Real-world implementations showing measurable results from CSPs worldwide. \[View Case Studies\]
+### Resource 3: Industry Insights
+**Icon:** Lightbulb icon
+**Description:** Expert analysis on telecom trends, 5G evolution, and customer experience transformation.
+**Link:** [Read Blog]
 
-**Solution Guides**
+### Resource 4: Technical Documentation
+**Icon:** Code/API icon
+**Description:** Detailed platform information, APIs, and integration guides for technical teams.
+**Link:** [Access Library]
 
-Comprehensive resources on AAA modernization, BSS transformation, and AI implementation. \[Download Guides\]
+---
 
-**Industry Insights**
+## SECTION 12: Pre-Footer Contact
+**Placement:** Above footer
+**Background:** White
+**Layout:** 3-column layout
 
-Expert analysis on telecom trends, 5G evolution, and customer experience transformation. \[Read Blog\]
-
-**Technical Documentation**
-
-Detailed platform information, APIs, and integration guides for technical teams.
-
-\[Access Library\]
-
-**Connect With Alepo**
-
-**Global Presence**
-
-**Headquarters:** Austin, Texas  
+### Column 1: Global Presence
+**Headquarters:** Austin, Texas
 **Global Offices:** North America, Europe, Middle East, Asia
 
-**Contact Information**
+### Column 2: Contact Information
+**Sales:** +1 (512) 370-2537
+**Support:** 24/7/365 availability
+**Email:** info@alepo.com
 
-**Sales:** +1 (512) 370-2537  
-**Support:** 24/7/365 availability  
-**Email:** <info@alepo.com>
+### Column 3: Connect With Alepo
+**Text:** Stay updated on product releases, industry insights, and customer success stories.
+**Social Links:** [LinkedIn] [Twitter] [YouTube] [Newsletter Signup]
 
-**Follow Our Innovation**
+---
 
-Stay updated on product releases, industry insights, and customer success stories.
+## SECTION 13: Footer
+**Placement:** Bottom of page
+**Background:** Dark (black or dark gray)
+**Layout:** 5-column grid + bottom bar
 
-\[LinkedIn\] \[Twitter\] \[YouTube\] \[Newsletter Signup\]
-
-**Footer Navigation**
-
-**Solutions**
-
+### Column 1: Solutions
 - AAA Server
 - Converged Policy Control
 - WiFi Monetization
@@ -219,36 +305,27 @@ Stay updated on product releases, industry insights, and customer success storie
 - Security
 - Integrations
 
-**Products**
+### Column 2: Products
+- Product listings (TBD)
 
-- _List tbd_
-
-**Customers**
-
+### Column 3: Customers
 - Client Experience
 - Enhanced Support
 - Case Studies
 
-**Resources**
-
+### Column 4: Resources
 - Blog
 - Library
 - Events
 - News
 
-**Company**
-
+### Column 5: Company
 - Why Alepo
 - About
 - Partners
 - Leadership
 - Careers
 
-**Legal**
-
-- Privacy Policy
-- Terms of Service
-- Security
-- Compliance
-
-**© 2025 Alepo. All rights reserved. Smart Software for Serious Networks.**
+### Bottom Bar:
+**Left:** © 2025 Alepo. All rights reserved. Smart Software for Serious Networks.
+**Right:** Privacy Policy | Terms of Service | Security | Compliance

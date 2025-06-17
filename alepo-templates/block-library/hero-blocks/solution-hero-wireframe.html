@@ -4,10 +4,10 @@
 <!-- wp:group {"align":"full","className":"alepo-hero-wireframe section-pattern-1","style":{"spacing":{"padding":{"top":"0","bottom":"0"}},"dimensions":{"minHeight":"500px"}}} -->
 <div class="wp-block-group alignfull alepo-hero-wireframe section-pattern-1" style="min-height:500px;padding-top:0;padding-bottom:0">
 
-    <!-- Background image with gradient overlay for cleaner look -->
-    <!-- wp:cover {"url":"https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80","id":0,"customGradient":"linear-gradient(135deg, rgba(0, 86, 179, 0.85) 0%, rgba(0, 64, 133, 0.9) 100%)","dimRatio":0,"minHeight":500,"minHeightUnit":"px","isDark":true,"align":"full","className":"hero-image-overlay"} -->
-    <div class="wp-block-cover alignfull is-dark hero-image-overlay" style="background:linear-gradient(135deg, rgba(0, 86, 179, 0.85) 0%, rgba(0, 64, 133, 0.9) 100%),url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80);min-height:500px">
-        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
+    <!-- Background image with original gradient overlay -->
+    <!-- wp:cover {"url":"https://alepo.com/wp-content/uploads/2024/03/landing_Solution-Brief-Digital-MVNO-in-a-Box.png","id":0,"customGradient":"linear-gradient(135deg, var(--c-primary-400) 0%, var(--c-secondary-500) 100%)","dimRatio":75,"minHeight":500,"minHeightUnit":"px","isDark":true,"align":"full","className":"hero-image-overlay"} -->
+    <div class="wp-block-cover alignfull is-dark hero-image-overlay" style="background:linear-gradient(135deg, var(--c-primary-400) 0%, var(--c-secondary-500) 100%),url(https://alepo.com/wp-content/uploads/2024/03/landing_Solution-Brief-Digital-MVNO-in-a-Box.png);min-height:500px">
+        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-75 has-background-dim"></span>
         
         <div class="wp-block-cover__inner-container">
             
@@ -54,27 +54,21 @@
                         <p class="has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-7);font-size:var(--font-size-body-lg);line-height:var(--line-height-normal);font-weight:var(--font-weight-medium);opacity:0.95">{{solutionStatement}}</p>
                         <!-- /wp:paragraph -->
                         
-                        <!-- Trust Badge/Social Proof (8-15 words) - Centered -->
-                        <!-- wp:group {"className":"trust-badge","style":{"spacing":{"padding":{"top":"var(--space-3)","bottom":"var(--space-3)","left":"var(--space-4)","right":"var(--space-4)"},"margin":{"bottom":"var(--space-6)"}},"border":{"radius":"8px"}},"backgroundColor":"white","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-                        <div class="wp-block-group trust-badge has-white-background-color has-background" style="border-radius:8px;margin-bottom:var(--space-6);padding-top:var(--space-3);padding-right:var(--space-4);padding-bottom:var(--space-3);padding-left:var(--space-4)">
+                        <!-- Trust Badge/Social Proof (8-15 words) - Centered with proper visibility -->
+                        <!-- wp:group {"className":"trust-badge","style":{"spacing":{"padding":{"top":"var(--space-3)","bottom":"var(--space-3)","left":"var(--space-4)","right":"var(--space-4)"},"margin":{"bottom":"var(--space-6)"}},"border":{"radius":"6px","color":"rgba(255,255,255,0.3)","width":"1px"}},"backgroundColor":"white","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+                        <div class="wp-block-group trust-badge has-white-background-color has-background has-border-color" style="border-color:rgba(255,255,255,0.3);border-width:1px;border-radius:6px;margin-bottom:var(--space-6);padding-top:var(--space-3);padding-right:var(--space-4);padding-bottom:var(--space-3);padding-left:var(--space-4)">
                             <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-small)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"margin":{"bottom":"0"}}},"textColor":"primary-700"} -->
                             <p class="has-primary-700-color has-text-color" style="margin-bottom:0;font-size:var(--font-size-small);font-weight:var(--font-weight-semibold)">🏆 {{trustBadge}}</p>
                             <!-- /wp:paragraph -->
                         </div>
                         <!-- /wp:group -->
                         
-                        <!-- Primary CTA Buttons - Centered -->
-                        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var(--space-4)"}}} -->
-                        <div class="wp-block-buttons">
-                            <!-- wp:button {"className":"btn-primary-hero","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-7)","right":"var(--space-7)","top":"16px","bottom":"16px"}},"border":{"radius":"8px"}},"backgroundColor":"white","textColor":"primary-600"} -->
-                            <div class="wp-block-button btn-primary-hero">
-                                <a class="wp-block-button__link has-primary-600-color has-white-background-color has-text-color has-background wp-element-button" href="{{primaryCTAUrl}}" style="border-radius:8px;padding-top:16px;padding-right:var(--space-7);padding-bottom:16px;padding-left:var(--space-7);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold)">{{primaryCTAText}}</a>
-                            </div>
-                            <!-- /wp:button -->
-                            
-                            <!-- wp:button {"className":"btn-secondary-hero","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-7)","right":"var(--space-7)","top":"16px","bottom":"16px"}},"border":{"radius":"8px","width":"2px","color":"rgba(255,255,255,0.5)"}},"backgroundColor":"transparent","textColor":"white"} -->
-                            <div class="wp-block-button btn-secondary-hero">
-                                <a class="wp-block-button__link has-white-color has-transparent-background-color has-text-color has-background has-border-color wp-element-button" href="{{secondaryCTAUrl}}" style="border-color:rgba(255,255,255,0.5);border-width:2px;border-radius:8px;padding-top:16px;padding-right:var(--space-7);padding-bottom:16px;padding-left:var(--space-7);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold)">{{secondaryCTAText}}</a>
+                        <!-- Primary CTA Button - Centered, Original Style -->
+                        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var(--space-6)"}}}} -->
+                        <div class="wp-block-buttons" style="margin-top:var(--space-6)">
+                            <!-- wp:button {"className":"btn-primary-wireframe","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-6)","right":"var(--space-6)","top":"14px","bottom":"14px"}},"border":{"radius":"6px"}},"backgroundColor":"primary-500","textColor":"white"} -->
+                            <div class="wp-block-button btn-primary-wireframe">
+                                <a class="wp-block-button__link has-white-color has-primary-500-background-color has-text-color has-background wp-element-button" href="{{primaryCTAUrl}}" style="border-radius:6px;padding-top:14px;padding-right:var(--space-6);padding-bottom:14px;padding-left:var(--space-6);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold)">{{primaryCTAText}}</a>
                             </div>
                             <!-- /wp:button -->
                         </div>

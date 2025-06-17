@@ -11,10 +11,10 @@ if (!defined('ABSPATH')) {
 
 class AlepoPageCreator {
     
-    private $content_base_dir;
-    private $template_base_dir;
+    public $content_base_dir;
+    public $template_base_dir;
     private $available_sections = ['products', 'solutions', 'industries'];
-    private $templates = [];
+    public $templates = [];
     private $gutenberg_processor;
     
     public function __construct() {
@@ -29,10 +29,25 @@ class AlepoPageCreator {
      */
     private function load_templates() {
         $template_files = glob($this->template_base_dir . '/page-templates/*.json');
+        
+        // Debug: Log what we're finding
+        error_log("Template base dir: " . $this->template_base_dir);
+        error_log("Template files found: " . print_r($template_files, true));
+        
         foreach ($template_files as $file) {
             $template_name = basename($file, '.json');
-            $this->templates[$template_name] = json_decode(file_get_contents($file), true);
+            $template_content = json_decode(file_get_contents($file), true);
+            
+            if ($template_content === null) {
+                error_log("Failed to load template: " . $file);
+                continue;
+            }
+            
+            $this->templates[$template_name] = $template_content;
+            error_log("Loaded template: " . $template_name);
         }
+        
+        error_log("Available templates: " . print_r(array_keys($this->templates), true));
     }
     
     /**
@@ -401,6 +416,16 @@ add_action('admin_menu', function() {
 
 function alepo_page_creator_admin_page() {
     $creator = new AlepoPageCreator();
+    
+    // Debug: Show template loading status
+    if (isset($_GET['debug'])) {
+        echo '<div class="notice notice-info"><p>';
+        echo '<strong>Debug Info:</strong><br>';
+        echo 'Template base dir: ' . $creator->template_base_dir . '<br>';
+        echo 'Content base dir: ' . $creator->content_base_dir . '<br>';
+        echo 'Available templates: ' . implode(', ', array_keys($creator->templates)) . '<br>';
+        echo '</p></div>';
+    }
     
     // Handle form submission
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_pages'])) {

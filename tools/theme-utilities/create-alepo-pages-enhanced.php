@@ -470,6 +470,11 @@ class AlepoPageCreator {
     private function prepare_wireframe_replacements($section_config, $content_data, $metadata) {
         $replacements = $this->prepare_replacements($section_config, $content_data, $metadata);
         
+        // First, check if we have wireframe_variables in metadata and use them directly
+        if (!empty($metadata['wireframe_variables'])) {
+            $replacements = array_merge($replacements, $metadata['wireframe_variables']);
+        }
+        
         // Add wireframe-specific variables based on section type
         $section_name = $section_config['name'];
         
@@ -478,22 +483,28 @@ class AlepoPageCreator {
                 $replacements = array_merge($replacements, $this->get_wireframe_hero_vars($metadata));
                 break;
                 
+            case 'capability1':
+            case 'capability2':
             case 'capability-section':
                 $replacements = array_merge($replacements, $this->get_wireframe_capability_vars($metadata, $content_data));
                 break;
                 
+            case 'technicalFeatures':
             case 'technical-features':
                 $replacements = array_merge($replacements, $this->get_wireframe_technical_vars($metadata));
                 break;
                 
+            case 'businessBenefits':
             case 'business-benefits':
                 $replacements = array_merge($replacements, $this->get_wireframe_benefits_vars($metadata));
                 break;
                 
+            case 'customerSuccess':
             case 'customer-success':
                 $replacements = array_merge($replacements, $this->get_wireframe_customer_vars($metadata));
                 break;
                 
+            case 'finalCTA':
             case 'final-cta':
                 $replacements = array_merge($replacements, $this->get_wireframe_cta_vars($metadata));
                 break;

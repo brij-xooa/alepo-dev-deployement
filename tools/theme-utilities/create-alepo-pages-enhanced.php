@@ -18,8 +18,30 @@ class AlepoPageCreator {
     private $gutenberg_processor;
     
     public function __construct() {
-        $this->content_base_dir = get_template_directory() . '/../../../alepo-generated-content/01-page-content';
-        $this->template_base_dir = get_template_directory() . '/../../../alepo-templates';
+        // Try multiple path strategies
+        $theme_dir = get_template_directory();
+        
+        // Strategy 1: Relative to theme (current)
+        $this->content_base_dir = $theme_dir . '/../../../alepo-generated-content/01-page-content';
+        $this->template_base_dir = $theme_dir . '/../../../alepo-templates';
+        
+        // Strategy 2: If that doesn't work, try absolute paths
+        if (!is_dir($this->template_base_dir)) {
+            $possible_paths = [
+                ABSPATH . '../alepo-templates',
+                dirname(ABSPATH) . '/alepo-templates',
+                '/nas/content/live/alepodev/alepo-templates'
+            ];
+            
+            foreach ($possible_paths as $path) {
+                if (is_dir($path)) {
+                    $this->template_base_dir = $path;
+                    $this->content_base_dir = str_replace('alepo-templates', 'alepo-generated-content/01-page-content', $path);
+                    break;
+                }
+            }
+        }
+        
         $this->load_templates();
         $this->gutenberg_processor = new AlepoGutenbergProcessor();
     }

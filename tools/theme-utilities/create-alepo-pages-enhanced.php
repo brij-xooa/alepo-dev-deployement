@@ -319,6 +319,10 @@ class AlepoPageCreator {
         // Replace template variables with wireframe-specific logic
         $replacements = $this->prepare_wireframe_replacements($section_config, $content_data, $metadata);
         
+        // First, process Handlebars-style conditionals and loops
+        $block_template = $this->process_handlebars_conditionals($block_template, $replacements);
+        
+        // Then, do simple variable replacements
         foreach ($replacements as $key => $value) {
             // Convert arrays to strings for template replacement
             if (is_array($value)) {
@@ -331,6 +335,52 @@ class AlepoPageCreator {
         }
         
         return $block_template;
+    }
+    
+    /**
+     * Process Handlebars-style conditionals and loops
+     */
+    private function process_handlebars_conditionals($template, $replacements) {
+        // Process {{#if variable}}...{{/if}} conditionals
+        $template = preg_replace_callback(
+            '/\{\{#if\s+([^}]+)\}\}(.*?)\{\{\/if\}\}/s',
+            function($matches) use ($replacements) {
+                $variable = trim($matches[1]);
+                $content = $matches[2];
+                
+                // Check if variable exists and is truthy
+                if (isset($replacements[$variable]) && !empty($replacements[$variable])) {
+                    return $content;
+                } else {
+                    return ''; // Remove the entire conditional block
+                }
+            },
+            $template
+        );
+        
+        // Process {{#each array}}...{{/each}} loops
+        $template = preg_replace_callback(
+            '/\{\{#each\s+([^}]+)\}\}(.*?)\{\{\/each\}\}/s',
+            function($matches) use ($replacements) {
+                $variable = trim($matches[1]);
+                $content = $matches[2];
+                
+                if (isset($replacements[$variable]) && is_array($replacements[$variable])) {
+                    $output = '';
+                    foreach ($replacements[$variable] as $item) {
+                        // Replace {{this}} with current array item
+                        $item_content = str_replace('{{this}}', $item, $content);
+                        $output .= $item_content;
+                    }
+                    return $output;
+                } else {
+                    return ''; // Remove the entire loop block
+                }
+            },
+            $template
+        );
+        
+        return $template;
     }
     
     /**

@@ -19,55 +19,96 @@ get_header();
         <?php else : ?>
             <!-- Fallback template structure -->
         
-        <!-- Hero Section -->
-        <!-- wp:cover {"customGradient":"linear-gradient(135deg,rgb(49,138,255) 0%,rgb(70,151,160) 100%)","className":"hero-section"} -->
-        <div class="wp-block-cover hero-section">
-            <span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim has-background-gradient" style="background:linear-gradient(135deg,rgb(49,138,255) 0%,rgb(70,151,160) 100%)"></span>
-            <div class="wp-block-cover__inner-container">
+        <!-- Hero Section - Two Column Layout -->
+        <!-- wp:group {"className":"hero-section"} -->
+        <section class="wp-block-group hero-section">
+            
+            <!-- wp:group {"className":"hero-two-columns"} -->
+            <div class="wp-block-group hero-two-columns">
                 
-                <!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
-                <div class="wp-block-group">
-
-                    <!-- wp:heading {"level":1,"textAlign":"center","textColor":"white","fontSize":"large"} -->
-                    <h1 class="wp-block-heading has-white-color has-text-color has-text-align-center has-large-font-size">
+                <!-- Left Column: Content -->
+                <!-- wp:group {"className":"hero-content-left"} -->
+                <div class="wp-block-group hero-content-left">
+                    
+                    <!-- wp:heading {"level":1,"className":"hero-title"} -->
+                    <h1 class="wp-block-heading hero-title">
                         Smart Software for Serious Networks
                     </h1>
                     <!-- /wp:heading -->
-
-                    <!-- wp:heading {"level":2,"textAlign":"center","textColor":"white","fontSize":"medium"} -->
-                    <h2 class="wp-block-heading has-white-color has-text-color has-text-align-center has-medium-font-size">
-                        Empowering CSPs with Modern, Intelligent Solutions
-                    </h2>
-                    <!-- /wp:heading -->
-
-                    <!-- wp:paragraph {"textAlign":"center","textColor":"white"} -->
-                    <p class="has-white-color has-text-color has-text-align-center">
+                    
+                    <!-- wp:paragraph {"className":"hero-description"} -->
+                    <p class="hero-description">
                         Alepo delivers cloud-native software that drives revenue growth, operational efficiency, and exceptional customer experiences for Communication Service Providers (CSPs) worldwide. From carrier-grade network infrastructure to AI-powered customer engagement, our proven platforms help CSPs move faster, operate smarter, and serve customers better.
                     </p>
                     <!-- /wp:paragraph -->
-
-                    <!-- wp:paragraph {"textAlign":"center","textColor":"white"} -->
-                    <p class="has-white-color has-text-color has-text-align-center">
-                        <strong>Trusted by leading CSPs managing 100+ million subscribers globally</strong>
+                    
+                    <!-- wp:paragraph {"className":"hero-trust-badge","style":{"typography":{"fontWeight":"600"},"color":{"text":"#1a6af6"}}} -->
+                    <p class="hero-trust-badge has-text-color" style="color:#1a6af6;font-weight:600">
+                        Trusted by leading CSPs managing 100+ million subscribers globally
                     </p>
                     <!-- /wp:paragraph -->
-
-                    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-                    <div class="wp-block-buttons is-content-justification-center is-layout-flex wp-block-buttons-is-layout-flex">
-                        <!-- wp:button {"backgroundColor":"white","textColor":"primary","className":"is-style-fill"} -->
-                        <div class="wp-block-button is-style-fill">
-                            <a class="wp-block-button__link has-primary-color has-white-background-color has-text-color has-background wp-element-button" href="/request-demo">Request a Demo</a>
-                        </div>
-                        <!-- /wp:button -->
+                    
+                    <!-- wp:group {"className":"hero-cta-buttons"} -->
+                    <div class="wp-block-group hero-cta-buttons">
+                        <!-- wp:html -->
+                        <a href="/request-demo" class="hero-btn-primary">
+                            Request Demo
+                            <span style="margin-left: 8px;">→</span>
+                        </a>
+                        <a href="/solutions" class="hero-btn-secondary">
+                            Our Solutions
+                        </a>
+                        <!-- /wp:html -->
                     </div>
-                    <!-- /wp:buttons -->
-
+                    <!-- /wp:group -->
+                    
                 </div>
                 <!-- /wp:group -->
-
+                
+                <!-- Right Column: Image with Floating Elements -->
+                <!-- wp:group {"className":"hero-content-right"} -->
+                <div class="wp-block-group hero-content-right">
+                    
+                    <!-- wp:html -->
+                    <div class="hero-image-container">
+                        
+                        <!-- Floating Card 1: Network Performance -->
+                        <div class="floating-card floating-card-1">
+                            <div class="card-title">Network Performance</div>
+                            <div class="card-value">99.999%</div>
+                            <div class="card-chart"></div>
+                            <div style="font-size: 0.75rem; color: #6c757d;">Uptime SLA</div>
+                        </div>
+                        
+                        <!-- Floating Card 2: Subscriber Analytics -->
+                        <div class="floating-card floating-card-2">
+                            <div class="card-title">CSP Success</div>
+                            <div class="team-avatars">
+                                <div class="avatar">ST</div>
+                                <div class="avatar">DC</div>
+                                <div class="avatar">OR</div>
+                                <div style="margin-left: 8px; font-size: 0.75rem; color: #6c757d;">+100 CSPs</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Card 3: Revenue Growth -->
+                        <div class="floating-card floating-card-3">
+                            <div class="card-title">AI Impact</div>
+                            <div class="card-value">90%</div>
+                            <div style="font-size: 0.75rem; color: #6c757d;">Resolution Rate</div>
+                        </div>
+                        
+                    </div>
+                    <!-- /wp:html -->
+                    
+                </div>
+                <!-- /wp:group -->
+                
             </div>
-        </div>
-        <!-- /wp:cover -->
+            <!-- /wp:group -->
+            
+        </section>
+        <!-- /wp:group -->
 
         <!-- Three Pillars of CSP Success Section -->
         <!-- wp:group {"backgroundColor":"white","className":"section-solutions"} -->

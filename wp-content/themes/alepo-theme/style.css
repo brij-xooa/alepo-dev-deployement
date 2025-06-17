@@ -2463,28 +2463,250 @@ div[style*="margin: 40px 0"] br {
 .section-pattern-4 { background: var(--c-white, #ffffff); }
 .section-pattern-5 { background: var(--c-secondary-950, #1a2c32); color: var(--c-white, #ffffff); }
 
-/* Hero Section Styles */
+/* Hero Section Styles - Two Column Layout */
 .hero-section {
-    min-height: 60vh;
+    min-height: 100vh;
     display: flex;
+    align-items: center;
+    background: var(--c-white);
+    padding: 0;
+    position: relative;
+}
+
+.hero-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    width: 100%;
+    min-height: 100vh;
     align-items: center;
 }
 
-.hero-content {
+.hero-content-left {
+    padding: var(--space-8, 64px) var(--space-7, 48px);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+.hero-content-right {
     position: relative;
-    z-index: 1;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .hero-title {
-    font-size: var(--font-size-hero, 48px);
-    font-weight: var(--font-weight-bold, 700);
-    color: var(--c-white, #ffffff);
-    margin-bottom: var(--space-4, 16px);
-    line-height: var(--line-height-tight, 1.2);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--c-gray-900);
+    margin-bottom: var(--space-5, 24px);
+    background: linear-gradient(135deg, var(--c-primary-600) 0%, var(--c-secondary-600) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-text 3s ease-in-out infinite alternate;
 }
+
+@keyframes gradient-text {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.hero-description {
+    font-size: var(--font-size-body-lg, 1.125rem);
+    line-height: var(--line-height-relaxed, 1.8);
+    color: var(--c-gray-700);
+    margin-bottom: var(--space-6, 32px);
+}
+
+.hero-cta-buttons {
+    display: flex;
+    gap: var(--space-4, 16px);
+    flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+    background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-primary-600) 100%);
+    color: var(--c-white);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2, 8px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(49, 138, 255, 0.25);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(49, 138, 255, 0.35);
+    color: var(--c-white);
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    color: var(--c-primary-600);
+    padding: 16px 32px;
+    border: 2px solid var(--c-primary-600);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2, 8px);
+    transition: all 0.3s ease;
+}
+
+.hero-btn-secondary:hover {
+    background: var(--c-primary-600);
+    color: var(--c-white);
+    transform: translateY(-2px);
+}
+
+/* Hero Image with Floating Elements */
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url('/wp-content/themes/alepo-theme/assets/images/hero-business-team.jpg') center/cover;
+    border-radius: 16px;
+    margin: var(--space-6, 32px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.floating-card {
+    position: absolute;
+    background: var(--c-white);
+    border-radius: 12px;
+    padding: var(--space-5, 24px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-card-1 {
+    top: 10%;
+    right: 5%;
+    width: 240px;
+    animation-delay: 0s;
+}
+
+.floating-card-2 {
+    bottom: 15%;
+    left: 5%;
+    width: 200px;
+    animation-delay: 2s;
+}
+
+.floating-card-3 {
+    top: 50%;
+    right: -10%;
+    width: 180px;
+    animation-delay: 4s;
+    transform: translateY(-50%);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.card-title {
+    font-size: var(--font-size-small, 0.875rem);
+    font-weight: 600;
+    color: var(--c-gray-600);
+    margin-bottom: var(--space-2, 8px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    font-size: var(--font-size-h3, 1.5rem);
+    font-weight: 700;
+    color: var(--c-primary-600);
+    margin-bottom: var(--space-3, 12px);
+}
+
+.card-chart {
+    height: 40px;
+    background: linear-gradient(90deg, var(--c-primary-200) 0%, var(--c-primary-400) 100%);
+    border-radius: 4px;
+    margin-bottom: var(--space-2, 8px);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-chart::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.team-avatars {
+    display: flex;
+    gap: var(--space-2, 8px);
+    align-items: center;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--c-primary-100);
+    border: 2px solid var(--c-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--c-primary-600);
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+    .hero-two-columns {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .hero-content-left {
+        text-align: center;
+        margin: 0 auto;
+        padding: var(--space-8, 64px) var(--space-5, 24px);
+    }
+    
+    .hero-content-right {
+        min-height: 60vh;
+        order: -1;
+    }
+    
+    .hero-cta-buttons {
+        justify-content: center;
+    }
+    
+    .floating-card {
+        display: none;
+    }
+}
+
 
 .hero-subtitle {
     font-size: var(--font-size-body-lg, 18px);

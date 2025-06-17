@@ -122,11 +122,19 @@ class AlepoPageCreator {
         ];
         
         // Determine which template to use
-        $template_name = $section . '-template';
+        // Handle plural section names by converting to singular for template lookup
+        $template_mapping = [
+            'products' => 'product-template',
+            'solutions' => 'solution-template', 
+            'industries' => 'industry-template'
+        ];
+        
+        $template_name = $template_mapping[$section] ?? $section . '-template';
+        
         if (!isset($this->templates[$template_name])) {
             $results['errors'][] = [
                 'page' => $section,
-                'message' => "Template not found for section: {$section}"
+                'message' => "Template not found for section: {$section}. Looking for: {$template_name}. Available: " . implode(', ', array_keys($this->templates))
             ];
             return $results;
         }

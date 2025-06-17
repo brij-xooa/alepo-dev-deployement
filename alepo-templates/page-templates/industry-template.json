@@ -1,0 +1,168 @@
+{
+  "templateName": "industry-template",
+  "version": "1.0",
+  "description": "Standard template for all industry pages",
+  "sections": [
+    {
+      "name": "hero",
+      "type": "alepo/industry-hero",
+      "required": true,
+      "attributes": {
+        "layout": "industry-focused",
+        "backgroundType": "industry-imagery",
+        "minHeight": 600
+      },
+      "content": {
+        "breadcrumbs": true,
+        "headline": "{{industryHeadline}}",
+        "subheadline": "{{industrySubheadline}}",
+        "primaryCTA": {
+          "text": "Explore {{industryName}} Solutions",
+          "url": "/consultation/{{industrySlug}}"
+        },
+        "secondaryCTA": {
+          "text": "Download Industry Report",
+          "url": "/resources/{{industrySlug}}-report"
+        },
+        "industryStats": "{{industryMetrics}}"
+      }
+    },
+    {
+      "name": "context",
+      "type": "alepo/industry-context",
+      "required": true,
+      "attributes": {
+        "layout": "overview-narrative",
+        "includeRegulatory": true
+      },
+      "content": {
+        "sectionTitle": "Understanding {{industryName}}",
+        "overview": "{{industryOverview}}",
+        "marketDynamics": "{{marketTrends}}",
+        "regulatoryLandscape": "{{complianceRequirements}}"
+      }
+    },
+    {
+      "name": "challenges",
+      "type": "alepo/industry-challenges",
+      "required": true,
+      "attributes": {
+        "layout": "challenge-cards",
+        "includeStats": true
+      },
+      "content": {
+        "sectionTitle": "{{industryName}} Faces Unique Challenges",
+        "challenges": "{{industryChallenges}}",
+        "impactMetrics": "{{challengeImpacts}}"
+      }
+    },
+    {
+      "name": "solutions",
+      "type": "alepo/industry-solutions",
+      "required": true,
+      "attributes": {
+        "layout": "solution-showcase",
+        "linkToProducts": true
+      },
+      "content": {
+        "sectionTitle": "Tailored Solutions for {{industryName}}",
+        "solutions": "{{industrySolutions}}",
+        "productMappings": "{{relevantProducts}}"
+      }
+    },
+    {
+      "name": "expertise",
+      "type": "alepo/industry-expertise",
+      "required": false,
+      "attributes": {
+        "showTeam": true,
+        "includeCertifications": true
+      },
+      "content": {
+        "sectionTitle": "Deep {{industryName}} Expertise",
+        "expertise": "{{teamExpertise}}",
+        "certifications": "{{industryCertifications}}",
+        "partnerships": "{{industryPartnerships}}"
+      }
+    },
+    {
+      "name": "success-stories",
+      "type": "alepo/industry-success",
+      "required": true,
+      "attributes": {
+        "layout": "case-study-carousel",
+        "includeLogos": true
+      },
+      "content": {
+        "sectionTitle": "{{industryName}} Success Stories",
+        "caseStudies": "{{industrySuccessStories}}",
+        "customerLogos": "{{industryCustomers}}",
+        "results": "{{successMetrics}}"
+      }
+    },
+    {
+      "name": "compliance",
+      "type": "alepo/compliance-standards",
+      "required": false,
+      "attributes": {
+        "showCertificates": true
+      },
+      "content": {
+        "standards": "{{complianceStandards}}",
+        "certifications": "{{securityCertifications}}"
+      }
+    },
+    {
+      "name": "cta",
+      "type": "alepo/final-cta",
+      "required": true,
+      "attributes": {
+        "style": "industry-partnership",
+        "includeContactInfo": true
+      },
+      "content": {
+        "headline": "Partner with {{industryName}} Experts",
+        "subheadline": "Join leading {{industryName}} organizations transforming with Alepo",
+        "primaryCTA": {
+          "text": "Schedule Industry Consultation",
+          "url": "/consultation"
+        },
+        "secondaryCTA": {
+          "text": "Connect with Industry Expert",
+          "url": "/contact/industry-expert"
+        },
+        "trustIndicators": "{{industryLogos}}"
+      }
+    }
+  ],
+  "metadata": {
+    "minSections": 5,
+    "maxSections": 8,
+    "requiredBlocks": ["hero", "context", "challenges", "solutions", "success-stories", "cta"],
+    "optionalBlocks": ["expertise", "compliance"],
+    "seoRequirements": {
+      "minWordCount": 1000,
+      "headingStructure": "h1-h2-h3",
+      "internalLinks": 5,
+      "industryKeywords": true
+    },
+    "contentFlow": {
+      "narrative": "industry-understanding → specific-challenges → tailored-solutions → proven-results → partnership",
+      "emotionalJourney": "recognition → concern → confidence → trust → partnership"
+    }
+  },
+  "variations": {
+    "regulated-industry": {
+      "emphasize": ["compliance", "expertise"],
+      "additionalSections": ["regulatory-updates", "audit-support"]
+    },
+    "emerging-market": {
+      "emphasize": ["context", "expertise"],
+      "additionalSections": ["market-education", "future-roadmap"]
+    },
+    "enterprise-focused": {
+      "emphasize": ["solutions", "success-stories"],
+      "additionalSections": ["enterprise-features", "scalability"]
+    }
+  }
+}

@@ -87,7 +87,10 @@ class AlepoPageCreator {
         // Determine which template to use
         $template_name = $section . '-template';
         if (!isset($this->templates[$template_name])) {
-            $results['errors'][] = "Template not found for section: {$section}";
+            $results['errors'][] = [
+                'page' => $section,
+                'message' => "Template not found for section: {$section}"
+            ];
             return $results;
         }
         
@@ -414,7 +417,11 @@ function alepo_page_creator_admin_page() {
             echo '<div class="notice notice-success"><p>';
             echo '<strong>Successfully created/updated ' . count($results['success']) . ' pages:</strong><br>';
             foreach ($results['success'] as $success) {
-                echo '✅ ' . $success['page'] . ' (' . $success['action'] . ') - <a href="' . $success['url'] . '" target="_blank">View Page</a><br>';
+                if (is_array($success)) {
+                    echo '✅ ' . ($success['page'] ?? 'Unknown') . ' (' . ($success['action'] ?? 'processed') . ') - <a href="' . ($success['url'] ?? '#') . '" target="_blank">View Page</a><br>';
+                } else {
+                    echo '✅ ' . $success . '<br>';
+                }
             }
             echo '</p></div>';
         }
@@ -423,7 +430,11 @@ function alepo_page_creator_admin_page() {
             echo '<div class="notice notice-error"><p>';
             echo '<strong>Errors:</strong><br>';
             foreach ($results['errors'] as $error) {
-                echo '❌ ' . $error['page'] . ': ' . $error['message'] . '<br>';
+                if (is_array($error)) {
+                    echo '❌ ' . ($error['page'] ?? 'Unknown') . ': ' . ($error['message'] ?? 'Unknown error') . '<br>';
+                } else {
+                    echo '❌ ' . $error . '<br>';
+                }
             }
             echo '</p></div>';
         }

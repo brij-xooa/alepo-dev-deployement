@@ -1,0 +1,201 @@
+{
+  "templateName": "solution-template",
+  "version": "1.0",
+  "description": "Standard template for all solution pages",
+  "sections": [
+    {
+      "name": "hero",
+      "type": "alepo/solution-hero",
+      "required": true,
+      "attributes": {
+        "layout": "full-width-gradient",
+        "backgroundType": "parallax",
+        "minHeight": 650
+      },
+      "content": {
+        "breadcrumbs": true,
+        "headline": "{{solutionHeadline}}",
+        "subheadline": "{{solutionSubheadline}}",
+        "primaryCTA": {
+          "text": "Start {{solutionName}} Assessment",
+          "url": "/consultation/{{solutionSlug}}"
+        },
+        "secondaryCTA": {
+          "text": "Download Solution Guide",
+          "url": "/resources/{{solutionSlug}}-guide"
+        },
+        "visualization": "{{heroVisualization}}"
+      }
+    },
+    {
+      "name": "challenge",
+      "type": "alepo/challenge-narrative",
+      "required": true,
+      "attributes": {
+        "layout": "story-driven",
+        "includeStats": true
+      },
+      "content": {
+        "sectionTitle": "{{challengeTitle}}",
+        "narrative": "{{challengeStory}}",
+        "painPoints": {
+          "layout": "three-column-cards",
+          "items": "{{challengePainPoints}}"
+        }
+      }
+    },
+    {
+      "name": "approach",
+      "type": "alepo/solution-methodology",
+      "required": true,
+      "attributes": {
+        "layout": "step-process",
+        "includeTimeline": false
+      },
+      "content": {
+        "sectionTitle": "Our Proven Approach",
+        "intro": "{{approachIntro}}",
+        "steps": "{{methodologySteps}}",
+        "differentiators": "{{uniqueApproach}}"
+      }
+    },
+    {
+      "name": "benefits",
+      "type": "alepo/business-benefits",
+      "required": true,
+      "attributes": {
+        "layout": "icon-grid",
+        "columns": 3
+      },
+      "content": {
+        "sectionTitle": "Transform Your {{businessArea}}",
+        "benefits": "{{businessBenefits}}",
+        "metrics": "{{outcomeMetrics}}"
+      }
+    },
+    {
+      "name": "implementation",
+      "type": "alepo/implementation-journey",
+      "required": false,
+      "attributes": {
+        "showTimeline": true,
+        "includeRisks": true
+      },
+      "content": {
+        "sectionTitle": "Your Implementation Journey",
+        "phases": "{{implementationPhases}}",
+        "timeline": "{{typicalTimeline}}",
+        "support": "{{ongoingSupport}}"
+      }
+    },
+    {
+      "name": "proof",
+      "type": "alepo/case-study-preview",
+      "required": false,
+      "attributes": {
+        "layout": "spotlight",
+        "includeMetrics": true
+      },
+      "content": {
+        "caseStudy": "{{featuredCaseStudy}}",
+        "results": "{{customerResults}}",
+        "testimonial": "{{customerQuote}}"
+      }
+    },
+    {
+      "name": "resources",
+      "type": "alepo/resource-hub",
+      "required": false,
+      "attributes": {
+        "layout": "card-grid",
+        "maxItems": 3
+      },
+      "content": {
+        "sectionTitle": "Helpful Resources",
+        "resources": [
+          {
+            "type": "whitepaper",
+            "title": "{{solutionName}} Implementation Guide",
+            "url": "/resources/{{solutionSlug}}-implementation"
+          },
+          {
+            "type": "webinar",
+            "title": "{{solutionName}} Best Practices",
+            "url": "/webinars/{{solutionSlug}}"
+          },
+          {
+            "type": "calculator",
+            "title": "ROI Calculator",
+            "url": "/tools/roi-calculator"
+          }
+        ]
+      }
+    },
+    {
+      "name": "related",
+      "type": "alepo/related-solutions",
+      "required": false,
+      "attributes": {
+        "layout": "carousel",
+        "maxItems": 4
+      },
+      "content": {
+        "sectionTitle": "Complete Your Transformation",
+        "intro": "Combine with these solutions for maximum impact",
+        "relatedItems": "{{relatedSolutions}}"
+      }
+    },
+    {
+      "name": "cta",
+      "type": "alepo/final-cta",
+      "required": true,
+      "attributes": {
+        "style": "full-width-emphasis",
+        "includeContactInfo": true
+      },
+      "content": {
+        "headline": "Let's Solve Your {{challengeType}} Together",
+        "subheadline": "Join operators who've transformed their {{businessArea}} with Alepo",
+        "primaryCTA": {
+          "text": "Schedule Solution Workshop",
+          "url": "/consultation"
+        },
+        "secondaryCTA": {
+          "text": "Talk to Solution Expert",
+          "url": "/contact"
+        },
+        "trustIndicators": "{{trustLogos}}"
+      }
+    }
+  ],
+  "metadata": {
+    "minSections": 6,
+    "maxSections": 10,
+    "requiredBlocks": ["hero", "challenge", "approach", "benefits", "cta"],
+    "optionalBlocks": ["implementation", "proof", "resources", "related"],
+    "seoRequirements": {
+      "minWordCount": 1200,
+      "headingStructure": "h1-h2-h3",
+      "internalLinks": 5,
+      "externalLinks": 2
+    },
+    "contentFlow": {
+      "narrative": "problem-awareness → solution-understanding → value-realization → proof → action",
+      "emotionalJourney": "concern → hope → confidence → trust → commitment"
+    }
+  },
+  "variations": {
+    "technical-solution": {
+      "emphasize": ["approach", "implementation"],
+      "additionalSections": ["architecture", "security"]
+    },
+    "business-solution": {
+      "emphasize": ["benefits", "proof"],
+      "additionalSections": ["roi-calculator", "executive-summary"]
+    },
+    "transformation-solution": {
+      "emphasize": ["challenge", "approach", "implementation"],
+      "additionalSections": ["change-management", "roadmap"]
+    }
+  }
+}

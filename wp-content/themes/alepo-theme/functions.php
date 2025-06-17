@@ -173,6 +173,12 @@ function alepo_widgets_init() {
 add_action('widgets_init', 'alepo_widgets_init');
 
 /**
+ * Include Enhanced Page Creator and Template System
+ */
+require_once get_template_directory() . '/../../../tools/theme-utilities/create-alepo-pages-enhanced.php';
+require_once get_template_directory() . '/../../../alepo-templates/validation/template-mapping-demo.php';
+
+/**
  * ACF Field Groups Registration
  */
 function alepo_register_acf_fields() {

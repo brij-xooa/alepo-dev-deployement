@@ -1,0 +1,126 @@
+{
+  "templateName": "product-template",
+  "version": "1.0",
+  "description": "Standard template for all product pages",
+  "sections": [
+    {
+      "name": "hero",
+      "type": "alepo/product-hero",
+      "required": true,
+      "attributes": {
+        "layout": "split-screen",
+        "backgroundType": "gradient",
+        "minHeight": 600
+      },
+      "content": {
+        "breadcrumbs": true,
+        "headline": "{{productHeadline}}",
+        "subheadline": "{{productSubheadline}}",
+        "primaryCTA": {
+          "text": "Request {{productName}} Demo",
+          "url": "/request-demo/{{productSlug}}"
+        },
+        "secondaryCTA": {
+          "text": "Download Datasheet",
+          "url": "/resources/{{productSlug}}-datasheet"
+        },
+        "stats": "{{productStats}}"
+      }
+    },
+    {
+      "name": "challenge",
+      "type": "alepo/challenge-section",
+      "required": true,
+      "attributes": {
+        "layout": "narrative-grid",
+        "columns": 2
+      },
+      "content": {
+        "sectionTitle": "{{challengeTitle}}",
+        "leadText": "{{challengeNarrative}}",
+        "scenarios": [
+          {
+            "type": "problem",
+            "title": "With Legacy Systems",
+            "points": "{{legacyPainPoints}}"
+          },
+          {
+            "type": "solution",
+            "title": "With Alepo {{productName}}",
+            "points": "{{alepoBenefits}}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "features",
+      "type": "alepo/feature-showcase",
+      "required": true,
+      "attributes": {
+        "layout": "alternating",
+        "animationStyle": "slide-in"
+      },
+      "content": {
+        "sectionTitle": "Key Capabilities",
+        "features": "{{productFeatures}}"
+      }
+    },
+    {
+      "name": "technical",
+      "type": "alepo/technical-specs",
+      "required": false,
+      "attributes": {
+        "layout": "tabbed"
+      },
+      "content": {
+        "specifications": "{{technicalSpecs}}",
+        "architecture": "{{architectureDiagram}}",
+        "integrations": "{{integrationOptions}}"
+      }
+    },
+    {
+      "name": "roi",
+      "type": "alepo/roi-calculator",
+      "required": false,
+      "attributes": {
+        "style": "interactive"
+      }
+    },
+    {
+      "name": "testimonial",
+      "type": "alepo/customer-proof",
+      "required": true,
+      "content": {
+        "testimonials": "{{customerTestimonials}}",
+        "logos": "{{customerLogos}}"
+      }
+    },
+    {
+      "name": "cta",
+      "type": "alepo/final-cta",
+      "required": true,
+      "attributes": {
+        "style": "centered-bold"
+      },
+      "content": {
+        "headline": "Ready to Transform Your {{productCategory}}?",
+        "subheadline": "Join leading operators who trust Alepo",
+        "primaryCTA": {
+          "text": "Schedule Your Demo",
+          "url": "/demo"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "minSections": 5,
+    "maxSections": 8,
+    "requiredBlocks": ["hero", "challenge", "features", "testimonial", "cta"],
+    "optionalBlocks": ["technical", "roi", "comparison"],
+    "seoRequirements": {
+      "minWordCount": 1500,
+      "headingStructure": "h1-h2-h3",
+      "internalLinks": 5
+    }
+  }
+}

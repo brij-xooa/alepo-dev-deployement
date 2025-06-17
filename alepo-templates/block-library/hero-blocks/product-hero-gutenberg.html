@@ -1,0 +1,84 @@
+<!-- wp:cover {"customGradient":"linear-gradient(135deg,rgb(0,86,179) 0%,rgb(23,162,184) 100%)","minHeight":600,"minHeightUnit":"px","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}}} -->
+<div class="wp-block-cover alignfull is-light" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);min-height:600px">
+    <span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim has-background-gradient" style="background:linear-gradient(135deg,rgb(0,86,179) 0%,rgb(23,162,184) 100%)"></span>
+    <div class="wp-block-cover__inner-container">
+        
+        <!-- wp:group {"layout":{"type":"constrained","contentSize":"1200px"}} -->
+        <div class="wp-block-group">
+            
+            <!-- wp:group {"className":"breadcrumb-wrapper","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} -->
+            <div class="wp-block-group breadcrumb-wrapper" style="margin-bottom:var(--wp--preset--spacing--40)">
+                <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"small"} -->
+                <p class="has-white-color has-text-color has-small-font-size has-link-color">
+                    <a href="/">Home</a> / <a href="/products">Products</a> / {{productName}}
+                </p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
+            
+            <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|60"}}}} -->
+            <div class="wp-block-columns are-vertically-aligned-center">
+                
+                <!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
+                <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
+                    
+                    <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"3rem","fontStyle":"normal","fontWeight":"700","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"textColor":"white"} -->
+                    <h1 class="wp-block-heading has-white-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--30);font-size:3rem;font-style:normal;font-weight:700;line-height:1.2">{{productHeadline}}</h1>
+                    <!-- /wp:heading -->
+                    
+                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem","lineHeight":"1.6"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}},"textColor":"white"} -->
+                    <p class="has-white-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--40);font-size:1.25rem;line-height:1.6">{{productSubheadline}}</p>
+                    <!-- /wp:paragraph -->
+                    
+                    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
+                    <div class="wp-block-buttons">
+                        <!-- wp:button {"backgroundColor":"white","textColor":"primary","style":{"typography":{"fontSize":"1.125rem","fontWeight":"600"},"spacing":{"padding":{"left":"2rem","right":"2rem","top":"1rem","bottom":"1rem"}},"border":{"radius":"4px"}},"className":"has-custom-font-size"} -->
+                        <div class="wp-block-button has-custom-font-size">
+                            <a class="wp-block-button__link has-primary-color has-white-background-color has-text-color has-background has-custom-font-size wp-element-button" href="{{primaryCTAUrl}}" style="border-radius:4px;padding-top:1rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem;font-size:1.125rem;font-weight:600">{{primaryCTAText}}</a>
+                        </div>
+                        <!-- /wp:button -->
+                        
+                        <!-- wp:button {"backgroundColor":"transparent","textColor":"white","style":{"typography":{"fontSize":"1.125rem","fontWeight":"600"},"spacing":{"padding":{"left":"2rem","right":"2rem","top":"1rem","bottom":"1rem"}},"border":{"radius":"4px","width":"2px"}},"borderColor":"white","className":"is-style-outline has-custom-font-size"} -->
+                        <div class="wp-block-button is-style-outline has-custom-font-size">
+                            <a class="wp-block-button__link has-white-color has-transparent-background-color has-text-color has-background has-border-color has-white-border-color has-custom-font-size wp-element-button" href="{{secondaryCTAUrl}}" style="border-width:2px;border-radius:4px;padding-top:1rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem;font-size:1.125rem;font-weight:600">{{secondaryCTAText}}</a>
+                        </div>
+                        <!-- /wp:button -->
+                    </div>
+                    <!-- /wp:buttons -->
+                    
+                </div>
+                <!-- /wp:column -->
+                
+                <!-- wp:column {"verticalAlignment":"center","width":"40%"} -->
+                <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%">
+                    
+                    <!-- wp:group {"className":"hero-stats","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+                    <div class="wp-block-group hero-stats">
+                        {{#each productStats}}
+                        <!-- wp:group {"className":"stat-item","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
+                        <div class="wp-block-group stat-item" style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
+                            <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"2.5rem","fontWeight":"700"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+                            <h3 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0;font-size:2.5rem;font-weight:700">{{this.value}}</h3>
+                            <!-- /wp:heading -->
+                            
+                            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem","textTransform":"uppercase"},"spacing":{"margin":{"top":"0.5rem"}}},"textColor":"white"} -->
+                            <p class="has-white-color has-text-color" style="margin-top:0.5rem;font-size:0.875rem;text-transform:uppercase">{{this.label}}</p>
+                            <!-- /wp:paragraph -->
+                        </div>
+                        <!-- /wp:group -->
+                        {{/each}}
+                    </div>
+                    <!-- /wp:group -->
+                    
+                </div>
+                <!-- /wp:column -->
+                
+            </div>
+            <!-- /wp:columns -->
+            
+        </div>
+        <!-- /wp:group -->
+        
+    </div>
+</div>
+<!-- /wp:cover -->

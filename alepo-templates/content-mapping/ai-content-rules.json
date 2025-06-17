@@ -1,0 +1,240 @@
+{
+  "version": "1.0",
+  "description": "Rules for mapping AI-generated content to template structures",
+  "contentGuidelines": {
+    "general": {
+      "tone": "Professional yet approachable, authoritative without being preachy",
+      "voice": "Expert consultant who understands customer challenges",
+      "creativity": "Use metaphors, storytelling, and industry-specific scenarios",
+      "technicalLevel": "Balance technical accuracy with business accessibility"
+    },
+    "sectionSpecific": {
+      "products": {
+        "focus": "Technical capabilities solving real problems",
+        "structure": "Problem → Solution → Benefits → Proof",
+        "uniqueElements": [
+          "Performance metrics with context",
+          "Architecture explanations",
+          "Integration possibilities",
+          "ROI calculations"
+        ]
+      },
+      "solutions": {
+        "focus": "Business challenges and transformation journeys",
+        "structure": "Challenge → Approach → Implementation → Results",
+        "uniqueElements": [
+          "Industry scenarios",
+          "Step-by-step methodologies",
+          "Risk mitigation",
+          "Success metrics"
+        ]
+      },
+      "industries": {
+        "focus": "Sector-specific expertise and understanding",
+        "structure": "Industry Context → Challenges → Solutions → Success Stories",
+        "uniqueElements": [
+          "Regulatory considerations",
+          "Market dynamics",
+          "Competitive advantages",
+          "Industry partnerships"
+        ]
+      }
+    }
+  },
+  "templateMapping": {
+    "hero": {
+      "requiredElements": {
+        "headline": {
+          "maxLength": 60,
+          "style": "Compelling, specific, outcome-focused",
+          "examples": {
+            "products": "When 50 Million Subscribers Connect at Once",
+            "solutions": "Your Network Wasn't Built for This World",
+            "industries": "Where Telecom Innovation Meets Banking Security"
+          }
+        },
+        "subheadline": {
+          "maxLength": 150,
+          "style": "Expand on headline with specific value proposition",
+          "mustInclude": ["specific benefit", "target audience", "unique differentiator"]
+        },
+        "primaryCTA": {
+          "products": "Request [Product] Demo",
+          "solutions": "Start [Solution] Assessment",
+          "industries": "Explore [Industry] Solutions"
+        },
+        "stats": {
+          "count": 3,
+          "format": {
+            "value": "Numeric with unit",
+            "label": "Short descriptor"
+          },
+          "examples": [
+            {"value": "99.999%", "label": "Uptime SLA"},
+            {"value": "36,000", "label": "TPS Performance"},
+            {"value": "500M+", "label": "Active Subscribers"}
+          ]
+        }
+      }
+    },
+    "challenge": {
+      "requiredElements": {
+        "sectionTitle": {
+          "style": "Problem-focused, creates urgency",
+          "examples": [
+            "The Authentication Crisis Nobody Talks About",
+            "The Infrastructure Paradox",
+            "When Legacy Meets Tomorrow"
+          ]
+        },
+        "narrative": {
+          "style": "Storytelling that resonates with target audience",
+          "structure": "Set scene → Introduce problem → Show consequences",
+          "length": "2-3 paragraphs"
+        },
+        "scenarios": {
+          "count": 2,
+          "types": ["problem_scenario", "solution_scenario"],
+          "format": {
+            "problem_scenario": {
+              "title": "With Legacy Systems",
+              "points": 4,
+              "tone": "Pain points, frustrations, risks"
+            },
+            "solution_scenario": {
+              "title": "With Alepo [Product/Solution]",
+              "points": 4,
+              "tone": "Benefits, outcomes, peace of mind"
+            }
+          }
+        }
+      }
+    },
+    "features": {
+      "requiredElements": {
+        "sectionTitle": "Key Capabilities | Core Features | What Sets Us Apart",
+        "featureBlocks": {
+          "minCount": 3,
+          "maxCount": 6,
+          "structure": {
+            "icon": "Emoji or icon identifier",
+            "title": "Feature name (action-oriented)",
+            "description": "2-3 sentences explaining the feature and its benefit",
+            "technicalNote": "Optional technical detail for credibility"
+          }
+        }
+      }
+    },
+    "testimonial": {
+      "requiredElements": {
+        "format": "Quote with attribution",
+        "elements": {
+          "quote": "Specific, outcome-focused testimonial",
+          "attribution": "Name, Title, Company",
+          "metric": "Quantified result when possible"
+        }
+      }
+    },
+    "finalCTA": {
+      "requiredElements": {
+        "headline": {
+          "products": "Ready to Transform Your [Product Category]?",
+          "solutions": "Let's Solve Your [Challenge] Together",
+          "industries": "Join Leading [Industry] Innovators"
+        },
+        "subheadline": "Reinforcement of value proposition",
+        "primaryButton": {
+          "text": "Strong action verb + specific outcome",
+          "examples": [
+            "Schedule Your Personalized Demo",
+            "Get Your Custom Assessment",
+            "Start Your Transformation Journey"
+          ]
+        }
+      }
+    }
+  },
+  "contentStructureRules": {
+    "products": {
+      "sections": [
+        {"id": "hero", "required": true},
+        {"id": "challenge", "required": true},
+        {"id": "features", "required": true},
+        {"id": "technical", "required": false},
+        {"id": "roi", "required": false},
+        {"id": "testimonial", "required": true},
+        {"id": "finalCTA", "required": true}
+      ],
+      "flowLogic": "Problem awareness → Solution introduction → Capability proof → Business value → Social proof → Action"
+    },
+    "solutions": {
+      "sections": [
+        {"id": "hero", "required": true},
+        {"id": "challenge", "required": true},
+        {"id": "approach", "required": true},
+        {"id": "benefits", "required": true},
+        {"id": "implementation", "required": false},
+        {"id": "caseStudy", "required": false},
+        {"id": "finalCTA", "required": true}
+      ],
+      "flowLogic": "Challenge recognition → Methodology → Outcomes → Process → Evidence → Engagement"
+    },
+    "industries": {
+      "sections": [
+        {"id": "hero", "required": true},
+        {"id": "industryContext", "required": true},
+        {"id": "challenges", "required": true},
+        {"id": "solutions", "required": true},
+        {"id": "successStories", "required": true},
+        {"id": "finalCTA", "required": true}
+      ],
+      "flowLogic": "Industry understanding → Specific challenges → Tailored solutions → Proven results → Partnership"
+    }
+  },
+  "aiGenerationPrompts": {
+    "products": "Generate content for a [PRODUCT NAME] page following the product template structure. Focus on technical capabilities solving real business problems. Include specific metrics, architecture details, and ROI considerations. Each section should flow naturally into the next, building a compelling case for the product.",
+    "solutions": "Create content for a [SOLUTION NAME] page using the solution template. Start with a business challenge narrative, present a clear methodology, highlight benefits, and include implementation considerations. Use storytelling to make technical concepts accessible to business decision-makers.",
+    "industries": "Develop content for the [INDUSTRY NAME] page following the industry template. Demonstrate deep understanding of sector-specific challenges, regulatory requirements, and market dynamics. Include relevant success stories and position Alepo as the industry expert."
+  },
+  "validationRules": {
+    "headlines": {
+      "minLength": 20,
+      "maxLength": 60,
+      "mustInclude": ["value proposition", "target audience OR specific outcome"]
+    },
+    "paragraphs": {
+      "minWords": 50,
+      "maxWords": 150,
+      "readabilityScore": "Grade 8-10"
+    },
+    "ctas": {
+      "maxLength": 30,
+      "mustStartWith": ["action verb"],
+      "avoid": ["Learn More", "Click Here", "Submit"]
+    },
+    "stats": {
+      "requireSource": false,
+      "formatExamples": ["99.99%", "50M+", "$2.5M", "3x ROI", "<100ms"]
+    }
+  },
+  "brandConsistency": {
+    "terminology": {
+      "always": {
+        "company": "Alepo",
+        "products": ["AAA", "Digital BSS", "BSS Now", "AI Customer Assistant", "AI Agent Assistant"],
+        "positioning": ["cloud-native", "5G-ready", "future-proof", "carrier-grade"]
+      },
+      "avoid": {
+        "outdated": ["legacy" (when referring to Alepo), "traditional", "old-school"],
+        "weak": ["try to", "maybe", "possibly", "somewhat"],
+        "generic": ["best-in-class", "world-class", "cutting-edge", "revolutionary"]
+      }
+    },
+    "messagingPillars": [
+      "Technical excellence with business outcomes",
+      "Partnership approach to transformation",
+      "Proven at scale with global operators",
+      "Innovation grounded in telecom expertise"
+    ]
+  }
+}

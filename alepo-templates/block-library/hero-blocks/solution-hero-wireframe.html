@@ -4,22 +4,22 @@
 <!-- wp:group {"align":"full","className":"alepo-hero-wireframe section-pattern-1","style":{"spacing":{"padding":{"top":"0","bottom":"0"}},"dimensions":{"minHeight":"500px"}}} -->
 <div class="wp-block-group alignfull alepo-hero-wireframe section-pattern-1" style="min-height:500px;padding-top:0;padding-bottom:0">
 
-    <!-- Background image with original gradient overlay -->
-    <!-- wp:cover {"url":"https://alepo.com/wp-content/uploads/2024/03/landing_Solution-Brief-Digital-MVNO-in-a-Box.png","id":0,"customGradient":"linear-gradient(135deg, var(--c-primary-400) 0%, var(--c-secondary-500) 100%)","dimRatio":75,"minHeight":500,"minHeightUnit":"px","isDark":true,"align":"full","className":"hero-image-overlay"} -->
-    <div class="wp-block-cover alignfull is-dark hero-image-overlay" style="background:linear-gradient(135deg, var(--c-primary-400) 0%, var(--c-secondary-500) 100%),url(https://alepo.com/wp-content/uploads/2024/03/landing_Solution-Brief-Digital-MVNO-in-a-Box.png);min-height:500px">
-        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-75 has-background-dim"></span>
+    <!-- Modern 3D Hero Background with Gradient -->
+    <!-- wp:cover {"customGradient":"linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #164e63 100%)","dimRatio":0,"minHeight":600,"minHeightUnit":"px","isDark":true,"align":"full","className":"hero-3d-modern"} -->
+    <div class="wp-block-cover alignfull is-dark hero-3d-modern" style="background:linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #164e63 100%);min-height:600px">
+        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
         
         <div class="wp-block-cover__inner-container">
             
-            <!-- Main Container with More Breathing Space -->
-            <!-- wp:group {"layout":{"type":"constrained","contentSize":"900px"},"style":{"spacing":{"padding":{"top":"var(--space-10)","bottom":"var(--space-10)","left":"var(--space-6)","right":"var(--space-6)"}}}} -->
+            <!-- Split Layout Container -->
+            <!-- wp:group {"layout":{"type":"constrained","contentSize":"1400px"},"style":{"spacing":{"padding":{"top":"var(--space-10)","bottom":"var(--space-10)","left":"var(--space-6)","right":"var(--space-6)"}}}} -->
             <div class="wp-block-group" style="padding-top:var(--space-10);padding-right:var(--space-6);padding-bottom:var(--space-10);padding-left:var(--space-6)">
                 
                 <!-- Breadcrumb Navigation -->
-                <!-- wp:group {"className":"breadcrumb-nav","style":{"spacing":{"margin":{"bottom":"var(--space-7)"}}}} -->
-                <div class="wp-block-group breadcrumb-nav" style="margin-bottom:var(--space-7)">
-                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-small)","fontWeight":"var(--font-weight-medium)"},"elements":{"link":{"color":{"text":"rgba(255,255,255,0.8)"}}}},"textColor":"white"} -->
-                    <p class="has-white-color has-text-color has-link-color" style="font-size:var(--font-size-small);font-weight:var(--font-weight-medium);opacity:0.9">
+                <!-- wp:group {"className":"breadcrumb-nav","style":{"spacing":{"margin":{"bottom":"var(--space-8)"}}}} -->
+                <div class="wp-block-group breadcrumb-nav" style="margin-bottom:var(--space-8)">
+                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-small)","fontWeight":"var(--font-weight-medium)"},"elements":{"link":{"color":{"text":"rgba(255,255,255,0.7)"}}}},"textColor":"white"} -->
+                    <p class="has-white-color has-text-color has-link-color" style="font-size:var(--font-size-small);font-weight:var(--font-weight-medium);opacity:0.8">
                         <a href="/" aria-label="Navigate to Home">Home</a> 
                         <span aria-hidden="true"> > </span> 
                         <a href="/solutions" aria-label="Navigate to Solutions">Solutions</a> 
@@ -30,52 +30,133 @@
                 </div>
                 <!-- /wp:group -->
                 
-                <!-- Hero Content - Centered Layout -->
-                <!-- wp:group {"className":"hero-content-centered","style":{"spacing":{"margin":{"bottom":"var(--space-8)"}}},"layout":{"type":"constrained","contentSize":"800px"}} -->
-                <div class="wp-block-group hero-content-centered" style="margin-bottom:var(--space-8)">
+                <!-- Split Layout: Text Left (60%) + 3D Visual Right (40%) -->
+                <!-- wp:columns {"verticalAlignment":"center","className":"hero-split-layout","style":{"spacing":{"blockGap":{"left":"var(--space-12)"}}}} -->
+                <div class="wp-block-columns are-vertically-aligned-center hero-split-layout">
                     
-                        <!-- Solution Name + Key Benefit (H1: 8-12 words) - Centered -->
-                        <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"var(--font-size-hero)","fontWeight":"var(--font-weight-bold)","lineHeight":"var(--line-height-tight)","letterSpacing":"var(--letter-spacing-tight)"},"spacing":{"margin":{"bottom":"var(--space-6)"}}},"textColor":"white"} -->
-                        <h1 class="wp-block-heading has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-6);font-size:var(--font-size-hero);font-weight:var(--font-weight-bold);line-height:var(--line-height-tight);letter-spacing:var(--letter-spacing-tight)">{{solutionHeadline}}</h1>
+                    <!-- Left Column: Content -->
+                    <!-- wp:column {"verticalAlignment":"center","width":"60%","className":"hero-content-column"} -->
+                    <div class="wp-block-column is-vertically-aligned-center hero-content-column" style="flex-basis:60%">
+                    
+                        <!-- Solution Name + Key Benefit (H1: 8-12 words) - Left Aligned -->
+                        <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"3.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.1","letterSpacing":"-0.02em"},"spacing":{"margin":{"bottom":"var(--space-5)"}}},"textColor":"white"} -->
+                        <h1 class="wp-block-heading has-white-color has-text-color" style="margin-bottom:var(--space-5);font-size:3.5rem;font-weight:var(--font-weight-bold);line-height:1.1;letter-spacing:-0.02em">{{solutionHeadline}}</h1>
                         <!-- /wp:heading -->
                         
-                        <!-- Value Proposition Subheadline (12-18 words) - Centered -->
-                        <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"var(--font-size-h3)","fontWeight":"var(--font-weight-medium)","lineHeight":"var(--line-height-snug)"},"spacing":{"margin":{"bottom":"var(--space-8)"}}},"textColor":"white"} -->
-                        <h2 class="wp-block-heading has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-8);font-size:var(--font-size-h3);font-weight:var(--font-weight-medium);line-height:var(--line-height-snug);opacity:0.9">{{valueProposition}}</h2>
+                        <!-- Value Proposition Subheadline (12-18 words) - Left Aligned -->
+                        <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"1.25rem","fontWeight":"var(--font-weight-medium)","lineHeight":"1.4"},"spacing":{"margin":{"bottom":"var(--space-6)"}}},"textColor":"white"} -->
+                        <h2 class="wp-block-heading has-white-color has-text-color" style="margin-bottom:var(--space-6);font-size:1.25rem;font-weight:var(--font-weight-medium);line-height:1.4;opacity:0.9">{{valueProposition}}</h2>
                         <!-- /wp:heading -->
                         
-                        <!-- Problem Statement (20-30 words) - Centered -->
-                        <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var(--font-size-body-lg)","lineHeight":"var(--line-height-normal)"},"spacing":{"margin":{"bottom":"var(--space-5)"}}},"textColor":"white"} -->
-                        <p class="has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-5);font-size:var(--font-size-body-lg);line-height:var(--line-height-normal);opacity:0.85">{{problemStatement}}</p>
+                        <!-- Problem Statement (20-30 words) - Left Aligned -->
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-body)","lineHeight":"1.6"},"spacing":{"margin":{"bottom":"var(--space-4)"}}},"textColor":"white"} -->
+                        <p class="has-white-color has-text-color" style="margin-bottom:var(--space-4);font-size:var(--font-size-body);line-height:1.6;opacity:0.8">{{problemStatement}}</p>
                         <!-- /wp:paragraph -->
                         
-                        <!-- Solution Statement (25-35 words) - Centered -->
-                        <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var(--font-size-body-lg)","lineHeight":"var(--line-height-normal)","fontWeight":"var(--font-weight-medium)"},"spacing":{"margin":{"bottom":"var(--space-7)"}}},"textColor":"white"} -->
-                        <p class="has-text-align-center has-white-color has-text-color" style="margin-bottom:var(--space-7);font-size:var(--font-size-body-lg);line-height:var(--line-height-normal);font-weight:var(--font-weight-medium);opacity:0.95">{{solutionStatement}}</p>
+                        <!-- Solution Statement (25-35 words) - Left Aligned -->
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-body)","lineHeight":"1.6","fontWeight":"var(--font-weight-medium)"},"spacing":{"margin":{"bottom":"var(--space-7)"}}},"textColor":"white"} -->
+                        <p class="has-white-color has-text-color" style="margin-bottom:var(--space-7);font-size:var(--font-size-body);line-height:1.6;font-weight:var(--font-weight-medium);opacity:0.9">{{solutionStatement}}</p>
                         <!-- /wp:paragraph -->
                         
-                        <!-- Trust Badge/Social Proof (8-15 words) - Centered with proper visibility -->
-                        <!-- wp:group {"className":"trust-badge","style":{"spacing":{"padding":{"top":"var(--space-3)","bottom":"var(--space-3)","left":"var(--space-4)","right":"var(--space-4)"},"margin":{"bottom":"var(--space-6)"}},"border":{"radius":"6px","color":"rgba(255,255,255,0.3)","width":"1px"}},"backgroundColor":"white","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-                        <div class="wp-block-group trust-badge has-white-background-color has-background has-border-color" style="border-color:rgba(255,255,255,0.3);border-width:1px;border-radius:6px;margin-bottom:var(--space-6);padding-top:var(--space-3);padding-right:var(--space-4);padding-bottom:var(--space-3);padding-left:var(--space-4)">
-                            <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-small)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"margin":{"bottom":"0"}}},"textColor":"primary-700"} -->
-                            <p class="has-primary-700-color has-text-color" style="margin-bottom:0;font-size:var(--font-size-small);font-weight:var(--font-weight-semibold)">🏆 {{trustBadge}}</p>
-                            <!-- /wp:paragraph -->
-                        </div>
-                        <!-- /wp:group -->
-                        
-                        <!-- Primary CTA Button - Centered, Original Style -->
-                        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var(--space-6)"}}}} -->
-                        <div class="wp-block-buttons" style="margin-top:var(--space-6)">
-                            <!-- wp:button {"className":"btn-primary-wireframe","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-6)","right":"var(--space-6)","top":"14px","bottom":"14px"}},"border":{"radius":"6px"}},"backgroundColor":"primary-500","textColor":"white"} -->
-                            <div class="wp-block-button btn-primary-wireframe">
-                                <a class="wp-block-button__link has-white-color has-primary-500-background-color has-text-color has-background wp-element-button" href="{{primaryCTAUrl}}" style="border-radius:6px;padding-top:14px;padding-right:var(--space-6);padding-bottom:14px;padding-left:var(--space-6);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold)">{{primaryCTAText}}</a>
+                        <!-- CTA Buttons - Left Aligned -->
+                        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var(--space-4)"}}} -->
+                        <div class="wp-block-buttons">
+                            <!-- wp:button {"className":"btn-primary-modern","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-7)","right":"var(--space-7)","top":"16px","bottom":"16px"}},"border":{"radius":"8px"}},"backgroundColor":"primary-500","textColor":"white"} -->
+                            <div class="wp-block-button btn-primary-modern">
+                                <a class="wp-block-button__link has-white-color has-primary-500-background-color has-text-color has-background wp-element-button" href="{{primaryCTAUrl}}" style="border-radius:8px;padding-top:16px;padding-right:var(--space-7);padding-bottom:16px;padding-left:var(--space-7);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold)">{{primaryCTAText}}</a>
+                            </div>
+                            <!-- /wp:button -->
+                            
+                            <!-- wp:button {"className":"btn-secondary-modern","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-7)","right":"var(--space-7)","top":"16px","bottom":"16px"}},"border":{"radius":"8px","width":"1px","color":"rgba(255,255,255,0.3)"}},"backgroundColor":"transparent","textColor":"white"} -->
+                            <div class="wp-block-button btn-secondary-modern">
+                                <a class="wp-block-button__link has-white-color has-transparent-background-color has-text-color has-background has-border-color wp-element-button" href="{{secondaryCTAUrl}}" style="border-color:rgba(255,255,255,0.3);border-width:1px;border-radius:8px;padding-top:16px;padding-right:var(--space-7);padding-bottom:16px;padding-left:var(--space-7);font-size:var(--font-size-body);font-weight:var(--font-weight-semibold)">{{secondaryCTAText}}</a>
                             </div>
                             <!-- /wp:button -->
                         </div>
                         <!-- /wp:buttons -->
-                
+                        
+                    </div>
+                    <!-- /wp:column -->
+                    
+                    <!-- Right Column: 3D Visual Elements (40%) -->
+                    <!-- wp:column {"verticalAlignment":"center","width":"40%","className":"hero-visual-column"} -->
+                    <div class="wp-block-column is-vertically-aligned-center hero-visual-column" style="flex-basis:40%">
+                        
+                        <!-- 3D Isometric Container -->
+                        <!-- wp:group {"className":"hero-3d-container","style":{"spacing":{"padding":{"top":"var(--space-6)","bottom":"var(--space-6)","left":"var(--space-4)","right":"var(--space-4)"}}}} -->
+                        <div class="wp-block-group hero-3d-container" style="padding-top:var(--space-6);padding-right:var(--space-4);padding-bottom:var(--space-6);padding-left:var(--space-4)">
+                            
+                            <!-- Main 3D Visual Element -->
+                            <!-- wp:group {"className":"isometric-graphic","style":{"dimensions":{"minHeight":"300px"},"position":{"type":"relative"}}} -->
+                            <div class="wp-block-group isometric-graphic" style="min-height:300px;position:relative">
+                                
+                                <!-- Central Network Icon/Visual -->
+                                <!-- wp:group {"className":"network-core","style":{"position":{"type":"absolute","top":"50%","left":"50%"},"transform":"translate(-50%, -50%)","dimensions":{"width":"120px","height":"120px"}}} -->
+                                <div class="wp-block-group network-core" style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:120px;height:120px">
+                                    <div class="network-icon">🌐</div>
+                                </div>
+                                <!-- /wp:group -->
+                                
+                                <!-- Floating Metric Cards -->
+                                <!-- Trust Signals - Top Left -->
+                                <!-- wp:group {"className":"metric-card trust-card","style":{"position":{"type":"absolute","top":"10%","left":"10%"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                <div class="wp-block-group metric-card trust-card" style="position:absolute;top:10%;left:10%;background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                    <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">+73%</p>
+                                    <!-- /wp:paragraph -->
+                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                    <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">Revenue Growth</p>
+                                    <!-- /wp:paragraph -->
+                                </div>
+                                <!-- /wp:group -->
+                                
+                                <!-- Performance Metric - Top Right -->
+                                <!-- wp:group {"className":"metric-card performance-card","style":{"position":{"type":"absolute","top":"20%","right":"5%"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                <div class="wp-block-group metric-card performance-card" style="position:absolute;top:20%;right:5%;background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                    <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">99.9%</p>
+                                    <!-- /wp:paragraph -->
+                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                    <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">Uptime SLA</p>
+                                    <!-- /wp:paragraph -->
+                                </div>
+                                <!-- /wp:group -->
+                                
+                                <!-- Innovation Metric - Bottom Left -->
+                                <!-- wp:group {"className":"metric-card innovation-card","style":{"position":{"type":"absolute","bottom":"15%","left":"5%"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                <div class="wp-block-group metric-card innovation-card" style="position:absolute;bottom:15%;left:5%;background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                    <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{trustMetric1Value}}</p>
+                                    <!-- /wp:paragraph -->
+                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                    <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{trustMetric1Label}}</p>
+                                    <!-- /wp:paragraph -->
+                                </div>
+                                <!-- /wp:group -->
+                                
+                                <!-- ROI Metric - Bottom Right -->
+                                <!-- wp:group {"className":"metric-card roi-card","style":{"position":{"type":"absolute","bottom":"25%","right":"10%"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                <div class="wp-block-group metric-card roi-card" style="position:absolute;bottom:25%;right:10%;background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                    <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{trustMetric2Value}}</p>
+                                    <!-- /wp:paragraph -->
+                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                    <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{trustMetric2Label}}</p>
+                                    <!-- /wp:paragraph -->
+                                </div>
+                                <!-- /wp:group -->
+                                
+                            </div>
+                            <!-- /wp:group -->
+                            
+                        </div>
+                        <!-- /wp:group -->
+                        
+                    </div>
+                    <!-- /wp:column -->
+                    
                 </div>
-                <!-- /wp:group -->
+                <!-- /wp:columns -->
                 
             </div>
             <!-- /wp:group -->
@@ -157,6 +238,170 @@
 .alepo-hero-wireframe .btn-primary-wireframe .wp-block-button__link:focus {
     outline: 2px solid var(--c-white);
     outline-offset: 2px;
+}
+
+/* 3D Hero Visual Elements */
+.alepo-hero-wireframe .hero-3d-container {
+    perspective: 1000px;
+}
+
+.alepo-hero-wireframe .isometric-graphic {
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+}
+
+.alepo-hero-wireframe .network-core {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.alepo-hero-wireframe .network-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.alepo-hero-wireframe .metric-card {
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.alepo-hero-wireframe .metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.alepo-hero-wireframe .trust-card {
+    animation-delay: 0.2s;
+}
+
+.alepo-hero-wireframe .performance-card {
+    animation-delay: 0.4s;
+}
+
+.alepo-hero-wireframe .innovation-card {
+    animation-delay: 0.6s;
+}
+
+.alepo-hero-wireframe .roi-card {
+    animation-delay: 0.8s;
+}
+
+/* Split Layout Enhancements */
+.alepo-hero-wireframe .hero-split-layout {
+    align-items: center;
+    min-height: 400px;
+}
+
+.alepo-hero-wireframe .hero-content-column {
+    z-index: 2;
+}
+
+.alepo-hero-wireframe .hero-visual-column {
+    z-index: 1;
+}
+
+/* Modern Button Styles */
+.alepo-hero-wireframe .btn-primary-modern .wp-block-button__link {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.alepo-hero-wireframe .btn-primary-modern .wp-block-button__link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
+}
+
+.alepo-hero-wireframe .btn-secondary-modern .wp-block-button__link {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.alepo-hero-wireframe .btn-secondary-modern .wp-block-button__link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotateY(0deg); 
+    }
+    50% { 
+        transform: translateY(-10px) rotateY(5deg); 
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Enhancements */
+@media (max-width: 1024px) {
+    .alepo-hero-wireframe .hero-visual-column {
+        display: none;
+    }
+    
+    .alepo-hero-wireframe .hero-content-column {
+        flex-basis: 100% !important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .alepo-hero-wireframe .hero-split-layout {
+        flex-direction: column;
+        gap: var(--space-8);
+    }
+    
+    .alepo-hero-wireframe .hero-content-column,
+    .alepo-hero-wireframe .hero-visual-column {
+        flex-basis: 100% !important;
+    }
+    
+    .alepo-hero-wireframe h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .alepo-hero-wireframe .metric-card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        margin: var(--space-2);
+        display: inline-block;
+    }
 }
 
 /* Ensure proper color contrast */

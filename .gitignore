@@ -53,6 +53,7 @@ wp-content/themes/*/node_modules/
 *.log
 error_log
 debug.log
+.claude/logs/
 
 # Temporary files
 tmp/

@@ -1,10 +1,10 @@
-<!-- WIREFRAME-BASED SOLUTION HERO SECTION -->
-<!-- Full-width, ~400px height, 60-80 words total -->
+<!-- ENHANCED SOLUTION HERO SECTION WITH IMAGE OPTIONS -->
+<!-- Full-width, ~600px height, 60-80 words total -->
 
-<!-- wp:group {"align":"full","className":"alepo-hero-wireframe section-pattern-1","style":{"spacing":{"padding":{"top":"0","bottom":"0"}},"dimensions":{"minHeight":"500px"}}} -->
-<div class="wp-block-group alignfull alepo-hero-wireframe section-pattern-1" style="min-height:500px;padding-top:0;padding-bottom:0">
+<!-- wp:group {"align":"full","className":"alepo-hero-wireframe section-pattern-1","style":{"spacing":{"padding":{"top":"0","bottom":"0"}},"dimensions":{"minHeight":"600px"}}} -->
+<div class="wp-block-group alignfull alepo-hero-wireframe section-pattern-1" style="min-height:600px;padding-top:0;padding-bottom:0">
 
-    <!-- Modern 3D Hero Background with Gradient -->
+    <!-- Modern 3D Hero Background with Optional Image and Gradient -->
     <!-- wp:cover {"url":"{{heroBackgroundImage}}","dimRatio":{{heroDimRatio}},"customGradient":"linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #164e63 100%)","minHeight":600,"minHeightUnit":"px","isDark":true,"align":"full","className":"hero-3d-modern"} -->
     <div class="wp-block-cover alignfull is-dark hero-3d-modern" style="min-height:600px">
         <span aria-hidden="true" class="wp-block-cover__background has-background-dim-{{heroDimRatio}} has-background-dim has-background-gradient" style="background:linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #164e63 100%)"></span>
@@ -31,7 +31,7 @@
                 </div>
                 <!-- /wp:group -->
                 
-                <!-- Split Layout: Text Left (60%) + 3D Visual Right (40%) -->
+                <!-- Split Layout: Text Left (60%) + Visual Right (40%) -->
                 <!-- wp:columns {"verticalAlignment":"center","className":"hero-split-layout","style":{"spacing":{"blockGap":{"left":"var(--space-12)"}}}} -->
                 <div class="wp-block-columns are-vertically-aligned-center hero-split-layout">
                     
@@ -39,27 +39,27 @@
                     <!-- wp:column {"verticalAlignment":"center","width":"60%","className":"hero-content-column"} -->
                     <div class="wp-block-column is-vertically-aligned-center hero-content-column" style="flex-basis:60%">
                     
-                        <!-- Solution Name + Key Benefit (H1: 8-12 words) - Left Aligned -->
+                        <!-- Solution Name + Key Benefit (H1: 8-12 words) -->
                         <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"3.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.1","letterSpacing":"-0.02em"},"spacing":{"margin":{"bottom":"var(--space-5)"}}},"textColor":"white"} -->
                         <h1 class="wp-block-heading has-white-color has-text-color" style="margin-bottom:var(--space-5);font-size:3.5rem;font-weight:var(--font-weight-bold);line-height:1.1;letter-spacing:-0.02em">{{solutionHeadline}}</h1>
                         <!-- /wp:heading -->
                         
-                        <!-- Value Proposition Subheadline (12-18 words) - Left Aligned -->
+                        <!-- Value Proposition Subheadline (12-18 words) -->
                         <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"1.25rem","fontWeight":"var(--font-weight-medium)","lineHeight":"1.4"},"spacing":{"margin":{"bottom":"var(--space-6)"}}},"textColor":"white"} -->
                         <h2 class="wp-block-heading has-white-color has-text-color" style="margin-bottom:var(--space-6);font-size:1.25rem;font-weight:var(--font-weight-medium);line-height:1.4;opacity:0.9">{{valueProposition}}</h2>
                         <!-- /wp:heading -->
                         
-                        <!-- Problem Statement (20-30 words) - Left Aligned -->
+                        <!-- Problem Statement (20-30 words) -->
                         <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-body)","lineHeight":"1.6"},"spacing":{"margin":{"bottom":"var(--space-4)"}}},"textColor":"white"} -->
                         <p class="has-white-color has-text-color" style="margin-bottom:var(--space-4);font-size:var(--font-size-body);line-height:1.6;opacity:0.8">{{problemStatement}}</p>
                         <!-- /wp:paragraph -->
                         
-                        <!-- Solution Statement (25-35 words) - Left Aligned -->
+                        <!-- Solution Statement (25-35 words) -->
                         <!-- wp:paragraph {"style":{"typography":{"fontSize":"var(--font-size-body)","lineHeight":"1.6","fontWeight":"var(--font-weight-medium)"},"spacing":{"margin":{"bottom":"var(--space-7)"}}},"textColor":"white"} -->
                         <p class="has-white-color has-text-color" style="margin-bottom:var(--space-7);font-size:var(--font-size-body);line-height:1.6;font-weight:var(--font-weight-medium);opacity:0.9">{{solutionStatement}}</p>
                         <!-- /wp:paragraph -->
                         
-                        <!-- CTA Buttons - Left Aligned -->
+                        <!-- CTA Buttons -->
                         <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var(--space-4)"}}} -->
                         <div class="wp-block-buttons">
                             <!-- wp:button {"className":"btn-primary-modern","style":{"typography":{"fontSize":"var(--font-size-body)","fontWeight":"var(--font-weight-semibold)"},"spacing":{"padding":{"left":"var(--space-7)","right":"var(--space-7)","top":"16px","bottom":"16px"}},"border":{"radius":"8px"}},"backgroundColor":"primary-500","textColor":"white"} -->
@@ -79,17 +79,17 @@
                     </div>
                     <!-- /wp:column -->
                     
-                    <!-- Right Column: 3D Visual Elements (40%) -->
+                    <!-- Right Column: Visual Elements (40%) -->
                     <!-- wp:column {"verticalAlignment":"center","width":"40%","className":"hero-visual-column"} -->
                     <div class="wp-block-column is-vertically-aligned-center hero-visual-column" style="flex-basis:40%">
                         
-                        <!-- 3D Isometric Container -->
-                        <!-- wp:group {"className":"hero-3d-container","style":{"spacing":{"padding":{"top":"var(--space-6)","bottom":"var(--space-6)","left":"var(--space-4)","right":"var(--space-4)"}}}} -->
-                        <div class="wp-block-group hero-3d-container" style="padding-top:var(--space-6);padding-right:var(--space-4);padding-bottom:var(--space-6);padding-left:var(--space-4)">
+                        <!-- Visual Container -->
+                        <!-- wp:group {"className":"hero-visual-container","style":{"spacing":{"padding":{"top":"var(--space-6)","bottom":"var(--space-6)","left":"var(--space-4)","right":"var(--space-4)"}}}} -->
+                        <div class="wp-block-group hero-visual-container" style="padding-top:var(--space-6);padding-right:var(--space-4);padding-bottom:var(--space-6);padding-left:var(--space-4)">
                             
-                            <!-- Main 3D Visual Element -->
-                            <!-- wp:group {"className":"isometric-graphic","style":{"dimensions":{"minHeight":"300px"},"position":{"type":"relative"}}} -->
-                            <div class="wp-block-group isometric-graphic" style="min-height:300px;position:relative">
+                            <!-- Circular Metrics Layout -->
+                            <!-- wp:group {"className":"circular-metrics-container","style":{"dimensions":{"minHeight":"400px"},"position":{"type":"relative"}}} -->
+                            <div class="wp-block-group circular-metrics-container" style="min-height:400px;position:relative">
                                 
                                 <!-- Central Visual Element -->
                                 <!-- wp:group {"className":"central-visual","style":{"position":{"type":"absolute","top":"50%","left":"50%"},"transform":"translate(-50%, -50%)","dimensions":{"width":"200px","height":"200px"}}} -->
@@ -114,54 +114,70 @@
                                 </div>
                                 <!-- /wp:group -->
                                 
-                                <!-- Floating Metric Cards -->
-                                <!-- Metric 1 - Top Position -->
-                                <!-- wp:group {"className":"metric-card metric-0","style":{"position":{"type":"absolute"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
-                                <div class="wp-block-group metric-card metric-0" style="position:absolute;background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
-                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
-                                    <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">+73%</p>
-                                    <!-- /wp:paragraph -->
-                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
-                                    <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">Revenue Growth</p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
-                                
-                                <!-- Metric 2 - Right Position -->
-                                <!-- wp:group {"className":"metric-card metric-1","style":{"position":{"type":"absolute"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
-                                <div class="wp-block-group metric-card metric-1" style="position:absolute;background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
-                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
-                                    <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">99.9%</p>
-                                    <!-- /wp:paragraph -->
-                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
-                                    <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">Uptime SLA</p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
-                                
-                                <!-- Metric 3 - Bottom Position -->
-                                <!-- wp:group {"className":"metric-card metric-2","style":{"position":{"type":"absolute"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
-                                <div class="wp-block-group metric-card metric-2" style="position:absolute;background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
-                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
-                                    <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{trustMetric1Value}}</p>
-                                    <!-- /wp:paragraph -->
-                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
-                                    <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{trustMetric1Label}}</p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
-                                
-                                <!-- Metric 4 - Left Position -->
-                                <!-- wp:group {"className":"metric-card metric-3","style":{"position":{"type":"absolute"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
-                                <div class="wp-block-group metric-card metric-3" style="position:absolute;background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
-                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
-                                    <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{trustMetric2Value}}</p>
-                                    <!-- /wp:paragraph -->
-                                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
-                                    <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{trustMetric2Label}}</p>
-                                    <!-- /wp:paragraph -->
-                                </div>
-                                <!-- /wp:group -->
+                                <!-- Floating Metric Cards in Circular Pattern -->
+                                {{#if metricCards}}
+                                    {{#each metricCards}}
+                                        <!-- wp:group {"className":"metric-card metric-{{@index}}","style":{"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                        <div class="wp-block-group metric-card metric-{{@index}}" style="background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                            <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                            <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{this.value}}</p>
+                                            <!-- /wp:paragraph -->
+                                            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                            <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{this.label}}</p>
+                                            <!-- /wp:paragraph -->
+                                        </div>
+                                        <!-- /wp:group -->
+                                    {{/each}}
+                                {{else}}
+                                    <!-- Default Metric Cards -->
+                                    <!-- Metric 1 - Top -->
+                                    <!-- wp:group {"className":"metric-card metric-0","style":{"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                    <div class="wp-block-group metric-card metric-0" style="background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                        <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{trustMetric1Value}}</p>
+                                        <!-- /wp:paragraph -->
+                                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                        <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{trustMetric1Label}}</p>
+                                        <!-- /wp:paragraph -->
+                                    </div>
+                                    <!-- /wp:group -->
+                                    
+                                    <!-- Metric 2 - Right -->
+                                    <!-- wp:group {"className":"metric-card metric-1","style":{"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                    <div class="wp-block-group metric-card metric-1" style="background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                        <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{trustMetric2Value}}</p>
+                                        <!-- /wp:paragraph -->
+                                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                        <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{trustMetric2Label}}</p>
+                                        <!-- /wp:paragraph -->
+                                    </div>
+                                    <!-- /wp:group -->
+                                    
+                                    <!-- Metric 3 - Bottom -->
+                                    <!-- wp:group {"className":"metric-card metric-2","style":{"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                    <div class="wp-block-group metric-card metric-2" style="background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                        <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{trustMetric3Value}}</p>
+                                        <!-- /wp:paragraph -->
+                                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                        <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{trustMetric3Label}}</p>
+                                        <!-- /wp:paragraph -->
+                                    </div>
+                                    <!-- /wp:group -->
+                                    
+                                    <!-- Metric 4 - Left -->
+                                    <!-- wp:group {"className":"metric-card metric-3","style":{"spacing":{"padding":{"top":"12px","bottom":"12px","left":"16px","right":"16px"}},"border":{"radius":"8px"},"color":{"background":"rgba(255,255,255,0.95)"}}} -->
+                                    <div class="wp-block-group metric-card metric-3" style="background-color:rgba(255,255,255,0.95);padding-top:12px;padding-right:16px;padding-bottom:12px;padding-left:16px;border-radius:8px">
+                                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"var(--font-weight-bold)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"4px"}},"color":{"text":"#0f172a"}}} -->
+                                        <p style="color:#0f172a;margin-bottom:4px;font-size:1.5rem;font-weight:var(--font-weight-bold);line-height:1.2">{{trustMetric4Value}}</p>
+                                        <!-- /wp:paragraph -->
+                                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"var(--font-weight-medium)"},"color":{"text":"#64748b"}}} -->
+                                        <p style="color:#64748b;font-size:0.75rem;font-weight:var(--font-weight-medium)">{{trustMetric4Label}}</p>
+                                        <!-- /wp:paragraph -->
+                                    </div>
+                                    <!-- /wp:group -->
+                                {{/if}}
                                 
                             </div>
                             <!-- /wp:group -->
@@ -186,85 +202,10 @@
 <!-- /wp:group -->
 
 <style>
-/* Wireframe Hero Styles Using Design System */
+/* Enhanced Hero Styles */
 .alepo-hero-wireframe {
     --hero-padding: var(--space-9);
     --hero-gap: var(--space-8);
-}
-
-.alepo-hero-wireframe .hero-gradient-subtle {
-    background-image: 
-        radial-gradient(at 20% 80%, var(--c-primary-100) 0px, transparent 50%),
-        radial-gradient(at 80% 20%, var(--c-secondary-100) 0px, transparent 50%),
-        linear-gradient(135deg, var(--c-primary-50) 0%, var(--c-secondary-50) 100%);
-}
-
-.alepo-hero-wireframe .trust-badge {
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.alepo-hero-wireframe .trust-badge:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-1px);
-}
-
-.alepo-hero-wireframe .solution-visual {
-    box-shadow: var(--shadow-lg);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.alepo-hero-wireframe .solution-visual:hover {
-    box-shadow: var(--shadow-xl);
-    transform: translateY(-2px);
-}
-
-.alepo-hero-wireframe .btn-primary-wireframe .wp-block-button__link {
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.alepo-hero-wireframe .btn-primary-wireframe .wp-block-button__link:hover {
-    box-shadow: var(--shadow-primary);
-    transform: translateY(-1px);
-}
-
-/* Responsive Typography */
-@media (max-width: 768px) {
-    .alepo-hero-wireframe .wp-block-columns {
-        flex-direction: column;
-    }
-    
-    .alepo-hero-wireframe .hero-content-column,
-    .alepo-hero-wireframe .hero-visual-column {
-        flex-basis: 100% !important;
-    }
-    
-    .alepo-hero-wireframe .hero-visual-column {
-        margin-top: var(--space-6);
-    }
-}
-
-/* Accessibility Enhancements */
-.alepo-hero-wireframe .breadcrumb-nav a:focus {
-    outline: 2px solid var(--c-primary-500);
-    outline-offset: 2px;
-    border-radius: 3px;
-}
-
-.alepo-hero-wireframe .btn-primary-wireframe .wp-block-button__link:focus {
-    outline: 2px solid var(--c-white);
-    outline-offset: 2px;
-}
-
-/* 3D Hero Visual Elements */
-.alepo-hero-wireframe .hero-3d-container {
-    perspective: 1000px;
-}
-
-.alepo-hero-wireframe .isometric-graphic {
-    transform-style: preserve-3d;
-    animation: float 6s ease-in-out infinite;
 }
 
 /* Central Visual Styles */
@@ -305,6 +246,12 @@
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Circular Metric Card Positioning */
+.alepo-hero-wireframe .circular-metrics-container {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
 }
 
 .alepo-hero-wireframe .metric-card {
@@ -352,6 +299,7 @@
 
 /* Hover effects */
 .alepo-hero-wireframe .metric-card:hover {
+    transform: translateY(-2px);
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.15),
         0 8px 16px rgba(0, 0, 0, 0.08);
@@ -373,21 +321,7 @@
     transform: translateY(-50%) translateX(2px);
 }
 
-/* Split Layout Enhancements */
-.alepo-hero-wireframe .hero-split-layout {
-    align-items: center;
-    min-height: 400px;
-}
-
-.alepo-hero-wireframe .hero-content-column {
-    z-index: 2;
-}
-
-.alepo-hero-wireframe .hero-visual-column {
-    z-index: 1;
-}
-
-/* Modern Button Styles */
+/* Button Styles */
 .alepo-hero-wireframe .btn-primary-modern .wp-block-button__link {
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
@@ -422,11 +356,11 @@
 
 @keyframes pulse {
     0%, 100% { 
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
         opacity: 0.8;
     }
     50% { 
-        transform: translate(-50%, -50%) scale(1.05);
+        transform: scale(1.05);
         opacity: 1;
     }
 }
@@ -438,7 +372,7 @@
     }
 }
 
-/* Responsive Enhancements */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .alepo-hero-wireframe .hero-visual-column {
         display: none;
@@ -448,68 +382,35 @@
         flex-basis: 100% !important;
         text-align: center;
     }
+    
+    .alepo-hero-wireframe .btn-primary-modern,
+    .alepo-hero-wireframe .btn-secondary-modern {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
-    .alepo-hero-wireframe .hero-split-layout {
-        flex-direction: column;
-        gap: var(--space-8);
-    }
-    
-    .alepo-hero-wireframe .hero-content-column,
-    .alepo-hero-wireframe .hero-visual-column {
-        flex-basis: 100% !important;
-    }
-    
     .alepo-hero-wireframe h1 {
         font-size: 2.5rem !important;
     }
     
-    .alepo-hero-wireframe .metric-card {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        margin: var(--space-2);
-        display: inline-block;
+    .alepo-hero-wireframe h2 {
+        font-size: 1.1rem !important;
+    }
+    
+    .alepo-hero-wireframe .hero-split-layout {
+        gap: var(--space-8);
     }
 }
 
-/* Ensure proper color contrast */
-.alepo-hero-wireframe .has-gray-600-color {
-    color: var(--c-gray-600) !important;
+/* Cover block gradient fix */
+.alepo-hero-wireframe .wp-block-cover__gradient-background {
+    opacity: 0.9;
 }
 
-.alepo-hero-wireframe .has-gray-700-color {
-    color: var(--c-gray-700) !important;
-}
-
-.alepo-hero-wireframe .has-gray-800-color {
-    color: var(--c-gray-800) !important;
-}
-
-.alepo-hero-wireframe .has-gray-900-color {
-    color: var(--c-gray-900) !important;
-}
-
-.alepo-hero-wireframe .has-primary-500-color {
-    color: var(--c-primary-500) !important;
-}
-
-.alepo-hero-wireframe .has-primary-700-color {
-    color: var(--c-primary-700) !important;
-}
-
-.alepo-hero-wireframe .has-primary-50-background-color {
-    background-color: var(--c-primary-50) !important;
-}
-
-.alepo-hero-wireframe .has-primary-500-background-color {
-    background-color: var(--c-primary-500) !important;
-}
-
-.alepo-hero-wireframe .has-white-background-color {
-    background-color: var(--c-white) !important;
+/* Ensure proper layering */
+.alepo-hero-wireframe .wp-block-cover__inner-container {
+    z-index: 1;
+    position: relative;
 }
 </style>

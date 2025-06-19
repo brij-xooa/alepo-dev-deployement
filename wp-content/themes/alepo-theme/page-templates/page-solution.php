@@ -195,8 +195,8 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Section 4: Key Capabilities Section -->
-        <section class="key-capabilities-section">
+        <!-- Section 4: Key Capabilities Section (Enhanced with Alepo Components) -->
+        <section class="key-capabilities-section alepo-bg-gray-50 alepo-py-11">
             <div class="container">
                 
                 <?php 

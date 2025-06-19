@@ -5,10 +5,10 @@
 <div class="wp-block-group alignfull alepo-hero-wireframe section-pattern-1" style="min-height:500px;padding-top:0;padding-bottom:0">
 
     <!-- Modern 3D Hero Background with Gradient -->
-    <!-- wp:cover {"url":"{{heroBackgroundImage}}","dimRatio":{{heroDimRatio}},"customGradient":"linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #164e63 100%)","minHeight":600,"minHeightUnit":"px","isDark":true,"align":"full","className":"hero-3d-modern"} -->
+    <!-- wp:cover {"url":"{{heroBackgroundImage}}","dimRatio":70,"customGradient":"linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #164e63 100%)","minHeight":600,"minHeightUnit":"px","isDark":true,"align":"full","className":"hero-3d-modern"} -->
     <div class="wp-block-cover alignfull is-dark hero-3d-modern" style="min-height:600px">
-        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-{{heroDimRatio}} has-background-dim has-background-gradient" style="background:linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #164e63 100%)"></span>
-        {{#if heroBackgroundImage}}<img class="wp-block-cover__image-background" alt="{{heroBackgroundAlt}}" src="{{heroBackgroundImage}}" data-object-fit="cover"/>{{/if}}
+        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-70 has-background-dim has-background-gradient" style="background:linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #164e63 100%)"></span>
+        <img class="wp-block-cover__image-background" alt="{{heroBackgroundAlt}}" src="{{heroBackgroundImage}}" data-object-fit="cover"/>
         
         <div class="wp-block-cover__inner-container">
             
@@ -94,23 +94,9 @@
                                 <!-- Central Visual Element -->
                                 <!-- wp:group {"className":"central-visual","style":{"position":{"type":"absolute","top":"50%","left":"50%"},"transform":"translate(-50%, -50%)","dimensions":{"width":"200px","height":"200px"}}} -->
                                 <div class="wp-block-group central-visual" style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:200px;height:200px">
-                                    {{#if solutionVisualType}}
-                                        {{#if solutionVisualImage}}
-                                            <!-- wp:image {"className":"solution-hero-image","sizeSlug":"medium"} -->
-                                            <figure class="wp-block-image size-medium solution-hero-image">
-                                                <img src="{{solutionVisualImage}}" alt="{{solutionVisualAlt}}" />
-                                            </figure>
-                                            <!-- /wp:image -->
-                                        {{else}}
-                                            <div class="solution-icon-wrapper">
-                                                <div class="solution-icon">{{solutionIcon}}</div>
-                                            </div>
-                                        {{/if}}
-                                    {{else}}
-                                        <div class="solution-icon-wrapper">
-                                            <div class="solution-icon">{{solutionIcon}}</div>
-                                        </div>
-                                    {{/if}}
+                                    <div class="solution-icon-wrapper">
+                                        <div class="solution-icon">{{solutionIcon}}</div>
+                                    </div>
                                 </div>
                                 <!-- /wp:group -->
                                 

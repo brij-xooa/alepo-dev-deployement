@@ -1,0 +1,138 @@
+{
+  "title": "Legacy AAA Replacement",
+  "slug": "legacy-aaa-replacement",
+  "meta_description": "Replace outdated AAA infrastructure with cloud-native solutions. Migrate from legacy RADIUS servers to modern authentication platforms with zero downtime and improved security.",
+  "primary_keyword": "legacy AAA replacement",
+  "secondary_keywords": ["AAA migration", "RADIUS modernization", "authentication upgrade", "AAA transformation"],
+  "schema_type": "Service",
+  "hero_subheadline": "From Legacy Constraints to Cloud-Native Freedom - Replace outdated AAA systems with future-ready authentication platform",
+  "capability_group_title": "AAA Modernization Framework",
+  "capability_1_title": "Zero-Downtime Migration",
+  "capability_1_desc": "Seamlessly transition from legacy RADIUS/Diameter infrastructure to cloud-native AAA platform. Parallel deployment strategy ensures continuous service while modernizing authentication backend.",
+  "capability_2_title": "Performance Amplification", 
+  "capability_2_desc": "Transform from thousands to millions of concurrent authentications. Cloud-native architecture delivers 10x performance improvement with elastic scaling and sub-millisecond response times.",
+  "capability_3_title": "Security Enhancement",
+  "capability_3_desc": "Eliminate legacy vulnerabilities with modern security protocols. Advanced threat detection, zero-trust principles, and real-time fraud prevention protect against evolving cyber threats.",
+  "acf_fields": {
+    "hero_style": "gradient-modernization",
+    "cta_primary": {
+      "text": "Get Migration Plan",
+      "url": "/aaa-migration-assessment",
+      "style": "primary"
+    },
+    "cta_secondary": {
+      "text": "View Case Studies", 
+      "url": "/aaa-replacement-case-studies",
+      "style": "secondary"
+    },
+    "performance_metrics": [
+      {
+        "metric": "99.99%",
+        "label": "Migration Success Rate",
+        "description": "Successful legacy AAA replacements with zero data loss"
+      },
+      {
+        "metric": "10x",
+        "label": "Performance Boost", 
+        "description": "Authentication capacity increase after modernization"
+      },
+      {
+        "metric": "60%",
+        "label": "Cost Reduction",
+        "description": "Operational cost savings through cloud-native efficiency"
+      }
+    ],
+    "key_features": [
+      "Zero-Downtime Migration",
+      "Cloud-Native Architecture", 
+      "Legacy Protocol Support",
+      "Performance Scaling",
+      "Security Enhancement",
+      "Cost Optimization",
+      "Vendor Independence",
+      "Future-Proof Design"
+    ]
+  },
+  "internal_links": [
+    {
+      "context": "When discussing AAA solutions",
+      "target_page": "product-aaa-solutions", 
+      "anchor_text": "modern AAA platform"
+    },
+    {
+      "context": "For cloud migration strategies",
+      "target_page": "cloud-migration",
+      "anchor_text": "cloud transformation approach"
+    }
+  ],
+  "wireframe_variables": {
+    "solutionName": "Legacy AAA Replacement",
+    "solutionHeadline": "Legacy AAA Replacement: From Constraints to Cloud-Native Freedom",
+    "valueProposition": "Replace outdated AAA infrastructure with future-ready authentication platform",
+    "problemStatement": "Legacy AAA systems create bottlenecks, security vulnerabilities, and scaling limitations. 67% of operators struggle with authentication performance issues during peak traffic.",
+    "solutionStatement": "Alepo enables seamless migration from legacy RADIUS/Diameter systems to cloud-native AAA platform. Zero-downtime transition delivers 10x performance improvement, enhanced security, and 60% cost reduction.",
+    "trustBadge": "99.99% migration success • 10x performance boost • 60% cost savings",
+    "solutionIcon": "🔄",
+    "solutionVisualType": "icon",
+    "solutionVisualImage": "",
+    "solutionVisualAlt": "Legacy AAA replacement transformation",
+    "heroBackgroundImage": "https://alepo.com/wp-content/uploads/2024/03/landing_Solution-Brief-Digital-MVNO-in-a-Box.png",
+    "heroBackgroundAlt": "Network infrastructure transformation",
+    "heroDimRatio": 70,
+    "visualDescription": "Legacy to modern AAA transformation journey",
+    "technicalFeaturesTitle": "Migration Architecture",
+    "feature1Icon": "🔄",
+    "feature1Description": "Parallel deployment with gradual traffic migration",
+    "feature2Icon": "⚡", 
+    "feature2Description": "Cloud-native microservices architecture",
+    "feature3Icon": "🛡️",
+    "feature3Description": "Enhanced security and threat protection",
+    "feature4Icon": "📊",
+    "feature4Description": "Real-time monitoring and analytics platform",
+    "feature5Icon": "🔌",
+    "feature5Description": "Legacy protocol compatibility and translation",
+    "feature6Icon": "☁️",
+    "feature6Description": "Multi-cloud deployment flexibility",
+    "feature7Icon": "🚀",
+    "feature7Description": "Performance optimization and scaling",
+    "feature8Icon": "🔧",
+    "feature8Description": "Automated management and maintenance",
+    "businessBenefitsTitle": "Migration Benefits",
+    "benefit1Icon": "⚡",
+    "benefit1Title": "Performance Revolution",
+    "benefit1Description": "Achieve 10x authentication capacity improvement with sub-millisecond response times. Handle millions of concurrent users with elastic cloud scaling.",
+    "benefit1Metric": "10x capacity boost",
+    "benefit2Icon": "💰",
+    "benefit2Title": "Cost Optimization", 
+    "benefit2Description": "Reduce operational costs by 60% through cloud efficiency, automated management, and eliminated hardware maintenance expenses.",
+    "benefit2Metric": "60% cost reduction",
+    "benefit3Icon": "🛡️",
+    "benefit3Title": "Security Enhancement",
+    "benefit3Description": "Eliminate legacy vulnerabilities with modern security protocols, real-time threat detection, and zero-trust authentication principles.",
+    "benefit3Metric": "99.9% threat protection",
+    "benefit4Icon": "🚀",
+    "benefit4Title": "Future Readiness",
+    "benefit4Description": "Enable 5G, IoT, and edge computing with cloud-native architecture. API-first design supports emerging technologies and business models.",
+    "benefit4Metric": "Future-proof platform",
+    "customerSuccessTitle": "Migration Success",
+    "customerQuote": "Alepo's migration expertise transformed our legacy AAA bottleneck into a high-performance authentication engine. 10x capacity increase with zero downtime during transition.",
+    "customerName": "Infrastructure Director",
+    "customerCompany": "Major European Operator",
+    "trustIndicators": ["25M+ Migrated Users", "99.99% Success Rate", "Zero Downtime"],
+    "ctaHeadline": "Ready to Modernize Your AAA Infrastructure?",
+    "ctaSupportingText": "Break free from legacy limitations. Transform authentication performance with proven migration methodology.",
+    "primaryCTAText": "Get Migration Plan",
+    "primaryCTAUrl": "/aaa-migration-assessment",
+    "secondaryCTAText": "View Success Stories",
+    "secondaryCTAUrl": "/aaa-replacement-case-studies",
+    "contactInfo": "Migration planning in 7 days • Proven methodology • Zero-risk transition",
+    "trustMetric1Value": "99.99%",
+    "trustMetric1Label": "Success Rate",
+    "trustMetric2Value": "10x",
+    "trustMetric2Label": "Performance",
+    "trustMetric3Value": "60%",
+    "trustMetric3Label": "Cost Savings",
+    "trustMetric4Value": "0",
+    "trustMetric4Label": "Downtime"
+  }
+}

@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAA Modernization Framework</title>
+    <style>
+        /* Design System Variables */
+        :root {
+            /* Primary (Azure → Royal) */
+            --c-primary-50: #EEF7FF;
+            --c-primary-100: #D9ECFF;
+            --c-primary-200: #BCDEFF;
+            --c-primary-300: #8DCBFF;
+            --c-primary-400: #58ACFF;
+            --c-primary-500: #318AFF;
+            --c-primary-600: #1A6AF6;
+            --c-primary-700: #1353E2;
+            --c-primary-800: #1644B7;
+            --c-primary-900: #183D90;
+            --c-primary-950: #172D66;
+
+            /* Secondary (Teal → Charcoal) */
+            --c-secondary-50: #F2F9F9;
+            --c-secondary-100: #DDF0F0;
+            --c-secondary-200: #BEE1E3;
+            --c-secondary-300: #92CACE;
+            --c-secondary-400: #5EABB2;
+            --c-secondary-500: #4697A0;
+            --c-secondary-600: #3A7680;
+            --c-secondary-700: #34606A;
+            --c-secondary-800: #315159;
+            --c-secondary-900: #2D454C;
+            --c-secondary-950: #1A2C32;
+
+            /* Utility */
+            --c-black: #000000;
+            --c-white: #FFFFFF;
+            --c-gray-50: #FAFAFA;
+            --c-gray-100: #F7F7F9;
+            --c-gray-200: #E9ECEF;
+            --c-gray-300: #DEE2E6;
+            --c-gray-400: #CED4DA;
+            --c-gray-500: #ADB5BD;
+            --c-gray-600: #6C757D;
+            --c-gray-700: #495057;
+            --c-gray-800: #343A40;
+            --c-gray-900: #212529;
+
+            /* Shadows */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
+            --shadow-primary: 0 8px 24px rgba(49, 138, 255, 0.15);
+            --shadow-primary-lg: 0 12px 32px rgba(49, 138, 255, 0.20);
+
+            /* Typography */
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+
+            /* Type Scale */
+            --font-size-hero: clamp(2rem, 4vw + 1rem, 3rem);
+            --font-size-display: clamp(1.75rem, 3vw + 0.5rem, 2rem);
+            --font-size-h1: clamp(1.75rem, 3vw + 0.5rem, 2rem);
+            --font-size-h2: clamp(1.5rem, 2.5vw + 0.5rem, 1.5rem);
+            --font-size-h3: clamp(1.25rem, 2vw + 0.25rem, 1.25rem);
+            --font-size-body: 1rem;
+            --font-size-body-lg: 1.125rem;
+            --font-size-small: 0.875rem;
+
+            /* Font Weights */
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Line Heights */
+            --line-height-tight: 1.2;
+            --line-height-snug: 1.4;
+            --line-height-normal: 1.6;
+            --line-height-relaxed: 1.8;
+
+            /* Letter Spacing */
+            --letter-spacing-tight: -0.02em;
+            --letter-spacing-normal: 0;
+            --letter-spacing-wide: 0.05em;
+
+            /* Spacing Scale */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 24px;
+            --space-6: 32px;
+            --space-7: 48px;
+            --space-8: 64px;
+            --space-9: 80px;
+            --space-10: 96px;
+            --space-11: 120px;
+
+            /* Container */
+            --container-max: 1440px;
+            --container-xl: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-body);
+            line-height: var(--line-height-normal);
+            color: var(--c-gray-900);
+            background: var(--c-white);
+            overflow-x: hidden;
+        }
+
+        /* Gradient Mesh Background */
+        .gradient-mesh-light {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(at 30% 20%, var(--c-primary-100) 0px, transparent 40%),
+                radial-gradient(at 70% 80%, var(--c-secondary-100) 0px, transparent 40%),
+                var(--c-white);
+            z-index: -2;
+        }
+
+        /* Curved lines background */
+        .curved-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .curve-line {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        .curve-line svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .curve-line path {
+            fill: none;
+            stroke-width: 1;
+            animation: dashMove 20s linear infinite;
+        }
+
+        @keyframes dashMove {
+            to {
+                stroke-dashoffset: -100;
+            }
+        }
+
+        /* Flying particles background */
+        .particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle-bg {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--c-primary-400);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: floatUp 20s infinite linear;
+            box-shadow: 0 0 10px rgba(49, 138, 255, 0.3);
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.5;
+            }
+
+            90% {
+                opacity: 0.5;
+            }
+
+            to {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-xl);
+            margin: 0 auto;
+            padding: var(--space-9) var(--space-5);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main Title */
+        .title {
+            font-size: var(--font-size-hero);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-tight);
+            letter-spacing: var(--letter-spacing-tight);
+            text-align: center;
+            margin-bottom: var(--space-9);
+            color: var(--c-gray-900);
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Title gradient accent */
+        .title-accent {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--c-primary-500) 0%, var(--c-secondary-500) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Title underline */
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: calc(var(--space-5) * -1);
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--space-9);
+            height: 3px;
+            background: linear-gradient(90deg, var(--c-primary-400), var(--c-secondary-400));
+            border-radius: 2px;
+            opacity: 0;
+            animation: expandLine 0.8s ease 0.3s forwards;
+        }
+
+        @keyframes expandLine {
+            to {
+                opacity: 1;
+                width: var(--space-11);
+            }
+        }
+
+        /* Main content section */
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+            align-items: center;
+            margin-top: var(--space-9);
+        }
+
+        /* Features container */
+        .features-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        /* Features Grid */
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-5);
+        }
+
+        /* Feature Card */
+        .feature-card {
+            background: var(--c-white);
+            border: 1px solid var(--c-gray-200);
+            border-radius: 12px;
+            padding: var(--space-7);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(var(--space-5));
+            animation: slideUp 0.6s ease forwards;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Card design elements */
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--c-primary-100) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .feature-card:hover::after {
+            opacity: 0.3;
+        }
+
+        /* Corner accent - aim dot */
+        .aim-dot {
+            position: absolute;
+            top: var(--space-5);
+            right: var(--space-5);
+            width: 24px;
+            height: 24px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .aim-dot {
+            opacity: 1;
+        }
+
+        /* Aim dot design */
+        .aim-dot::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--c-primary-500);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .aim-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid var(--c-primary-400);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
+        }
+
+        .feature-card:hover .aim-dot::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .feature-card:hover .aim-dot::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Pulse animation on hover */
+        @keyframes aimPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(49, 138, 255, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 0 10px rgba(49, 138, 255, 0);
+            }
+        }
+
+        .feature-card:hover .aim-dot::before {
+            animation: aimPulse 1.5s infinite;
+        }
+
+        /* Mouse follow gradient */
+        .mouse-gradient {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--c-primary-300) 0%, transparent 50%);
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            filter: blur(40px);
+        }
+
+        .feature-card:hover .mouse-gradient {
+            opacity: 0.15;
+        }
+
+        .feature-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:hover {
+            transform: translateY(calc(var(--space-2) * -1));
+            box-shadow: var(--shadow-primary);
+            border-color: var(--c-primary-200);
+        }
+
+        /* Gradient overlay on hover */
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--c-primary-400), var(--c-secondary-400));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Icon */
+        .icon-wrapper {
+            width: var(--space-8);
+            height: var(--space-8);
+            margin-bottom: var(--space-5);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--c-primary-100), var(--c-secondary-100));
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, var(--c-primary-200), var(--c-secondary-200));
+        }
+
+        .icon {
+            width: var(--space-6);
+            height: var(--space-6);
+            stroke: var(--c-primary-600);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Feature Title */
+        .feature-title {
+            font-size: var(--font-size-h3);
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-snug);
+            color: var(--c-gray-900);
+            margin-bottom: var(--space-4);
+        }
+
+        /* Feature Description */
+        .feature-description {
+            font-size: var(--font-size-body);
+            line-height: var(--line-height-relaxed);
+            color: var(--c-gray-600);
+        }
+
+        /* Solution Section */
+        .solution-section {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .solution-wrapper {
+            position: sticky;
+            top: var(--space-9);
+            height: fit-content;
+            transform: translateY(0);
+            transition: transform 0.1s ease-out;
+        }
+
+        .solution-heading {
+            font-size: var(--font-size-h3);
+            font-weight: var(--font-weight-semibold);
+            color: var(--c-gray-900);
+            margin-bottom: var(--space-5);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+        }
+
+        /* Diagram Container */
+        .diagram-container {
+            background: var(--c-white);
+            border: 1px solid var(--c-gray-200);
+            border-radius: 16px;
+            padding: var(--space-6);
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            transform: scale(0.95);
+            animation: scaleIn 0.8s ease 0.7s forwards;
+            flex: 1;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .diagram-container.fade-out {
+            opacity: 0.3;
+            transform: scale(0.9);
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .diagram-placeholder {
+            height: 100%;
+            background: linear-gradient(135deg, var(--c-primary-50), var(--c-secondary-50));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Bottom section for scroll demonstration */
+        .bottom-section {
+            background: var(--c-gray-50);
+            padding: var(--space-11) 0;
+            margin-top: var(--space-11);
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .bottom-content {
+            max-width: var(--container-md);
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .bottom-title {
+            font-size: var(--font-size-display);
+            font-weight: var(--font-weight-bold);
+            color: var(--c-gray-900);
+            margin-bottom: var(--space-5);
+        }
+
+        .bottom-description {
+            font-size: var(--font-size-body-lg);
+            color: var(--c-gray-600);
+            line-height: var(--line-height-relaxed);
+        }
+
+        /* Decorative elements for bottom section */
+        .bottom-decoration {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--c-primary-100), transparent);
+            opacity: 0.5;
+        }
+
+        .bottom-decoration-1 {
+            top: 10%;
+            left: -150px;
+        }
+
+        .bottom-decoration-2 {
+            bottom: 10%;
+            right: -150px;
+        }
+
+        /* Animated particles for diagram */
+        .particle-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--c-primary-400);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            33% {
+                transform: translateY(-30px) translateX(50px);
+            }
+
+            66% {
+                transform: translateY(20px) translateX(-30px);
+            }
+        }
+
+        /* FAB */
+        .fab {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--c-primary-500), var(--c-secondary-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            animation: fabEntrance 0.6s ease 1s forwards;
+        }
+
+        @keyframes fabEntrance {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fab:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-primary-lg);
+        }
+
+        .fab svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--c-white);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .content-section {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+
+            .solution-section {
+                position: relative;
+                top: 0;
+                height: auto;
+                max-height: none;
+                margin-top: var(--space-8);
+            }
+
+            .solution-wrapper {
+                transform: none !important;
+                display: block;
+            }
+
+            .diagram-container {
+                min-height: 400px;
+            }
+
+            .diagram-container.fade-out {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-7) var(--space-4);
+            }
+
+            .feature-card {
+                padding: var(--space-6);
+            }
+
+            .title {
+                font-size: var(--font-size-h1);
+                margin-bottom: var(--space-7);
+            }
+
+            .fab {
+                bottom: var(--space-4);
+                right: var(--space-4);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Gradient Mesh Background -->
+    <div class="gradient-mesh-light"></div>
+
+    <!-- Curved lines background -->
+    <div class="curved-lines">
+        <div class="curve-line">
+            <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+                <path d="M 0,450 Q 360,300 720,450 T 1440,450" stroke="#E9ECEF" stroke-dasharray="5,5" />
+                <path d="M 0,500 Q 360,350 720,500 T 1440,500" stroke="#DEE2E6" stroke-dasharray="8,8" />
+            </svg>
+        </div>
+
+    </div>
+
+    <!-- Flying particles background -->
+    <div class="particles-bg" id="particles-bg"></div>
+
+    <div class="container">
+        <h1 class="title">
+            <span class="title-accent">AAA Modernization</span> Framework
+        </h1>
+
+        <div class="content-section">
+            <!-- Left side: Feature cards -->
+            <div class="features-container">
+                <div class="features">
+                    <!-- Zero-Downtime Migration -->
+                    <div class="feature-card">
+                        <div class="aim-dot"></div>
+                        <div class="mouse-gradient"></div>
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" />
+                                <path d="M2 17L12 22L22 17" />
+                                <path d="M2 12L12 17L22 12" />
+                            </svg>
+                        </div>
+                        <h2 class="feature-title">Zero-Downtime Migration</h2>
+                        <p class="feature-description">
+                            Seamlessly transition from legacy RADIUS/Diameter infrastructure to cloud-native AAA
+                            platform.
+                            Parallel deployment strategy ensures continuous service while modernizing authentication
+                            backend.
+                        </p>
+                    </div>
+
+                    <!-- Performance Amplification -->
+                    <div class="feature-card">
+                        <div class="aim-dot"></div>
+                        <div class="mouse-gradient"></div>
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" />
+                            </svg>
+                        </div>
+                        <h2 class="feature-title">Performance Amplification</h2>
+                        <p class="feature-description">
+                            Transform from thousands to millions of concurrent authentications. Cloud-native
+                            architecture delivers 10x performance improvement with elastic scaling and sub-millisecond
+                            response times.
+                        </p>
+                    </div>
+
+                    <!-- Security Enhancement -->
+                    <div class="feature-card">
+                        <div class="aim-dot"></div>
+                        <div class="mouse-gradient"></div>
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M12 2L3.5 7V11.5C3.5 16.5 6.5 21 12 22C17.5 21 20.5 16.5 20.5 11.5V7L12 2Z" />
+                                <path d="M9 12L11 14L15 10" />
+                            </svg>
+                        </div>
+                        <h2 class="feature-title">Security Enhancement</h2>
+                        <p class="feature-description">
+                            Eliminate legacy vulnerabilities with modern security protocols. Advanced threat
+                            detection, zero-trust principles, and real-time fraud prevention protect against evolving
+                            cyber threats.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side: Solution diagram -->
+            <div class="solution-section">
+                <div class="solution-wrapper">
+                    <h2 class="solution-heading">Integrated Solution Architecture</h2>
+                    <div class="diagram-container" id="diagram-container">
+                        <div class="diagram-placeholder" id="diagram-placeholder">
+                            <div class="particle-container" id="particles"></div>
+                            <div style="position: relative; z-index: 2; color: var(--c-gray-600); text-align: center;">
+                                <p style="font-size: var(--font-size-body-lg); margin-bottom: var(--space-3);">Solution
+                                    Capability Diagram</p>
+                                <p style="font-size: var(--font-size-small);">[Your architecture diagram here]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="scrollToTop()">
+        <svg viewBox="0 0 24 24">
+            <path d="M7 14l5-5 5 5" />
+        </svg>
+    </div>
+
+    <script>
+        // Create flying particles background
+        function createBackgroundParticles() {
+            const container = document.getElementById('particles-bg');
+            const particleCount = 25;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle-bg';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 15) + 's';
+
+                // Vary the opacity, size and color
+                const size = 4 + Math.random() * 6;
+                particle.style.width = particle.style.height = size + 'px';
+                particle.style.opacity = 0.3 + Math.random() * 0.4;
+
+                // Some particles use secondary color
+                if (Math.random() > 0.5) {
+                    particle.style.background = 'var(--c-secondary-400)';
+                    particle.style.boxShadow = '0 0 10px rgba(70, 151, 160, 0.3)';
+                }
+
+                container.appendChild(particle);
+            }
+        }
+
+        // Create floating particles in diagram
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 15;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Mouse follow effect for cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            const mouseGradient = card.querySelector('.mouse-gradient');
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                mouseGradient.style.left = x + 'px';
+                mouseGradient.style.top = y + 'px';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                mouseGradient.style.opacity = '0';
+            });
+        });
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.feature-card, .solution-heading, .diagram-container').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Initialize
+        createBackgroundParticles();
+        createParticles();
+
+        // Parallax effect for diagram
+        let solutionWrapper = document.querySelector('.solution-wrapper');
+        let diagramContainer = document.getElementById('diagram-container');
+        let contentSection = document.querySelector('.content-section');
+        let featuresContainer = document.querySelector('.features-container');
+
+        // Smooth parallax effect on scroll
+        let ticking = false;
+
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const meshBg = document.querySelector('.gradient-mesh-light');
+            const particlesBg = document.querySelector('.particles-bg');
+
+            // Background parallax
+            meshBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+            particlesBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+
+            // Diagram parallax effect - only on desktop
+            if (window.innerWidth > 968 && solutionWrapper) {
+                const contentRect = contentSection.getBoundingClientRect();
+                const featuresRect = featuresContainer.getBoundingClientRect();
+
+                // Calculate how much of the features have scrolled past
+                const scrollProgress = Math.max(0, -contentRect.top / (featuresRect.height - window.innerHeight));
+
+                // Apply parallax: diagram moves at 30% of the scroll speed
+                const parallaxOffset = scrollProgress * featuresRect.height * 0.3;
+                solutionWrapper.style.transform = `translateY(${parallaxOffset}px)`;
+
+                // Fade out effect when nearing the end
+                if (scrollProgress > 0.7) {
+                    const fadeProgress = (scrollProgress - 0.7) / 0.3;
+                    diagramContainer.classList.add('fade-out');
+                    diagramContainer.style.opacity = 1 - (fadeProgress * 0.7);
+                } else {
+                    diagramContainer.classList.remove('fade-out');
+                    diagramContainer.style.opacity = '';
+                }
+            }
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Reset parallax on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 968 && solutionWrapper) {
+                solutionWrapper.style.transform = 'translateY(0)';
+                diagramContainer.style.opacity = '';
+                diagramContainer.classList.remove('fade-out');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,582 @@
+/*
+ * ALEPO REUSABLE COMPONENTS LIBRARY
+ * Extracted from advanced design prototypes
+ * Uses existing Alepo design system variables from style.css
+ */
+
+/* ===== MISSING DESIGN SYSTEM VARIABLES ===== */
+/* Adding gray colors that were missing from main style.css */
+:root {
+    /* Gray Scale (missing from main design system) */
+    --c-gray-50: #FAFAFA;
+    --c-gray-100: #F7F7F9;
+    --c-gray-200: #E9ECEF;
+    --c-gray-300: #DEE2E6;
+    --c-gray-400: #CED4DA;
+    --c-gray-500: #ADB5BD;
+    --c-gray-600: #6C757D;
+    --c-gray-700: #495057;
+    --c-gray-800: #343A40;
+    --c-gray-900: #212529;
+    
+    /* Black & White utilities */
+    --c-black: #000000;
+    --c-white: #FFFFFF;
+    
+    /* Extended spacing (missing from main) */
+    --space-11: 120px;
+    
+    /* Extended containers */
+    --container-xl: 1200px;
+    --container-md: 768px;
+    
+    /* Responsive typography (clamp functions) */
+    --font-size-hero-responsive: clamp(2rem, 4vw + 1rem, 3rem);
+    --font-size-display-responsive: clamp(1.75rem, 3vw + 0.5rem, 2rem);
+    --font-size-h1-responsive: clamp(1.75rem, 3vw + 0.5rem, 2rem);
+    --font-size-h2-responsive: clamp(1.5rem, 2.5vw + 0.5rem, 1.5rem);
+    --font-size-h3-responsive: clamp(1.25rem, 2vw + 0.25rem, 1.25rem);
+    --font-size-body-lg: 1.125rem;
+}
+
+/* ===== BACKGROUND EFFECTS SYSTEM ===== */
+
+/* Gradient Mesh Background */
+.alepo-gradient-mesh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(at 30% 20%, var(--c-primary-100) 0px, transparent 40%),
+        radial-gradient(at 70% 80%, var(--c-secondary-100) 0px, transparent 40%),
+        var(--c-white);
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Animated Curved Lines Background */
+.alepo-curved-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.alepo-curve-line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.alepo-curve-line svg {
+    width: 100%;
+    height: 100%;
+}
+
+.alepo-curve-line path {
+    fill: none;
+    stroke-width: 1;
+    animation: alepo-dash-move 20s linear infinite;
+}
+
+@keyframes alepo-dash-move {
+    to { stroke-dashoffset: -100; }
+}
+
+/* Flying Particles Background */
+.alepo-particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.alepo-particle-bg {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--c-primary-400);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: alepo-float-up 20s infinite linear;
+    box-shadow: 0 0 10px rgba(49, 138, 255, 0.3);
+}
+
+@keyframes alepo-float-up {
+    from {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.5; }
+    to {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* ===== ADVANCED CARD SYSTEM ===== */
+
+/* Feature Card with Advanced Hover Effects */
+.alepo-feature-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-gray-200);
+    border-radius: 12px;
+    padding: var(--space-7);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(var(--space-5));
+    animation: alepo-slide-up 0.6s ease forwards;
+    transition: all var(--transition-medium) ease;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Card Entrance Animation */
+@keyframes alepo-slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered Animation Delays */
+.alepo-feature-card:nth-child(1) { animation-delay: 0.1s; }
+.alepo-feature-card:nth-child(2) { animation-delay: 0.2s; }
+.alepo-feature-card:nth-child(3) { animation-delay: 0.3s; }
+.alepo-feature-card:nth-child(4) { animation-delay: 0.4s; }
+.alepo-feature-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Card Hover Effects */
+.alepo-feature-card:hover {
+    transform: translateY(calc(var(--space-2) * -1));
+    box-shadow: var(--shadow-primary);
+    border-color: var(--c-primary-200);
+}
+
+/* Radial Hover Effect */
+.alepo-feature-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--c-primary-100) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity var(--transition-medium) ease;
+    pointer-events: none;
+}
+
+.alepo-feature-card:hover::after {
+    opacity: 0.3;
+}
+
+/* Top Border Animation */
+.alepo-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-ocean);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-medium) ease;
+}
+
+.alepo-feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* ===== AIM DOT ANIMATION SYSTEM ===== */
+
+/* Aim Dot Container */
+.alepo-aim-dot {
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-5);
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    transition: all var(--transition-medium) ease;
+}
+
+.alepo-feature-card:hover .alepo-aim-dot {
+    opacity: 1;
+}
+
+/* Aim Dot Inner Circle */
+.alepo-aim-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--c-primary-500);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Aim Dot Outer Ring */
+.alepo-aim-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--c-primary-400);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
+}
+
+.alepo-feature-card:hover .alepo-aim-dot::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.alepo-feature-card:hover .alepo-aim-dot::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Pulse Animation */
+@keyframes alepo-aim-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(49, 138, 255, 0.4); }
+    100% { box-shadow: 0 0 0 10px rgba(49, 138, 255, 0); }
+}
+
+.alepo-feature-card:hover .alepo-aim-dot::before {
+    animation: alepo-aim-pulse 1.5s infinite;
+}
+
+/* ===== MOUSE FOLLOW GRADIENT ===== */
+
+.alepo-mouse-gradient {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--c-primary-300) 0%, transparent 50%);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity var(--transition-medium) ease;
+    filter: blur(40px);
+}
+
+.alepo-feature-card:hover .alepo-mouse-gradient {
+    opacity: 0.15;
+}
+
+/* ===== ICON WRAPPER SYSTEM ===== */
+
+.alepo-icon-wrapper {
+    width: var(--space-8);
+    height: var(--space-8);
+    margin-bottom: var(--space-5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--c-primary-100), var(--c-secondary-100));
+    border-radius: 16px;
+    transition: all var(--transition-medium) ease;
+}
+
+.alepo-feature-card:hover .alepo-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, var(--c-primary-200), var(--c-secondary-200));
+}
+
+.alepo-icon {
+    width: var(--space-6);
+    height: var(--space-6);
+    stroke: var(--c-primary-600);
+    stroke-width: 2;
+    fill: none;
+}
+
+/* ===== FLOATING PARTICLES (DIAGRAM) ===== */
+
+.alepo-particle-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.alepo-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--c-primary-400);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: alepo-float 15s infinite;
+}
+
+@keyframes alepo-float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    33% { transform: translateY(-30px) translateX(50px); }
+    66% { transform: translateY(20px) translateX(-30px); }
+}
+
+/* ===== FLOATING ACTION BUTTON ===== */
+
+.alepo-fab {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 56px;
+    height: 56px;
+    background: var(--gradient-ocean);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-medium) ease;
+    z-index: 1000;
+    opacity: 0;
+    animation: alepo-fab-entrance 0.6s ease 1s forwards;
+    border: none;
+}
+
+@keyframes alepo-fab-entrance {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.alepo-fab:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-primary-lg);
+}
+
+.alepo-fab svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--c-white);
+    stroke-width: 2;
+    fill: none;
+}
+
+/* ===== TITLE SYSTEM WITH GRADIENT ACCENT ===== */
+
+.alepo-title-gradient {
+    display: inline-block;
+    background: var(--gradient-ocean);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.alepo-title-underline {
+    position: relative;
+}
+
+.alepo-title-underline::after {
+    content: '';
+    position: absolute;
+    bottom: calc(var(--space-5) * -1);
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--space-9);
+    height: 3px;
+    background: var(--gradient-ocean);
+    border-radius: 2px;
+    opacity: 0;
+    animation: alepo-expand-line 0.8s ease 0.3s forwards;
+}
+
+@keyframes alepo-expand-line {
+    to {
+        opacity: 1;
+        width: var(--space-11);
+    }
+}
+
+/* ===== FADE IN ANIMATIONS ===== */
+
+.alepo-fade-in-up {
+    opacity: 0;
+    transform: translateY(var(--space-5));
+    animation: alepo-fade-in-up 0.8s ease forwards;
+}
+
+@keyframes alepo-fade-in-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== STICKY PARALLAX SYSTEM ===== */
+
+.alepo-sticky-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.alepo-sticky-wrapper {
+    position: sticky;
+    top: var(--space-9);
+    height: fit-content;
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.alepo-diagram-container {
+    background: var(--c-white);
+    border: 1px solid var(--c-gray-200);
+    border-radius: 16px;
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: scale(0.95);
+    animation: alepo-scale-in 0.8s ease 0.7s forwards;
+    flex: 1;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-medium) ease;
+}
+
+.alepo-diagram-container.fade-out {
+    opacity: 0.3;
+    transform: scale(0.9);
+}
+
+@keyframes alepo-scale-in {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+    .alepo-feature-card {
+        padding: var(--space-6);
+    }
+    
+    .alepo-fab {
+        bottom: var(--space-4);
+        right: var(--space-4);
+    }
+    
+    .alepo-diagram-container {
+        min-height: 400px;
+    }
+    
+    .alepo-diagram-container.fade-out {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .alepo-sticky-wrapper {
+        transform: none !important;
+        display: block;
+    }
+}
+
+@media (max-width: 968px) {
+    .alepo-sticky-container {
+        position: relative;
+        top: 0;
+        height: auto;
+        max-height: none;
+        margin-top: var(--space-8);
+    }
+    
+    .alepo-sticky-wrapper {
+        transform: none !important;
+        display: block;
+    }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Layout Utilities */
+.alepo-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.alepo-flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.alepo-container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: var(--space-9) var(--space-5);
+    position: relative;
+    z-index: 1;
+}
+
+/* Text Utilities */
+.alepo-text-center { text-align: center; }
+.alepo-text-gradient { 
+    background: var(--gradient-ocean);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Spacing Utilities */
+.alepo-mb-9 { margin-bottom: var(--space-9); }
+.alepo-mt-9 { margin-top: var(--space-9); }
+.alepo-py-11 { padding: var(--space-11) 0; }
+
+/* Background Utilities */
+.alepo-bg-gradient-light {
+    background: linear-gradient(135deg, var(--c-primary-50), var(--c-secondary-50));
+}
+
+.alepo-bg-gray-50 { background: var(--c-gray-50); }
+
+/* Animation Utilities */
+.alepo-hover-lift {
+    transition: transform var(--transition-medium) ease;
+}
+
+.alepo-hover-lift:hover {
+    transform: translateY(calc(var(--space-1) * -1));
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+
+@media (max-width: 968px) {
+    .alepo-grid-2 {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .alepo-container {
+        padding: var(--space-7) var(--space-4);
+    }
+}

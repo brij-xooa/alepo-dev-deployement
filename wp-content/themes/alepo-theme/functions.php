@@ -12,6 +12,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Load Alepo Components Library
+require_once get_template_directory() . '/inc/alepo-components-enqueue.php';
+
 /**
  * Theme Setup
  */

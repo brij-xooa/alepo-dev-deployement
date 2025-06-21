@@ -15,6 +15,11 @@ if (!defined('ABSPATH')) {
 // Load Alepo Components Library
 require_once get_template_directory() . '/inc/alepo-components-enqueue.php';
 
+// Load Alepo Page Creator Updates for Enhanced Templates
+if (file_exists(get_template_directory() . '/../../tools/theme-utilities/alepo-page-creator-update.php')) {
+    require_once get_template_directory() . '/../../tools/theme-utilities/alepo-page-creator-update.php';
+}
+
 /**
  * Theme Setup
  */

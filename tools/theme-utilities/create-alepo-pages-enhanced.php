@@ -183,8 +183,16 @@ class AlepoPageCreator {
         $raw_content = file_get_contents($content_file);
         $metadata = file_exists($metadata_file) ? json_decode(file_get_contents($metadata_file), true) : [];
         
+        // Add section info to metadata for template processing
+        $metadata['section'] = $section;
+        
         // Process content through template
         $processed_content = $this->apply_template($raw_content, $metadata, $template, $section);
+        
+        // Add enhanced components for solutions
+        if ($section === 'solutions') {
+            $processed_content = $this->add_enhanced_components($processed_content, $metadata);
+        }
         
         // Convert to Gutenberg blocks if specified
         if (!empty($options['convert_to_gutenberg'])) {
@@ -226,6 +234,12 @@ class AlepoPageCreator {
         // Set page template if specified
         if (!empty($template['wordpress_template'])) {
             update_post_meta($page_id, '_wp_page_template', $template['wordpress_template']);
+        }
+        
+        // Auto-apply enhanced template for solutions
+        if ($section === 'solutions') {
+            update_post_meta($page_id, '_wp_page_template', 'page-templates/page-solution-enhanced.php');
+            update_post_meta($page_id, '_alepo_use_enhanced_components', true);
         }
         
         return [
@@ -275,8 +289,17 @@ class AlepoPageCreator {
         // Enhanced block template loading for wireframe templates
         $block_template_file = null;
         
+        // Check if this is a solutions section requiring enhanced templates
+        if (isset($metadata['section']) && $metadata['section'] === 'solutions' && $block_type === 'solution-hero') {
+            // Force use of enhanced hero template for solutions
+            $enhanced_hero_path = $this->template_base_dir . '/block-library/hero-blocks/solution-hero-wireframe.html';
+            if (file_exists($enhanced_hero_path)) {
+                $block_template_file = $enhanced_hero_path;
+            }
+        }
+        
         // For wireframe templates, the block_type already includes "-wireframe"
-        if (strpos($template_variation, 'wireframe') !== false || strpos($block_type, '-wireframe') !== false) {
+        if (!$block_template_file && (strpos($template_variation, 'wireframe') !== false || strpos($block_type, '-wireframe') !== false)) {
             // If block_type already has '-wireframe', use it directly
             if (strpos($block_type, '-wireframe') !== false) {
                 $wireframe_paths = [
@@ -754,6 +777,48 @@ class AlepoPageCreator {
         }
         
         return '✨'; // Default icon
+    }
+    
+    /**
+     * Add enhanced components to solution pages
+     */
+    private function add_enhanced_components($content, $metadata) {
+        // Add background effects at the beginning
+        $background_effects = '
+<!-- Alepo Enhanced Background Effects -->
+<div class="alepo-gradient-mesh"></div>
+<div class="alepo-curved-lines"></div>
+<div class="alepo-particles-bg"></div>
+
+';
+        
+        // Add FAB at the end
+        $fab_button = '
+<!-- Floating Action Button -->
+<button class="alepo-fab">
+    <svg viewBox="0 0 24 24">
+        <path d="M7 14l5-5 5 5" />
+    </svg>
+</button>';
+        
+        // Wrap content with effects
+        $enhanced_content = $background_effects . $content . $fab_button;
+        
+        // Add animation classes to hero elements
+        $enhanced_content = str_replace(
+            'class="wp-block-heading"',
+            'class="wp-block-heading alepo-fade-in-up"',
+            $enhanced_content
+        );
+        
+        // Enhance any capability sections
+        $enhanced_content = str_replace(
+            'class="key-capabilities-section"',
+            'class="key-capabilities-section alepo-bg-gray-50 alepo-py-11"',
+            $enhanced_content
+        );
+        
+        return $enhanced_content;
     }
 }
 

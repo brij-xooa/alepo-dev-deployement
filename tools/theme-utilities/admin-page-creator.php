@@ -172,9 +172,30 @@ function alepo_handle_page_creation() {
         
         echo "<h3>Creating Claude-Generated Pages...</h3>\n";
         
-        // Include and run Claude pages creator
-        require_once(get_template_directory() . '/create-claude-pages.php');
-        alepo_create_claude_pages();
+        // Include and run enhanced Claude pages creator
+        require_once(get_template_directory() . '/../../tools/theme-utilities/create-alepo-pages-enhanced.php');
+        $creator = new AlepoPageCreator();
+        
+        // Get all available solution pages
+        $available_pages = $creator->get_available_pages('solutions');
+        $page_slugs = array_keys($available_pages);
+        
+        echo "Found solution pages: " . implode(', ', $page_slugs) . "<br>\n";
+        
+        // Create all solution pages with enhanced components
+        $results = $creator->create_pages('solutions', $page_slugs, [
+            'convert_to_gutenberg' => true,
+            'overwrite_existing' => true
+        ]);
+        
+        foreach ($results as $result) {
+            if ($result['status'] === 'success') {
+                echo "✅ " . ucfirst($result['action']) . " page: {$result['page']} (ID: {$result['page_id']})<br>\n";
+                echo "   URL: <a href='{$result['url']}' target='_blank'>{$result['url']}</a><br>\n";
+            } else {
+                echo "❌ Error with {$result['page']}: {$result['message']}<br>\n";
+            }
+        }
         
         $output = ob_get_clean();
         set_transient('alepo_page_creation_output', $output, 300);

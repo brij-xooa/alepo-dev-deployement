@@ -236,9 +236,9 @@ class AlepoPageCreator {
             update_post_meta($page_id, '_wp_page_template', $template['wordpress_template']);
         }
         
-        // Auto-apply enhanced template for solutions
+        // Don't auto-apply enhanced template - let the existing template work
+        // Only add flag for enhanced components in specific sections
         if ($section === 'solutions') {
-            update_post_meta($page_id, '_wp_page_template', 'page-templates/page-solution-enhanced.php');
             update_post_meta($page_id, '_alepo_use_enhanced_components', true);
         }
         
@@ -289,14 +289,8 @@ class AlepoPageCreator {
         // Enhanced block template loading for wireframe templates
         $block_template_file = null;
         
-        // Check if this is a solutions section requiring enhanced templates
-        if (isset($metadata['section']) && $metadata['section'] === 'solutions' && $block_type === 'solution-hero') {
-            // Force use of enhanced hero template for solutions
-            $enhanced_hero_path = $this->template_base_dir . '/block-library/hero-blocks/solution-hero-wireframe.html';
-            if (file_exists($enhanced_hero_path)) {
-                $block_template_file = $enhanced_hero_path;
-            }
-        }
+        // Don't force enhanced hero template - let the original hero template work
+        // We'll only enhance the capabilities section below
         
         // For wireframe templates, the block_type already includes "-wireframe"
         if (!$block_template_file && (strpos($template_variation, 'wireframe') !== false || strpos($block_type, '-wireframe') !== false)) {
@@ -780,43 +774,50 @@ class AlepoPageCreator {
     }
     
     /**
-     * Add enhanced components to solution pages
+     * Add enhanced components to solution pages - ONLY to capabilities section
      */
     private function add_enhanced_components($content, $metadata) {
-        // Add background effects at the beginning
-        $background_effects = '
-<!-- Alepo Enhanced Background Effects -->
+        // Only enhance the key capabilities section, not the entire page
+        $enhanced_content = $content;
+        
+        // Find and enhance only the key capabilities section
+        $enhanced_content = preg_replace_callback(
+            '/(<section[^>]*class="[^"]*key-capabilities-section[^"]*"[^>]*>)(.*?)(<\/section>)/s',
+            function($matches) {
+                $section_open = $matches[1];
+                $section_content = $matches[2];
+                $section_close = $matches[3];
+                
+                // Add enhanced components only to this section
+                $background_effects = '
+<!-- Alepo Enhanced Background Effects for Capabilities Section -->
 <div class="alepo-gradient-mesh"></div>
 <div class="alepo-curved-lines"></div>
 <div class="alepo-particles-bg"></div>
-
 ';
+                
+                // Update the section class to include enhanced styling
+                $section_open = str_replace(
+                    'class="',
+                    'class="alepo-enhanced-section ',
+                    $section_open
+                );
+                
+                return $section_open . $background_effects . $section_content . $section_close;
+            },
+            $enhanced_content
+        );
         
-        // Add FAB at the end
-        $fab_button = '
+        // Add FAB only if we found a capabilities section
+        if (strpos($enhanced_content, 'alepo-enhanced-section') !== false) {
+            $enhanced_content .= '
 <!-- Floating Action Button -->
 <button class="alepo-fab">
     <svg viewBox="0 0 24 24">
         <path d="M7 14l5-5 5 5" />
     </svg>
 </button>';
-        
-        // Wrap content with effects
-        $enhanced_content = $background_effects . $content . $fab_button;
-        
-        // Add animation classes to hero elements
-        $enhanced_content = str_replace(
-            'class="wp-block-heading"',
-            'class="wp-block-heading alepo-fade-in-up"',
-            $enhanced_content
-        );
-        
-        // Enhance any capability sections
-        $enhanced_content = str_replace(
-            'class="key-capabilities-section"',
-            'class="key-capabilities-section alepo-bg-gray-50 alepo-py-11"',
-            $enhanced_content
-        );
+        }
         
         return $enhanced_content;
     }
